@@ -51,9 +51,9 @@ function chainButtonLabel(part: Extract<RollPart, { kind: 'chain' }>): string {
       </p>
     </template>
 
-    <template v-for="sub in result.subResults" :key="sub.rollLabel + (sub.factionName ?? sub.parts.map((p) => (p.kind === 'text' ? p.text : '')).join())">
+    <template v-for="(sub, n) in result.subResults" :key="n + '-' + sub.rollLabel + '-' + (sub.factionName ?? sub.parts.map((p) => (p.kind === 'text' ? p.text : p.label)).join('|'))">
       <div class="sub">
-        <span class="meta">Second roll: {{ sub.rollLabel }}</span>
+        <span class="meta">Roll {{ n + 1 }}: {{ sub.rollLabel }}</span>
         <OracleResultCard :result="sub" :depth="(depth ?? 0) + 1" />
       </div>
     </template>

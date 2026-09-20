@@ -13,6 +13,7 @@ import characterGoal from './character-goal.json'
 import relationships from './relationships.json'
 import revealedCharacteristic from './revealed-characteristic.json'
 import mortalOccupation from './mortal-occupation.json'
+import expertisesEdges from './expertises-edges.json'
 import turningWho from './turning-who.json'
 import turningWhy from './turning-why.json'
 import vampirePower from './vampire-power.json'
@@ -55,6 +56,7 @@ export const ORACLE_TABLES = [
   relationships,
   revealedCharacteristic,
   mortalOccupation,
+  expertisesEdges,
   turningWho,
   turningWhy,
   vampirePower,

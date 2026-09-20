@@ -65,15 +65,19 @@ function buildParts(table: OracleTable, row: OracleRow, cellText?: string): { pa
   }
   if (row.rollTwice) {
     const sides = maxSides(table)
-    const second = rollDie(sides)
-    const row2 = findRow(table, second)!
-    const sub = buildParts(table, row2)
-    return {
-      parts,
-      subResults: [
-        { tableId: table.id, tableTitle: table.title, rollLabel: dieLabel(second, sides), parts: sub.parts }
-      ]
-    }
+    const subResults = [rollDie(sides), rollDie(sides)].map((value) => {
+      const subRow = findRow(table, value)!
+      const sub = buildParts(table, subRow)
+      const subResult: OracleResult = {
+        tableId: table.id,
+        tableTitle: table.title,
+        rollLabel: dieLabel(value, sides),
+        parts: sub.parts
+      }
+      if (sub.subResults) subResult.subResults = sub.subResults
+      return subResult
+    })
+    return { parts, subResults }
   }
   return { parts }
 }
@@ -103,12 +107,13 @@ export function rollTable(table: OracleTable, options: TableRollOptions = {}): {
     const a = rollDie(sides)
     const b = rollDie(sides)
     const row = findRow(table, a)!
+    const rowB = findRow(table, b)!
     return {
       result: {
         tableId: table.id,
         tableTitle: table.title,
         rollLabel: `${dieLabel(a, sides)} + ${dieLabel(b, sides)}`,
-        parts: [{ kind: 'text', text: `${row.label} ${row.situation ?? ''}`.trim() }]
+        parts: [{ kind: 'text', text: `${row.label} ${rowB.situation ?? ''}`.trim() }]
       },
       row
     }
