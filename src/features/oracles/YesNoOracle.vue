@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { ORACLE_TABLES_BY_ID } from '@/data/oracles'
 import { rollYesNo, type OracleResult } from './roll'
 import { recordRoll } from './recent'
+import ManualRef from '@/components/ManualRef.vue'
 
 const table = ORACLE_TABLES_BY_ID['yes-no']
 const odds = table.odds!
@@ -16,7 +17,10 @@ function roll(oddsId: string) {
 
 <template>
   <section class="yesno">
-    <h2>Ask the Oracle</h2>
+    <h2>
+      Ask the Oracle
+      <ManualRef ref-key="oracle-how-to" label="How to ask the Oracle" />
+    </h2>
     <div class="odds-grid">
       <button v-for="o in odds" :key="o.id" type="button" @click="roll(o.id)">
         {{ o.label }}

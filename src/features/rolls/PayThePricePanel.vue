@@ -6,6 +6,7 @@ import { game, type MeterKey } from '@/store'
 import { applyDeltas } from './apply'
 import { MIN_RUSH, rollOnTable } from './engine'
 import { PAY_THE_PRICE, type PriceCost, type PriceRow } from './tables'
+import ManualRef from '@/components/ManualRef.vue'
 
 interface PriceRoll {
   die: number
@@ -66,7 +67,7 @@ function applyCost(roll: PriceRoll): void {
 <template>
   <article class="panel">
     <h2>Pay the Price</h2>
-    <p class="cite">Manual 364–412</p>
+    <p class="cite">Manual 364–412 <ManualRef ref-key="pay-the-price" /></p>
     <p class="intro">
       When a rule tells you to pay the price, choose a fitting consequence from the table below,
       or roll on it to decide at random. If the result doesn't make sense, roll again.

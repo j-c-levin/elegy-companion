@@ -4,6 +4,12 @@
   { "key": "conditions-overview", "label": "Conditions", "section": "Chapter 2", "ranges": [{ "start": 268, "end": 300 }] },
   { "key": "burdens-intro", "label": "Burdens (permanent conditions)", "section": "Chapter 4 — Burden abilities", "ranges": [{ "start": 3961, "end": 3969 }] },
   { "key": "action-roll", "label": "The Action Roll", "section": "Chapter 2 — How to play", "ranges": [{ "start": 315, "end": 362 }] },
+  { "key": "roll-engine", "label": "Action Roll, Rush, Matches and Basic Actions", "section": "Chapter 2 — How to play", "ranges": [
+    { "start": 315, "end": 362, "label": "The Action Roll" },
+    { "start": 363, "end": 375, "label": "Rush" },
+    { "start": 513, "end": 576, "label": "Matches: Twist, Misfortune, Impulse" },
+    { "start": 418, "end": 489, "label": "Basic Actions" }
+  ] },
   { "key": "rush", "label": "Rush", "section": "Chapter 2 — How to play", "ranges": [{ "start": 363, "end": 375 }] },
   { "key": "pay-the-price", "label": "Pay the Price", "section": "Chapter 2 — How to play", "ranges": [{ "start": 364, "end": 412 }] },
   { "key": "basic-actions", "label": "Basic Actions", "section": "Chapter 2 — How to play", "ranges": [{ "start": 418, "end": 489 }] },
@@ -119,5 +125,6 @@
     { "start": 746, "end": 756, "label": "Respite" },
     { "start": 767, "end": 778, "label": "Slumber" },
     { "start": 785, "end": 800, "label": "Feeding" }
-  ] }
+  ] },
+  { "key": "oracle-how-to", "label": "How to ask the Oracle", "section": "Chapter 6 — Oracles", "ranges": [{ "start": 4856, "end": 4884 }] }
 ]

@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import { TOTAL_TICKS, XP_PER_RANK, pulseMax, type Rank } from '../types'
 import type { Track } from '../types'
 import * as store from '../store'
+import ManualRef from '@/components/ManualRef.vue'
 
 const props = defineProps<{ track: Track }>()
 
@@ -113,6 +114,7 @@ function avoidDestruction(outcome: store.DestroyOutcome): void {
       <button type="button" class="mark-btn" @click="seal">
         Seal — gain +{{ XP_PER_RANK[track.rank] }} XP
       </button>
+      <ManualRef ref-key="connection-progress" label="Sealing a Connection" />
     </div>
 
     <details class="guidance">
@@ -128,7 +130,10 @@ function avoidDestruction(outcome: store.DestroyOutcome): void {
     </details>
 
     <details class="panel" :open="!track.sealed">
-      <summary>Test the Connection (roll manually)</summary>
+      <summary>
+        Test the Connection (roll manually)
+        <ManualRef ref-key="connection-test" label="Testing a Connection" />
+      </summary>
       <p class="note">
         Roll with Soul if they are mortal, Charm if not; +1 if Sealed. Use the Roll Engine, then
         record the result here.
@@ -159,7 +164,10 @@ function avoidDestruction(outcome: store.DestroyOutcome): void {
     </details>
 
     <div v-if="track.pulse !== null" class="pulse-block">
-      <h4>Pulse {{ track.pulse }} / {{ pmax }}</h4>
+      <h4>
+        Pulse {{ track.pulse }} / {{ pmax }}
+        <ManualRef ref-key="pulse" label="Connection Pulse" />
+      </h4>
       <div class="btn-row">
         <button type="button" class="ghost-btn" @click="store.applyPulseDamage(track.id, 1)">
           −1 Pulse
@@ -242,7 +250,10 @@ function avoidDestruction(outcome: store.DestroyOutcome): void {
     </div>
 
     <div class="bloodied">
-      <h4>Blood bonds</h4>
+      <h4>
+        Blood bonds
+        <ManualRef ref-key="bloodied" label="Bloodying a Connection" />
+      </h4>
       <label class="flag">
         <input
           type="checkbox"

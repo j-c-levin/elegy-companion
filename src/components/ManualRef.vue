@@ -39,7 +39,7 @@ const resolved = computed<{ label: string; ranges: ManualRange[] } | null>(() =>
 
 const open = ref(false)
 const loading = ref(false)
-const blocks = ref<ResolvedBlock[]>([])
+const excerptBlocks = ref<ResolvedBlock[]>([])
 const closeBtn = ref<HTMLButtonElement | null>(null)
 let restoreFocusTo: HTMLElement | null = null
 let loadToken = 0
@@ -49,7 +49,7 @@ async function loadBlocks(): Promise<void> {
   if (!target) return
   const token = ++loadToken
   loading.value = true
-  const blocks = await Promise.all(
+  const loaded = await Promise.all(
     target.ranges.map(async (range) => ({
       caption: range.label
         ? `${range.label} — lines ${range.start}-${range.end}`
@@ -59,10 +59,9 @@ async function loadBlocks(): Promise<void> {
       end: range.end,
     })),
   )
-  if (token === loadToken) {
-    blocks.value = blocks
-    loading.value = false
-  }
+  if (token !== loadToken) return
+  excerptBlocks.value = loaded
+  loading.value = false
 }
 
 function show(): void {
@@ -136,7 +135,7 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
     class="manual-ref-btn"
     :aria-label="`${heading} — open manual excerpt`"
     :title="heading"
-    @click="show"
+    @click.stop="show"
   >
     <span aria-hidden="true">i</span>
   </button>
@@ -151,7 +150,7 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
       >
         <header class="panel-head">
           <div class="panel-titles">
-            <p class="panel-label">{{ resolved.label }}</p>
+            <p class="panel-label">{{ heading }}</p>
             <p class="panel-source">Elegy 4e manual — raw text, lines as extracted</p>
           </div>
           <button ref="closeBtn" type="button" class="panel-close" aria-label="Close manual excerpt" @click="hide">
@@ -164,7 +163,7 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
             lines are highlighted.
           </p>
           <p v-if="loading" class="panel-loading" role="status">Loading excerpt…</p>
-          <section v-for="block in blocks" :key="block.caption" class="excerpt-block" :aria-label="block.caption">
+          <section v-for="block in excerptBlocks" :key="block.caption" class="excerpt-block" :aria-label="block.caption">
             <h3 class="excerpt-caption">{{ block.caption }}</h3>
             <p v-if="!block.excerpt" class="excerpt-missing">
               No excerpt bundled for lines {{ block.start }}-{{ block.end }}. Add it to

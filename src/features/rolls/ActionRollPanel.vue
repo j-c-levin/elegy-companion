@@ -19,6 +19,7 @@ import { patchRoll, recordRoll } from './history'
 import { consumeNextRollBonus, nextRollBonus, setNextRollBonus } from './local'
 import { BASIC_ACTIONS, type BasicAction, type EffectOption } from './presets'
 import { matchTable } from './tables'
+import ManualRef from '@/components/ManualRef.vue'
 
 const ASPECT_OPTION_LABEL = 'Aspects give you Rush: gain +1 Rush'
 
@@ -238,7 +239,10 @@ function bonusText(bonus: number): string {
 <template>
   <article class="panel">
     <h2>Action Roll</h2>
-    <p class="cite">Manual 315–362 (roll) · 363–375 (Rush) · 513–576 (matches) · 418–512 (basic actions)</p>
+    <p class="cite">
+      Manual 315–362 (roll) · 363–375 (Rush) · 513–576 (matches) · 418–512 (basic actions)
+      <ManualRef ref-key="roll-engine" label="Action Roll, Rush, Matches and Basic Actions" />
+    </p>
 
     <label for="action-select">Action</label>
     <select id="action-select" v-model="actionId">
@@ -278,8 +282,9 @@ function bonusText(bonus: number): string {
 
     <label class="aspect-toggle">
       <input type="checkbox" role="switch" v-model="aspectAided" />
-      <span>Aided by one or more of my Aspects — any success gains +1 Rush</span>
+      <span>Aided by one or more of my Aspects — any success gains +1 Rush (manual 436–438)</span>
     </label>
+    <ManualRef ref-key="aspects-give-rush" label="Aspects give you Rush" />
 
     <p class="meter-strip">
       <span>Rush {{ game.meters.rush.value }} <small>(base {{ game.meters.rush.base }}, max {{ game.meters.rush.max }})</small></span>
@@ -317,7 +322,8 @@ function bonusText(bonus: number): string {
 
       <div v-if="result.match" class="match-panel">
         <p class="hint">
-          Both challenge dice show {{ result.challenge.first }} — a match (manual 513–524).
+          Both challenge dice show {{ result.challenge.first }} — a match (manual 513–524
+          <ManualRef ref-key="match-rule" />).
           <template v-if="currentTable === 'impulse'">
             Action die {{ result.actionDie }} &gt; Blood {{ game.meters.blood.value }}: your predatory nature takes over.
           </template>

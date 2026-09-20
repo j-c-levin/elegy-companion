@@ -5,6 +5,7 @@ import { compareRoll, rollChallengePair, VERDICT_LABEL } from '../dice'
 import { XP_PER_RANK, TOTAL_TICKS, progressScore, type Rank } from '../types'
 import type { Track } from '../types'
 import * as store from '../store'
+import ManualRef from '@/components/ManualRef.vue'
 
 const props = defineProps<{ track: Track }>()
 
@@ -154,9 +155,12 @@ function archive(): void {
     </p>
 
     <div class="fulfill">
-      <button v-if="!fulfillOpen" type="button" class="ghost-btn" @click="fulfillOpen = true">
-        Fulfill — roll 2d10 vs {{ score }}
-      </button>
+      <div v-if="!fulfillOpen" class="fulfill-open-row">
+        <button type="button" class="ghost-btn" @click="fulfillOpen = true">
+          Fulfill — roll 2d10 vs {{ score }}
+        </button>
+        <ManualRef ref-key="missions" label="Fulfilling a Mission" />
+      </div>
       <template v-else>
         <div class="roll-row">
           <button type="button" class="ghost-btn" :disabled="done" @click="doRoll">
@@ -391,6 +395,16 @@ function archive(): void {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+.fulfill-open-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fulfill-open-row .ghost-btn {
+  flex: 1;
 }
 
 .roll-row {

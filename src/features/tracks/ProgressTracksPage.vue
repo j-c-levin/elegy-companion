@@ -12,6 +12,7 @@ import {
   type TrackKind,
 } from './types'
 import { game } from '@/store'
+import ManualRef from '@/components/ManualRef.vue'
 
 const formKind = ref<TrackKind>('mission')
 const formTitle = ref('')
@@ -51,7 +52,10 @@ function deleteArchived(id: string): void {
     <header class="page-head">
       <div>
         <h1>Progress Tracks</h1>
-        <p class="tagline">Missions, connections and adversaries on ten-box tracks.</p>
+        <p class="tagline">
+          Missions, connections and adversaries on ten-box tracks (manual 911–932
+          <ManualRef ref-key="progress-tracks" />).
+        </p>
       </div>
       <div class="meter-chips">
         <span class="chip">XP {{ game.xp }}</span>
@@ -147,7 +151,10 @@ function deleteArchived(id: string): void {
     </section>
 
     <details class="reference">
-      <summary>Rank reference</summary>
+      <summary>
+        Rank reference
+        <ManualRef ref-key="track-ranks" label="Rank reference tables" />
+      </summary>
       <div class="ref-grid">
         <div>
           <h4>Mission effort (per Rank)</h4>
