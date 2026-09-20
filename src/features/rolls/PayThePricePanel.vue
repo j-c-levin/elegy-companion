@@ -102,9 +102,6 @@ function applyCost(roll: PriceRoll): void {
       </button>
     </div>
 
-    <p v-if="rolls.some((roll) => roll.row.cost === 'twice')" class="hint">
-      Roll twice — both prices apply.
-    </p>
     <button v-if="rolls.length" type="button" class="ghost-btn again-btn" @click="rollPrice">
       Doesn't make sense? Roll again
     </button>
