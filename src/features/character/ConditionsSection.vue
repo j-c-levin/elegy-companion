@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { game } from '@/store'
+import { BASE_RUSH, game, MAX_RUSH } from '@/store'
 import {
   actionPenalty,
   conditionsForTrack,
@@ -18,8 +18,8 @@ const active = computed(() => game.activeConditions)
 const effectSummary = computed(() => {
   const parts: string[] = []
   const caps = rushCaps(active.value)
-  if (caps.base !== 2) parts.push(`base Rush ${caps.base - 2}`)
-  if (caps.max !== 10) parts.push(`max Rush ${caps.max - 10}`)
+  if (caps.base !== BASE_RUSH) parts.push(`base Rush ${caps.base - BASE_RUSH}`)
+  if (caps.max !== MAX_RUSH) parts.push(`max Rush ${caps.max - MAX_RUSH}`)
   const soul = soulModifier(active.value)
   if (soul !== 0) parts.push(`Soul ${soul}`)
   const penalty = actionPenalty(active.value)

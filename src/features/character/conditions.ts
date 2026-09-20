@@ -15,6 +15,7 @@ export interface Condition {
   soul: number
   actionPenalty: number
   burden?: string
+  reducesBaseRush?: boolean
   text: string
   ref: string
 }
@@ -51,6 +52,7 @@ export const CONDITIONS: readonly Condition[] = [
     soul: 0,
     actionPenalty: 0,
     burden: 'Scarred',
+    reducesBaseRush: true,
     text: 'The damage runs so deep it marks you permanently, aching even after the wound heals. Acquire the burden Scarred (its starting ability decreases your base Rush by 1, or max Rush if base is already 0).',
     ref: 'manual 713–715, 3962–3991',
   },
@@ -85,6 +87,7 @@ export const CONDITIONS: readonly Condition[] = [
     soul: 0,
     actionPenalty: 0,
     burden: 'Traumatized',
+    reducesBaseRush: true,
     text: 'These events have carved themselves into your mind permanently, and this scar will never fade from your psyche. Acquire the burden Traumatized (its starting ability decreases your base Rush by 1, or max Rush if base is already 0).',
     ref: 'manual 741–744, 3997–4027',
   },
@@ -119,6 +122,7 @@ export const CONDITIONS: readonly Condition[] = [
     soul: 0,
     actionPenalty: 0,
     burden: 'Torpid',
+    reducesBaseRush: true,
     text: 'The hunger drains you beyond repair, and your animating power is permanently weakened. Acquire the burden Torpid (its starting ability decreases your base Rush by 1, or max Rush if base is already 0).',
     ref: 'manual 823–825, 3997–4015',
   },
@@ -187,6 +191,7 @@ export const CONDITIONS: readonly Condition[] = [
     soul: 0,
     actionPenalty: 0,
     burden: 'Branded',
+    reducesBaseRush: true,
     text: 'Your repeated transgressions are brutally punished with a permanent symbol of betrayal. You awake not to a written warning, but to a group of vampires in service of your authority, who then personally brands you with fire. Acquire the burden Branded (its starting ability decreases your base Rush by 1, or max Rush if base is already 0).',
     ref: 'manual 898–903, 3962–3969',
   },
@@ -275,7 +280,7 @@ export function actionPenalty(active: readonly string[]): number {
 }
 
 export function burdenCount(active: readonly string[]): number {
-  return active.filter((key) => conditionByKey(key)?.severity === 'permanent').length
+  return active.filter((key) => conditionByKey(key)?.reducesBaseRush === true).length
 }
 
 export function rushCaps(active: readonly string[]): { base: number; max: number } {

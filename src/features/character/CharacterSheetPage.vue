@@ -99,7 +99,6 @@ const lossNote = computed(() => {
       </p>
       <div class="rush-dismiss">
         <button type="button" class="outline" @click="dismissRushLoss()">Done</button>
-        <button type="button" class="outline" @click="dismissRushLoss()">Lose the Rush anyway</button>
       </div>
     </aside>
 

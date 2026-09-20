@@ -61,11 +61,20 @@ function togglePreserved(): void {
   if (preservedSource.value) animalSource.value = false
 }
 
-function feedGain(): number {
+function baseFeedGain(): number {
   let gain = starving.value ? 2 : 3
   if (animalSource.value) gain -= 1
+  return Math.max(0, gain)
+}
+
+function failureFeedGain(): number {
+  let gain = baseFeedGain()
   if (preservedSource.value) gain -= 1
   return Math.max(0, gain)
+}
+
+function erasesStarving(): boolean {
+  return starving.value && baseFeedGain() > 0
 }
 
 const feedFailureVoracious = computed(() => starving.value && !preservedSource.value)
@@ -184,10 +193,10 @@ function addLooseEndNow(): void {
         </div>
         <div class="result-buttons">
           <button type="button" @click="feed('stylish', { animal: animalSource, preserved: preservedSource })">
-            Stylish: +{{ feedGain() }} Blood{{ starving && !preservedSource ? ', erase Starving' : '' }}
+            Stylish: +{{ baseFeedGain() }} Blood{{ erasesStarving() ? ', erase Starving' : '' }}
           </button>
           <button type="button" @click="feed('flat', { animal: animalSource, preserved: preservedSource })">
-            Flat: +{{ feedGain() }} Blood, −1 Rush
+            Flat: +{{ baseFeedGain() }} Blood{{ erasesStarving() ? ', erase Starving' : '' }}, −1 Rush
           </button>
           <button
             v-if="!feedFailureVoracious"
@@ -195,7 +204,7 @@ function addLooseEndNow(): void {
             class="outline"
             @click="feed('failure', { animal: animalSource, preserved: preservedSource })"
           >
-            Failure: +{{ feedGain() }} Blood{{ preservedSource ? '' : ' (as Flat)' }}, −1 Rush
+            Failure: +{{ failureFeedGain() }} Blood (as Flat), −1 Rush
           </button>
           <button v-else type="button" class="outline" @click="feed('failure', { animal: animalSource, preserved: preservedSource })">
             Failure: full Blood, erase Starving, Try Your Conscience

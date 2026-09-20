@@ -47,10 +47,10 @@ function removePossession(index: number): void {
       <label v-for="field in fields" :key="field.key">
         {{ field.label }}
         <input
-          :model-value="game.identity[field.key]"
+          :value="game.identity[field.key]"
           type="text"
           :placeholder="field.hint"
-          @update:model-value="setField(field.key, $event)"
+          @input="setField(field.key, ($event.target as HTMLInputElement).value)"
         />
       </label>
     </div>

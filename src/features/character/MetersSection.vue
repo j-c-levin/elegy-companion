@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import { game } from '@/store'
+import { BASE_RUSH, game, MAX_RUSH } from '@/store'
 import {
   conditionsForTrack,
   MITIGATION,
@@ -28,8 +28,8 @@ function mitigationEligible(meter: ResourceMeter): boolean {
 }
 
 const rush = computed(() => game.meters.rush)
-const maxRushModified = computed(() => rush.value.max !== 10)
-const baseRushModified = computed(() => rush.value.base !== 2)
+const maxRushModified = computed(() => rush.value.max !== MAX_RUSH)
+const baseRushModified = computed(() => rush.value.base !== BASE_RUSH)
 
 const trackChips = computed(() =>
   resourceMeters.map((meter) => ({

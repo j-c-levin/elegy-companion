@@ -150,8 +150,13 @@ export function discardLooseEnd(id: string): void {
 }
 
 export function slumber(): void {
+  if (game.meters.blood.value <= 0) {
+    pendingLoss.value = { meter: 'blood', amount: 1 }
+  }
   updateGame((draft) => {
-    draft.meters.blood.value = Math.max(0, draft.meters.blood.value - 1)
+    if (draft.meters.blood.value > 0) {
+      draft.meters.blood.value -= 1
+    }
     draft.meters.rush.value = Math.min(draft.meters.rush.max, draft.meters.rush.value + 1)
     const index = draft.activeConditions.indexOf('Cautioned')
     if (index !== -1) draft.activeConditions.splice(index, 1)
@@ -214,12 +219,12 @@ export function feed(result: RecoveryResult, source: FeedSource): void {
   }
   let gain = starving ? 2 : 3
   if (source.animal) gain -= 1
-  if (source.preserved) gain -= 1
+  if (result === 'failure' && source.preserved) gain -= 1
   gain = Math.max(0, gain)
   updateGame((draft) => {
     const blood = draft.meters.blood
     blood.value = Math.min(blood.max, blood.value + gain)
-    if (starving && !source.preserved) {
+    if (result !== 'failure' && gain > 0 && starving) {
       const index = draft.activeConditions.indexOf('Starving')
       if (index !== -1) draft.activeConditions.splice(index, 1)
     }
