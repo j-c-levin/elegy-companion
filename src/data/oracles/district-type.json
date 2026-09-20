@@ -1,0 +1,66 @@
+{
+  "id": "district-type",
+  "title": "District type",
+  "category": "locations",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5840-5870",
+  "rows": [
+    {
+      "min": 1,
+      "max": 20,
+      "label": "Commercial",
+      "detail": "A hub of diverse commercial activity",
+      "examples": "Stores, office buildings, restaurants, banks, clinics"
+    },
+    {
+      "min": 21,
+      "max": 33,
+      "label": "Downtown",
+      "detail": "The city’s administrative and historical center",
+      "examples": "Administrative buildings, plazas, museums, malls"
+    },
+    {
+      "min": 34,
+      "max": 43,
+      "label": "Entertainment",
+      "detail": "A cluster of leisure and late-hour social activity",
+      "examples": "Clubs, bars, theaters, galleries, food courts"
+    },
+    {
+      "min": 44,
+      "max": 48,
+      "label": "Environmental",
+      "detail": "Organized around wild or preserved open spaces",
+      "examples": "Trails, parking lots, restrooms, local shops, natural features"
+    },
+    {
+      "min": 49,
+      "max": 55,
+      "label": "Industrial",
+      "detail": "A complex of factory-related activity",
+      "examples": "Factories, plants, workshops, storage yards, utilities"
+    },
+    {
+      "min": 56,
+      "max": 64,
+      "label": "Institutional",
+      "detail": "Centered around a major institutional facility",
+      "examples": "A large complex (campus, barrack, etc.), local businesses"
+    },
+    {
+      "min": 65,
+      "max": 70,
+      "label": "Logistical",
+      "detail": "A storage and distribution area",
+      "examples": "Warehouses, loading bays, offices, maintenance facilities"
+    },
+    {
+      "min": 71,
+      "max": 100,
+      "label": "Residential",
+      "detail": "Dedicated to housing of any kind",
+      "examples": "Houses, apartment buildings, small local businesses, schools"
+    }
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "id": "urban-place",
+  "title": "Urban place",
+  "category": "locations",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5700-5749",
+  "rows": [
+    {
+      "min": 1,
+      "max": 1,
+      "label": "Nightclub"
+    },
+    {
+      "min": 2,
+      "max": 2,
+      "label": "Bar"
+    },
+    {
+      "min": 3,
+      "max": 3,
+      "label": "Pub"
+    },
+    {
+      "min": 4,
+      "max": 4,
+      "label": "Dive Bar"
+    },
+    {
+      "min": 5,
+      "max": 5,
+      "label": "Strip Club"
+    },
+    {
+      "min": 6,
+      "max": 6,
+      "label": "Casino"
+    },
+    {
+      "min": 7,
+      "max": 7,
+      "label": "University Campus"
+    },
+    {
+      "min": 8,
+      "max": 8,
+      "label": "Hotel"
+    },
+    {
+      "min": 9,
+      "max": 9,
+      "label": "Love Hotel"
+    },
+    {
+      "min": 10,
+      "max": 10,
+      "label": "Cemetery"
+    },
+    {
+      "min": 11,
+      "max": 11,
+      "label": "Morgue"
+    },
+    {
+      "min": 12,
+      "max": 12,
+      "label": "Gas Station"
+    },
+    {
+      "min": 13,
+      "max": 13,
+      "label": "Port"
+    },
+    {
+      "min": 14,
+      "max": 14,
+      "label": "Pier"
+    },
+    {
+      "min": 15,
+      "max": 15,
+      "label": "Parking Lot"
+    },
+    {
+      "min": 16,
+      "max": 16,
+      "label": "Prison"
+    },
+    {
+      "min": 17,
+      "max": 17,
+      "label": "Restaurant"
+    },
+    {
+      "min": 18,
+      "max": 18,
+      "label": "Diner"
+    },
+    {
+      "min": 19,
+      "max": 19,
+      "label": "Pizza Place"
+    },
+    {
+      "min": 20,
+      "max": 20,
+      "label": "Late-hours Café"
+    },
+    {
+      "min": 21,
+      "max": 21,
+      "label": "24h Supermarket"
+    },
+    {
+      "min": 22,
+      "max": 22,
+      "label": "Shopping Mall"
+    },
+    {
+      "min": 23,
+      "max": 23,
+      "label": "Cinema"
+    },
+    {
+      "min": 24,
+      "max": 24,
+      "label": "Theatre"
+    },
+    {
+      "min": 25,
+      "max": 25,
+      "label": "Convenience Store"
+    },
+    {
+      "min": 26,
+      "max": 26,
+      "label": "Arcade"
+    },
+    {
+      "min": 27,
+      "max": 27,
+      "label": "Gym"
+    },
+    {
+      "min": 28,
+      "max": 28,
+      "label": "Sewers"
+    },
+    {
+      "min": 29,
+      "max": 29,
+      "label": "Natural Reserve"
+    },
+    {
+      "min": 30,
+      "max": 30,
+      "label": "Lighthouse"
+    },
+    {
+      "min": 31,
+      "max": 31,
+      "label": "Stadium"
+    },
+    {
+      "min": 32,
+      "max": 32,
+      "label": "Sports Center"
+    },
+    {
+      "min": 33,
+      "max": 33,
+      "label": "Park"
+    },
+    {
+      "min": 34,
+      "max": 34,
+      "label": "Square"
+    },
+    {
+      "min": 35,
+      "max": 35,
+      "label": "Zoo"
+    },
+    {
+      "min": 36,
+      "max": 36,
+      "label": "Aquarium"
+    },
+    {
+      "min": 37,
+      "max": 37,
+      "label": "Library"
+    },
+    {
+      "min": 38,
+      "max": 38,
+      "label": "Bookstore"
+    },
+    {
+      "min": 39,
+      "max": 39,
+      "label": "Pharmacy"
+    },
+    {
+      "min": 40,
+      "max": 40,
+      "label": "Hospital"
+    },
+    {
+      "min": 41,
+      "max": 41,
+      "label": "Police Department"
+    },
+    {
+      "min": 42,
+      "max": 42,
+      "label": "Fire Department"
+    },
+    {
+      "min": 43,
+      "max": 43,
+      "label": "Airport"
+    },
+    {
+      "min": 44,
+      "max": 44,
+      "label": "Bus Station"
+    },
+    {
+      "min": 45,
+      "max": 45,
+      "label": "Bus Terminal"
+    },
+    {
+      "min": 46,
+      "max": 46,
+      "label": "Train Station"
+    },
+    {
+      "min": 47,
+      "max": 47,
+      "label": "Metro Station"
+    },
+    {
+      "min": 48,
+      "max": 48,
+      "label": "Bank"
+    },
+    {
+      "min": 49,
+      "max": 49,
+      "label": "Boardwalk"
+    },
+    {
+      "min": 50,
+      "max": 50,
+      "label": "New Age Center"
+    },
+    {
+      "min": 51,
+      "max": 51,
+      "label": "Psychic Parlor"
+    },
+    {
+      "min": 52,
+      "max": 52,
+      "label": "Bowling Alley"
+    },
+    {
+      "min": 53,
+      "max": 53,
+      "label": "Electrical Substation"
+    },
+    {
+      "min": 54,
+      "max": 54,
+      "label": "Museum"
+    },
+    {
+      "min": 55,
+      "max": 55,
+      "label": "City Hall"
+    },
+    {
+      "min": 56,
+      "max": 56,
+      "label": "Barracks"
+    },
+    {
+      "min": 57,
+      "max": 57,
+      "label": "Factory"
+    },
+    {
+      "min": 58,
+      "max": 58,
+      "label": "Slaughterhouse"
+    },
+    {
+      "min": 59,
+      "max": 59,
+      "label": "Warehouse"
+    },
+    {
+      "min": 60,
+      "max": 60,
+      "label": "Scrap Yard"
+    },
+    {
+      "min": 61,
+      "max": 61,
+      "label": "Water Treatment Plant"
+    },
+    {
+      "min": 62,
+      "max": 62,
+      "label": "Art Gallery"
+    },
+    {
+      "min": 63,
+      "max": 63,
+      "label": "Jewelry Store"
+    },
+    {
+      "min": 64,
+      "max": 64,
+      "label": "Religious Articles Store"
+    },
+    {
+      "min": 65,
+      "max": 65,
+      "label": "Religious Temple"
+    },
+    {
+      "min": 66,
+      "max": 66,
+      "label": "Hardware Store"
+    },
+    {
+      "min": 67,
+      "max": 67,
+      "label": "Amusement Park"
+    },
+    {
+      "min": 68,
+      "max": 68,
+      "label": "Reseller / Dealership"
+    },
+    {
+      "min": 69,
+      "max": 69,
+      "label": "Health Clinic"
+    },
+    {
+      "min": 70,
+      "max": 70,
+      "label": "Blood Clinic"
+    },
+    {
+      "min": 71,
+      "max": 71,
+      "label": "Brothel"
+    },
+    {
+      "min": 72,
+      "max": 72,
+      "label": "Golf Course"
+    },
+    {
+      "min": 73,
+      "max": 73,
+      "label": "Public Swimming Pool"
+    },
+    {
+      "min": 74,
+      "max": 74,
+      "label": "Animal Shelter"
+    },
+    {
+      "min": 75,
+      "max": 75,
+      "label": "Courthouse"
+    },
+    {
+      "min": 76,
+      "max": 76,
+      "label": "Shooting Range"
+    },
+    {
+      "min": 77,
+      "max": 77,
+      "label": "School"
+    },
+    {
+      "min": 78,
+      "max": 78,
+      "label": "Post Office"
+    },
+    {
+      "min": 79,
+      "max": 79,
+      "label": "Music School"
+    },
+    {
+      "min": 80,
+      "max": 80,
+      "label": "Bridge"
+    },
+    {
+      "min": 81,
+      "max": 81,
+      "label": "Tunnel"
+    },
+    {
+      "min": 82,
+      "max": 82,
+      "label": "Music Studio"
+    },
+    {
+      "min": 83,
+      "max": 83,
+      "label": "Clothing Store"
+    },
+    {
+      "min": 84,
+      "max": 84,
+      "label": "Toy Store"
+    },
+    {
+      "min": 85,
+      "max": 85,
+      "label": "Board Games Store"
+    },
+    {
+      "min": 86,
+      "max": 86,
+      "label": "Video Game Store"
+    },
+    {
+      "min": 87,
+      "max": 87,
+      "label": "Electronics Store"
+    },
+    {
+      "min": 88,
+      "max": 88,
+      "label": "Computer Store"
+    },
+    {
+      "min": 89,
+      "max": 89,
+      "label": "Instrument Store"
+    },
+    {
+      "min": 90,
+      "max": 90,
+      "label": "Costume Store"
+    },
+    {
+      "min": 91,
+      "max": 91,
+      "label": "Photography Studio"
+    },
+    {
+      "min": 92,
+      "max": 92,
+      "label": "Fish Market"
+    },
+    {
+      "min": 93,
+      "max": 93,
+      "label": "Dentist"
+    },
+    {
+      "min": 94,
+      "max": 94,
+      "label": "Physiotherapy Clinic"
+    },
+    {
+      "min": 95,
+      "max": 95,
+      "label": "Veterinary Clinic"
+    },
+    {
+      "min": 96,
+      "max": 96,
+      "label": "Tattoo Parlor"
+    },
+    {
+      "min": 97,
+      "max": 97,
+      "label": "Dojo"
+    },
+    {
+      "min": 98,
+      "max": 98,
+      "label": "Forum"
+    },
+    {
+      "min": 99,
+      "max": 99,
+      "label": "Paintball Arena"
+    },
+    {
+      "min": 100,
+      "max": 100,
+      "label": "Grand Temple"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "streets",
+  "title": "Streets",
+  "category": "quick-victim",
+  "dice": "2d10",
+  "kind": "duo",
+  "source": "reference/elegy-4e-beta-v3.txt:6086-6111",
+  "rows": [
+    { "min": 1, "max": 1, "label": "A jogger...", "situation": "...who stopped to ask for directions" },
+    { "min": 2, "max": 2, "label": "A night-shift professional...", "situation": "...who was looking for something they dropped" },
+    { "min": 3, "max": 3, "label": "A daytime professional...", "situation": "...who stumbled into you in a hurry" },
+    { "min": 4, "max": 4, "label": "A bar hopper...", "situation": "...who was too high to see you coming" },
+    { "min": 5, "max": 5, "label": "A mugger...", "situation": "...who was paying attention to someone else" },
+    { "min": 6, "max": 6, "label": "A club goer...", "situation": "...who was completely distracted by their phone" },
+    { "min": 7, "max": 7, "label": "A pet-walking person...", "situation": "...who was hiding from someone else" },
+    { "min": 8, "max": 8, "label": "A street vendor...", "situation": "...who fell down, and you helped them up" },
+    { "min": 9, "max": 9, "label": "A delivery person...", "situation": "...who mistook you for someone else" },
+    { "min": 10, "max": 10, "label": "A homeless person...", "situation": "...who attempted to make small talk" }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "clubs-and-bars",
+  "title": "Clubs and Bars",
+  "category": "ambience",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:6223-6326",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "A camera flash lights up smiles in a group hug."
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "The muffled sound of throwing up comes from behind some wall."
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Strangers aplaud as someone in drag shows a few dance steps."
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "Long fluorescent lamps form geometrical shapes on the ceiling."
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "This night is amazing, says someone to their lover as they hold each other."
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "This night sucks, says a drunk girl in a torn pantyhose with two bloodied knees."
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "Pierced nipples bounce under a black see-through shirt."
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "Almost empty cups are grouped on a small table surrounded by laughter."
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "A phosphorescent painting on the wall stands out behind black sillouettes."
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Pressed against each other, hips move in sync."
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "The friend of a dancing girl grabs her by her hand, and takes her somewhere."
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "A cool video game plushie watches the party from within the DJ booth."
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Someone sticks out their tongue, and their friends place something on it."
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Girls fix their hair in the mirror just outside the restroom."
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Moving lights paint the darkness with colorful smiles."
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "Two people bump into each other, both spilling beer, both apologizing profusely."
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "Makeup runs down a sobbing girl’s face. All her friends gather around her, worried."
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "A credit card machine finally powers on, and people in the queue applaud."
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "A girl’s cheeks and chest sparkle with glitter."
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "A group of friends cheers in perfect sync, then immediately returns to their regular tone."
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "A cult TV show poster hangs among others on the wall."
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "A couple breaks a kiss so one of them can lick a third person’s powdered fingertip."
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Security interrupts a horny couple making out on a couch."
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "Someone takes a puff without looking away from their phone. They're playing chess."
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "A sweaty girl impatiently waits for her drink, the blue of her eyes almost completely black."
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "A girl dances alone, eyes closed, lost in the rhythm."
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "A couple kisses slowly against a wall, lost in their own little world."
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "Friends cheer as a man takes a shot, salt and lemon waiting on the counter."
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "Changing lights color a scissors tattoo on a shoulder."
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "A bartender respectfully but firmly cuts off a chatty drunk man."
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Muscular legs cast a curvy, dancing shadow."
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "A couple stares at each other in silence, his arms around her back, her hand inside his pants."
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "A herbal-scented smoke drifts in from somewhere."
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "Ew, it’s full of old people, a teenager says to her friends, eyes fixed on a group of thirty-somethings."
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "A girl turns from the bar, stops, and smiles with her eyes, welcoming a kiss from a stranger."
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "A man rambles at a woman whose eyes refuse to meet his."
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "A smiling man hugs a friend from behind and kisses his neck."
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "A trembling girl in a short dress complains about the cold."
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "As a new song starts, friends look at each other and run to the dance floor."
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "Three people kiss each other, drawing annoyed looks for blocking the way to the restroom."
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "A nervous girl avoids eye contact with her friend, afraid to make the first move."
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "A dancer raises their arms to the ceiling as if in prayer."
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "An open shirt reveals numbers tattooed on a collarbone."
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "A girl screams with joy as her friend lifts her into a hug."
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "Two smiling girls align their faces, and a mint goes from one tongue to the other."
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "A man stands alone in a corner, high as a kite. Someone asks for a lighter, and he lends it."
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "A bartender stutters while taking the order of someone she’d been checking out."
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "Eat her out if you really love her, says a Barbie paste-up on the wall."
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "Friends pet the head of a polite dog that somehow got in, its tail wagging."
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "Balloons are thrown around. When the lights change colors, so do they."
+    }
+  ]
+}

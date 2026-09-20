@@ -1,0 +1,510 @@
+{
+  "id": "revealed-characteristic",
+  "title": "Revealed/Discovered Characteristic",
+  "category": "characters",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5226-5265",
+  "rows": [
+    {
+      "min": 1,
+      "max": 1,
+      "label": "Addicted"
+    },
+    {
+      "min": 2,
+      "max": 2,
+      "label": "Cruel"
+    },
+    {
+      "min": 3,
+      "max": 3,
+      "label": "Infamous"
+    },
+    {
+      "min": 4,
+      "max": 4,
+      "label": "Resourceful"
+    },
+    {
+      "min": 5,
+      "max": 5,
+      "label": "Adventurous"
+    },
+    {
+      "min": 6,
+      "max": 6,
+      "label": "Cunning"
+    },
+    {
+      "min": 7,
+      "max": 7,
+      "label": "Influential"
+    },
+    {
+      "min": 8,
+      "max": 8,
+      "label": "Secretive"
+    },
+    {
+      "min": 9,
+      "max": 9,
+      "label": "Afflicted"
+    },
+    {
+      "min": 10,
+      "max": 10,
+      "label": "Dangerous"
+    },
+    {
+      "min": 11,
+      "max": 11,
+      "label": "Insensitive"
+    },
+    {
+      "min": 12,
+      "max": 12,
+      "label": "Selfish"
+    },
+    {
+      "min": 13,
+      "max": 13,
+      "label": "Aggressive"
+    },
+    {
+      "min": 14,
+      "max": 14,
+      "label": "Deceitful"
+    },
+    {
+      "min": 15,
+      "max": 15,
+      "label": "Insightful"
+    },
+    {
+      "min": 16,
+      "max": 16,
+      "label": "Sociable"
+    },
+    {
+      "min": 17,
+      "max": 17,
+      "label": "Ambitious"
+    },
+    {
+      "min": 18,
+      "max": 18,
+      "label": "Defiant"
+    },
+    {
+      "min": 19,
+      "max": 19,
+      "label": "Intelligent"
+    },
+    {
+      "min": 20,
+      "max": 20,
+      "label": "Wise"
+    },
+    {
+      "min": 21,
+      "max": 21,
+      "label": "Angry"
+    },
+    {
+      "min": 22,
+      "max": 22,
+      "label": "Determined"
+    },
+    {
+      "min": 23,
+      "max": 23,
+      "label": "Intolerant"
+    },
+    {
+      "min": 24,
+      "max": 24,
+      "label": "Stern"
+    },
+    {
+      "min": 25,
+      "max": 25,
+      "label": "Anxious"
+    },
+    {
+      "min": 26,
+      "max": 26,
+      "label": "Disabled"
+    },
+    {
+      "min": 27,
+      "max": 27,
+      "label": "Remorseful"
+    },
+    {
+      "min": 28,
+      "max": 28,
+      "label": "Stingy"
+    },
+    {
+      "min": 29,
+      "max": 29,
+      "label": "Apathetic"
+    },
+    {
+      "min": 30,
+      "max": 30,
+      "label": "Doomed"
+    },
+    {
+      "min": 31,
+      "max": 31,
+      "label": "Kind"
+    },
+    {
+      "min": 32,
+      "max": 32,
+      "label": "Stoic"
+    },
+    {
+      "min": 33,
+      "max": 33,
+      "label": "Bitter"
+    },
+    {
+      "min": 34,
+      "max": 34,
+      "label": "Driven"
+    },
+    {
+      "min": 35,
+      "max": 35,
+      "label": "Law-abiding"
+    },
+    {
+      "min": 36,
+      "max": 36,
+      "label": "Wild"
+    },
+    {
+      "min": 37,
+      "max": 37,
+      "label": "Independent"
+    },
+    {
+      "min": 38,
+      "max": 38,
+      "label": "Dying"
+    },
+    {
+      "min": 39,
+      "max": 39,
+      "label": "Lonely"
+    },
+    {
+      "min": 40,
+      "max": 40,
+      "label": "Stubborn"
+    },
+    {
+      "min": 41,
+      "max": 41,
+      "label": "Boisterous"
+    },
+    {
+      "min": 42,
+      "max": 42,
+      "label": "Envious"
+    },
+    {
+      "min": 43,
+      "max": 43,
+      "label": "Loving"
+    },
+    {
+      "min": 44,
+      "max": 44,
+      "label": "Successful"
+    },
+    {
+      "min": 45,
+      "max": 45,
+      "label": "Bold"
+    },
+    {
+      "min": 46,
+      "max": 46,
+      "label": "Experienced"
+    },
+    {
+      "min": 47,
+      "max": 47,
+      "label": "Loyal"
+    },
+    {
+      "min": 48,
+      "max": 48,
+      "label": "Suspicious"
+    },
+    {
+      "min": 49,
+      "max": 49,
+      "label": "Brave"
+    },
+    {
+      "min": 50,
+      "max": 50,
+      "label": "Faithful"
+    },
+    {
+      "min": 51,
+      "max": 51,
+      "label": "Manipulative"
+    },
+    {
+      "min": 52,
+      "max": 52,
+      "label": "Talented"
+    },
+    {
+      "min": 53,
+      "max": 53,
+      "label": "Careless"
+    },
+    {
+      "min": 54,
+      "max": 54,
+      "label": "Generous"
+    },
+    {
+      "min": 55,
+      "max": 55,
+      "label": "Oblivious"
+    },
+    {
+      "min": 56,
+      "max": 56,
+      "label": "Technical"
+    },
+    {
+      "min": 57,
+      "max": 57,
+      "label": "Cautious"
+    },
+    {
+      "min": 58,
+      "max": 58,
+      "label": "Gifted"
+    },
+    {
+      "min": 59,
+      "max": 59,
+      "label": "Obsessed"
+    },
+    {
+      "min": 60,
+      "max": 60,
+      "label": "Timid"
+    },
+    {
+      "min": 61,
+      "max": 61,
+      "label": "Charismatic"
+    },
+    {
+      "min": 62,
+      "max": 62,
+      "label": "Greedy"
+    },
+    {
+      "min": 63,
+      "max": 63,
+      "label": "Relaxed"
+    },
+    {
+      "min": 64,
+      "max": 64,
+      "label": "Tolerant"
+    },
+    {
+      "min": 65,
+      "max": 65,
+      "label": "Clever"
+    },
+    {
+      "min": 66,
+      "max": 66,
+      "label": "Grief-stricken"
+    },
+    {
+      "min": 67,
+      "max": 67,
+      "label": "Incompetent"
+    },
+    {
+      "min": 68,
+      "max": 68,
+      "label": "Tough"
+    },
+    {
+      "min": 69,
+      "max": 69,
+      "label": "Conceited"
+    },
+    {
+      "min": 70,
+      "max": 70,
+      "label": "Handy"
+    },
+    {
+      "min": 71,
+      "max": 71,
+      "label": "Powerful"
+    },
+    {
+      "min": 72,
+      "max": 72,
+      "label": "Vengeful"
+    },
+    {
+      "min": 73,
+      "max": 73,
+      "label": "Confident"
+    },
+    {
+      "min": 74,
+      "max": 74,
+      "label": "Hardhearted"
+    },
+    {
+      "min": 75,
+      "max": 75,
+      "label": "Proud"
+    },
+    {
+      "min": 76,
+      "max": 76,
+      "label": "Violent"
+    },
+    {
+      "min": 77,
+      "max": 77,
+      "label": "Creative"
+    },
+    {
+      "min": 78,
+      "max": 78,
+      "label": "Haunted"
+    },
+    {
+      "min": 79,
+      "max": 79,
+      "label": "Reclusive"
+    },
+    {
+      "min": 80,
+      "max": 80,
+      "label": "Weary"
+    },
+    {
+      "min": 81,
+      "max": 81,
+      "label": "Connected"
+    },
+    {
+      "min": 82,
+      "max": 82,
+      "label": "Impulsive"
+    },
+    {
+      "min": 83,
+      "max": 83,
+      "label": "Quirky"
+    },
+    {
+      "min": 84,
+      "max": 84,
+      "label": "Watchful"
+    },
+    {
+      "min": 85,
+      "max": 85,
+      "label": "Corrupted"
+    },
+    {
+      "min": 86,
+      "max": 86,
+      "label": "Hot-tempered"
+    },
+    {
+      "min": 87,
+      "max": 87,
+      "label": "Rebellious"
+    },
+    {
+      "min": 88,
+      "max": 88,
+      "label": "Weak"
+    },
+    {
+      "min": 89,
+      "max": 89,
+      "label": "Pious"
+    },
+    {
+      "min": 90,
+      "max": 90,
+      "label": "Reckless"
+    },
+    {
+      "min": 91,
+      "max": 91,
+      "label": "Repentant"
+    },
+    {
+      "min": 92,
+      "max": 92,
+      "label": "Resilient"
+    },
+    {
+      "min": 93,
+      "max": 93,
+      "label": "Devout"
+    },
+    {
+      "min": 94,
+      "max": 94,
+      "label": "Patient"
+    },
+    {
+      "min": 95,
+      "max": 95,
+      "label": "Perseverant"
+    },
+    {
+      "min": 96,
+      "max": 96,
+      "label": "Pragmatic"
+    },
+    {
+      "min": 97,
+      "max": 97,
+      "label": "Forthright"
+    },
+    {
+      "min": 98,
+      "max": 98,
+      "label": "Humble"
+    },
+    {
+      "min": 99,
+      "max": 99,
+      "label": "Vain"
+    },
+    {
+      "min": 100,
+      "max": 100,
+      "label": "Unyielding"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "expertises-edges",
+  "title": "Expertises and Edges",
+  "category": "characters",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5326-5365",
+  "rows": [
+    {
+      "min": 1,
+      "max": 5,
+      "label": "Academics",
+      "detail": "Expertise — Skills in academia, research, and scholarly knowledge"
+    },
+    {
+      "min": 6,
+      "max": 10,
+      "label": "Arts",
+      "detail": "Expertise — Skills in artistic creation"
+    },
+    {
+      "min": 11,
+      "max": 15,
+      "label": "Athletics",
+      "detail": "Expertise — Skills in running, jumping, climbing, and physical feats"
+    },
+    {
+      "min": 16,
+      "max": 20,
+      "label": "Computers",
+      "detail": "Expertise — Skills in using, programming, and hacking computer systems"
+    },
+    {
+      "min": 21,
+      "max": 25,
+      "label": "Deception",
+      "detail": "Expertise — Skills in lying and concealing motives"
+    },
+    {
+      "min": 26,
+      "max": 30,
+      "label": "Driving",
+      "detail": "Expertise — Skills in operating and maneuvering vehicles"
+    },
+    {
+      "min": 31,
+      "max": 35,
+      "label": "Empathy",
+      "detail": "Expertise — Skills in reading emotions and understanding others’ feelings"
+    },
+    {
+      "min": 36,
+      "max": 40,
+      "label": "Gunnery",
+      "detail": "Expertise — Skills in shooting, maintaining, and identifying ranged weapons"
+    },
+    {
+      "min": 41,
+      "max": 45,
+      "label": "Investigation",
+      "detail": "Expertise — Skills in finding clues, solving puzzles, and analyzing evidence"
+    },
+    {
+      "min": 46,
+      "max": 50,
+      "label": "Larceny",
+      "detail": "Expertise — Skills in lockpicking, pickpocketing, and bypassing security"
+    },
+    {
+      "min": 51,
+      "max": 55,
+      "label": "Melee",
+      "detail": "Expertise — Skills in close-quarters combat"
+    },
+    {
+      "min": 56,
+      "max": 60,
+      "label": "Nature",
+      "detail": "Expertise — Skills in navigating the wilderness and understanding animals"
+    },
+    {
+      "min": 61,
+      "max": 65,
+      "label": "Persuasion",
+      "detail": "Expertise — Skills in convincing others through logic and charm"
+    },
+    {
+      "min": 66,
+      "max": 70,
+      "label": "Politics",
+      "detail": "Expertise — Skills in navigating and operating within political structures"
+    },
+    {
+      "min": 71,
+      "max": 75,
+      "label": "Sex Appeal",
+      "detail": "Expertise — Skills in seduction and sexual performance"
+    },
+    {
+      "min": 76,
+      "max": 80,
+      "label": "Socialization",
+      "detail": "Expertise — Skills in fitting in, networking, and navigating social situations"
+    },
+    {
+      "min": 81,
+      "max": 85,
+      "label": "Streetwise",
+      "detail": "Expertise — Skills in navigating the criminal underworld and urban survival"
+    },
+    {
+      "min": 86,
+      "max": 90,
+      "label": "Faction Loyalty",
+      "detail": "Edge — You're an active member of your faction (only available in undeath)"
+    },
+    {
+      "min": 91,
+      "max": 95,
+      "label": "Following",
+      "detail": "Edge — You are known and admired within a specific subculture"
+    },
+    {
+      "min": 96,
+      "max": 100,
+      "label": "Wealth",
+      "detail": "Edge — You have a lot of disposable money"
+    }
+  ]
+}

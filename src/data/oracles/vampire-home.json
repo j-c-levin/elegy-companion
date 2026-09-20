@@ -1,0 +1,80 @@
+{
+  "id": "vampire-home",
+  "title": "Vampire home",
+  "category": "locations",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5796-5809",
+  "rows": [
+    {
+      "min": 1,
+      "max": 20,
+      "label": "An abandoned apartment"
+    },
+    {
+      "min": 21,
+      "max": 36,
+      "label": "A room in a functioning (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 37,
+      "max": 49,
+      "label": "A room in an abandoned (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 50,
+      "max": 60,
+      "label": "A nice apartment"
+    },
+    {
+      "min": 61,
+      "max": 69,
+      "label": "An abandoned house"
+    },
+    {
+      "min": 70,
+      "max": 76,
+      "label": "A room in a derelict (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 77,
+      "max": 82,
+      "label": "An apartment in a derelict building"
+    },
+    {
+      "min": 83,
+      "max": 87,
+      "label": "A derelict house"
+    },
+    {
+      "min": 88,
+      "max": 97,
+      "label": "A nice house"
+    },
+    {
+      "min": 98,
+      "max": 100,
+      "label": "An old (roll for a historical place)",
+      "chained": [
+        {
+          "table": "historical-place"
+        }
+      ]
+    }
+  ]
+}

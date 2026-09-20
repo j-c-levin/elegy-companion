@@ -1,0 +1,16 @@
+{
+  "id": "yes-no",
+  "title": "Yes/No",
+  "category": "general",
+  "dice": "1d100",
+  "kind": "yesno",
+  "source": "reference/elegy-4e-beta-v3.txt:4956-4967",
+  "rows": [],
+  "odds": [
+    { "id": "small-chance", "label": "Small Chance", "max": 10 },
+    { "id": "unlikely", "label": "Unlikely", "max": 25 },
+    { "id": "fifty-fifty", "label": "50/50", "max": 50 },
+    { "id": "likely", "label": "Likely", "max": 75 },
+    { "id": "almost-certain", "label": "Almost Certain", "max": 90 }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "theme",
+  "title": "Theme",
+  "category": "general",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:4931-4953",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "Ability"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "Affection"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Agreement"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "Beauty"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "Blood"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Cheating"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "Connection"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "Crime"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "Death"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Debt"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "Disagreement"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "Dread"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Dream"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Elegy"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Evil"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "Fey"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "Fun"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Good"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "Grief"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "Hope"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "Hunger"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "Immortality"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Information"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "Justice"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "Lackey"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "Lineage"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "Magic"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "Memory"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "Mission"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "Mortals"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Novelty"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "Anonmity"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "Passion"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "Power"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "Progenitor"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Progeny"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Promise"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "Regret"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "Romance"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "Rush"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "Sensuality"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "Sorrow"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "Style"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "Taste"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "Time"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "Underworld"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "Violence"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "Werewolves"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "Work"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "Wounds"
+    }
+  ]
+}

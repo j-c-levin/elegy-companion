@@ -1,0 +1,32 @@
+{
+  "id": "relationships",
+  "title": "Relationships",
+  "category": "characters",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5212-5224",
+  "rows": [
+    { "min": 1, "max": 5, "label": "Aunt" },
+    { "min": 6, "max": 10, "label": "Boss" },
+    { "min": 11, "max": 15, "label": "Client" },
+    { "min": 16, "max": 20, "label": "Cousin" },
+    { "min": 21, "max": 25, "label": "Coworker" },
+    { "min": 26, "max": 30, "label": "Daughter" },
+    { "min": 31, "max": 34, "label": "Ex-fiancée" },
+    { "min": 35, "max": 38, "label": "Ex-girlfriend" },
+    { "min": 39, "max": 42, "label": "Ex-wife" },
+    { "min": 43, "max": 47, "label": "Fiancée" },
+    { "min": 48, "max": 51, "label": "Former coworker" },
+    { "min": 52, "max": 56, "label": "Friend" },
+    { "min": 57, "max": 60, "label": "Girlfriend" },
+    { "min": 61, "max": 64, "label": "Grandmother" },
+    { "min": 65, "max": 68, "label": "Mother" },
+    { "min": 69, "max": 72, "label": "Neighbor" },
+    { "min": 73, "max": 77, "label": "Professional" },
+    { "min": 78, "max": 81, "label": "Romantic interest" },
+    { "min": 82, "max": 85, "label": "Sister" },
+    { "min": 86, "max": 89, "label": "Student" },
+    { "min": 90, "max": 93, "label": "Teacher" },
+    { "min": 94, "max": 100, "label": "Wife" }
+  ]
+}

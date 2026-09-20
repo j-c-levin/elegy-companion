@@ -1,0 +1,260 @@
+{
+  "id": "sumptuous-place",
+  "title": "Sumptuous Place",
+  "category": "ambience",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:6550-6653",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "Inside a small glass cabinet, glasses with initials written on them stay untouched."
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "A painting in a heavy wooden frame hangs from a distant metal hook by one long cord."
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Outside, well-kept trees surround the building."
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "Enormous windows offer a privileged view of the city."
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "Oddly shaped chairs surround a small round table."
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "An elegant magazine rack sits close to a tall plant, full of travel magazines."
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "A minimalistic wall light casts cones of shadow around it."
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "Flowers with a citric smell sit inside a brass jar."
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "Light reflects on the doorframes, accentuating their curved relief."
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Purple flowers rest in a glass vase with a geometric design."
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "One wall is covered with bright, irregular bricks."
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "The lights shine on a flawless marble floor."
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Dried twigs sprout out of a ceramic vase on a very short end table."
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Every door handle is sinuous, spotless, and golden."
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "A wooden chair in the shape of a human hand occupies a small corner."
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "On the ceiling, geometric shapes form a chandelier that looks like a modern sculpture."
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "A rustic wooden bench rests near the wall, a bell sitting on the rough surface of the seat."
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Enormous curtains fall from above and are held by stone columns, reminiscent of a palace."
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "Arabesques cover the seat of an armchair and the small cushions resting on it."
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "The ceiling is covered by sinuous wooden shapes, perfectly polished."
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "A gigantic glass chandelier hangs from the ceiling by a thick metal pole."
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "A high-end security camera watches everything from a vantage point."
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Enormous stone pillars hold the ceiling above a gleaming floor."
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "A bas-relief artwork in stone covers an entire wall."
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "All the windows have the same complex, asymmetrical wooden frame."
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "The curves of a statuette shine under a table lamp, showered in warm light."
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "A thick, square photography book rests beside a metal statuette."
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "A large round mirror hangs in the middle of the wall; another, smaller one, covers part of it."
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "Golden geometric patterns on the walls reflect every light."
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "A minimalistic wooden statuette representing an exotic animal stands on a shelf."
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Shards of fading vibrant light shine inside a tall geode on the floor."
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "Large-scale floral patterns cover an enormous carpet on the ground."
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "Two symmetrical marble slabs form a colossal square on the wall."
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "A shiny black suitcase rests against a chair."
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "An original Renaissance painting is framed in glass within a frame that might be as old as the painting."
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Tiny vivid-colored flowers cover the crown of a massive bonsai."
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Colored, reflective polygons give shape to an abstract sculpture."
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "On the walls, larger pilasters above alternate with others below."
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "Tree slices form the tops of a few stools and the table they gather around."
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "Two pieces of metal fit together to form a table resembling a yin-yang shape."
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "Two tall, old-looking urns stand side by side, covered in contrasting but matching patterns and colors."
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "An elegant coffee machine exhales a refined aroma beside a tray of cups."
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "The soft colors of heavy drapes and a wool carpet harmonize with each other."
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "Thick walls provide a haven of silence within this noisy city."
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "A subtle scent of firewood is exhaled by a minimalist fireplace embedded in the wall."
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "A turned-off metal desk lamp hangs from the ceiling over an autograph book."
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "Doors, windows, chairs, desks, tables… everything is elegant, every surface clean."
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "A latest-generation iPad charges on a USB socket embedded in the wall."
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "A sleek VR headset rests on a corner table."
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "A large metal frame holds a small painting on the wall. It’s the original of a famous painter."
+    }
+  ]
+}
