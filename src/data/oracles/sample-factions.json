@@ -1,0 +1,31 @@
+{
+  "id": "sample-factions",
+  "title": "Sample Factions",
+  "category": "faction",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:2601-2660",
+  "rows": [
+    {
+      "min": 1,
+      "max": 33,
+      "label": "Necropolitan Circle",
+      "detail": "Vampirism is enlightenment. They seek to transcend mortality by shedding human attachments and embracing the supernatural. The most occult-oriented faction, steeped in esoteric rites and ritual practice. They respect endurance above all.",
+      "examples": "Mysticism · Transcendence · Survival"
+    },
+    {
+      "min": 34,
+      "max": 66,
+      "label": "Order of the Leviathan",
+      "detail": "A secret society rooted in medieval aristocracy. They accumulate wealth and information to invisibly influence mortal public life through corruption, bureaucracy, and intimidation. They value raw power as much as political power, and settle internal disputes through dueling when diplomacy fails.",
+      "examples": "Power · Secrecy · Status"
+    },
+    {
+      "min": 67,
+      "max": 100,
+      "label": "Perpetual Dusk Society",
+      "detail": "Undeath is no reason to abandon mortal pleasures. They pursue status and admiration as their primary means of influence, and aesthetics defines everything they do. Most members are artists, and weekly balls serve as arenas for reputation, gossip, and clashing egos.",
+      "examples": "Status · Mortality · Beauty"
+    }
+  ]
+}

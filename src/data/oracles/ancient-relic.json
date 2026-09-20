@@ -6,7 +6,7 @@
   "kind": "standard",
   "source": "reference/elegy-4e-beta-v3.txt:5878-5917",
   "rows": [
-    { "min": 1, "max": 2, "label": "Antique weapon (roll for one)", "chained": [{ "table": "weapon" }] },
+    { "min": 1, "max": 2, "label": "Antique weapon (roll for one)", "chained": [{ "table": "weapon", "column": "antique" }] },
     { "min": 3, "max": 4, "label": "Book" },
     { "min": 5, "max": 6, "label": "Shield" },
     { "min": 7, "max": 8, "label": "Chalice" },

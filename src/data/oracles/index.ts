@@ -22,6 +22,7 @@ import clue from './clue.json'
 import combatAction from './combat-action.json'
 import faction from './faction.json'
 import factionRelationship from './faction-relationship.json'
+import sampleFactions from './sample-factions.json'
 import urbanPlace from './urban-place.json'
 import naturalPlace from './natural-place.json'
 import historicalPlace from './historical-place.json'
@@ -63,6 +64,7 @@ export const ORACLE_TABLES = [
   combatAction,
   faction,
   factionRelationship,
+  sampleFactions,
   urbanPlace,
   naturalPlace,
   historicalPlace,

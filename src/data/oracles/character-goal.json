@@ -4,66 +4,302 @@
   "category": "characters",
   "dice": "1d100",
   "kind": "standard",
-  "source": "reference/elegy-4e-beta-v3.txt:5119-5195",
+  "source": "reference/elegy-4e-beta-v3.txt:5119-5206",
   "rows": [
-    { "min": 1, "max": 2, "label": "Escape or hide from a pursuer" },
-    { "min": 3, "max": 4, "label": "Obtain a valuable object" },
-    { "min": 5, "max": 6, "label": "Eliminate someone" },
-    { "min": 7, "max": 8, "label": "Locate someone missing" },
-    { "min": 9, "max": 10, "label": "Shelter someone being hunted" },
-    { "min": 11, "max": 12, "label": "Reclaim a stolen object" },
-    { "min": 13, "max": 14, "label": "Break free from someone’s control" },
-    { "min": 15, "max": 16, "label": "Secure control over someone" },
-    { "min": 17, "max": 18, "label": "Hunt down someone on the run from them" },
-    { "min": 19, "max": 20, "label": "Collect a debt" },
-    { "min": 21, "max": 22, "label": "Pay a debt" },
-    { "min": 23, "max": 24, "label": "Restore a business or project" },
-    { "min": 25, "max": 26, "label": "Harm a business or project" },
-    { "min": 27, "max": 28, "label": "Shut down, or evade, a mortal investigation" },
-    { "min": 29, "max": 30, "label": "Rein in someone drawing dangerous mortal attention" },
-    { "min": 31, "max": 32, "label": "Take down or neutralize signs of a kill" },
-    { "min": 33, "max": 34, "label": "Damage someone’s reputation" },
-    { "min": 35, "max": 36, "label": "Restore someone’s reputation" },
-    { "min": 37, "max": 38, "label": "Build a relationship or alliance" },
-    { "min": 39, "max": 40, "label": "Harm a relationship or alliance" },
-    { "min": 41, "max": 42, "label": "Restore a relationship or alliance" },
-    { "min": 43, "max": 44, "label": "Secure someone’s silence" },
-    { "min": 45, "max": 46, "label": "Bring justice to a traitor" },
-    { "min": 47, "max": 48, "label": "Bring justice to vampire feeding where they can’t" },
-    { "min": 49, "max": 50, "label": "Bring justice to territory breacher" },
-    { "min": 51, "max": 52, "label": "Uncover a hidden truth or secret" },
-    { "min": 53, "max": 54, "label": "Capture and hold someone" },
-    { "min": 55, "max": 56, "label": "Disrupt a dangerous operation" },
-    { "min": 57, "max": 58, "label": "Settle a disagreement" },
-    { "min": 59, "max": 60, "label": "Prove their innocence" },
-    { "min": 61, "max": 62, "label": "Find someone who lost control in public" },
-    { "min": 63, "max": 64, "label": "Rescue someone" },
-    { "min": 65, "max": 66, "label": "Hide a valuable object" },
-    { "min": 67, "max": 68, "label": "Avenge a ruined relationship" },
-    { "min": 69, "max": 70, "label": "Get someone to stop acting so strange" },
-    { "min": 71, "max": 72, "label": "Find out who’s feeding in this territory" },
-    { "min": 73, "max": 74, "label": "Prevent an assassination or massacre" },
-    { "min": 75, "max": 76, "label": "Frame someone for something they didn’t do" },
-    { "min": 77, "max": 78, "label": "Turn a mortal / be turned into a vampire" },
-    { "min": 79, "max": 80, "label": "Expose an impostor" },
-    { "min": 81, "max": 82, "label": "Lose a stalker" },
-    { "min": 83, "max": 83, "label": "Escape an abductor" },
-    { "min": 84, "max": 84, "label": "Locate and get into a rumored secret place" },
-    { "min": 85, "max": 85, "label": "Locate someone assumed dead" },
-    { "min": 86, "max": 86, "label": "Avenge a stolen or destroyed object" },
-    { "min": 87, "max": 87, "label": "Hunt down a rogue, hostile creature" },
-    { "min": 88, "max": 88, "label": "Get rid of a botched turning" },
-    { "min": 89, "max": 89, "label": "Take down or neutralize online evidence" },
-    { "min": 90, "max": 90, "label": "Bring justice to an assassin" },
-    { "min": 91, "max": 91, "label": "Bring justice to vampire leaving signs around" },
-    { "min": 92, "max": 92, "label": "Undo something they did or are" },
-    { "min": 93, "max": 93, "label": "Prevent a turning" },
-    { "min": 94, "max": 94, "label": "Stop a dangerous power or knowledge from spreading" },
-    { "min": 95, "max": 95, "label": "Conduct a ritualistic or sportive hunt" },
-    { "min": 96, "max": 96, "label": "Throw an entertaining event" },
-    { "min": 97, "max": 97, "label": "Deliver a good through dangerous territory" },
-    { "min": 98, "max": 98, "label": "Impress a powerful figure" },
-    { "min": 99, "max": 99, "label": "Investigate and lay to rest a haunting" },
-    { "min": 100, "max": 100, "label": "Find out what creature is attacking people and neutralize it" }
+    {
+      "min": 1,
+      "max": 2,
+      "label": "Escape or hide from a pursuer"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "Obtain a valuable object"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Eliminate someone"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "Locate someone missing"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "Shelter someone being hunted"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Reclaim a stolen object"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "Break free from someone’s control"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "Secure control over someone"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "Hunt down someone on the run from them"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Collect a debt"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "Pay a debt"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "Restore a business or project"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Harm a business or project"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Shut down, or evade, a mortal investigation"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Rein in someone drawing dangerous mortal attention"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "Take down or neutralize signs of a kill"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "Damage someone’s reputation"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Restore someone’s reputation"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "Build a relationship or alliance"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "Harm a relationship or alliance"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "Restore a relationship or alliance"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "Secure someone’s silence"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Bring justice to a traitor"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "Bring justice to vampire feeding where they can’t"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "Bring justice to territory breacher"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "Uncover a hidden truth or secret"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "Capture and hold someone"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "Disrupt a dangerous operation"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "Settle a disagreement"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "Prove their innocence"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Find someone who lost control in public"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "Rescue someone"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "Hide a valuable object"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "Avenge a ruined relationship"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "Get someone to stop acting so strange"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Find out who’s feeding in this territory"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Prevent an assassination or massacre"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "Frame someone for something they didn’t do"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "Turn a mortal / be turned into a vampire"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "Expose an impostor"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "Lose a stalker"
+    },
+    {
+      "min": 83,
+      "max": 83,
+      "label": "Escape an abductor"
+    },
+    {
+      "min": 84,
+      "max": 84,
+      "label": "Locate and get into a rumored secret place"
+    },
+    {
+      "min": 85,
+      "max": 85,
+      "label": "Locate someone assumed dead"
+    },
+    {
+      "min": 86,
+      "max": 86,
+      "label": "Avenge a stolen or destroyed object"
+    },
+    {
+      "min": 87,
+      "max": 87,
+      "label": "Hunt down a rogue, hostile creature"
+    },
+    {
+      "min": 88,
+      "max": 88,
+      "label": "Get rid of a botched turning"
+    },
+    {
+      "min": 89,
+      "max": 89,
+      "label": "Take down or neutralize online evidence"
+    },
+    {
+      "min": 90,
+      "max": 90,
+      "label": "Bring justice to an assassin"
+    },
+    {
+      "min": 91,
+      "max": 91,
+      "label": "Bring justice to vampire leaving signs around"
+    },
+    {
+      "min": 92,
+      "max": 92,
+      "label": "Undo something they did or are"
+    },
+    {
+      "min": 93,
+      "max": 93,
+      "label": "Prevent a turning"
+    },
+    {
+      "min": 94,
+      "max": 94,
+      "label": "Stop a dangerous power or knowledge from spreading"
+    },
+    {
+      "min": 95,
+      "max": 95,
+      "label": "Conduct a ritualistic or sportive hunt"
+    },
+    {
+      "min": 96,
+      "max": 96,
+      "label": "Throw an entertaining event"
+    },
+    {
+      "min": 97,
+      "max": 97,
+      "label": "Deliver a good through dangerous territory"
+    },
+    {
+      "min": 98,
+      "max": 98,
+      "label": "Impress a powerful figure"
+    },
+    {
+      "min": 99,
+      "max": 99,
+      "label": "Investigate and lay to rest a haunting"
+    },
+    {
+      "min": 100,
+      "max": 100,
+      "label": "Find out what creature is attacking people and neutralize it"
+    }
   ]
 }
