@@ -8,6 +8,9 @@
   },
   "scripts": {
     "dev": "vite",
+    "predev": "node scripts/build-manual-excerpts.mjs",
+    "prebuild": "node scripts/build-manual-excerpts.mjs",
+    "manual:build": "node scripts/build-manual-excerpts.mjs",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "vue-tsc --noEmit"

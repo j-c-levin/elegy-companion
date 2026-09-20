@@ -11,6 +11,7 @@ import {
   slumber,
   type RecoveryResult,
 } from './sheet'
+import ManualRef from '@/components/ManualRef.vue'
 
 const wounded = computed(() => game.activeConditions.includes('Wounded'))
 const inShock = computed(() => game.activeConditions.includes('In Shock'))
@@ -94,13 +95,14 @@ function addLooseEndNow(): void {
     <h2 id="recovery-heading">Recovery</h2>
     <p class="cite">
       Pick your roll result after rolling in the Roll Engine. Regenerate 682–692, Respite 746–756,
-      Slumber 767–778, Feeding 785–800.
+      Slumber 767–778, Feeding 785–800. <ManualRef ref-key="recovery" />
     </p>
     <div class="recovery-grid">
       <article>
         <h3>Regenerate <span class="cite-inline">roll with Body</span></h3>
         <p class="how">
-          Restore Health. If not Wounded, treat a Failure as a Flat Success (manual 682–692).
+          Restore Health. If not Wounded, treat a Failure as a Flat Success (manual 682–692
+          <ManualRef ref-key="health-regenerate" />).
         </p>
         <div class="result-buttons">
           <button type="button" @click="pickRegenerate('stylish')">
@@ -125,7 +127,10 @@ function addLooseEndNow(): void {
 
       <article>
         <h3>Respite <span class="cite-inline">roll with Mind (solitude) or Soul (company)</span></h3>
-        <p class="how">Restore Clarity by taking a break and finding peace (manual 746–756).</p>
+        <p class="how">
+          Restore Clarity by taking a break and finding peace (manual 746–756
+          <ManualRef ref-key="clarity-respite" />).
+        </p>
         <div class="result-buttons">
           <button type="button" @click="pickRespite('stylish')">
             Stylish: +{{ clarityGain }} Clarity{{ inShock ? ', clear In Shock' : '' }}
@@ -148,7 +153,7 @@ function addLooseEndNow(): void {
       </article>
 
       <article>
-        <h3>Slumber <span class="cite-inline">the death-sleep, manual 767–778</span></h3>
+        <h3>Slumber <span class="cite-inline">the death-sleep, manual 767–778 <ManualRef ref-key="slumber" /></span></h3>
         <p class="how">
           Lose 1 Blood (cannot be mitigated), gain +1 Rush, erase Cautioned. To stay awake through
           the day instead: lose 2 Blood and Flow Your Blood with Soul.
@@ -171,12 +176,13 @@ function addLooseEndNow(): void {
               aria-label="New loose end"
             />
             <button type="submit" class="outline">Write it</button>
+            <ManualRef ref-key="loose-end-write" label="Loose Ends" />
           </form>
         </div>
       </article>
 
       <article>
-        <h3>Feeding <span class="cite-inline">roll with Soul, manual 785–800</span></h3>
+        <h3>Feeding <span class="cite-inline">roll with Soul, manual 785–800 <ManualRef ref-key="feeding" /></span></h3>
         <p class="how">
           Feed on a prey you've met, hunted, or subdued to restore Blood. If you fed from this
           victim yesterday, they become extremely weak; wait two days before feeding from them again.

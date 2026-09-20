@@ -26,6 +26,8 @@ import RecoverySection from './RecoverySection.vue'
 import TenetsSection from './TenetsSection.vue'
 import XpSection from './XpSection.vue'
 import ConfirmButton from './ConfirmButton.vue'
+import ManualRef from '@/components/ManualRef.vue'
+import { endRefKey } from '@/manual/refs'
 
 const endedTracks = computed(() =>
   CONDITION_TRACKS.filter((track) => trackIsComplete(track, game.activeConditions)),
@@ -54,8 +56,11 @@ const lossNote = computed(() => {
       <p v-for="track in endedTracks" :key="track">
         <strong>{{ TRACK_LABEL[track] }}:</strong> {{ TRACK_END_TEXT[track] }}
         (manual 716–717, 746, 827–828, 880–882, 904–907)
+        <ManualRef :ref-key="endRefKey(track)" label="The End" />
       </p>
-      <p class="the-end-text">{{ THE_END_TEXT }} (manual 888–894)</p>
+      <p class="the-end-text">
+        {{ THE_END_TEXT }} (manual 888–894 <ManualRef ref-key="the-end" />)
+      </p>
       <p class="the-end-action">
         <ConfirmButton
           danger
@@ -70,6 +75,7 @@ const lossNote = computed(() => {
       v-if="pendingLoss"
       class="page-prompt"
       :heading="`At 0 ${TRACK_LABEL[pendingLoss.meter]} — cascade (manual 694–717, 726–744, 806–825)`"
+      manual-ref-key="resource-cascades"
       :note="lossNote"
       :condition="lossCondition"
       :confirm-label="lossCondition ? `Mark ${lossCondition.key}` : 'All conditions marked'"
@@ -80,7 +86,7 @@ const lossNote = computed(() => {
     <aside v-if="pendingRushLoss !== null" class="rush-prompt">
       <p>
         <strong>At 0 Rush and losing {{ pendingRushLoss }} more.</strong>
-        Choose a steeper cost (manual 823–833):
+        Choose a steeper cost (manual 823–833 <ManualRef ref-key="rush-0" />):
       </p>
       <div class="rush-choices">
         <button type="button" class="outline" @click="convertRushLoss('health')">

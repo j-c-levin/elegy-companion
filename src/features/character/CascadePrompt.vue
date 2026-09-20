@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { Condition } from './conditions'
+import ManualRef from '@/components/ManualRef.vue'
 
 defineProps<{
   heading: string
   note?: string
   condition?: Condition
   confirmLabel: string
+  manualRefKey?: string
 }>()
 
 const emit = defineEmits<{ confirm: []; cancel: [] }>()
@@ -13,7 +15,10 @@ const emit = defineEmits<{ confirm: []; cancel: [] }>()
 
 <template>
   <aside class="cascade-prompt">
-    <p class="heading"><strong>{{ heading }}</strong></p>
+    <p class="heading">
+      <strong>{{ heading }}</strong>
+      <ManualRef v-if="manualRefKey" :ref-key="manualRefKey" />
+    </p>
     <p v-if="note" class="note">{{ note }}</p>
     <details v-if="condition" open>
       <summary>{{ condition.key }} — next condition in the cascade ({{ condition.ref }})</summary>
@@ -44,6 +49,10 @@ const emit = defineEmits<{ confirm: []; cancel: [] }>()
 
 .heading {
   margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
 .note {

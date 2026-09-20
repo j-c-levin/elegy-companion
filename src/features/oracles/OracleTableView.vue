@@ -4,12 +4,16 @@ import type { WeaponColumnId } from './types'
 import { getTable, rollTable, type OracleResult } from './roll'
 import OracleResultCard from './OracleResultCard.vue'
 import { recordRoll } from './recent'
+import ManualRef from '@/components/ManualRef.vue'
+import { parseManualSource } from '@/manual/refs'
 
 const props = defineProps<{ tableId: string }>()
 defineEmits<{ back: [] }>()
 
 const table = getTable(props.tableId)!
 if (!table) throw new Error(`Unknown oracle table: ${props.tableId}`)
+
+const sourceRange = parseManualSource(table.source)
 
 const result = ref<OracleResult | null>(null)
 const column = ref<WeaponColumnId | 'random'>('random')
@@ -28,7 +32,15 @@ roll()
   <section class="table-view">
     <button type="button" class="back" @click="$emit('back')">All oracles</button>
     <header>
-      <h2>{{ table.title }}</h2>
+      <h2>
+        {{ table.title }}
+        <ManualRef
+          v-if="sourceRange"
+          :start="sourceRange.start"
+          :end="sourceRange.end"
+          :label="table.title"
+        />
+      </h2>
       <small>{{ table.dice }} · {{ table.rows.length }} entries · {{ table.source }}</small>
     </header>
 

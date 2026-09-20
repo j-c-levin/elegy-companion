@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import { PROGRESS_TICKS_PER_MARK, TOTAL_TICKS, type Rank } from '../types'
 import type { Track } from '../types'
 import * as store from '../store'
+import ManualRef from '@/components/ManualRef.vue'
 
 const props = defineProps<{ track: Track }>()
 
@@ -75,10 +76,14 @@ function loseFight(): void {
         <button type="button" class="mark-btn" @click="collectWin">
           They are down — gain +{{ track.rank }} Rush
         </button>
+        <ManualRef ref-key="combat-winning" label="Winning a fight" />
       </div>
 
       <details class="panel" :open="!full">
-        <summary>Attack (roll with Body, manually)</summary>
+        <summary>
+        Attack (roll with Body, manually)
+        <ManualRef ref-key="combat-attack" label="Attacking" />
+      </summary>
         <p class="note">
           Roll with Body in the Roll Engine, then record the result here. One mark of damage is
           worth {{ perMark }} tick{{ perMark === 1 ? '' : 's' }}.

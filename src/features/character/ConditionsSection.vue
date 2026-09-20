@@ -12,6 +12,8 @@ import {
 } from './conditions'
 import { eraseCondition } from './sheet'
 import ConfirmButton from './ConfirmButton.vue'
+import ManualRef from '@/components/ManualRef.vue'
+import { conditionRefKey } from '@/manual/refs'
 
 const active = computed(() => game.activeConditions)
 
@@ -38,7 +40,8 @@ function severityLabel(severity: string): string {
     <h2 id="conditions-heading">Conditions</h2>
     <p class="cite">
       Enduring consequences when your limits are tested; permanent ones are Burdens
-      (manual 268–300, 3961+).
+      (manual 268–300 <ManualRef ref-key="conditions-overview" />, 3961+
+      <ManualRef ref-key="burdens-intro" />).
     </p>
     <p v-if="effectSummary.length" class="effects-line">
       Active effects: {{ effectSummary.join(', ') }}
@@ -67,10 +70,14 @@ function severityLabel(severity: string): string {
             />
           </div>
           <details v-if="active.includes(condition.key)">
-            <summary>Rules text ({{ condition.ref }})</summary>
+            <summary>
+              Rules text ({{ condition.ref }} <ManualRef :ref-key="conditionRefKey(condition.key)" />)
+            </summary>
             <p class="rules-text">{{ condition.text }}</p>
           </details>
-          <p v-else class="unmarked-note">unmarked — {{ condition.ref }}</p>
+          <p v-else class="unmarked-note">
+            unmarked — {{ condition.ref }} <ManualRef :ref-key="conditionRefKey(condition.key)" />
+          </p>
         </li>
       </ul>
     </div>

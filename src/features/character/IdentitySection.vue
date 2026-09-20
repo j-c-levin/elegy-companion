@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 
 import { game, updateGame, type CharacterIdentity } from '@/store'
+import ManualRef from '@/components/ManualRef.vue'
 
 type TextField = Exclude<keyof CharacterIdentity, 'possessions'>
 
@@ -42,7 +43,7 @@ function removePossession(index: number): void {
 <template>
   <section aria-labelledby="identity-heading">
     <h2 id="identity-heading">Identity</h2>
-    <p class="cite">manual 174–190</p>
+    <p class="cite">manual 174–190 <ManualRef ref-key="identity" /></p>
     <div class="identity-grid">
       <label v-for="field in fields" :key="field.key">
         {{ field.label }}
