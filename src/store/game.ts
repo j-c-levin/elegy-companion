@@ -1,4 +1,4 @@
-import { reactive } from 'vue'
+import { reactive, type DeepReadonly } from 'vue'
 
 import { readJson, writeJson } from './storage'
 import { ATTRIBUTE_KEYS } from './types'
@@ -98,7 +98,12 @@ export function migrateGameState(raw: unknown): GameState {
   const state = createDefaultState()
   if (!isRecord(raw)) return state
   const version = typeof raw.version === 'number' ? raw.version : 0
-  if (version > GAME_SCHEMA_VERSION) return state
+  if (version > GAME_SCHEMA_VERSION) {
+    console.warn(
+      `[elegy] stored game data is version ${version}, newer than supported ${GAME_SCHEMA_VERSION}; loaded defaults instead`,
+    )
+    return state
+  }
   const identity = raw.identity
   if (isRecord(identity)) {
     for (const key of IDENTITY_TEXT_KEYS) {
@@ -141,28 +146,41 @@ export function migrateGameState(raw: unknown): GameState {
   return state
 }
 
-function loadState(): GameState {
-  return migrateGameState(readJson<unknown>(GAME_STORAGE_NAME))
-}
+const stored = readJson<unknown>(GAME_STORAGE_NAME)
+const storedVersion =
+  isRecord(stored) && typeof stored.version === 'number' ? stored.version : null
+const persistBlocked = storedVersion !== null && storedVersion > GAME_SCHEMA_VERSION
 
-export const game: GameState = reactive(loadState())
+const state: GameState = reactive(migrateGameState(stored))
+
+export const game: DeepReadonly<GameState> = state
 
 export function persistGame(): void {
-  writeJson(GAME_STORAGE_NAME, game)
+  if (persistBlocked) {
+    console.warn('[elegy] refusing to persist: stored data is from a newer schema version')
+    return
+  }
+  writeJson(GAME_STORAGE_NAME, state)
 }
 
 export function updateGame(recipe: (draft: GameState) => void): void {
-  recipe(game)
+  recipe(state)
   persistGame()
 }
 
 export function resetGame(): void {
-  Object.assign(game, createDefaultState())
+  Object.assign(state, createDefaultState())
   persistGame()
 }
 
 export function makeId(): string {
-  return crypto.randomUUID()
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID()
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (char) => {
+    const bits = (Math.random() * 16) | 0
+    return (char === 'x' ? bits : (bits & 0x3) | 0x8).toString(16)
+  })
 }
 
 export function addListItem(draft: GameState, listName: string, text: string): ListItem {
