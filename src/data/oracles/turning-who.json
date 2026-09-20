@@ -1,0 +1,20 @@
+{
+  "id": "turning-who",
+  "title": "Turning — Who were they to you?",
+  "category": "characters",
+  "dice": "1d10",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5371-5395",
+  "rows": [
+    { "min": 1, "max": 1, "label": "Someone under your guidance. They looked up to you with admiration and aspired to be more like you. They may have been an apprentice, a student, a younger sibling, etc." },
+    { "min": 2, "max": 2, "label": "Someone you hated. You may or may not have had a pleasant relationship in the past, but in the present, you never saw eye to eye. They may have been a rival, a boss, an ex, etc." },
+    { "min": 3, "max": 3, "label": "A service provider. You used to be their client. They may have been a plumber, therapist, doctor, waiter, etc." },
+    { "min": 4, "max": 4, "label": "A colleague or contact. Your relationship was based on mutual academic or professional background. They may have been a classmate, a coworker, a business contact, etc." },
+    { "min": 5, "max": 5, "label": "An acquaintance. You knew each other by name and even said hi, but you never talked much. They may have been a significant other’s cousin, a friend of one of your parents, your neighbor you saw now and then, etc." },
+    { "min": 6, "max": 6, "label": "A complete stranger. You met them for the first time right before they turned you." },
+    { "min": 7, "max": 7, "label": "A mentor. They were a figure of authority and wisdom to you, like a more experienced colleague, a professor, etc." },
+    { "min": 8, "max": 8, "label": "A lover. You used to fill each other with lust and affection. They may have been a significant other, a friend with benefits, a situationship, etc." },
+    { "min": 9, "max": 9, "label": "A great friend. You could always count on each other in any situation. They may have been a roommate, a friend, a best friend, etc." },
+    { "min": 10, "max": 10, "label": "A relative. Close or distant, even in life you had blood ties. They may have been a cousin, aunt, uncle, sibling, etc." }
+  ]
+}

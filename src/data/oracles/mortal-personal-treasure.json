@@ -1,0 +1,335 @@
+{
+  "id": "mortal-personal-treasure",
+  "title": "Mortal Personal Treasure",
+  "category": "objects",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5920-6024",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "A napkin with a phone number and a name written on it"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "A necklace revealing what they have faith in"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "An intriguing receipt from a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "A heartfelt photo taken in a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "A heartfelt photo taken in a… (roll for a natural place)",
+      "chained": [
+        {
+          "table": "natural-place"
+        }
+      ]
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Some kind of souvenir from a… (roll for a natural place)",
+      "chained": [
+        {
+          "table": "natural-place"
+        }
+      ]
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "Some kind of souvenir from a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "A short, sweet note from their (roll for a relationship)",
+      "chained": [
+        {
+          "table": "relationships"
+        }
+      ]
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "A short, painfully dry note from their (roll for a relationship)",
+      "chained": [
+        {
+          "table": "relationships"
+        }
+      ]
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "A candidly admiring note from their (roll for a relationship)",
+      "chained": [
+        {
+          "table": "relationships"
+        }
+      ]
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "An openly accusatory note from their (roll for a relationship)",
+      "chained": [
+        {
+          "table": "relationships"
+        }
+      ]
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "A thank-you card from a (roll for a relationship)",
+      "chained": [
+        {
+          "table": "relationships"
+        }
+      ]
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "A ring representing some type of commitment"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "The receipt of a peculiar acquisition"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Aged picture of a young person who should be dead by now"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "A pet collar charm with a name on it"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "A locket bearing the initials and picture of a loved one"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Two tickets to an upcoming movie session"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "An old keychain that obviously belonged to someone else before"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "A napkin with a silly drawing on it"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "A years-old bar tab with the same drink asked twice"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "A loyalty or subscription card from a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "The business card of a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "The menu or informational folder from a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "A hospital wristband with a date, name and blood type"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "A support group meeting pamphlet"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "A promotional gift card revealing a specific interest"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "The worn photo of a loved one"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "A music CD autographed by the musician(s)"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "A movie DVD autographed by one of the stars"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "A book autographed by the author"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "A bank slip revealing a surprising detail about their life"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "A passionate and polemical politics pamphlet"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "A child’s drawing at least a few decades old"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "A child’s toy at least a few decades old"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "A medical prescription slip revealing a silent battle"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Old consent papers regarding a life-changing decision"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "The fading bus ticket of a trip from years ago"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "A ticket to a recent movie session with a doodle on it"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "A sports match ticket from decades ago"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "A monthly planner page, empty except for initials repeating every week"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "A ticket to a concert or play from a special night from years ago"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "The ripped page of a book, a meaningful passage highlighted"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "A ticket to a movie from a special night from years ago"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "A hotel key card from a city you’d never think they’d want to visit"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "A religious pamphlet with personal notes in the margins"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "An identification badge from an old job they had"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "A court notice betraying a serious issue, folded many times"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "A folded map marked with a red pen, repeatedly circling a… (roll for an urban place)",
+      "chained": [
+        {
+          "table": "urban-place"
+        }
+      ]
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "An old local paper clipping noticing something related to (roll for a theme)",
+      "chained": [
+        {
+          "table": "theme"
+        }
+      ]
+    }
+  ]
+}

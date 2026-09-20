@@ -1,0 +1,260 @@
+{
+  "id": "busy-street",
+  "title": "Busy Street",
+  "category": "ambience",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:6114-6217",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "A siren echoes from another street."
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "The light of a lamppost brings the colors of a recent graffiti artwork alive."
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Posters announce different parties on the same club over a brick wall."
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "An artistic sticker is signed with a social media handle in unintelligible writing."
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "Dogs bark at a delivery motorcycle."
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Someone in business attire gets into an Uber."
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "The window of an apartment puffs out thick smoke as it opens."
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "A long, slow line forms outside a nightclub, and cigarette smoke comes from it."
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "A cat licks itself on top of a wall. Upon seeing you, it jumps and vanishes over the roof."
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Loud teenagers go quiet as they pass by older girls."
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "A young clerk locks a gate, hops on a bike, and rides away."
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "Someone in a bathrobe and slippers waits for their dog to poop."
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "A girl in party clothes types on her phone, alone, under an awning."
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "A plastic bag floats along the sidewalk."
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "A drunk person stumbles at the curb but doesn’t fall."
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "A car beeps, locks click, and someone slips a key into their pocket."
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "A rat emerges from beneath a container and vanishes into the curbside shadows."
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Three girls on a corner pass around a thin joint. One of them coughs."
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "A middle-aged man in a heavy metal t-shirt jogs by."
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "Across the street, a woman and her friend gather papers scattered on the ground."
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "Two people, each holding a beer, kiss intensely, and fall down."
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "A young man crosses the street and meets his friends. A drunk girl yells with joy."
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "A crying woman leaves a nightclub, followed in a hurry by a man in loafers."
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "Someone in costume poses for a photo, says goodbye to strangers, and moves on."
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "A bottle shatters under a car tire, and tiny shards scatter over the black asphalt like stars."
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "Two guys share a quick, clumsy handshake, as something passes from one hand to the other."
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "Someone in disheveled formal wear sighs at a bus stop."
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "A few blocks away, two people nearly get into a fight, but a third intervenes."
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "A small group in religious garments walks silently."
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "Friends form a small circle outside a bar. The breeze from there smells green."
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Someone talks to themselves in the third person, feet staggering."
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "A skater passes by. The back of their shirt features a manga page."
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "The yowling of a cat in heat echoes between the buildings."
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "A security guard sighs and lights a cigarette."
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "Two cyclists zoom past, laughing."
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Puddles reflect the moon, and footsteps distort the images."
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Someone knocks on a door, then waits while checking all their pockets."
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "Heels click on the sidewalk, leaving a trail of perfume."
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "Music escapes from a hurried passerby’s headphones."
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "A bus hisses as the doors close, then accelerates."
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "A poorly modified car drives by, vibrating with bass."
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "A flyer flaps against a pole, advertising a strange new age book."
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "A dog sniffs an overflowing trash bin, bites something, and runs away."
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "A naked mannequin behind a store window looks menacing in the shop's darkness."
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "A phone screen lights up two faces that look at each other, then laugh."
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "A man with a hand in his pocket leans against a wall, looking impatiently around."
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "A strange-looking vehicle drifts down the street, drawing all kinds of stares."
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "A car does a bootleg turn. A baby cries inside."
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "A large silhouette with three or four heads writhes and moans in the deep end of an alley."
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "A car stops. Young men jump out and start dancing in the street, entertaining passersby."
+    }
+  ]
+}

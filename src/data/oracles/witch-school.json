@@ -1,0 +1,20 @@
+{
+  "id": "witch-school",
+  "title": "Witch School",
+  "category": "mystery",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5478-5493",
+  "rows": [
+    { "min": 1, "max": 10, "label": "Death", "detail": "Influences death and decay. Enables necromancy and withering." },
+    { "min": 11, "max": 20, "label": "Energy", "detail": "Influences physical forces. Enables control of fire, light, sound, gravity, speed, etc." },
+    { "min": 21, "max": 30, "label": "Fate", "detail": "Influences destiny and luck. Enables blessings, curses, and chance." },
+    { "min": 31, "max": 40, "label": "Life", "detail": "Influences vitality. Enables healing, enhancement, and control of living things." },
+    { "min": 41, "max": 50, "label": "Mana", "detail": "Influences magic itself. Enables spell shaping, dispels, and imbuing." },
+    { "min": 51, "max": 60, "label": "Matter", "detail": "Influences physical matter. Enables creation, transmutation, and destruction." },
+    { "min": 61, "max": 70, "label": "Mind", "detail": "Influences thoughts and emotions. Enables telepathy, illusions, and astral travel." },
+    { "min": 71, "max": 80, "label": "Space", "detail": "Influences distance and position. Enables scrying, portals, and teleportation." },
+    { "min": 81, "max": 90, "label": "Spirit", "detail": "Influences spirits. Enables summoning, banishing, and essence control." },
+    { "min": 91, "max": 100, "label": "Time", "detail": "Influences temporal flow. Enables foresight, time shifts, and rewinds." }
+  ]
+}

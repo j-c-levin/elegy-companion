@@ -1,0 +1,260 @@
+{
+  "id": "place-quirk",
+  "title": "Place Quirk",
+  "category": "locations",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5815-5837",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "Gloomy"
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "Bustling"
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "Shadowy"
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "Serene"
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "Dilapidated"
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Vibrant"
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "Haunting"
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "Cozy"
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "Foreboding"
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Tranquil"
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "Desolate"
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "Lively"
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Pleasant"
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Bright"
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Crumbling"
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "Peaceful"
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "Eerie"
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "Modern"
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "Claustrophobic"
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "Spacious"
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "Mysterious"
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "Inviting"
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Dark"
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "Colorful"
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "Damp"
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "Clean"
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "Sinister"
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "Ordinary"
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "Rotting"
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "Sleek"
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "Isolated"
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "Welcoming"
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "Blighted"
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "Cheerful"
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "Stark"
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Safe"
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "Bleak"
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "Familiar"
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "Festering"
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "Comfortable"
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "Secluded"
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "Busy"
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "Decrepit"
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "Brightly-lit"
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "Dangerous"
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "Friendly"
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "Secretive"
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "Calm"
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "Withered"
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "Menacing"
+    }
+  ]
+}

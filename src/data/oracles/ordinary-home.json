@@ -1,0 +1,260 @@
+{
+  "id": "ordinary-home",
+  "title": "Ordinary Home",
+  "category": "ambience",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:6441-6544",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "A few pairs of folded socks rest on top of one folded t-shirt on a chair."
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "Through the air and across the walls, household appliances hum softly."
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "A glass ashtray holds only a single burnt match."
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "A sticky note clings to the corner of a cupboard."
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "From the street, two dogs bark briefly at each other."
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "A turned-off floor fan sits alone in the corner."
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "A pair of shoes sits right next to the door."
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "An analog clock ticks from somewhere."
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "A shoelace trails out from under the couch."
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "One light switch plate is missing its cover."
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "Books pile up under folded socks."
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "A large artwork piece has been put on a wall."
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "A stray nail clipper shines on a surface."
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Keys dangle from the lock of an unlocked door."
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "A small flask of perfume stands just within reach."
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "A coat covers the back of a chair."
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "An unplugged charger dangles from the edge of a table."
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "The kitchen sink holds one soapy spoon."
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "The light of a car passes through the window, tracing part of the wall as it goes by."
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "The aroma of coffee rises from a used ceramic cup on the table."
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "A vertical vacuum cleaner hides in a tight corner behind a cabinet."
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "Next to the door, a paper bag full of trash patiently waits to be taken outside."
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "On the table, a water bottle with hourly markers is two hours behind."
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "A shiny black router points its antennas in three different directions, tiny green eyes blinking."
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "A bathrobe hangs from the top of an open door."
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "A stray necklace has been left on a counter."
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "An old photo on the wall captures a moment from a simpler time."
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "Portraits stand on a table; the pictures, as well as their subjects, are generations apart."
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "The faint trace of lavender hovers around a misplaced aerosol can."
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "A half-empty blister pack of painkillers stands guard next to a bottle of water."
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "The cover of a puzzle magazine faces the ceiling, its pages probably parted in an ongoing puzzle."
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "Neighbors laugh aloud, muffled but barely audible."
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "A neighbor turns on music very loudly, then lowers it an instant later."
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "A strange embroidery made by a local artist hangs on its hoop on the wall."
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "One spot on the wall gathers postcards from different places around the world, all by the same artist."
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "Postcards from all over the world are organized on the wall."
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "A cardboard box full of holiday decorations hides among other things in a closet."
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "From time to time, the lamp above flickers for an instant, in its final days."
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "One wall is painted a different color, matching the furniture."
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "A worn-out but solid CD sleeve is covered in teenage doodles from lives ago."
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "From within the walls, the muffled flow of water descends."
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "Two jackets and one hat hang on an elliptical bike."
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "The homely smell of food cooked hours ago still lingers in the air."
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "Pajamas are folded and resting on the lid of an empty laundry basket."
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "A thick candle waits for the day it might be used, its center hollowed and cold."
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "A broom rests against the wall, over the small mound of dust it piled up before."
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "The pot of a healthy plant exhales a pleasant earthy scent."
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "An e-reader rests on a wooden surface, the screen locked on a black-and-white image."
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "A salty, pleasant smell clings to the cardboard of a food-delivery package."
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "A wet towel has been forgotten over the back of a chair."
+    }
+  ]
+}

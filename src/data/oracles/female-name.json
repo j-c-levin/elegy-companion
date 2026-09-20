@@ -1,0 +1,510 @@
+{
+  "id": "female-name",
+  "title": "Female Name",
+  "category": "characters",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:4974-5013",
+  "rows": [
+    {
+      "min": 1,
+      "max": 1,
+      "label": "Aaliyah"
+    },
+    {
+      "min": 2,
+      "max": 2,
+      "label": "Aisha"
+    },
+    {
+      "min": 3,
+      "max": 3,
+      "label": "Alicia"
+    },
+    {
+      "min": 4,
+      "max": 4,
+      "label": "Alina"
+    },
+    {
+      "min": 5,
+      "max": 5,
+      "label": "Amara"
+    },
+    {
+      "min": 6,
+      "max": 6,
+      "label": "Amaya"
+    },
+    {
+      "min": 7,
+      "max": 7,
+      "label": "Amira"
+    },
+    {
+      "min": 8,
+      "max": 8,
+      "label": "Amina"
+    },
+    {
+      "min": 9,
+      "max": 9,
+      "label": "Anaya"
+    },
+    {
+      "min": 10,
+      "max": 10,
+      "label": "Aria"
+    },
+    {
+      "min": 11,
+      "max": 11,
+      "label": "Ava"
+    },
+    {
+      "min": 12,
+      "max": 12,
+      "label": "Autumn"
+    },
+    {
+      "min": 13,
+      "max": 13,
+      "label": "Bailey"
+    },
+    {
+      "min": 14,
+      "max": 14,
+      "label": "Bella"
+    },
+    {
+      "min": 15,
+      "max": 15,
+      "label": "Brooklyn"
+    },
+    {
+      "min": 16,
+      "max": 16,
+      "label": "Bruna"
+    },
+    {
+      "min": 17,
+      "max": 17,
+      "label": "Camila"
+    },
+    {
+      "min": 18,
+      "max": 18,
+      "label": "Carol"
+    },
+    {
+      "min": 19,
+      "max": 19,
+      "label": "Catalina"
+    },
+    {
+      "min": 20,
+      "max": 20,
+      "label": "Celeste"
+    },
+    {
+      "min": 21,
+      "max": 21,
+      "label": "Cecilia"
+    },
+    {
+      "min": 22,
+      "max": 22,
+      "label": "Chloe"
+    },
+    {
+      "min": 23,
+      "max": 23,
+      "label": "Cielo"
+    },
+    {
+      "min": 24,
+      "max": 24,
+      "label": "Clara"
+    },
+    {
+      "min": 25,
+      "max": 25,
+      "label": "Diana"
+    },
+    {
+      "min": 26,
+      "max": 26,
+      "label": "Eliza"
+    },
+    {
+      "min": 27,
+      "max": 27,
+      "label": "Elena"
+    },
+    {
+      "min": 28,
+      "max": 28,
+      "label": "Eliana"
+    },
+    {
+      "min": 29,
+      "max": 29,
+      "label": "Emilia"
+    },
+    {
+      "min": 30,
+      "max": 30,
+      "label": "Emi"
+    },
+    {
+      "min": 31,
+      "max": 31,
+      "label": "Emma"
+    },
+    {
+      "min": 32,
+      "max": 32,
+      "label": "Eva"
+    },
+    {
+      "min": 33,
+      "max": 33,
+      "label": "Farah"
+    },
+    {
+      "min": 34,
+      "max": 34,
+      "label": "Fatima"
+    },
+    {
+      "min": 35,
+      "max": 35,
+      "label": "Gabriella"
+    },
+    {
+      "min": 36,
+      "max": 36,
+      "label": "Gabrielle"
+    },
+    {
+      "min": 37,
+      "max": 37,
+      "label": "Gemma"
+    },
+    {
+      "min": 38,
+      "max": 38,
+      "label": "Giovanna"
+    },
+    {
+      "min": 39,
+      "max": 39,
+      "label": "Hazel"
+    },
+    {
+      "min": 40,
+      "max": 40,
+      "label": "Imani"
+    },
+    {
+      "min": 41,
+      "max": 41,
+      "label": "Ingrid"
+    },
+    {
+      "min": 42,
+      "max": 42,
+      "label": "Ivy"
+    },
+    {
+      "min": 43,
+      "max": 43,
+      "label": "Jade"
+    },
+    {
+      "min": 44,
+      "max": 44,
+      "label": "Jazmin"
+    },
+    {
+      "min": 45,
+      "max": 45,
+      "label": "Jéssica"
+    },
+    {
+      "min": 46,
+      "max": 46,
+      "label": "Joanne"
+    },
+    {
+      "min": 47,
+      "max": 47,
+      "label": "Jocelyn"
+    },
+    {
+      "min": 48,
+      "max": 48,
+      "label": "Juliana"
+    },
+    {
+      "min": 49,
+      "max": 49,
+      "label": "Julia"
+    },
+    {
+      "min": 50,
+      "max": 50,
+      "label": "Katie"
+    },
+    {
+      "min": 51,
+      "max": 51,
+      "label": "Kiara"
+    },
+    {
+      "min": 52,
+      "max": 52,
+      "label": "Kimberly"
+    },
+    {
+      "min": 53,
+      "max": 53,
+      "label": "Laura"
+    },
+    {
+      "min": 54,
+      "max": 54,
+      "label": "Layla"
+    },
+    {
+      "min": 55,
+      "max": 55,
+      "label": "Leila"
+    },
+    {
+      "min": 56,
+      "max": 56,
+      "label": "Lila"
+    },
+    {
+      "min": 57,
+      "max": 57,
+      "label": "Louise"
+    },
+    {
+      "min": 58,
+      "max": 58,
+      "label": "Luna"
+    },
+    {
+      "min": 59,
+      "max": 59,
+      "label": "Lyla"
+    },
+    {
+      "min": 60,
+      "max": 60,
+      "label": "Madelin"
+    },
+    {
+      "min": 61,
+      "max": 61,
+      "label": "Flávia"
+    },
+    {
+      "min": 62,
+      "max": 62,
+      "label": "Mariana"
+    },
+    {
+      "min": 63,
+      "max": 63,
+      "label": "Maya"
+    },
+    {
+      "min": 64,
+      "max": 64,
+      "label": "Mia"
+    },
+    {
+      "min": 65,
+      "max": 65,
+      "label": "Milla"
+    },
+    {
+      "min": 66,
+      "max": 66,
+      "label": "Mira"
+    },
+    {
+      "min": 67,
+      "max": 67,
+      "label": "Miranda"
+    },
+    {
+      "min": 68,
+      "max": 68,
+      "label": "Molly"
+    },
+    {
+      "min": 69,
+      "max": 69,
+      "label": "Nadia"
+    },
+    {
+      "min": 70,
+      "max": 70,
+      "label": "Naomi"
+    },
+    {
+      "min": 71,
+      "max": 71,
+      "label": "Natalie"
+    },
+    {
+      "min": 72,
+      "max": 72,
+      "label": "Nora"
+    },
+    {
+      "min": 73,
+      "max": 73,
+      "label": "Noemi"
+    },
+    {
+      "min": 74,
+      "max": 74,
+      "label": "Nadine"
+    },
+    {
+      "min": 75,
+      "max": 75,
+      "label": "Olivia"
+    },
+    {
+      "min": 76,
+      "max": 76,
+      "label": "Paisley"
+    },
+    {
+      "min": 77,
+      "max": 77,
+      "label": "Paola"
+    },
+    {
+      "min": 78,
+      "max": 78,
+      "label": "Penelope"
+    },
+    {
+      "min": 79,
+      "max": 79,
+      "label": "Priya"
+    },
+    {
+      "min": 80,
+      "max": 80,
+      "label": "Ruby"
+    },
+    {
+      "min": 81,
+      "max": 81,
+      "label": "Salma"
+    },
+    {
+      "min": 82,
+      "max": 82,
+      "label": "Samantha"
+    },
+    {
+      "min": 83,
+      "max": 83,
+      "label": "Samira"
+    },
+    {
+      "min": 84,
+      "max": 84,
+      "label": "Sania"
+    },
+    {
+      "min": 85,
+      "max": 85,
+      "label": "Sonja"
+    },
+    {
+      "min": 86,
+      "max": 86,
+      "label": "Savannah"
+    },
+    {
+      "min": 87,
+      "max": 87,
+      "label": "Selene"
+    },
+    {
+      "min": 88,
+      "max": 88,
+      "label": "Seraphina"
+    },
+    {
+      "min": 89,
+      "max": 89,
+      "label": "Sienna"
+    },
+    {
+      "min": 90,
+      "max": 90,
+      "label": "Sofia"
+    },
+    {
+      "min": 91,
+      "max": 91,
+      "label": "Sophie"
+    },
+    {
+      "min": 92,
+      "max": 92,
+      "label": "Stella"
+    },
+    {
+      "min": 93,
+      "max": 93,
+      "label": "Taiara"
+    },
+    {
+      "min": 94,
+      "max": 94,
+      "label": "Valentina"
+    },
+    {
+      "min": 95,
+      "max": 95,
+      "label": "Valerie"
+    },
+    {
+      "min": 96,
+      "max": 96,
+      "label": "Vivian"
+    },
+    {
+      "min": 97,
+      "max": 97,
+      "label": "Vivianne"
+    },
+    {
+      "min": 98,
+      "max": 98,
+      "label": "Yara"
+    },
+    {
+      "min": 99,
+      "max": 99,
+      "label": "Zara"
+    },
+    {
+      "min": 100,
+      "max": 100,
+      "label": "Zoe"
+    }
+  ]
+}

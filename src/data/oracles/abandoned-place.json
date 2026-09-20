@@ -1,0 +1,260 @@
+{
+  "id": "abandoned-place",
+  "title": "Abandoned Place",
+  "category": "ambience",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:6332-6435",
+  "rows": [
+    {
+      "min": 1,
+      "max": 2,
+      "label": "Books and magazines rest, somehow untouched by time, in cardboard boxes."
+    },
+    {
+      "min": 3,
+      "max": 4,
+      "label": "A dog collar lies discarded and stained. Once, it was pink."
+    },
+    {
+      "min": 5,
+      "max": 6,
+      "label": "An old poster of a flopped blockbuster movie stands rolled against the wall."
+    },
+    {
+      "min": 7,
+      "max": 8,
+      "label": "An empty pizza box leans upright against the wall."
+    },
+    {
+      "min": 9,
+      "max": 10,
+      "label": "A pile of dusty wood debris rests forgotten in the corner."
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "Green, brown, and white stains spread across a threadbare carpet."
+    },
+    {
+      "min": 13,
+      "max": 14,
+      "label": "A mannequin head, scribbled over in marker, lies face-up."
+    },
+    {
+      "min": 15,
+      "max": 16,
+      "label": "A headless plus-size mannequin slumps against the wall, one arm raised."
+    },
+    {
+      "min": 17,
+      "max": 18,
+      "label": "The cover of an old gossip magazine announces the union of two celebrities who broke up last year."
+    },
+    {
+      "min": 19,
+      "max": 20,
+      "label": "Dew-like droplets cling to the spiral threads of a spiderweb."
+    },
+    {
+      "min": 21,
+      "max": 22,
+      "label": "Medicine boxes spill out of a soil-streaked plastic bag."
+    },
+    {
+      "min": 23,
+      "max": 24,
+      "label": "A red flashlight with leaking batteries lies forgotten."
+    },
+    {
+      "min": 25,
+      "max": 26,
+      "label": "Pieces of a cup shaped like a cartoon character rest broken."
+    },
+    {
+      "min": 27,
+      "max": 28,
+      "label": "Something small scuttles across the floor, then vanishes."
+    },
+    {
+      "min": 29,
+      "max": 30,
+      "label": "Rust gathers thick around every lock."
+    },
+    {
+      "min": 31,
+      "max": 32,
+      "label": "A centipede disappears into a crack in the wall."
+    },
+    {
+      "min": 33,
+      "max": 34,
+      "label": "A dried frog carcass clings to the base of a wall."
+    },
+    {
+      "min": 35,
+      "max": 36,
+      "label": "A vinyl cover lies under a rock, the disc nowhere to be seen."
+    },
+    {
+      "min": 37,
+      "max": 38,
+      "label": "Dark water forms a shallow puddle."
+    },
+    {
+      "min": 39,
+      "max": 40,
+      "label": "Collapsed ceiling lies on the floor, under a hole of the same size."
+    },
+    {
+      "min": 41,
+      "max": 42,
+      "label": "Time has peeled away the paint from most of every wall."
+    },
+    {
+      "min": 43,
+      "max": 44,
+      "label": "Spiderwebs and dust cover an outdated socket near the floor."
+    },
+    {
+      "min": 45,
+      "max": 46,
+      "label": "Old newspapers covered in nonsensical writings hang on the wall."
+    },
+    {
+      "min": 47,
+      "max": 48,
+      "label": "A sad, tortured confession has been written on the wall."
+    },
+    {
+      "min": 49,
+      "max": 50,
+      "label": "A shoebox is filled with floppy disks and expired medicine."
+    },
+    {
+      "min": 51,
+      "max": 52,
+      "label": "A half-smoked joint lies forgotten in a wall crack, almost fossilized."
+    },
+    {
+      "min": 53,
+      "max": 54,
+      "label": "An old black-and-white photo of a child lies on the floor, the face faded by time."
+    },
+    {
+      "min": 55,
+      "max": 56,
+      "label": "An empty peanut butter jar has been forgotten next to a luxury-brand condom packet."
+    },
+    {
+      "min": 57,
+      "max": 58,
+      "label": "An uncommon and mildly controversial pop culture take has been sprayed on the wall."
+    },
+    {
+      "min": 59,
+      "max": 60,
+      "label": "A rusty stop sign lies on the floor beside a PS2 game case."
+    },
+    {
+      "min": 61,
+      "max": 62,
+      "label": "An artistic graffiti of an anime character adorns the wall."
+    },
+    {
+      "min": 63,
+      "max": 64,
+      "label": "A rusty, dusty ladder rests against the wall, its paint withering away."
+    },
+    {
+      "min": 65,
+      "max": 66,
+      "label": "A dusty porcelain cat poses, one ear broken."
+    },
+    {
+      "min": 67,
+      "max": 68,
+      "label": "A bent, wheel-less bicycle is covered in dusty spiderwebs."
+    },
+    {
+      "min": 69,
+      "max": 70,
+      "label": "A whole beer pack has been forgotten, cans expired a decade ago."
+    },
+    {
+      "min": 71,
+      "max": 72,
+      "label": "A red warning has been sprayed on a distant wall: unstable floor be safe 1/1/2011."
+    },
+    {
+      "min": 73,
+      "max": 74,
+      "label": "A collection of bizarre handmade jugs is preserved inside a wooden box."
+    },
+    {
+      "min": 75,
+      "max": 76,
+      "label": "Lampshades with no coverings are grouped in a corner."
+    },
+    {
+      "min": 77,
+      "max": 78,
+      "label": "A moldy red ball gag lies beside torn stockings."
+    },
+    {
+      "min": 79,
+      "max": 80,
+      "label": "An old rusty coin has been forgotten in an ashtray."
+    },
+    {
+      "min": 81,
+      "max": 82,
+      "label": "Wooden beams pile up on a floor covered in graffiti."
+    },
+    {
+      "min": 83,
+      "max": 84,
+      "label": "A graffiti signature in red covers one in white."
+    },
+    {
+      "min": 85,
+      "max": 86,
+      "label": "A broken black umbrella rests in a small pink cradle."
+    },
+    {
+      "min": 87,
+      "max": 88,
+      "label": "A grimy pink blender lies on the ground, the base detached from its broken body."
+    },
+    {
+      "min": 89,
+      "max": 90,
+      "label": "Three big glass panels are piled up, the edges chipped away."
+    },
+    {
+      "min": 91,
+      "max": 92,
+      "label": "Wiry vines crawl out of cracks in the concrete."
+    },
+    {
+      "min": 93,
+      "max": 94,
+      "label": "A binder with study notes has been left here."
+    },
+    {
+      "min": 95,
+      "max": 96,
+      "label": "A yellowed newspaper scrap on the floor mentions a country that no longer exists."
+    },
+    {
+      "min": 97,
+      "max": 98,
+      "label": "Fuck the ploice says graffiti on the wall."
+    },
+    {
+      "min": 99,
+      "max": 100,
+      "label": "A gumball machine lies fallen on the ground, still almost full."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "turning-why",
+  "title": "Turning — Why did they turn you?",
+  "category": "characters",
+  "dice": "1d100",
+  "kind": "standard",
+  "source": "reference/elegy-4e-beta-v3.txt:5397-5413",
+  "rows": [
+    { "min": 1, "max": 12, "label": "They wanted a companion in undeath and asked you." },
+    { "min": 13, "max": 25, "label": "You were dying, or sick, and it was the only way to keep you alive." },
+    { "min": 26, "max": 37, "label": "They almost drained you, and in an act of desperation, turned you." },
+    { "min": 38, "max": 50, "label": "They did it to make you suffer or to punish you for something." },
+    { "min": 51, "max": 62, "label": "You never knew. They disappeared without a trace right after you were turned." },
+    { "min": 63, "max": 75, "label": "They wanted to ensure some kind of legacy and saw you as an excellent candidate, and you wanted to be more like them." },
+    { "min": 76, "max": 87, "label": "They wanted access to your useful skills and assets, and you were convinced or coerced by them." },
+    { "min": 88, "max": 100, "label": "They believed you’d have a better existence in undeath, and proposed turning you." }
+  ]
+}

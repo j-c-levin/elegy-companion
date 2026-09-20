@@ -1,0 +1,20 @@
+{
+  "id": "nightlife",
+  "title": "Nightlife",
+  "category": "quick-victim",
+  "dice": "2d10",
+  "kind": "duo",
+  "source": "reference/elegy-4e-beta-v3.txt:6061-6084",
+  "rows": [
+    { "min": 1, "max": 1, "label": "Someone euphoric...", "situation": "...who approached you from the other side of the room" },
+    { "min": 2, "max": 2, "label": "Someone paranoid...", "situation": "...who asked if you had seen their friend" },
+    { "min": 3, "max": 3, "label": "Someone charming...", "situation": "...who made small talk while waiting in line" },
+    { "min": 4, "max": 4, "label": "Someone lonely...", "situation": "...who accidentally spilled their drink on you" },
+    { "min": 5, "max": 5, "label": "Someone sad...", "situation": "...who fell down, and you helped them up" },
+    { "min": 6, "max": 6, "label": "Someone annoying...", "situation": "...who wouldn’t stop looking at you" },
+    { "min": 7, "max": 7, "label": "Someone irritable...", "situation": "...who smiled at you as you walked past each other" },
+    { "min": 8, "max": 8, "label": "Someone shy...", "situation": "...who told you that you looked exactly like someone else" },
+    { "min": 9, "max": 9, "label": "Someone chatty...", "situation": "...who mistook you for someone else" },
+    { "min": 10, "max": 10, "label": "Someone friendly...", "situation": "...who started telling you a story for no reason" }
+  ]
+}
