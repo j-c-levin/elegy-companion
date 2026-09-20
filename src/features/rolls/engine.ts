@@ -105,6 +105,13 @@ export const METER_LABELS: Record<MeterKey, string> = {
   rush: 'Rush',
 }
 
+export const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
+  body: 'Body',
+  mind: 'Mind',
+  charm: 'Charm',
+  soul: 'Soul',
+}
+
 export const VERDICT_LABELS: Record<Verdict, string> = {
   stylish: 'Stylish Success',
   flat: 'Flat Success',

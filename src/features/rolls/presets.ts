@@ -1,7 +1,7 @@
 import raw from '@/data/basic-actions.json'
-import { ATTRIBUTE_KEYS, type AttributeKey } from '@/store'
+import { ATTRIBUTE_KEYS, type AttributeKey, type MeterKey } from '@/store'
 
-import type { MeterKey, Verdict } from './engine'
+import type { Verdict } from './engine'
 
 export interface MeterDelta {
   meter: MeterKey

@@ -1,7 +1,8 @@
 import matchRaw from '@/data/match-tables.json'
 import priceRaw from '@/data/pay-the-price.json'
+import type { MeterKey } from '@/store'
 
-import type { MatchTableId, MeterKey, TableRow } from './engine'
+import type { MatchTableId, TableRow } from './engine'
 
 export type PriceCost = MeterKey | 'pulse' | 'standing' | 'reroll' | 'twice'
 
