@@ -169,7 +169,8 @@ Navigation is top tabs on desktop, a bottom tab bar on mobile (breakpoint 720px)
 
 ### Shared state and data conventions
 
-- **Store:** `src/store/` is the shared, typed, localStorage-backed game state (identity, attributes, Body/Mind/Charm/Soul, Health/Clarity/Blood/Rush meters, XP, active conditions, generic lists). Read the full API in [`docs/store.md`](docs/store.md) before touching game state. Extend it additively; never rewrite shared store files.
+- **Store:** `src/store/` is the shared, typed, localStorage-backed game state (identity, attributes, Body/Mind/Charm/Soul, Health/Clarity/Blood/Rush meters, XP, active conditions, generic lists). Read the full API in [`docs/store.md`](docs/store.md) before touching game state. Extend it additively; never rewrite shared store files. `game` is read-only — all mutations go through `updateGame`.
+- **Styling:** feature styles live in the feature's SFC as scoped styles; `src/styles/base.css` is shell-only (header, tab bar, Pico tuning) and off-limits to features.
 - **Static game data:** oracle tables and similar content go in `src/data/` as JSON modules — see [`src/data/README.md`](src/data/README.md).
 - **Feature isolation:** one directory per feature under `src/features/`; the only shared file a feature edits is [`src/router/routes.ts`](src/router/routes.ts) (route + tab registration).
 
