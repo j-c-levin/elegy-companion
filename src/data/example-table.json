@@ -1,0 +1,10 @@
+{
+  "id": "example",
+  "title": "Example oracle table",
+  "dice": "1d6",
+  "rows": [
+    { "range": [1, 3], "text": "No." },
+    { "range": [4, 5], "text": "Yes, but..." },
+    { "range": [6, 6], "text": "Yes, and..." }
+  ]
+}
