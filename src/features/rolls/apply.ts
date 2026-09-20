@@ -1,6 +1,6 @@
 import { game, updateGame, type GameState, type MeterKey } from '@/store'
 
-import { MIN_RUSH } from './engine'
+import { MIN_RUSH, METER_LABELS } from './engine'
 import type { MeterDelta } from './presets'
 
 export function applyDeltaInPlace(draft: GameState, delta: MeterDelta): void {
@@ -38,12 +38,5 @@ export function deltaLabel(delta: MeterDelta): string {
     if (next === current) return `Rush unchanged (${current})`
     return `Rush ${current} → ${next}`
   }
-  return `${METER_NAMES[delta.meter]} ${current} → ${current + delta.amount}`
-}
-
-const METER_NAMES: Record<MeterKey, string> = {
-  health: 'Health',
-  clarity: 'Clarity',
-  blood: 'Blood',
-  rush: 'Rush',
+  return `${METER_LABELS[delta.meter]} ${current} → ${current + delta.amount}`
 }

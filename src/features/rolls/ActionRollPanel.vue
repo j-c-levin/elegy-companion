@@ -123,6 +123,7 @@ function optionDisabled(option: EffectOption, key: string): boolean {
 }
 
 function optionNoChange(option: EffectOption): boolean {
+  if (option.nextRoll !== undefined) return false
   return option.deltas.some((delta) => {
     if (delta.meter !== 'rush') return false
     const rush = game.meters.rush
@@ -178,10 +179,9 @@ function coolRush(): void {
   const rush = game.meters.rush.value
   if (rush <= result.value.actionScore) return
   const originalScore = result.value.actionScore
-  cooledFrom.value = rush
+  cooledFrom.value = originalScore
   resetRushToBase()
   result.value = rejudge(result.value, rush)
-  appliedKeys.value = []
   const table = matchTableFor(
     {
       match: result.value.match,
