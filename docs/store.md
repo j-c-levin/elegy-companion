@@ -3,6 +3,7 @@
 The shared game state layer lives in `src/store/`. Feature agents consume it read-write through
 the functions below; they never rewrite these files, they extend additively in their own feature
 directories. All state persists to `localStorage` under the `elegy:` namespace — no backend, no sync.
+The store assumes a single tab per device: last-write-wins, no `storage`-event sync.
 
 ## Where things live
 
@@ -107,11 +108,12 @@ the same pattern `migrateGameState` uses.
 
 ## Game state functions (`src/store/game.ts`)
 
-### `game: GameState`
+### `game: DeepReadonly<GameState>`
 
-A module-level Vue `reactive` singleton, loaded from `localStorage` at import time. Read it
-directly anywhere (it is reactive; templates and computeds track it). Do not reassign or
-replace it; mutate through `updateGame` so every change persists.
+A module-level read-only view over a Vue `reactive` singleton, loaded from `localStorage` at
+import time. Read it directly anywhere (it is reactive; templates and computeds track it).
+`vue-tsc` rejects direct writes (`game.identity.name = 'x'`, `v-model="game.identity.name"`)
+— the only mutation paths are `updateGame` and `resetGame`.
 
 ### `createDefaultState(): GameState`
 
@@ -126,18 +128,24 @@ resetting the character.
 ### `migrateGameState(raw: unknown): GameState`
 
 Parses arbitrary stored JSON into a valid `GameState`. Unknown/invalid fields fall back to
-defaults per field; a stored `version` newer than `GAME_SCHEMA_VERSION` yields defaults.
+defaults per field; `lists` items keep only `id` and `text` — extra fields are stripped.
+A stored `version` newer than `GAME_SCHEMA_VERSION` logs a console warning and loads defaults;
+the load-time guard refuses to persist over it, so an older bundle never clobbers newer data.
 Persistence code calls this; feature code normally does not.
 
 ### `game` loading + `persistGame(): void`
 
-The singleton loads once via `migrateGameState(readJson('game'))`. `persistGame()` serializes
-the current state to `localStorage` — `updateGame` and `resetGame` already call it; use it
-directly only if you mutate outside `updateGame` (avoid).
+The singleton loads once via `readJson('game')` + `migrateGameState` and refuses to persist
+when the stored payload came from a schema newer than `GAME_SCHEMA_VERSION` (stale-bundle
+protection). `persistGame()` serializes the current state to `localStorage` — `updateGame`
+and `resetGame` already call it; use it directly only if you mutate outside `updateGame` (avoid).
 
 ### `updateGame(recipe: (draft: GameState) => void): void`
 
-The one way to change shared state. Mutate the draft, persistence happens after the recipe.
+The one way to change shared state. The recipe receives the live reactive state object (not
+an immer-style draft), so it mutates in place; persistence runs after the recipe returns.
+Keep recipes synchronous and non-throwing: if the recipe throws, memory keeps the partial
+mutation while disk still holds the previous state, and nothing retries the write.
 
 ```ts
 updateGame((draft) => {
@@ -153,7 +161,8 @@ affordance; confirm with the user first, it is destructive.
 
 ### `makeId(): string`
 
-Stable unique id for list items and feature entities (`crypto.randomUUID()`).
+Stable unique id for list items and feature entities. `crypto.randomUUID()` with a
+Math.random-based fallback for non-secure contexts (e.g. phone testing over LAN HTTP).
 
 ### `addListItem(draft: GameState, listName: string, text: string): ListItem`
 

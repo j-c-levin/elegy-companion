@@ -7,6 +7,7 @@ declare module 'vue-router' {
   interface RouteMeta {
     title: string
     short: string
+    blurb: string
   }
 }
 

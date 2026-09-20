@@ -1,28 +1,13 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
-const tools = [
-  {
-    to: '/character',
-    name: 'Character Sheet',
-    blurb: 'Identity, attributes, meters, conditions and XP — everything the paper sheet tracked.',
-  },
-  {
-    to: '/rolls',
-    name: 'Roll Engine',
-    blurb: 'Action rolls against the challenge dice, Rush cooling, and Pay the Price.',
-  },
-  {
-    to: '/tracks',
-    name: 'Progress Tracks',
-    blurb: 'Missions, connections and combat tracks with rank-based progress boxes.',
-  },
-  {
-    to: '/oracles',
-    name: 'Oracles',
-    blurb: 'Yes/no questions with odds presets and every table in the manual.',
-  },
-]
+import { routes } from '@/router/routes'
+
+const tools = routes.flatMap((route) =>
+  route.meta
+    ? [{ to: route.path, name: route.meta.title, blurb: route.meta.blurb }]
+    : [],
+)
 </script>
 
 <template>
@@ -38,3 +23,47 @@ const tools = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.tagline {
+  color: var(--pico-muted-color);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.75rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--pico-card-background-color);
+  color: var(--pico-color);
+  text-decoration: none;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--pico-primary);
+}
+
+.card h3 {
+  margin-bottom: 0.3rem;
+}
+
+.card p {
+  color: var(--pico-muted-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-cta {
+  color: var(--pico-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+</style>
