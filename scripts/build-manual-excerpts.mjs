@@ -52,6 +52,23 @@ for (const file of oracleFiles) {
   requestRange(Number(match[1]), Number(match[2]), `oracles/${file}`)
 }
 
+const registryKeys = new Set(registry.map((entry) => entry.key))
+for (const track of ['health', 'clarity', 'blood', 'conscience', 'standing']) {
+  if (!registryKeys.has(`end-${track}`)) fail(`registry is missing the "end-${track}" key used by endRefKey()`)
+}
+for (const meter of ['health', 'clarity', 'blood']) {
+  if (!registryKeys.has(`mitigate-${meter}`)) fail(`registry is missing the "mitigate-${meter}" key used by mitigationRefKey()`)
+}
+
+const conditionsSource = readFileSync(
+  path.join(root, 'src', 'features', 'character', 'conditions.ts'),
+  'utf8',
+)
+for (const match of conditionsSource.matchAll(/key: '([A-Za-z ]+)'/g)) {
+  const refKey = `cond-${match[1].toLowerCase().replace(/\s+/g, '-')}`
+  if (!registryKeys.has(refKey)) fail(`registry is missing "${refKey}" for condition "${match[1]}"`)
+}
+
 const excerpts = {}
 for (const key of [...requested.keys()].sort((a, b) => {
   const [as] = a.split('-').map(Number)
