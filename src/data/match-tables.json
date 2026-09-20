@@ -1,0 +1,58 @@
+{
+  "id": "match-tables",
+  "title": "Match tables",
+  "dice": "1d10",
+  "tables": [
+    {
+      "id": "twist",
+      "title": "Twist",
+      "subtitle": "Stylish Success",
+      "rows": [
+        { "range": [1, 1], "text": "A place or individual has changed since your last visit" },
+        { "range": [2, 2], "text": "You find a curious object" },
+        { "range": [3, 3], "text": "Someone you admire reveals a curious side" },
+        { "range": [4, 4], "text": "People begin arguing or fighting" },
+        { "range": [5, 5], "text": "Curious detail about a place or its history is revealed" },
+        { "range": [6, 6], "text": "You discover a curious place" },
+        { "range": [7, 7], "text": "You encounter a mortal celebrity or influential figure" },
+        { "range": [8, 8], "text": "Your actions have a curious side effect" },
+        { "range": [9, 9], "text": "Well-known underworld individual is here" },
+        { "range": [10, 10], "text": "An enemy reveals a curious side" }
+      ]
+    },
+    {
+      "id": "misfortune",
+      "title": "Misfortune",
+      "subtitle": "Failure",
+      "rows": [
+        { "range": [1, 1], "text": "An important place is endangered or made inaccessible" },
+        { "range": [2, 2], "text": "You are lost or trapped" },
+        { "range": [3, 3], "text": "An enemy reveals unexpected skills or influence" },
+        { "range": [4, 4], "text": "Your actions have a harmful side effect" },
+        { "range": [5, 5], "text": "Enemy or hostile creature appears" },
+        { "range": [6, 6], "text": "You are being watched" },
+        { "range": [7, 7], "text": "You encounter a living mortal from your past life" },
+        { "range": [8, 8], "text": "Someone you admire reveals a nasty side" },
+        { "range": [9, 9], "text": "Something valuable is lost, broken, or rendered useless" },
+        { "range": [10, 10], "text": "You are ambushed" }
+      ]
+    },
+    {
+      "id": "impulse",
+      "title": "Impulse",
+      "subtitle": "Failure, action die higher than Blood",
+      "rows": [
+        { "range": [1, 1], "text": "You are too forceful, unintentionally damaging something or harming someone" },
+        { "range": [2, 2], "text": "Your movements are unnervingly inhuman" },
+        { "range": [3, 3], "text": "Your words are vicious, and you sound like a monster" },
+        { "range": [4, 4], "text": "You make a stupid decision based on survival" },
+        { "range": [5, 5], "text": "You display or express a predatory, inhuman or animalistic view" },
+        { "range": [6, 6], "text": "You see this moment in a predator-prey way, and act as a predator" },
+        { "range": [7, 7], "text": "Nearby animals panic, obviously aware you're not mortal" },
+        { "range": [8, 8], "text": "You feel threatened and react with primitive territorialism" },
+        { "range": [9, 9], "text": "You struggle to keep your focus as hunger eats you from within" },
+        { "range": [10, 10], "text": "Your intense hunger makes you commit a social transgression" }
+      ]
+    }
+  ]
+}
