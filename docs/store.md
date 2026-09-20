@@ -113,7 +113,10 @@ the same pattern `migrateGameState` uses.
 A module-level read-only view over a Vue `reactive` singleton, loaded from `localStorage` at
 import time. Read it directly anywhere (it is reactive; templates and computeds track it).
 `vue-tsc` rejects direct writes (`game.identity.name = 'x'`, `v-model="game.identity.name"`)
-— the only mutation paths are `updateGame` and `resetGame`.
+— the only mutation paths are `updateGame` and `resetGame`. Reads stay fully reactive in
+templates; note that template `v-model` on a readonly path does not raise a vue-tsc error, so
+feature agents must bind form inputs through `:model-value` + `@update:model-value` into
+`updateGame` instead of `v-model="game...."`.
 
 ### `createDefaultState(): GameState`
 
