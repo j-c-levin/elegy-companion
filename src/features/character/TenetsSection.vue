@@ -16,6 +16,8 @@ import {
   type TenetPending,
 } from './sheet'
 import CascadePrompt from './CascadePrompt.vue'
+import ManualRef from '@/components/ManualRef.vue'
+import { endRefKey } from '@/manual/refs'
 
 const conscienceCascade = ref(false)
 const standingCascade = ref(false)
@@ -67,12 +69,15 @@ const standingNext = computed(() =>
   <section aria-labelledby="tenets-heading">
     <h2 id="tenets-heading">Tenets</h2>
     <p class="cite">
-      Conscience and Standing have no meter; specific events trigger a test (manual 846–907).
+      Conscience and Standing have no meter; specific events trigger a test (manual 846–907
+      <ManualRef ref-key="tenets" />).
       Make the roll in the Roll Engine, then record the outcome here.
     </p>
     <div class="tenet-grid">
       <article>
-        <h3>Conscience <span class="cite-inline">roll with Soul — manual 853–882</span></h3>
+        <h3>
+          Conscience <span class="cite-inline">roll with Soul — manual 853–882 <ManualRef ref-key="conscience" /></span>
+        </h3>
         <p class="how">
           Triggered at the end of a scene where you take a life or bloody a Connection. If you
           killed in self-defense or to protect someone when no other option remained, treat a
@@ -112,6 +117,7 @@ const standingNext = computed(() =>
         <CascadePrompt
           v-if="conscienceCascade"
           heading="Your Conscience fails (manual 864–882)"
+          manual-ref-key="conscience-cascade"
           note="You reach your limit; suffer the first unmarked condition in the cascade."
           :condition="conscienceNext"
           :confirm-label="conscienceNext ? `Mark ${conscienceNext.key}` : 'No condition left'"
@@ -119,12 +125,15 @@ const standingNext = computed(() =>
           @cancel="conscienceCascade = false"
         />
         <p v-if="!conscienceCascade && conscienceNext === undefined" class="ended-note">
-          Detached, Penitent and Blighted are all marked — see The End (manual 880–882).
+          Detached, Penitent and Blighted are all marked — see The End (manual 880–882
+          <ManualRef :ref-key="endRefKey('conscience')" />).
         </p>
       </article>
 
       <article>
-        <h3>Standing <span class="cite-inline">roll with Charm — manual 856–907</span></h3>
+        <h3>
+          Standing <span class="cite-inline">roll with Charm — manual 856–907 <ManualRef ref-key="standing" /></span>
+        </h3>
         <p class="how">
           Triggered at the end of a night where you violated the laws or customs of vampire
           society: breaking the ruling authority's laws, disrespecting an elder, exposing secrets,
@@ -153,6 +162,7 @@ const standingNext = computed(() =>
         <CascadePrompt
           v-if="standingCascade"
           heading="Your Standing fails (manual 878–907)"
+          manual-ref-key="standing-cascade"
           note="They condemn and punish you; you awaken to a written warning. Suffer the first unmarked condition in the cascade."
           :condition="standingNext"
           :confirm-label="standingNext ? `Mark ${standingNext.key}` : 'No condition left'"
@@ -160,7 +170,8 @@ const standingNext = computed(() =>
           @cancel="standingCascade = false"
         />
         <p v-if="!standingCascade && standingNext === undefined" class="ended-note">
-          Cautioned, Discredited and Branded are all marked — see The End (manual 904–907).
+          Cautioned, Discredited and Branded are all marked — see The End (manual 904–907
+          <ManualRef :ref-key="endRefKey('standing')" />).
         </p>
       </article>
     </div>

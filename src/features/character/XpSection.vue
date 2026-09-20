@@ -4,6 +4,7 @@ import { computed, ref } from 'vue'
 import { game } from '@/store'
 import { addLooseEnd, addXp, discardLooseEnd, spendXp, tieLooseEnd } from './sheet'
 import ConfirmButton from './ConfirmButton.vue'
+import ManualRef from '@/components/ManualRef.vue'
 
 const xp = computed(() => game.xp)
 const fullUnits = computed(() => Math.floor(xp.value / 5))
@@ -27,7 +28,8 @@ function addEnd(): void {
     <h2 id="xp-heading">Experience</h2>
     <p class="cite">
       Failures grant 1 XP, or 3 on a match; Loose Ends grant 1 XP when tied; spend 10 XP to upgrade
-      an Aspect or 15 to acquire one (manual 1122–1155, tallies 1161–1187).
+      an Aspect or 15 to acquire one (manual 1122–1155 <ManualRef ref-key="xp" />, tallies 1161–1187
+      <ManualRef ref-key="xp-tallies" />).
     </p>
     <article class="xp-card">
       <h3>XP tally <span class="xp-count">{{ xp }}</span></h3>
@@ -59,13 +61,16 @@ function addEnd(): void {
       </div>
       <p class="xp-note">
         Upgrading takes effect when you slumber; acquiring Gifts or Mysteries needs a Connection to
-        teach you (manual 1128–1149). Missions and Connections award XP from the Progress Tracks
-        tool.
+        teach you (manual 1128–1149 <ManualRef ref-key="xp-acquire" />). Missions and Connections
+        award XP from the Progress Tracks tool.
       </p>
     </article>
     <article class="loose-ends-card">
       <h3>Loose Ends</h3>
-      <p class="cite">Lingering questions written when you slumber; mark Tied to gain 1 XP (manual 1147–1155).</p>
+      <p class="cite">
+        Lingering questions written when you slumber; mark Tied to gain 1 XP (manual 1147–1155
+        <ManualRef ref-key="loose-ends" />).
+      </p>
       <form class="loose-end-form" @submit.prevent="addEnd">
         <input
           v-model="newEnd"

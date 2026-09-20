@@ -14,6 +14,8 @@ import {
   mitigateNext,
 } from './sheet'
 import MeterPips from './MeterPips.vue'
+import ManualRef from '@/components/ManualRef.vue'
+import { mitigationRefKey } from '@/manual/refs'
 
 const resourceMeters: ResourceMeter[] = ['health', 'clarity', 'blood']
 
@@ -45,7 +47,10 @@ const trackChips = computed(() =>
 <template>
   <section aria-labelledby="meters-heading">
     <h2 id="meters-heading">Meters</h2>
-    <p class="cite">Health 681–722, Clarity 723–761, Blood 762–805, Rush 363–375 and 806–845.</p>
+    <p class="cite">
+      Health 681–722, Clarity 723–761, Blood 762–805, Rush 363–375 and 806–845.
+      <ManualRef ref-key="meters-overview" />
+    </p>
     <div class="meter-grid">
       <article v-for="meter in resourceMeters" :key="meter" class="meter-card">
         <header class="meter-header">
@@ -83,7 +88,7 @@ const trackChips = computed(() =>
           <input v-model="mitigateNext[meter]" type="checkbox" />
           <span>
             Spend 1 Rush to lose 1 less ({{ MITIGATION[meter].caveat }},
-            {{ MITIGATION[meter].ref }})
+            {{ MITIGATION[meter].ref }} <ManualRef :ref-key="mitigationRefKey(meter)" />)
           </span>
         </label>
       </article>
@@ -100,6 +105,7 @@ const trackChips = computed(() =>
           max {{ rush.max }}
           <span v-if="maxRushModified" class="modified">(conditions)</span>
           — manual 2046–2052, 702–705, 729, 738, 873, 889–897, 3965–3967
+          <ManualRef ref-key="rush-modifiers" label="What changes base and max Rush" />
         </p>
         <div class="button-rows">
           <div class="button-row" role="group" aria-label="Lose Rush">
@@ -114,10 +120,12 @@ const trackChips = computed(() =>
           </div>
         </div>
         <p class="rush-note">
-          Range −6 to +10 (manual 363–375). Cool your Rush from the Roll Engine after a roll.
+          Range −6 to +10 (manual 363–375 <ManualRef ref-key="rush" />). Cool your Rush from the
+          Roll Engine after a roll.
         </p>
         <p v-if="rush.value <= 0" class="rush-warning">
-          At 0 Rush, losing more means choosing a steeper cost (manual 823–833). The sheet will ask.
+          At 0 Rush, losing more means choosing a steeper cost (manual 823–833
+          <ManualRef ref-key="rush-0" />). The sheet will ask.
         </p>
       </article>
     </div>

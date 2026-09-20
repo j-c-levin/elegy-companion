@@ -3,6 +3,7 @@ import { computed } from 'vue'
 
 import { ATTRIBUTE_KEYS, game, updateGame, type AttributeKey } from '@/store'
 import { soulModifier } from './conditions'
+import ManualRef from '@/components/ManualRef.vue'
 
 const descriptions: Record<AttributeKey, string> = {
   body: 'Strength, agility, coordination. Fight, overcome physical challenges, resist harm.',
@@ -24,8 +25,9 @@ function adjust(key: AttributeKey, delta: number): void {
   <section aria-labelledby="attributes-heading">
     <h2 id="attributes-heading">Attributes</h2>
     <p class="cite">
-      Character creation distributes +3, +2, +2 and +1 across the four attributes (manual 1942–1946);
-      descriptions at 191–220. Scores range 0–3 in this tool.
+      Character creation distributes +3, +2, +2 and +1 across the four attributes (manual 1942–1946
+      <ManualRef ref-key="attributes-create" />); descriptions at 191–220
+      <ManualRef ref-key="attributes" />. Scores range 0–3 in this tool.
     </p>
     <div class="attribute-list">
       <div v-for="key in ATTRIBUTE_KEYS" :key="key" class="attribute-row">
