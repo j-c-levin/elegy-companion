@@ -142,6 +142,39 @@ Static single-page app, no build step required for v1 (plain HTML/CSS/JS or a sm
 
 ---
 
+## Building
+
+**Stack:** Vue 3 (`<script setup>` SFCs) + TypeScript + Vite, `vue-router` (hash history — no server config needed on Pages), [Pico.css](https://picocss.com) as the classless base layer plus a small shared layer in `src/styles/base.css`. Dependencies are kept minimal on purpose; no styling engines, no component libraries, no backend.
+
+```sh
+npm install
+npm run dev        # dev server
+npm run build      # typecheck + build to dist/
+npm run preview    # serve the production build locally
+```
+
+Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`. The Vite `base` is `/elegy-companion/`.
+
+### Tools and routes (Phase 1)
+
+| Tool | Route |
+|---|---|
+| Home (launchpad) | `/` |
+| Character Sheet | `/character` |
+| Roll Engine | `/rolls` |
+| Progress Tracks | `/tracks` |
+| Oracles | `/oracles` |
+
+Navigation is top tabs on desktop, a bottom tab bar on mobile (breakpoint 720px). Pages use hash routing (`/#/character`).
+
+### Shared state and data conventions
+
+- **Store:** `src/store/` is the shared, typed, localStorage-backed game state (identity, attributes, Body/Mind/Charm/Soul, Health/Clarity/Blood/Rush meters, XP, active conditions, generic lists). Read the full API in [`docs/store.md`](docs/store.md) before touching game state. Extend it additively; never rewrite shared store files.
+- **Static game data:** oracle tables and similar content go in `src/data/` as JSON modules — see [`src/data/README.md`](src/data/README.md).
+- **Feature isolation:** one directory per feature under `src/features/`; the only shared file a feature edits is [`src/router/routes.ts`](src/router/routes.ts) (route + tab registration).
+
+---
+
 ## For future agents
 
 - Read `reference/elegy-4e-beta-v3.txt` sections via the index above — don't re-extract the PDF (the line numbers here assume `-layout` mode).
