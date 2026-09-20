@@ -31,10 +31,6 @@ function roll(oddsId: string) {
 </template>
 
 <style scoped>
-.odds {
-  margin-bottom: 0.5rem;
-}
-
 .odds-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -70,7 +66,7 @@ function roll(oddsId: string) {
 }
 
 .verdict.yes {
-  color: var(--pico-insurance, var(--pico-primary));
+  color: var(--pico-primary);
 }
 
 .verdict.no {
