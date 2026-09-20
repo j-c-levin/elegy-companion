@@ -1,0 +1,39 @@
+.tracks-page button:not([type='submit']).ghost-btn,
+.track-card button:not([type='submit']).ghost-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--pico-contrast, var(--pico-color));
+  background: transparent;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: auto;
+  box-shadow: none;
+}
+
+.tracks-page button:not([type='submit']).ghost-btn:hover,
+.track-card button:not([type='submit']).ghost-btn:hover {
+  border-color: var(--pico-primary);
+  color: var(--pico-primary);
+}
+
+.tracks-page button:not([type='submit']).ghost-btn:disabled,
+.track-card button:not([type='submit']).ghost-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--pico-muted-border-color);
+  color: var(--pico-muted-color);
+}
+
+.tracks-page button:not([type='submit']).ghost-btn.small,
+.track-card button:not([type='submit']).ghost-btn.small {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.82rem;
+}

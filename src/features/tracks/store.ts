@@ -61,11 +61,14 @@ function coerceTrack(raw: unknown): Track | null {
   return track
 }
 
+let refusePersist = false
+
 function load(): Track[] {
   const stored = readJson<StoredTracks>(STORAGE_NAME)
   if (!stored || !Array.isArray(stored.tracks)) return []
   if (typeof stored.version === 'number' && stored.version > STORAGE_VERSION) {
     console.warn(`[elegy] stored tracks are version ${stored.version}; ignoring newer data`)
+    refusePersist = true
     return []
   }
   return stored.tracks.map(coerceTrack).filter((track): track is Track => track !== null)
@@ -76,6 +79,10 @@ const state = reactive<{ tracks: Track[] }>({ tracks: load() })
 watch(
   () => state.tracks,
   () => {
+    if (refusePersist) {
+      console.warn('[elegy] refusing to persist tracks: stored data is from a newer version')
+      return
+    }
     writeJson(STORAGE_NAME, { version: STORAGE_VERSION, tracks: state.tracks })
   },
   { deep: true },
@@ -93,7 +100,13 @@ export function archivedTracks(): Track[] {
   return state.tracks.filter((track) => track.archived)
 }
 
-export function addTrack(kind: TrackKind, title: string, rank: Rank, notes = ''): Track {
+export function addTrack(
+  kind: TrackKind,
+  title: string,
+  rank: Rank,
+  notes = '',
+  hasTrack = true,
+): Track {
   const track: Track = {
     id: makeId(),
     kind,
@@ -110,7 +123,7 @@ export function addTrack(kind: TrackKind, title: string, rank: Rank, notes = '')
     bloodiedByThem: false,
     outOfAction: false,
     dead: false,
-    hasTrack: true,
+    hasTrack: kind === 'combat' ? hasTrack : true,
   }
   state.tracks.push(track)
   return track
@@ -143,6 +156,12 @@ export function setTrackNotes(id: string, notes: string): void {
 export function setTrackArchived(id: string, archived: boolean): void {
   const track = findTrack(id)
   if (track) track.archived = archived
+}
+
+export function setHasTrack(id: string, hasTrack: boolean): void {
+  const track = findTrack(id)
+  if (!track || track.kind !== 'combat') return
+  track.hasTrack = hasTrack
 }
 
 export function setTicks(id: string, ticks: number): void {

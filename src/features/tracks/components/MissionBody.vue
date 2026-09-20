@@ -17,7 +17,13 @@ const failureMode = ref<'choice' | 'recommit' | 'abandon'>('choice')
 const recommit = ref<{ d1: number; d2: number; lower: number } | null>(null)
 const done = ref(false)
 const doneMessage = ref('')
-const appliedConsequences = ref<Record<string, boolean>>({})
+type AbandonConsequence = 'demoralized' | 'innocent' | 'reputation' | 'enemy'
+const appliedConsequences = ref<Record<AbandonConsequence, boolean>>({
+  demoralized: false,
+  innocent: false,
+  reputation: false,
+  enemy: false,
+})
 
 const score = computed(() => progressScore(props.track.ticks))
 const full = computed(() => props.track.ticks >= TOTAL_TICKS)
@@ -76,11 +82,11 @@ function doRecommitRoll(): void {
   store.recommitMission(props.track.id, lower)
 }
 
-function applyConsequence(kind: 'clarity' | 'rush'): void {
+function applyConsequence(kind: AbandonConsequence): void {
   if (appliedConsequences.value[kind]) return
   appliedConsequences.value[kind] = true
-  if (kind === 'clarity') store.loseClarity()
-  else store.loseRush()
+  if (kind === 'enemy') store.loseRush()
+  else store.loseClarity()
 }
 
 function archive(): void {
@@ -243,10 +249,10 @@ function archive(): void {
                   <button
                     type="button"
                     class="ghost-btn small"
-                    :disabled="appliedConsequences.clarity"
-                    @click="applyConsequence('clarity')"
+                    :disabled="appliedConsequences.demoralized"
+                    @click="applyConsequence('demoralized')"
                   >
-                    {{ appliedConsequences.clarity ? 'Applied' : '−1 Clarity' }}
+                    {{ appliedConsequences.demoralized ? 'Applied' : '−1 Clarity' }}
                   </button>
                 </li>
                 <li>
@@ -260,10 +266,10 @@ function archive(): void {
                   <button
                     type="button"
                     class="ghost-btn small"
-                    :disabled="appliedConsequences.clarity"
-                    @click="applyConsequence('clarity')"
+                    :disabled="appliedConsequences.innocent"
+                    @click="applyConsequence('innocent')"
                   >
-                    {{ appliedConsequences.clarity ? 'Applied' : '−1 Clarity' }}
+                    {{ appliedConsequences.innocent ? 'Applied' : '−1 Clarity' }}
                   </button>
                 </li>
                 <li>
@@ -271,10 +277,10 @@ function archive(): void {
                   <button
                     type="button"
                     class="ghost-btn small"
-                    :disabled="appliedConsequences.rush"
-                    @click="applyConsequence('rush')"
+                    :disabled="appliedConsequences.enemy"
+                    @click="applyConsequence('enemy')"
                   >
-                    {{ appliedConsequences.rush ? 'Applied' : '−1 Rush' }}
+                    {{ appliedConsequences.enemy ? 'Applied' : '−1 Rush' }}
                   </button>
                 </li>
                 <li>
@@ -282,10 +288,10 @@ function archive(): void {
                   <button
                     type="button"
                     class="ghost-btn small"
-                    :disabled="appliedConsequences.clarity"
-                    @click="applyConsequence('clarity')"
+                    :disabled="appliedConsequences.reputation"
+                    @click="applyConsequence('reputation')"
                   >
-                    {{ appliedConsequences.clarity ? 'Applied' : '−1 Clarity' }}
+                    {{ appliedConsequences.reputation ? 'Applied' : '−1 Clarity' }}
                   </button>
                 </li>
                 <li>

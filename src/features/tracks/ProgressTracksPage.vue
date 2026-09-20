@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 
+import './tracks-shared.css'
 import TrackCard from './components/TrackCard.vue'
 import { addTrack, archivedTracks, removeTrack, setTrackArchived, tracksByKind } from './store'
 import {
@@ -16,6 +17,7 @@ const formKind = ref<TrackKind>('mission')
 const formTitle = ref('')
 const formRank = ref<Rank>(2)
 const formNotes = ref('')
+const formHasTrack = ref(true)
 
 const kinds: TrackKind[] = ['mission', 'connection', 'combat']
 
@@ -26,10 +28,17 @@ const archived = computed(() => archivedTracks())
 
 function create(): void {
   if (!formTitle.value.trim()) return
-  addTrack(formKind.value, formTitle.value, formRank.value, formNotes.value.trim())
+  addTrack(
+    formKind.value,
+    formTitle.value,
+    formRank.value,
+    formNotes.value.trim(),
+    formHasTrack.value,
+  )
   formTitle.value = ''
   formNotes.value = ''
   formRank.value = 2
+  formHasTrack.value = true
 }
 
 function deleteArchived(id: string): void {
@@ -89,6 +98,10 @@ function deleteArchived(id: string): void {
           — a mark is worth {{ PROGRESS_TICKS_PER_MARK[formRank] }} ticks
         </span>
       </div>
+      <label v-if="formKind === 'combat'" class="flag combat-track">
+        <input v-model="formHasTrack" type="checkbox" />
+        <span>Has a progress track (uncheck for regular mortals: one hit takes them down)</span>
+      </label>
     </form>
 
     <section class="group">
@@ -283,6 +296,18 @@ function deleteArchived(id: string): void {
 .rank-hint {
   font-size: 0.8rem;
   color: var(--pico-muted-color);
+}
+
+.combat-track {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.combat-track span {
+  flex: 1;
 }
 
 .group {

@@ -52,7 +52,7 @@ function onDelete(): void {
   <article class="track-card">
     <header class="track-head">
       <span class="kind-tag">{{ KIND_LABEL[track.kind] }}</span>
-      <label class="rank-pick">
+      <label class="rank-pick" :title="`Rank for ${track.title}`">
         Rank
         <select
           :value="track.rank"
@@ -62,8 +62,21 @@ function onDelete(): void {
           <option v-for="r in 5" :key="r" :value="r">{{ r }}</option>
         </select>
       </label>
+      <label v-if="track.kind === 'combat'" class="rank-pick combat-toggle">
+        <input
+          type="checkbox"
+          :checked="track.hasTrack"
+          :aria-label="`Track progress for ${track.title}`"
+          @change="store.setHasTrack(track.id, ($event.target as HTMLInputElement).checked)"
+        />
+        Tracked
+      </label>
       <span class="tick-readout">
-        {{ progressScore(track.ticks) }}/{{ TRACK_BOXES }} boxes · {{ track.ticks }}/{{ TOTAL_TICKS }} ticks
+        {{
+          track.hasTrack
+            ? `${progressScore(track.ticks)}/${TRACK_BOXES} boxes · ${track.ticks}/${TOTAL_TICKS} ticks`
+            : 'no track — down in one hit'
+        }}
       </span>
     </header>
 
@@ -92,7 +105,12 @@ function onDelete(): void {
       </div>
     </div>
 
-    <TrackBoxes :ticks="track.ticks" :disabled="boxesDisabled" @set="setTicks" />
+    <TrackBoxes
+      v-if="track.hasTrack"
+      :ticks="track.ticks"
+      :disabled="boxesDisabled"
+      @set="setTicks"
+    />
 
     <MissionBody v-if="track.kind === 'mission'" :track="track" />
     <ConnectionBody v-else-if="track.kind === 'connection'" :track="track" />
