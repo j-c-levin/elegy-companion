@@ -1,0 +1,211 @@
+{
+  "id": "basic-actions",
+  "title": "Basic Actions",
+  "actions": [
+    {
+      "id": "face-danger",
+      "title": "Face Danger",
+      "ref": "441-461",
+      "intro": "When you attempt something risky or react to an imminent threat, envision your action and roll with the most appropriate attribute:",
+      "attributes": [
+        { "key": "charm", "guidance": "Charisma, manipulation, composure" },
+        { "key": "mind", "guidance": "Intelligence, sharpness, concentration" },
+        { "key": "body", "guidance": "Physical coordination, strength, endurance or agility" },
+        { "key": "soul", "guidance": "Empathy, honesty, self-control, humaneness" }
+      ],
+      "results": {
+        "stylish": {
+          "text": "You do it. Gain +1 Rush.",
+          "options": [
+            { "label": "Gain +1 Rush", "deltas": [{ "meter": "rush", "amount": 1 }] }
+          ]
+        },
+        "flat": {
+          "text": "As above, but at a moderate cost: also pay the price.",
+          "options": [
+            { "label": "Gain +1 Rush", "deltas": [{ "meter": "rush", "amount": 1 }] }
+          ]
+        },
+        "failure": {
+          "text": "You fail, or a momentary triumph is ruined by a dire turn of events.",
+          "options": []
+        }
+      }
+    },
+    {
+      "id": "secure-an-advantage",
+      "title": "Secure an Advantage",
+      "ref": "419-438",
+      "intro": "When you assess a situation, make preparations, or attempt to gain leverage, envision your action and roll with the most appropriate attribute:",
+      "attributes": [
+        { "key": "charm", "guidance": "Charisma, manipulation, composure" },
+        { "key": "mind", "guidance": "Intelligence, sharpness, concentration" },
+        { "key": "body", "guidance": "Physical coordination, strength, endurance or agility" },
+        { "key": "soul", "guidance": "Empathy, honesty, self-control, humaneness" }
+      ],
+      "results": {
+        "stylish": {
+          "text": "You achieve what you want. Pick one below. If you are aiding in direct support of an ally, they gain the reward instead of you.",
+          "options": [
+            { "label": "Gain +2 Rush", "deltas": [{ "meter": "rush", "amount": 2 }] },
+            {
+              "label": "Gain +1 Rush and add +1 to your next action roll",
+              "deltas": [{ "meter": "rush", "amount": 1 }],
+              "nextRoll": 1
+            }
+          ]
+        },
+        "flat": {
+          "text": "As above, but at a moderate cost: also pay the price.",
+          "options": [
+            { "label": "Gain +2 Rush", "deltas": [{ "meter": "rush", "amount": 2 }] },
+            {
+              "label": "Gain +1 Rush and add +1 to your next action roll",
+              "deltas": [{ "meter": "rush", "amount": 1 }],
+              "nextRoll": 1
+            }
+          ]
+        },
+        "failure": {
+          "text": "You fail, your efforts are unfruitful, or your assumptions betray you: pay the price.",
+          "options": []
+        }
+      }
+    },
+    {
+      "id": "compel",
+      "title": "Compel",
+      "ref": "440-461",
+      "intro": "When you attempt to persuade someone, negotiate with them, or ask them a favor, roll with:",
+      "attributes": [
+        { "key": "body", "guidance": "Making physical threats" },
+        { "key": "soul", "guidance": "Being reasonable, honest, open and vulnerable" },
+        { "key": "charm", "guidance": "Using charisma or manipulation, within reason" }
+      ],
+      "bonusHint": "If you share a Connection, add +1. If it is Sealed, add +2 instead (see Connections).",
+      "results": {
+        "stylish": {
+          "text": "They agree. Gain +1 Rush.",
+          "options": [
+            { "label": "Gain +1 Rush", "deltas": [{ "meter": "rush", "amount": 1 }] }
+          ]
+        },
+        "flat": {
+          "text": "They agree, but they want something in return, or something is stopping them from helping you. Envision what it is or ask the Oracle.",
+          "options": []
+        },
+        "failure": {
+          "text": "They refuse, or accept but make a costly demand. Pay the price.",
+          "options": []
+        }
+      }
+    },
+    {
+      "id": "gather-information",
+      "title": "Gather Information",
+      "ref": "466-484",
+      "intro": "When you seek or analyze information or evidence (by searching for clues, observing someone's behavior, conducting an investigation or research, looking for rumors, or scanning your memories), roll with Mind. If attempting to read the human emotions and intentions of someone else, you may roll with Soul instead.",
+      "attributes": [
+        { "key": "mind", "guidance": "Information and evidence" },
+        { "key": "soul", "guidance": "Reading human emotions and intentions" }
+      ],
+      "results": {
+        "stylish": {
+          "text": "You learn something helpful and specific. Ask the Oracle what it is and gain +1 Rush.",
+          "options": [
+            { "label": "Gain +1 Rush", "deltas": [{ "meter": "rush", "amount": 1 }] }
+          ]
+        },
+        "flat": {
+          "text": "As above, but your discovery also reveals a complication; ask the Oracle what it is, and gain no Rush.",
+          "options": []
+        },
+        "failure": {
+          "text": "Your investigation throws you into danger or reveals an unwelcome truth. Pay the price.",
+          "options": []
+        }
+      }
+    },
+    {
+      "id": "hunt",
+      "title": "Hunt",
+      "ref": "466-483",
+      "intro": "When you quickly look for a source of blood and attempt to feed from it, or when you engage a prey with the intent of feeding, envision your approach and roll with:",
+      "attributes": [
+        { "key": "charm", "guidance": "Seducing or manipulating" },
+        { "key": "body", "guidance": "Ambushing, overpowering, or chasing" },
+        { "key": "mind", "guidance": "Procuring blood from a shady blood bank" }
+      ],
+      "results": {
+        "stylish": {
+          "text": "You get your blood. Gain +1 Rush and Feed.",
+          "options": [
+            { "label": "Gain +1 Rush", "deltas": [{ "meter": "rush", "amount": 1 }] }
+          ]
+        },
+        "flat": {
+          "text": "You get your blood, but it takes a while. Gain no Rush, then Feed.",
+          "options": []
+        },
+        "failure": {
+          "text": "You get your blood, but your hunt is sloppy. You leave evidence, draw attention, or cause collateral damage: pay the price, then Feed.",
+          "options": []
+        }
+      }
+    },
+    {
+      "id": "generic",
+      "title": "Generic Action Roll",
+      "ref": "490-508",
+      "intro": "When you do something that prompts a basic action but you don't feel like reading, following or looking for its specific rules, envision your goal and your approach, and roll with the most appropriate attribute:",
+      "attributes": [
+        { "key": "charm", "guidance": "Charisma, manipulation, composure" },
+        { "key": "mind", "guidance": "Intelligence, sharpness, concentration" },
+        { "key": "body", "guidance": "Physical coordination, strength, endurance or agility" },
+        { "key": "soul", "guidance": "Empathy, honesty, self-control, humaneness" }
+      ],
+      "results": {
+        "stylish": {
+          "text": "You get what you want, the way you want. If an Aspect aided your roll, gain +1 Rush. Then, pick the one that best describes the goal of your action:",
+          "options": [
+            {
+              "label": "Overcome risk, danger, or an obstacle: gain +1 Rush",
+              "deltas": [{ "meter": "rush", "amount": 1 }]
+            },
+            {
+              "label": "Prepare an advantage for a future action (yours or an ally's): gain +2 Rush",
+              "deltas": [{ "meter": "rush", "amount": 2 }]
+            },
+            {
+              "label": "Prepare an advantage for a future action: gain +1 Rush and add +1 to the next related action roll",
+              "deltas": [{ "meter": "rush", "amount": 1 }],
+              "nextRoll": 1
+            }
+          ]
+        },
+        "flat": {
+          "text": "You get what you want, but with side effects, reduced effectiveness, or a moderate cost. Consider the rewards above, then pay the price.",
+          "options": [
+            {
+              "label": "Overcome risk, danger, or an obstacle: gain +1 Rush",
+              "deltas": [{ "meter": "rush", "amount": 1 }]
+            },
+            {
+              "label": "Prepare an advantage for a future action (yours or an ally's): gain +2 Rush",
+              "deltas": [{ "meter": "rush", "amount": 2 }]
+            },
+            {
+              "label": "Prepare an advantage for a future action: gain +1 Rush and add +1 to the next related action roll",
+              "deltas": [{ "meter": "rush", "amount": 1 }],
+              "nextRoll": 1
+            }
+          ]
+        },
+        "failure": {
+          "text": "Your assumptions were wrong, a brief triumph costs too much, or you simply fail. The situation worsens. Pay the price and gain no reward.",
+          "options": []
+        }
+      }
+    }
+  ]
+}

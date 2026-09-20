@@ -1,7 +1,24 @@
 <script setup lang="ts">
-import ToolStub from '@/components/ToolStub.vue'
+import ActionRollPanel from './ActionRollPanel.vue'
+import PayThePricePanel from './PayThePricePanel.vue'
+import RollHistoryList from './RollHistoryList.vue'
 </script>
 
 <template>
-  <ToolStub title="Roll Engine" />
+  <section>
+    <h1>Roll Engine</h1>
+    <p class="lede">
+      Resolve actions with the manual's dice: 1d6 + attribute + bonuses against 2d10 challenge dice.
+    </p>
+    <ActionRollPanel />
+    <PayThePricePanel />
+    <RollHistoryList />
+  </section>
 </template>
+
+<style scoped>
+.lede {
+  color: var(--pico-muted-color);
+  margin-bottom: 1.25rem;
+}
+</style>

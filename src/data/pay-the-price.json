@@ -1,0 +1,25 @@
+{
+  "id": "pay-the-price",
+  "title": "Pay the Price",
+  "dice": "1d100",
+  "rows": [
+    { "range": [1, 3], "text": "A trusted individual or group acts against you: lose Rush", "cost": "rush" },
+    { "range": [4, 6], "text": "You are separated from something or someone: lose Rush", "cost": "rush" },
+    { "range": [7, 9], "text": "An individual or group you care about is exposed to danger: lose Rush", "cost": "rush" },
+    { "range": [10, 12], "text": "A new adversary is revealed: lose Rush", "cost": "rush" },
+    { "range": [13, 15], "text": "You create an opportunity for an adversary: lose Rush", "cost": "rush" },
+    { "range": [16, 18], "text": "A Connection or companion is harmed: lose Pulse", "cost": "pulse" },
+    { "range": [19, 21], "text": "Something of value is lost/destroyed: lose Rush", "cost": "rush" },
+    { "range": [22, 28], "text": "You encounter signs of a looming threat: lose Clarity", "cost": "clarity" },
+    { "range": [29, 35], "text": "You face consequences of an earlier choice: roll again or pick another option", "cost": "reroll" },
+    { "range": [36, 42], "text": "A Connection or companion is put in danger's way: lose Rush", "cost": "rush" },
+    { "range": [43, 49], "text": "You spend too much/waste money: lose Rush", "cost": "rush" },
+    { "range": [50, 56], "text": "Your action has an unintended effect: lose Rush", "cost": "rush" },
+    { "range": [57, 63], "text": "You are delayed/disadvantaged: lose Rush", "cost": "rush" },
+    { "range": [64, 71], "text": "You're harmed: lose Health", "cost": "health" },
+    { "range": [72, 79], "text": "You're frightened or despaired: lose Clarity", "cost": "clarity" },
+    { "range": [80, 87], "text": "Your action violates vampire laws or customs: Try Your Standing next time you slumber", "cost": "standing" },
+    { "range": [88, 95], "text": "The power you're activating or is active consumes your life force: lose Blood", "cost": "blood" },
+    { "range": [96, 100], "text": "Roll twice", "cost": "twice" }
+  ]
+}
