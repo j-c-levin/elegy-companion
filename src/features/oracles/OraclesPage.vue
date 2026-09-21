@@ -141,8 +141,7 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   font-weight: 500;
 }
 
-.table-list small,
-.recent small {
+.table-list small {
   color: var(--pico-muted-color);
   white-space: nowrap;
 }
@@ -168,6 +167,11 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   padding: 0.6rem 0.25rem;
   margin: 0;
   color: var(--pico-contrast, var(--pico-color));
+}
+
+.recent-row:hover {
+  background: var(--pico-muted-background-color, var(--pico-secondary-background));
+  color: var(--pico-secondary-inverse);
 }
 
 .recent-row span {
