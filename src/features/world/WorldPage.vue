@@ -77,17 +77,20 @@ function goNext(): void {
     </nav>
 
     <div class="step-body">
-      <aside class="rail" aria-hidden="true">
-        <div
+      <nav class="rail" aria-label="World creation steps">
+        <button
           v-for="(step, index) in STEPS"
           :key="step.id"
+          type="button"
           class="rail-item"
           :class="{ active: step.id === activeId }"
+          :aria-current="step.id === activeId ? 'step' : undefined"
+          @click="goTo(step.id)"
         >
-          <span class="rail-index">{{ index + 1 }}</span>
+          <span class="rail-index" aria-hidden="true">{{ index + 1 }}</span>
           <span class="rail-label">{{ step.label }}</span>
-        </div>
-      </aside>
+        </button>
+      </nav>
       <div class="step-main">
         <KeepAlive>
           <TruthsStep v-if="activeId === 'truths'" />
@@ -225,9 +228,17 @@ function goNext(): void {
     display: flex;
     align-items: center;
     gap: 0.55rem;
+    width: 100%;
+    margin: 0;
     padding: 0.45rem 0.6rem;
+    border: none;
     border-left: 3px solid var(--pico-muted-border-color);
+    border-radius: 0;
+    background: transparent;
     color: var(--pico-muted-color);
+    font-size: inherit;
+    text-align: left;
+    cursor: pointer;
   }
 
   .rail-item.active {
