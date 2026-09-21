@@ -2,7 +2,7 @@
 
 Aspect browser at `/aspects`. Owner: task 13 agent. Scope: browse Expertises,
 Gifts, Mysteries, Edges, Burdens with abilities and acquisition requirements
-(manual 2892–4269).
+(manual 2892–4269). Cite the per-type keys below, not the whole chapter.
 
 ## Contract (foundation-owned, do not reshape)
 
@@ -25,11 +25,11 @@ Everything in `src/features/aspects/` (this README included), plus nothing else:
 
 ## Manual citations
 
-Use the pre-registered keys: `aspects` (2892–4269), `aspects-how-they-work`
-(2893–2959), `aspects-expertise` (2960–3309), `aspects-gift` (3310–3671),
-`aspects-edge` (3672–3915), `aspects-connection` (3916–3960),
-`aspects-burden` (3961–4269). Prefer registry keys over ad-hoc ranges; add a
-`ManualRef` button next to every quoted rule.
+Use the pre-registered keys: `aspects-how-they-work` (2893–2959),
+`aspects-expertise` (2960–3309), `aspects-gift` (3310–3671), `aspects-edge`
+(3672–3915), `aspects-connection` (3916–3960), `aspects-burden` (3961–4269).
+Cite subsection ranges only; whole-chapter ManualRef dialogs are
+intentionally not registered.
 
 ## Known limitations (foundation stub)
 

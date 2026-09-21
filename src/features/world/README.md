@@ -2,7 +2,8 @@
 
 Guided world creation at `/world`. Owner: task 10 agent. Scope: step through Truths
 with oracle wiring (manual 1491–1627), city creation (manual 2338–2698), first
-mission generation (manual 2699–2891).
+mission generation (manual 2699–2891). Cite the per-category and per-section
+keys below; whole-chapter ManualRef dialogs are intentionally not registered.
 
 ## Contract (foundation-owned, do not reshape)
 
@@ -34,14 +35,17 @@ Everything in `src/features/world/` (this README included), plus nothing else:
 
 ## Manual citations
 
-Use the pre-registered keys: `truths` (1491–1627) + per-category keys
-(`truths-origins`, `truths-innate-powers`, `truths-population`,
-`truths-political-landscape`, `truths-loyalty`, `truths-hunting-territory`,
-`truths-sunlight`, `truths-district-access`, `truths-witches`,
-`truths-hunters`, `truths-werewolves`, `truths-fey`), `city` (2338–2698),
-`city-basics`, `city-faction`, `city-districts`, `first-mission` (2699–2891),
-`first-mission-envision`, `first-mission-commit`.
+Use the pre-registered keys: per-category keys (`truths-origins`,
+`truths-innate-powers`, `truths-population`, `truths-political-landscape`,
+`truths-loyalty`, `truths-hunting-territory`, `truths-sunlight`,
+`truths-district-access`, `truths-witches`, `truths-hunters`,
+`truths-werewolves`, `truths-fey`), `city-basics`, `city-faction`,
+`city-districts`, `first-mission-envision`, `first-mission-commit`.
 
 ## Known limitations (foundation stub)
 
 - `WorldPage.vue` is a `ToolStub` placeholder. The wizard UI is task 10's work.
+- Out-of-range `firstMission.rank` values are clamped to 1–5 on load rather
+  than falling back to `null`.
+- Persist guards refuse to overwrite newer stored data, mirroring
+  `migrateGameState`; update both if the version scheme changes.
