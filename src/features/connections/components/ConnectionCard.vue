@@ -552,16 +552,17 @@ function refuse(): void {
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
 }
 
 .tag.good {
   background: var(--pico-primary-background);
-  color: var(--pico-primary);
+  color: var(--pico-primary-inverse);
 }
 
 .tag.bad {
   background: var(--pico-secondary-background);
-  color: var(--pico-danger, #b03a2e);
+  color: var(--pico-secondary-inverse);
 }
 
 .banner {
@@ -570,16 +571,19 @@ function refuse(): void {
   border-radius: 0.5rem;
   border-left: 4px solid var(--pico-primary);
   background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
   font-size: 0.92rem;
 }
 
 .banner.demand {
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
   border-left-color: var(--pico-primary);
 }
 
 .banner.bad {
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
   border-left-color: var(--pico-danger, #b03a2e);
 }
 

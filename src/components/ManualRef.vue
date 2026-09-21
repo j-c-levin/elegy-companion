@@ -210,6 +210,7 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
 
 .manual-ref-btn:hover {
   background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
 }
 
 .manual-ref-overlay {
@@ -338,6 +339,11 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
 
 .excerpt-line.cited {
   background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+}
+
+.excerpt-line.cited .line-no {
+  color: inherit;
 }
 
 .line-no {

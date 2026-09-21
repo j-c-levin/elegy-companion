@@ -124,6 +124,7 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
 
 .table-row:hover {
   background: var(--pico-muted-background-color, var(--pico-secondary-background));
+  color: var(--pico-secondary-inverse);
 }
 
 .table-title {

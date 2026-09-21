@@ -241,6 +241,7 @@ function loseFight(): void {
   padding: 0.6rem 0.8rem;
   border-radius: 0.5rem;
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
   border-left: 4px solid var(--pico-primary);
   font-size: 0.92rem;
 }
