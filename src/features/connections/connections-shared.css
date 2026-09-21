@@ -1,0 +1,44 @@
+.connections-page button:not([type='submit']).ghost-btn,
+.connection-card button:not([type='submit']).ghost-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--pico-contrast, var(--pico-color));
+  background: transparent;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: auto;
+  box-shadow: none;
+}
+
+.connections-page button:not([type='submit']).ghost-btn:hover,
+.connection-card button:not([type='submit']).ghost-btn:hover {
+  border-color: var(--pico-primary);
+  color: var(--pico-primary);
+}
+
+.connections-page button:not([type='submit']).ghost-btn:disabled,
+.connection-card button:not([type='submit']).ghost-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  border-color: var(--pico-muted-border-color);
+  color: var(--pico-muted-color);
+}
+
+.connections-page button:not([type='submit']).ghost-btn.small,
+.connection-card button:not([type='submit']).ghost-btn.small {
+  padding: 0.2rem 0.6rem;
+  font-size: 0.82rem;
+}
+
+.connections-page button:not([type='submit']).ghost-btn.danger,
+.connection-card button:not([type='submit']).ghost-btn.danger {
+  color: var(--pico-danger, #b03a2e);
+}

@@ -70,7 +70,7 @@ watch(
       console.warn('[elegy] refusing to persist connections: stored data is from a newer version')
       return
     }
-    writeJson(STORAGE_NAME, { version: STORAGE_VERSION, list: state.list })
+    writeJson(STORAGE_NAME, { version: STORAGE_VERSION, connections: state.list })
   },
   { deep: true },
 )
@@ -146,6 +146,14 @@ export function seal(id: string): number {
   const xp = XP_PER_RANK[connection.rank]
   awardXp(xp)
   return xp
+}
+
+// For seals already claimed on the Connection's track in Progress Tracks.
+export function markSealed(id: string): void {
+  const connection = find(id)
+  if (!connection) return
+  connection.sealed = true
+  connection.outOfAction = false
 }
 
 // Manual 1017–1019: progress on a Sealed Connection gains +2 Rush instead.
