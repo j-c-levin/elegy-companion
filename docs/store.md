@@ -219,3 +219,31 @@ updateGame((draft) => {
 - Per-feature persisted data uses `readJson`/`writeJson` with your own storage name; keep a
   `version` field in your payload.
 - Business rules (cascades, clamping, XP awards) live in feature code, not in the store.
+
+## Storage name registry
+
+Every storage name — a `game.lists` key or a feature-local `elegy:` name — is owned by exactly one
+feature. Claim new names here and in your feature README before using them.
+
+| Name | Kind | Owner | Notes |
+|---|---|---|---|
+| `game` (`elegy:game`) | shared state | store | the whole `GameState` |
+| `game.lists['loose-ends']` | shared list | session (task 6, Loose Ends) | ownership moved here from the character feature in Phase 2 |
+| `game.lists['loose-ends-tied']` | shared list | session (task 6, Loose Ends) | same transfer |
+| `night-log` (`elegy:night-log`) | feature-local | session (task 5, Night log) | slumber checklist history (manual 767–778) |
+| `connections` (`elegy:connections`) | feature-local | connections (task 8) | connection manager roster (manual 979–1084) |
+| `npc-roster` (`elegy:npc-roster`) | feature-local | roster (task 9) | NPC & adversary roster (manual 986–1008, 4270–4854) |
+| `character-tenets` (`elegy:character-tenets`) | feature-local | character | pending Conscience/Standing tests (Phase 1) |
+| `rolls` (`elegy:rolls`) | feature-local | rolls | roll history and panel state (Phase 1) |
+| `progress-tracks` (`elegy:progress-tracks`) | feature-local | tracks | mission/connection/combat tracks (Phase 1) |
+
+## XP conventions
+
+`game.xp` is shared state — no feature owns it. Every mutation goes through `updateGame`;
+spending clamps to 0 minimum, awards never make it negative (manual 1122–1160). Phase 2 code
+awards and spends XP through the small helpers in `src/features/session/xp.ts` (`awardXp` /
+`spendXp`); any feature may import them, they are the sanctioned cross-feature XP entry point.
+Do not edit `xp.ts` in an implementation task — it is frozen for the phase so parallel
+worktrees cannot collide; if you need more, add a module next to your own SFC. The Phase 1
+helpers (`character/sheet.ts` `addXp`/`spendXp`, `tracks/store.ts` `grantXp`) keep working;
+migrating their call sites is end-of-phase cleanup, not Phase 2 work.
