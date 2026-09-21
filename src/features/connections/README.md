@@ -20,7 +20,8 @@ feature; do not duplicate it — cite and link where the two overlap.
 ## Files the implementation agent may touch
 
 Everything in `src/features/connections/` (this README included), plus nothing else:
-`src/router/routes.ts`, `src/store/*`, `src/styles/base.css` and other features are off-limits.
+`src/router/routes.ts`, `src/store/*`, `src/styles/base.css`, `src/manual/refs.json` (need a new
+citation key: coordinate with the lead — shared file) and other features are off-limits.
 Feature styles stay scoped in this feature's SFCs.
 
 ## Cross-tool notes

@@ -9,7 +9,8 @@ Phase 1 item 1: the interactive character sheet (README roadmap). All rules impl
   written through `updateGame` from `sheet.ts`.
 - `game.lists['loose-ends']` / `game.lists['loose-ends-tied']`: ownership moved to the Session
   feature in Phase 2 (`src/features/session/README.md`, `docs/store.md`); the Loose Ends block in
-  `XpSection.vue` is the legacy Phase 1 surface, superseded by `/session`.
+   `XpSection.vue` is the legacy Phase 1 surface, superseded by `/session`; it is removed in the
+   end-of-phase cleanup, until when `character/sheet.ts` keeps writing both lists.
 - Feature-local storage: `elegy:character-tenets` (version 1) — pending Conscience/Standing tests.
 
 ## Condition catalog

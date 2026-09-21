@@ -243,6 +243,8 @@ feature. Claim new names here and in your feature README before using them.
 spending clamps to 0 minimum, awards never make it negative (manual 1122–1160). Phase 2 code
 awards and spends XP through the small helpers in `src/features/session/xp.ts` (`awardXp` /
 `spendXp`); any feature may import them, they are the sanctioned cross-feature XP entry point.
+Both helpers ignore non-positive amounts; `spendXp` clamps the total at 0 and reports nothing —
+callers must pre-check `game.xp >= cost` and disable unaffordable actions (manual 1123–1155).
 Do not edit `xp.ts` in an implementation task — it is frozen for the phase so parallel
 worktrees cannot collide; if you need more, add a module next to your own SFC. The Phase 1
 helpers (`character/sheet.ts` `addXp`/`spendXp`, `tracks/store.ts` `grantXp`) keep working;

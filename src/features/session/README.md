@@ -16,8 +16,9 @@ One implementation agent owns exactly one section and never edits shared or sibl
 | 7 — XP economy | `XpSection.vue` | plus new modules it creates | 1122–1160 (`xp`), 1128–1149 (`xp-acquire`), 1161–1187 (`xp-tallies`) |
 
 Off-limits to all of them: `SessionPage.vue`, `xp.ts`, each other's files, `src/router/routes.ts`,
-`src/store/*`, `src/styles/base.css`, other features. Each agent updates this README only in its
-own section's row/notes.
+`src/store/*`, `src/styles/base.css`, `src/manual/refs.json` (need a new citation key: coordinate
+with the lead — shared file), other features. Each agent documents its work in its own subsection
+below ("Task N notes") rather than editing shared tables, so parallel branches do not conflict.
 
 ## Storage
 
@@ -32,6 +33,7 @@ own section's row/notes.
 ## XP helpers
 
 Award and spend XP via `awardXp` / `spendXp` from `./xp` (spend clamps to 0; manual 1122–1160).
+Pre-check `game.xp >= cost` before spending — the helpers ignore non-positive amounts and report nothing.
 `xp.ts` is foundation-owned and frozen for this phase so parallel worktrees cannot collide —
 do not edit it in an implementation task. Loose Ends ties award XP with `awardXp(1)` inside the
 same `updateGame` recipe as the list move, or as an immediate second call if that keeps the code
