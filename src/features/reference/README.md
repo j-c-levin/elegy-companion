@@ -36,8 +36,10 @@ Registered keys used: `glossary` (1188–1396), `basic-actions` (418–489),
 (1085–1121), `health-harm` (681–722), `clarity-harm` (723–761),
 `health-cascade` (694–717), `clarity-cascade` (726–744), `mitigate-health`
 (708–712), `mitigate-clarity` (741–744). No new `refs.json` entries were
-needed; per-term `ref` ranges in `glossary.json` all exactly match existing
-registry ranges (verified at build time against `excerpts.json`).
+needed; per-term `ref` ranges in `glossary.json` were verified by hand
+against `refs.json` ranges. The excerpt builder only scans `refs.json` +
+`oracles/*.json`, so re-check that each new term's range is already bundled
+before adding it.
 
 ## Known limitations
 
@@ -50,7 +52,7 @@ registry ranges (verified at build time against `excerpts.json`).
 - Harm-table cell text is digitized in `HarmTablesView.vue` following the
   oracle-tables precedent (tabular data + ManualRef for the full raw text);
   prose paragraphs stay in the excerpts pipeline.
-- The plain grouped list (84 terms) is not virtualized — fine at this size;
+- The plain grouped list (85 terms) is not virtualized — fine at this size;
   revisit only if the glossary grows several times over.
 - Per-action `ref` ranges inside `basic-actions.json` are informational; the
   page cites the section keys, so narrower per-action excerpts are not bundled.
