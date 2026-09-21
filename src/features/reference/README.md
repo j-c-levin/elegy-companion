@@ -1,9 +1,9 @@
 # Rules reference feature (Phase 3 task 12)
 
-Searchable rules reference at `/reference`. Owner: task 12 agent. Scope:
-searchable glossary (manual 1188–1396), basic actions with full result text
-(manual 418–512), damage/clarity-loss tables by threat Rank (Health 681–722,
-Clarity 723–761).
+Searchable rules reference at `/reference`. Owner: task 12 agent (implemented).
+Scope: searchable glossary (manual 1188–1396), basic actions with full result
+text (manual 418–512), damage/clarity-loss tables by threat Rank (Health
+681–722, Clarity 723–761).
 
 ## Contract (foundation-owned, do not reshape)
 
@@ -16,23 +16,41 @@ Clarity 723–761).
 - No persisted state. This tool claims no storage name and writes nothing —
   not `game.*`, not feature-local keys.
 
-## Files the implementation agent may touch
+## Files
 
-Everything in `src/features/reference/` (this README included), plus nothing else:
-`src/router/routes.ts`, `src/store/*`, `src/styles/base.css`, `src/manual/refs.json`
-(need a new citation key: coordinate with the lead — shared file),
-`src/data/glossary.json` and other features are off-limits.
+- `ReferencePage.vue` — in-page tabs (Glossary / Actions / Tables), no route
+  changes; tab choice lives in memory only.
+- `GlossaryBrowser.vue` — search over term + summary (case-insensitive),
+  letter-grouped rows; each row cites its `ref` range via `ManualRef`.
+- `BasicActionsView.vue` — renders all six actions from
+  `src/data/basic-actions.json`, section keys `basic-actions` / `generic-action`.
+- `HarmTablesView.vue` — Health loss by source of danger (manual 687–696,
+  key `health-harm`) and Clarity loss by gravity (manual 728–739, key
+  `clarity-harm`), plus cascade and mitigation citations; combat context via
+  key `combat`.
 
 ## Manual citations
 
-Use the pre-registered keys: `glossary` (1188–1396), `basic-actions` (418–489,
-existing), `generic-action` (490–512), `combat` (1085–1121), `health`
-(681–722, existing), `health-harm` (681–722), `clarity` (723–761, existing),
-`clarity-harm` (723–761), `factions` (4661–4854). Prefer registry keys over
-ad-hoc ranges; add a `ManualRef` button next to every quoted rule.
+Registered keys used: `glossary` (1188–1396), `basic-actions` (418–489),
+`generic-action` (490–512), `aspects-give-rush` (436–438), `combat`
+(1085–1121), `health-harm` (681–722), `clarity-harm` (723–761),
+`health-cascade` (694–717), `clarity-cascade` (726–744), `mitigate-health`
+(708–712), `mitigate-clarity` (741–744). No new `refs.json` entries were
+needed; per-term `ref` ranges in `glossary.json` all exactly match existing
+registry ranges (verified at build time against `excerpts.json`).
 
-## Known limitations (foundation stub)
+## Known limitations
 
-- `ReferencePage.vue` is a `ToolStub` placeholder. Search + tables are task 12's work.
-- `glossary.json` ships 26 anchor terms for search scaffolding; full A–Z coverage
-  is task 12's work (extend the JSON additively, keep `ref` keys parseable).
+- Glossary rows open the covering rule-section excerpt, not the glossary's own
+  line ranges (those are not registered individually); terms with no dedicated
+  rule section (Ally, Elegy, Game Master) open the full glossary excerpt.
+- `glossary.json` term names follow the manual's glossary canon (`Basic
+  Action`, `Feed`, `Experience (XP)`); `Combat` is kept as an anchor term
+  although the manual glossary itself has no COMBAT entry.
+- Harm-table cell text is digitized in `HarmTablesView.vue` following the
+  oracle-tables precedent (tabular data + ManualRef for the full raw text);
+  prose paragraphs stay in the excerpts pipeline.
+- The plain grouped list (84 terms) is not virtualized — fine at this size;
+  revisit only if the glossary grows several times over.
+- Per-action `ref` ranges inside `basic-actions.json` are informational; the
+  page cites the section keys, so narrower per-action excerpts are not bundled.
