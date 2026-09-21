@@ -3,9 +3,11 @@ import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
 
 import {
   excerptForRange,
+  readableForRange,
   MANUAL_REFS,
   type ManualExcerpt,
   type ManualRange,
+  type ManualReadable,
 } from '@/manual/refs'
 
 const props = defineProps<{
@@ -18,6 +20,7 @@ const props = defineProps<{
 interface ResolvedBlock {
   caption: string
   excerpt: ManualExcerpt | undefined
+  readable: ManualReadable | undefined
   start: number
   end: number
 }
@@ -55,6 +58,7 @@ async function loadBlocks(): Promise<void> {
         ? `${range.label} — lines ${range.start}-${range.end}`
         : `Lines ${range.start}-${range.end}`,
       excerpt: await excerptForRange(range.start, range.end),
+      readable: await readableForRange(range.start, range.end),
       start: range.start,
       end: range.end,
     })),
@@ -151,7 +155,7 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
         <header class="panel-head">
           <div class="panel-titles">
             <p class="panel-label">{{ heading }}</p>
-            <p class="panel-source">Elegy 4e manual — raw text, lines as extracted</p>
+            <p class="panel-source">Elegy 4e manual — readable text with source lines</p>
           </div>
           <button ref="closeBtn" type="button" class="panel-close" aria-label="Close manual excerpt" @click="hide">
             Close
@@ -159,19 +163,55 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
         </header>
         <div class="panel-body">
           <p class="panel-note">
-            Raw manual text (two PDF columns share each line, so a line may mix columns). Cited
-            lines are highlighted.
+            Manual text reflowed for reading (two PDF columns separated, hyphenation joined).
+            Cited lines are shown in full; line numbers are preserved for citation.
           </p>
           <p v-if="loading" class="panel-loading" role="status">Loading excerpt…</p>
           <section v-for="block in excerptBlocks" :key="block.caption" class="excerpt-block" :aria-label="block.caption">
             <h3 class="excerpt-caption">{{ block.caption }}</h3>
-            <p v-if="!block.excerpt" class="excerpt-missing">
+            <p v-if="!block.excerpt && !block.readable" class="excerpt-missing">
               No excerpt bundled for lines {{ block.start }}-{{ block.end }}. Add it to
               src/manual/refs.json and run <code>npm run manual:build</code>.
             </p>
+            <div v-else-if="block.readable" class="readable-blocks">
+              <template v-for="(item, index) in block.readable.blocks" :key="index">
+                <h4 v-if="item.k === 'h'" :class="item.lvl === 2 ? 'readable-h2' : 'readable-h1'">
+                  {{ item.t }}
+                </h4>
+                <p v-else-if="item.k === 'p'" class="readable-p">{{ item.t }}</p>
+                <ul v-else-if="item.k === 'list'" class="readable-list">
+                  <li v-for="(entry, entryIndex) in item.items" :key="entryIndex">
+                    {{ entry.t }}
+                  </li>
+                </ul>
+                <div v-else class="readable-table-wrap">
+                  <table class="readable-table">
+                    <thead v-if="item.cols">
+                      <tr>
+                        <th v-for="(col, colIndex) in item.cols" :key="colIndex" scope="col">
+                          {{ col }}
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(row, rowIndex) in item.rows" :key="rowIndex">
+                        <td v-for="(cell, cellIndex) in row.c" :key="cellIndex">
+                          {{ cell }}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </template>
+              <p class="readable-source">
+                Source: reference/elegy-4e-beta-v3.txt:{{ block.readable.start }}-{{
+                  block.readable.end
+                }}
+              </p>
+            </div>
             <div v-else class="excerpt-lines">
               <span
-                v-for="line in block.excerpt.lines"
+                v-for="line in block.excerpt!.lines"
                 :key="line.n"
                 class="excerpt-line"
                 :class="{ cited: line.n >= block.start && line.n <= block.end }"
@@ -314,8 +354,79 @@ const heading = computed(() => `Manual reference: ${resolved.value?.label ?? ''}
 }
 
 .excerpt-missing {
-  color: var(--pico-danger);
+  color: var(--pico-muted-color);
   font-size: 0.9rem;
+}
+
+.readable-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
+  background: var(--pico-card-background-color);
+  padding: 0.75rem 0.85rem;
+}
+
+.readable-h1 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0.35rem 0 0;
+}
+
+.readable-h1:first-child,
+.readable-h2:first-child {
+  margin-top: 0;
+}
+
+.readable-h2 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pico-muted-color);
+  margin: 0.5rem 0 0;
+}
+
+.readable-p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.readable-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.readable-table-wrap {
+  overflow-x: auto;
+  margin: 0 -0.2rem;
+  padding: 0 0.2rem;
+}
+
+.readable-table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.readable-table th,
+.readable-table td {
+  padding: 0.4rem 0.5rem;
+  vertical-align: top;
+}
+
+.readable-source {
+  color: var(--pico-muted-color);
+  font-size: 0.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  margin: 0.25rem 0 0;
 }
 
 .excerpt-lines {
