@@ -17,15 +17,14 @@ const section = ref<Section>('glossary')
 
 <template>
   <div class="reference">
-    <nav class="section-tabs" role="tablist" aria-label="Reference sections">
+    <nav class="section-tabs" aria-label="Reference sections">
       <button
         v-for="s in sections"
         :key="s.id"
         type="button"
-        role="tab"
         class="section-tab"
         :class="{ active: section === s.id }"
-        :aria-selected="section === s.id"
+        :aria-current="section === s.id ? 'true' : undefined"
         @click="section = s.id"
       >
         {{ s.label }}
@@ -51,8 +50,8 @@ const section = ref<Section>('glossary')
   font-size: 0.9rem;
   border-radius: 2rem;
   border: 1px solid var(--pico-muted-border-color);
-  background: var(--pico-background-color);
-  color: var(--pico-primary-inverse);
+  background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
 }
 
 .section-tab.active {
