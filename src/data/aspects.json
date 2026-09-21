@@ -5,13 +5,13 @@
   "types": [
     { "aspectType": "expertise", "label": "Expertise", "ref": "2960-3309", "refKey": "aspects-expertise", "summary": "Trained skills; standard first ability +1 in related rolls.", "acquire": "Spend 15 XP, justify narratively, slumber; upgrade 10 XP." },
     { "aspectType": "gift", "label": "Gift", "ref": "3310-3671", "refKey": "aspects-gift", "summary": "Vampiric powers; up to three innate, more learned from Connections.", "acquire": "Spend 15 XP; innate slumber, otherwise favor Mission one Rank below theirs; upgrade 10 XP." },
-    { "aspectType": "mystery", "label": "Mystery", "ref": "2893-2959", "refKey": "aspects-edge", "summary": "Magic powers and rituals; never innate, always learned like a non-innate Gift.", "acquire": "Spend 15 XP, learn like a non-innate Gift; upgrade 10 XP." },
+    { "aspectType": "mystery", "label": "Mystery", "ref": "3712-3915", "refKey": "aspects-mystery", "summary": "Magic powers and rituals; never innate, always learned like a non-innate Gift.", "acquire": "Spend 15 XP, learn like a non-innate Gift; upgrade 10 XP." },
     { "aspectType": "edge", "label": "Edge", "ref": "3672-3915", "refKey": "aspects-edge", "summary": "Resources or assets: richness, faction loyalty, fame.", "acquire": "Spend 15 XP, justify narratively, slumber; upgrade 10 XP." },
     { "aspectType": "connection", "label": "Connection", "ref": "3916-3960", "refKey": "aspects-connection", "summary": "Meaningful relationships; standard first ability +1 to interact.", "acquire": "Never bought with XP; create a Connection; upgrade 10 XP." },
     { "aspectType": "burden", "label": "Burden", "ref": "3961-4269", "refKey": "aspects-burden", "summary": "Lasting marks of overwhelm; first ability is a negative effect.", "acquire": "Never bought with XP; suffer the third condition in a cascade; upgrade 10 XP." }
   ],
   "aspects": [
-    { "id": "academics", "type": "expertise", "name": "Academics", "ref": "2966-2998", "summary": "Scholarly knowledge and research; rerolls and XP from extended study within your chosen field." },
+    { "id": "academics", "type": "expertise", "name": "Academics", "ref": "2966-2998", "summary": "Scholarly knowledge and research; +1 to field research/study Respite rolls (match grants 1 XP), +1 to Secure an Advantage or Compel in the field, +3 Rush from field-related Loose Ends." },
     { "id": "arts", "type": "expertise", "name": "Arts", "ref": "2963-2999", "summary": "Artistic skill and sensibility; reroll when creating or presenting art, and XP for memorializing moving or traumatic events." },
     { "id": "athletics", "type": "expertise", "name": "Athletics", "ref": "3004-3030", "summary": "Running, jumping, climbing and physical feats; free mitigation for botched maneuvers and one specialized feat with a preset action die." },
     { "id": "computers", "type": "expertise", "name": "Computers", "ref": "3005-3043", "summary": "Using, programming and hacking digital systems; anonymity breaches, secret files and retrying failed digital rolls." },
@@ -41,7 +41,7 @@
     { "id": "speed", "type": "gift", "name": "Speed", "ref": "3558-3582", "summary": "Superhuman velocity and reflexes: rerolls on quickness, blink dashes, stolen moments of stopped time and last-second saves with Blood." },
     { "id": "veil", "type": "gift", "name": "Veil", "ref": "3599-3637", "summary": "Vanish and disguise: become unnoticeable in crowds or anywhere, appear as someone else and apply it all to objects." },
     { "id": "vision", "type": "gift", "name": "Vision", "ref": "3643-3666", "summary": "Superhuman intuition and perception: rerolls on senses, reading an object's past, visible auras and prophetic intuitions." },
-    { "id": "blood-strength", "type": "mystery", "name": "Blood Strength", "ref": "3713-3748", "summary": "Hone the living essence of your blood: stronger powers, a stored vial, slumbering without Blood cost and blood blasts." },
+    { "id": "blood-strength", "type": "mystery", "name": "Blood Strength", "ref": "3713-3748", "summary": "Hone the living essence of your blood: stronger powers, a stored vial, Flow Your Blood to slumber instead of losing 1 Blood, and blood blasts." },
     { "id": "blood-transmutation", "type": "mystery", "name": "Blood Transmutation", "ref": "3754-3785", "summary": "Transform blood into other substances: acid, contact venom, a solidified whip and a homunculus beast." },
     { "id": "catoptromancy", "type": "mystery", "name": "Catoptromancy", "ref": "3791-3813", "summary": "Manipulate reflections and mirrors: see and project through any mirror, mirror portals and asking a mirror for insight." },
     { "id": "fleshcraft", "type": "mystery", "name": "Fleshcraft", "ref": "3823-3854", "summary": "Reshape your body and its limits: sculpted faces, bone armaments, stolen body-part enhancements and a detached working hand." },

@@ -5,8 +5,10 @@ import { RouterLink } from 'vue-router'
 import ManualRef from '@/components/ManualRef.vue'
 import aspectsData from '@/data/aspects.json'
 
+type AspectType = 'expertise' | 'gift' | 'mystery' | 'edge' | 'connection' | 'burden'
+
 interface AspectTypeMeta {
-  aspectType: string
+  aspectType: AspectType
   label: string
   ref: string
   refKey: string
@@ -16,19 +18,61 @@ interface AspectTypeMeta {
 
 interface AspectEntry {
   id: string
-  type: string
+  type: AspectType
   name: string
   ref: string
   summary: string
   tag?: string
 }
 
-const TYPES = aspectsData.types as unknown as AspectTypeMeta[]
-const ASPECTS = aspectsData.aspects as unknown as AspectEntry[]
+const KNOWN_TYPES: readonly AspectType[] = [
+  'expertise',
+  'gift',
+  'mystery',
+  'edge',
+  'connection',
+  'burden',
+]
 
-const TYPES_BY_ID = new Map(TYPES.map((t) => [t.aspectType, t]))
+function isAspectType(value: string): value is AspectType {
+  return (KNOWN_TYPES as readonly string[]).includes(value)
+}
 
-const activeType = ref<string | 'all'>('all')
+function isAspectTypeMeta(value: unknown): value is AspectTypeMeta {
+  if (typeof value !== 'object' || value === null) return false
+  const t = value as Record<string, unknown>
+  return (
+    typeof t.aspectType === 'string' &&
+    isAspectType(t.aspectType) &&
+    typeof t.label === 'string' &&
+    typeof t.ref === 'string' &&
+    typeof t.refKey === 'string' &&
+    typeof t.summary === 'string' &&
+    typeof t.acquire === 'string'
+  )
+}
+
+function isAspectEntry(value: unknown): value is AspectEntry {
+  if (typeof value !== 'object' || value === null) return false
+  const e = value as Record<string, unknown>
+  return (
+    typeof e.id === 'string' &&
+    typeof e.type === 'string' &&
+    isAspectType(e.type) &&
+    typeof e.name === 'string' &&
+    typeof e.ref === 'string' &&
+    typeof e.summary === 'string' &&
+    (e.tag === undefined || typeof e.tag === 'string')
+  )
+}
+
+const TYPES: AspectTypeMeta[] = aspectsData.types.filter(isAspectTypeMeta)
+const ASPECTS: AspectEntry[] = aspectsData.aspects.filter(isAspectEntry)
+
+const TYPES_BY_ID: Partial<Record<AspectType, AspectTypeMeta>> = {}
+for (const t of TYPES) TYPES_BY_ID[t.aspectType] = t
+
+const activeType = ref<AspectType | 'all'>('all')
 const search = ref('')
 
 const chips = computed(() => [
@@ -51,8 +95,19 @@ const filtered = computed(() => {
   })
 })
 
-function metaOf(entry: AspectEntry): AspectTypeMeta {
-  return TYPES_BY_ID.get(entry.type) ?? TYPES[0]
+const cards = computed(() =>
+  filtered.value.flatMap((entry) => {
+    const meta = metaOf(entry)
+    return meta ? [{ entry, meta }] : []
+  }),
+)
+
+function metaOf(entry: AspectEntry): AspectTypeMeta | undefined {
+  return TYPES_BY_ID[entry.type]
+}
+
+function pluralLabel(t: AspectTypeMeta): string {
+  return t.aspectType === 'mystery' ? 'Mysteries' : `${t.label}s`
 }
 </script>
 
@@ -75,7 +130,7 @@ function metaOf(entry: AspectEntry): AspectTypeMeta {
           <p class="acquire-summary">{{ t.summary }}</p>
           <p class="acquire-rule">
             <strong>Acquire:</strong> {{ t.acquire }}
-            <ManualRef :ref-key="t.refKey" :label="`Acquiring ${t.label}s`" />
+            <ManualRef :ref-key="t.refKey" :label="`Acquiring ${pluralLabel(t)}`" />
           </p>
         </article>
       </div>
@@ -98,23 +153,24 @@ function metaOf(entry: AspectEntry): AspectTypeMeta {
           type="button"
           class="chip"
           :class="{ active: activeType === c.id }"
+          :aria-pressed="activeType === c.id"
           @click="activeType = c.id"
         >
           {{ c.label }}
         </button>
       </div>
       <ul class="grid">
-        <li v-for="a in filtered" :key="a.id" class="card">
+        <li v-for="{ entry, meta } in cards" :key="entry.id" class="card">
           <div class="card-head">
-            <h3>{{ a.name }}</h3>
-            <ManualRef :ref-key="metaOf(a).refKey" :label="`${a.name} — ${metaOf(a).label}`" />
+            <h3>{{ entry.name }}</h3>
+            <ManualRef :ref-key="meta.refKey" :label="`${entry.name} — ${meta.label}`" />
           </div>
           <p class="tags">
-            <span class="chip small">{{ metaOf(a).label }}</span>
-            <span v-if="a.tag" class="chip small tag">{{ a.tag }}</span>
+            <span class="chip small">{{ meta.label }}</span>
+            <span v-if="entry.tag" class="chip small tag">{{ entry.tag }}</span>
           </p>
-          <p class="summary">{{ a.summary }}</p>
-          <p class="acquire-rule"><strong>Acquire:</strong> {{ metaOf(a).acquire }}</p>
+          <p class="summary">{{ entry.summary }}</p>
+          <p class="acquire-rule"><strong>Acquire:</strong> {{ meta.acquire }}</p>
         </li>
       </ul>
       <p v-if="!filtered.length" class="muted">No Aspects match.</p>
@@ -191,8 +247,8 @@ function metaOf(entry: AspectEntry): AspectTypeMeta {
   font-size: 0.85rem;
   border-radius: 2rem;
   border: 1px solid var(--pico-muted-border-color);
-  background: var(--pico-background-color);
-  color: var(--pico-color);
+  background: var(--pico-card-background-color);
+  color: var(--pico-contrast);
 }
 
 .chip.active {
