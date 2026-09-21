@@ -62,7 +62,8 @@ feature's feature-local shared-class file and is loaded by this feature only).
 
 - Slumber heals Connections by their Rank in Pulse (manual 1061–1062): the Session night log shows
   a reminder linking here; applying the heal belongs to this feature (per-card button and the
-  page-level batch button).- Interaction bonus when Bloodied by you (extra action die, 1043–1045) and the Rank penalty when
+  page-level batch button).
+- Interaction bonus when Bloodied by you (extra action die, 1043–1045) and the Rank penalty when
   acting against a Connection Bloodied by them (1048–1050) surface here as displayed rules text;
   the Roll Engine reads modifiers from the store only, so if rolls should consume these states,
   coordinate with the lead before adding cross-feature imports.
