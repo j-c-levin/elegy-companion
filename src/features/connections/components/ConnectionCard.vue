@@ -46,6 +46,8 @@ const testRoll = ref<RollLine | null>(null)
 const healRoll = ref<RollLine | null>(null)
 
 const pmax = computed(() => pulseMax(props.connection.rank))
+const bloodNow = computed(() => game.meters.blood.value)
+const canGive = computed(() => !props.connection.dead && bloodNow.value >= bloodAmount.value)
 const testAttribute = computed(() => (props.connection.mortal ? 'Soul' : 'Charm'))
 const attributeValue = computed(() =>
   props.connection.mortal ? game.attributes.soul : game.attributes.charm,
@@ -95,14 +97,17 @@ function applyProgress(label: string): void {
 
 function recordTest(outcome: TestOutcome): void {
   if (outcome === 'failure') {
+    confirmingUndo.value = false
     showDemand.value = true
     return
   }
+  confirmingUndo.value = false
   showDemand.value = false
   applyProgress(outcome === 'stylish' ? 'This test brings you closer' : 'Closer, at a cost')
 }
 
 function rollTest(): void {
+  confirmingUndo.value = false
   const die = rollActionDie()
   const bonus = props.connection.sealed ? 1 : 0
   const challenge = rollChallengePair()
@@ -182,18 +187,23 @@ function rollLetThemHeal(): void {
 }
 
 function giveBlood(): void {
-  store.giveBlood(props.connection.id, bloodAmount.value)
+  if (!store.giveBlood(props.connection.id, bloodAmount.value)) {
+    flash.value = `Need ${bloodAmount.value} Blood to give — you have ${bloodNow.value}.`
+    return
+  }
   flash.value = `Gave ${bloodAmount.value} Blood: +${bloodAmount.value} Pulse, now Bloodied by you — Try Your Conscience at the end of the scene (manual 1036–1037)`
 }
 
 function drinkTheirBlood(): void {
   store.setBloodied(props.connection.id, props.connection.bloodiedByYou, true)
+  confirmingUndo.value = false
   showDemand.value = false
   flash.value = 'You drank their vampiric blood: Bloodied by them (manual 1041)'
 }
 
 function demandMission(): void {
   store.setLoyaltyDemand(props.connection.id, true)
+  confirmingUndo.value = false
   showDemand.value = false
   flash.value = `They require a Mission at Rank ${demandRank.value} — commit it in Progress Tracks`
 }
@@ -373,8 +383,8 @@ function refuse(): void {
             <option :value="2">2 Blood</option>
             <option :value="3">3 Blood</option>
           </select>
-          <button type="button" class="ghost-btn" :disabled="connection.dead" @click="giveBlood">
-            Give blood: +{{ bloodAmount }} Pulse, −{{ bloodAmount }} Blood
+          <button type="button" class="ghost-btn" :disabled="!canGive" @click="giveBlood">
+            Give blood: +{{ bloodAmount }} Pulse, −{{ bloodAmount }} Blood (you have {{ bloodNow }})
           </button>
         </div>
         <div class="btn-row wrap">
@@ -389,6 +399,9 @@ function refuse(): void {
           1d6 {{ healRoll.die }} + Rank {{ connection.rank }} = {{ healRoll.score }} vs
           {{ healRoll.challenge[0] }}, {{ healRoll.challenge[1] }} —
           <strong>{{ VERDICT_LABEL[healRoll.verdict] }}</strong>
+        </p>
+        <p v-if="healRoll?.match" class="note">
+          Challenge match: consult the Roll Engine for Twist, Misfortune or Impulse (manual 513–524).
         </p>
         <p class="note">
           Letting them heal on a Failure: half Rank, rounded down, and the situation worsens —

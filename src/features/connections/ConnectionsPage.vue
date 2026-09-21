@@ -29,7 +29,7 @@ function healAllFromSlumber(): void {
   batchFlash.value =
     healed === 0
       ? 'No Connections needed slumber healing.'
-      : `You slumbered: ${healed} Connection${healed === 1 ? '' : 's'} recovered Pulse equal to their Rank (manual 1074–1076).`
+      : `You slumbered: ${healed} Connection${healed === 1 ? '' : 's'} recovered Pulse equal to their Rank (manual 1061–1062).`
 }
 </script>
 
@@ -86,7 +86,7 @@ function healAllFromSlumber(): void {
 
     <div class="batch-row">
       <button type="button" class="ghost-btn" @click="healAllFromSlumber">
-        You slumbered — heal every Connection +Rank Pulse
+        You slumbered — heal live Connections +Rank Pulse
       </button>
       <ManualRef ref-key="pulse" label="Healing your Connection" />
       <p v-if="batchFlash" class="batch-flash" role="status">{{ batchFlash }}</p>
@@ -96,7 +96,7 @@ function healAllFromSlumber(): void {
       <h2 id="roster-heading">
         Your Connections <span class="count">{{ inPlay.length }}</span>
       </h2>
-      <p v-if="inPlay.length === 0" class="empty">
+      <p v-if="roster.length === 0" class="empty">
         No Connections yet. Create one when a relationship becomes useful or important, or when you
         let someone drink from your veins (manual 980–985, 1032–1037).
       </p>

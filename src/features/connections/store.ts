@@ -1,7 +1,7 @@
 import { reactive, watch } from 'vue'
 
 import { awardXp } from '@/features/session/xp'
-import { makeId, readJson, updateGame, writeJson } from '@/store'
+import { game, makeId, readJson, updateGame, writeJson } from '@/store'
 
 import {
   clampRank,
@@ -219,14 +219,17 @@ export function slumberHealAll(): number {
 
 // Manual 1063–1066: giving your blood restores 1-3 Pulse at the same Blood cost
 // and marks the Connection as Bloodied by you.
-export function giveBlood(id: string, amount: number): void {
+export function giveBlood(id: string, amount: number): boolean {
   const connection = find(id)
-  if (!connection || connection.dead) return
+  if (!connection || connection.dead || amount <= 0) return false
+  if (game.meters.blood.value < amount) return false
+  const cost = Math.min(amount, 3)
   updateGame((draft) => {
-    draft.meters.blood.value = Math.max(0, draft.meters.blood.value - amount)
+    draft.meters.blood.value = draft.meters.blood.value - cost
   })
   connection.bloodiedByYou = true
-  healPulse(id, amount)
+  healPulse(id, cost)
+  return true
 }
 
 // Manual 1072–1077: letting them heal, rolled with dice + Rank instead of an Attribute.
