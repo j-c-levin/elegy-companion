@@ -5,6 +5,9 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   base: '/elegy-companion/',
+  build: {
+    chunkSizeWarningLimit: 800,
+  },
   plugins: [vue()],
   resolve: {
     alias: {
