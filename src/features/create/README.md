@@ -79,17 +79,13 @@ Use the pre-registered keys: `creation-origins`, `creation-turning`,
 `creation-gifts`, `creation-skills`, `creation-magic`,
 `creation-relationships`, `creation-attributes`, `creation-identity`,
 `creation-finishing`, `attributes-create` (1942–1946, existing), plus
-`truths-innate-powers` and `xp-tallies`.
+`truths-innate-powers` and `xp-tallies`, plus `starting-abilities`
+(2090–2107) for the Aspect starting-abilities note.
 Cite subsection ranges only; whole-chapter ManualRef dialogs are
 intentionally not registered.
 
 ## Known limitations
 
-- No `starting-abilities` registry key exists in `src/manual/refs.json`; the
-  Abilities step cites `creation-skills` (1825–1879) and shows the
-  2090–2107 range as plain text. Registering `starting-abilities`
-  (2090–2107, or the full 2090–2337 subsection) needs a lead-coordinated
-  refs.json edit plus `npm run manual:build`.
 - Aspect names are labels only; full ability text belongs to task 13
   (`src/data/aspects.json`) — the wizard links to `/aspects`, it does not
   copy ability text.
@@ -103,3 +99,7 @@ intentionally not registered.
   re-creation flow above); it does not reconcile them with the new character.
 - `loadDraft` discards unversioned payloads and re-tests the newer-version
   condition inline rather than via sequential checks.
+- Slot positions can shuffle on remount when mysteries precede gifts:
+  `GiftsStep.vue` orders mysteries first (foundation draft shape, left as-is).
+- `src/data/creation.json` step→tables mapping is not consumed by the wizard;
+  table ids are component-local, though contract rules still hold.
