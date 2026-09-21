@@ -141,23 +141,39 @@
       ]
     },
     {
-      "from": 335,
+      "from": 332,
       "to": 357,
       "side": "full",
       "blocks": [
         {
-          "k": "p",
-          "t": "Attribute, that's the one you add.",
+          "k": "h",
+          "lvl": 1,
+          "t": "Then, add...",
           "s": [
-            336,
-            336
+            332,
+            332
           ]
         },
         {
-          "k": "p",
-          "t": "…the cumulative value of any other bonus you may have, from Aspects or previous rolls.",
+          "k": "list",
+          "items": [
+            {
+              "t": "...the value of appropriate Attribute for this action. When rules tell you to roll with an Attribute, that's the one you add.",
+              "s": [
+                333,
+                336
+              ]
+            },
+            {
+              "t": "...the cumulative value of any other bonus you may have, from Aspects or previous rolls.",
+              "s": [
+                337,
+                338
+              ]
+            }
+          ],
           "s": [
-            337,
+            333,
             338
           ]
         },
