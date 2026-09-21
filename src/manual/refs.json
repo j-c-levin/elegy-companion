@@ -108,6 +108,7 @@
   { "key": "connection-test", "label": "Testing a Connection", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1026, "end": 1046 }] },
   { "key": "bloodied", "label": "Bloodying a Connection", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1026, "end": 1051 }] },
   { "key": "pulse", "label": "Pulse, limits and healing", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1057, "end": 1079 }] },
+  { "key": "npc-ranks", "label": "Common NPC ranks", "section": "Chapter 2 — Connections", "ranges": [{ "start": 986, "end": 1008 }] },
   { "key": "combat-attack", "label": "Attacking", "section": "Chapter 2 — Combat", "ranges": [{ "start": 1095, "end": 1107 }] },
   { "key": "combat-winning", "label": "Winning and losing", "section": "Chapter 2 — Combat", "ranges": [{ "start": 1108, "end": 1116 }] },
   { "key": "xp", "label": "Experience", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1122, "end": 1160 }] },

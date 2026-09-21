@@ -49,6 +49,36 @@ export const routes: RouteRecordRaw[] = [
     },
   },
   {
+    path: '/session',
+    name: 'session',
+    component: () => import('@/features/session/SessionPage.vue'),
+    meta: {
+      title: 'Session',
+      short: 'Session',
+      blurb: 'End-of-night slumber checklist, Loose Ends and the XP economy in one flow.',
+    },
+  },
+  {
+    path: '/connections',
+    name: 'connections',
+    component: () => import('@/features/connections/ConnectionsPage.vue'),
+    meta: {
+      title: 'Connections',
+      short: 'Conns',
+      blurb: 'Rank, Pulse, Sealed and Bloodied states for every relationship.',
+    },
+  },
+  {
+    path: '/roster',
+    name: 'npc-roster',
+    component: () => import('@/features/roster/RosterPage.vue'),
+    meta: {
+      title: 'NPC & Adversary Roster',
+      short: 'Roster',
+      blurb: 'Rank, Pulse and notes for every NPC and adversary you create.',
+    },
+  },
+  {
     path: '/:pathMatch(.*)*',
     redirect: '/',
   },

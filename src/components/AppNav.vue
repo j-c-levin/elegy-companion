@@ -22,3 +22,22 @@ const tools = routes.flatMap((route) =>
     <RouterLink v-for="tool in tools" :key="tool.to" :to="tool.to" class="tab">{{ tool.short }}</RouterLink>
   </nav>
 </template>
+
+<style scoped>
+@media (max-width: 719.98px) {
+  .tabbar .tab {
+    padding: 0.65rem 0.1rem;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 720px) {
+  .desktop-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 0.1rem;
+  }
+}
+</style>
