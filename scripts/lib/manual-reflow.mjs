@@ -1,5 +1,4 @@
-// Reflow of the pdftotext -layout extraction into readable blocks.
-// REFLOW ONLY: text is preserved verbatim; only layout artifacts are fixed.
+// REFLOW ONLY: text preserved verbatim; only layout artifacts fixed.
 
 const GUTTER_MIN_START = 5
 const GUTTER_MAX_START = 58
@@ -586,7 +585,7 @@ function assembleFull(segment, splices) {
   }
   const table = parseTable(tableRows)
   if (table) return [...blocks, table]
-  const tokens = rest.map((r) => ({ n: r.n, text: r.text.replace(/^ {1,3}/, ''), indent: r.text.length - r.text.trimStart().length, fresh: r.fresh }))
+  const tokens = tableRows.map((r) => ({ n: r.n, text: r.text.replace(/^ {1,3}/, ''), indent: r.text.length - r.text.trimStart().length, fresh: r.fresh }))
   return [...blocks, ...assembleStream(tokens, [])]
 }
 
