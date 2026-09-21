@@ -73,7 +73,8 @@ Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persist
   `/character` (888–890). Connections and conditions are never mutated from here.
 - History persists in `elegy:night-log` via `readJson`/`writeJson` as a version-1 payload
   (`entries` capped at 100, newest first, plus `slumberCount` / `awakeCount` / `totalBloodLost`
-  counters), validated and defaulted on read.
+  counters). `loadLog` validates version, array-ness, and each entry's shape (id, at, outcome,
+  numeric blood/rush fields, booleans, looseEnd string); malformed entries are dropped.
 
 ### Known limitations
 
