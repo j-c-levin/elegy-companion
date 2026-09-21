@@ -236,6 +236,7 @@ function deleteArchived(id: string): void {
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
   font-size: 0.85rem;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -266,7 +267,7 @@ function deleteArchived(id: string): void {
   appearance: none;
   border: 1px solid var(--pico-muted-border-color);
   background: var(--pico-secondary-background);
-  color: var(--pico-color);
+  color: var(--pico-secondary-inverse);
   border-radius: 999px;
   padding: 0.45rem 0.9rem;
   font-size: 0.9rem;
@@ -275,8 +276,9 @@ function deleteArchived(id: string): void {
 
 .kind-btn.active,
 .rank-btn.active {
-  border-color: var(--pico-primary);
-  color: var(--pico-primary);
+  background: var(--pico-primary-background);
+  border-color: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
   font-weight: 600;
 }
 

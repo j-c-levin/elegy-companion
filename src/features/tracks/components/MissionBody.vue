@@ -386,6 +386,7 @@ function archive(): void {
   padding: 0.6rem 0.8rem;
   border-radius: 0.5rem;
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
   border-left: 4px solid var(--pico-primary);
   font-size: 0.92rem;
 }
@@ -435,10 +436,12 @@ function archive(): void {
   padding: 0.3rem 0.4rem;
   border-radius: 0.4rem;
   background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
 }
 
 .die.dark {
   background: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
 }
 
 .die-sep {

@@ -584,6 +584,6 @@ function bonusText(bonus: number): string {
 
 .apply-btn small {
   display: block;
-  color: var(--pico-muted-color);
+  color: var(--pico-primary-inverse);
 }
 </style>

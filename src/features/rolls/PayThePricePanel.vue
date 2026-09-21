@@ -164,7 +164,7 @@ function applyCost(roll: PriceRoll): void {
 
 .apply-btn small {
   display: block;
-  color: var(--pico-muted-color);
+  color: var(--pico-primary-inverse);
 }
 
 .hint {

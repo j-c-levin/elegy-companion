@@ -51,7 +51,7 @@ function roll(oddsId: string) {
 
 .odds-grid small {
   font-weight: 400;
-  color: var(--pico-muted-color);
+  color: var(--pico-primary-inverse);
 }
 
 .answer {
