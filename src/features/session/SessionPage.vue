@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, type Component } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { RouterLink, useRoute } from 'vue-router'
 
 import LooseEndsSection from './LooseEndsSection.vue'
 import NightLogSection from './NightLogSection.vue'
@@ -27,35 +27,35 @@ function isViewId(value: unknown): value is ViewId {
 }
 
 const route = useRoute()
-const router = useRouter()
 
 const activeId = computed<ViewId>(() =>
   isViewId(route.query.view) ? route.query.view : DEFAULT_VIEW,
 )
 
-const activeView = computed(() => VIEWS.find((view) => view.id === activeId.value) ?? VIEWS[0])
-
-function select(id: ViewId): void {
-  if (id === activeId.value) return
-  void router.push({ path: '/session', query: { view: id } })
-}
+const activeView = computed(() => VIEWS.find((view) => view.id === activeId.value) as SessionView)
 </script>
 
 <template>
   <section aria-labelledby="session-heading">
     <h1 id="session-heading">Session</h1>
     <nav class="views" aria-label="Session sections">
-      <button
+      <RouterLink
         v-for="view in VIEWS"
         :key="view.id"
-        type="button"
-        class="view-tab"
-        :class="{ active: view.id === activeId }"
-        :aria-current="view.id === activeId ? 'true' : undefined"
-        @click="select(view.id)"
+        :to="{ path: '/session', query: { view: view.id } }"
+        custom
+        v-slot="{ href, navigate }"
       >
-        {{ view.label }}
-      </button>
+        <a
+          :href="href"
+          class="view-tab"
+          :class="{ active: view.id === activeId }"
+          :aria-current="view.id === activeId ? 'page' : undefined"
+          @click="navigate"
+        >
+          {{ view.label }}
+        </a>
+      </RouterLink>
     </nav>
     <component :is="activeView.component" />
   </section>
@@ -77,6 +77,7 @@ function select(id: ViewId): void {
   background: transparent;
   color: var(--pico-muted-color);
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .view-tab.active {
