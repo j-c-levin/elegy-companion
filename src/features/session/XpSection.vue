@@ -117,8 +117,8 @@ onUnmounted(() => window.clearTimeout(disarmTimer))
     <article class="acquire-card">
       <h3>Upgrading and acquiring Aspects</h3>
       <p class="cite">
-        What each cost buys and which steps precede the slumber (manual 1128–1155
-        <ManualRef ref-key="xp-acquire" />).
+        What each cost buys and which steps precede the slumber (manual 1128–1149
+        <ManualRef ref-key="xp-acquire" />; Edge/Expertise 1150–1152, Connections/Burdens 1153–1155).
       </p>
       <h4>Upgrade — 10 XP</h4>
       <p>
@@ -277,9 +277,13 @@ onUnmounted(() => window.clearTimeout(disarmTimer))
   font-weight: 600;
 }
 
-@media (max-width: 719px) {
+.button-row button {
+  flex: 1 1 auto;
+}
+
+@media (min-width: 720px) {
   .button-row button {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
   }
 }
 </style>

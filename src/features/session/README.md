@@ -63,7 +63,8 @@ simpler; never write `draft.xp` directly from a section SFC.
   mandatory pre-check `game.xp >= cost`; buttons are disabled when unaffordable. Two-click
   confirm ("Cross out 2/3 units?") with a 4s disarm; while armed, the units that would be crossed
   out are highlighted in the tally (manual 1168–1172).
-- **Acquisition guidance** (manual 1128–1155, `xp-acquire`): upgrade = new Ability + slumber;
+- **Acquisition guidance** (manual 1128–1149, `xp-acquire`; Edge/Expertise 1150–1152,
+  Connections/Burdens 1153–1155): upgrade = new Ability + slumber;
   acquire flows per Aspect type — innate Gift (slumber), learned Gift / Mystery (Connection
   teaches via a favor Mission one Rank below theirs, min Rank 1), Edge/Expertise (narrative
   justification + slumber); Connections and Burdens are never bought with XP. Guided text links
