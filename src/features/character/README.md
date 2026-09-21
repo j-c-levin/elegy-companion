@@ -39,6 +39,11 @@ Rush by 1; Detached reduces Soul by 1, not max Rush (manual 866–869).
   Roll Engine; this sheet only records the picked outcome.
 - Missions/progress tracks are referenced, never duplicated: `#tracks` links where the manual
   says "create a progress track".
+- **Cautioned recovery (manual 888–890):** canonical mechanical erase is this feature's
+  `sheet.ts` `slumber()` (RecoverySection "Slumber now") — it removes Cautioned and resyncs
+  Rush caps. The Session night log does not mutate conditions; after slumbering it reminds the
+  player to erase Cautioned here (ConditionsSection can also erase by hand). Do not unify the
+  two surfaces without an explicit product decision.
 
 ## Feeding from preserved blood
 
@@ -50,10 +55,14 @@ never erases Starving.
 ## Known limitations
 
 - `pendingLoss` / `pendingRushLoss` are ephemeral module refs: reloading mid-cascade drops them,
-  so the prompt a player was mid-answer on is lost.
+  so the prompt a player was mid-answer on is lost. A pending-cascade cross-feature hook is out
+  of scope (night log still only links here).
 - Rush caps resync only on condition change (`markCondition` / `eraseCondition` / `syncRushCaps`
   call sites). A reload with pre-existing conditions defers the resync until the next
-  mark/erase; stored caps from an older build can show briefly until then.
+  mark/erase; stored caps from an older build can show briefly until then. Phase 2 cleanup
+  skipped a load-time resync in `game.ts`: calling `syncRushCaps` from the store would import
+  this feature into shared state and is not a few-line migrate. Do not persist on load (stale-
+  bundle guard).
 - The Torpid-burden mitigation upgrade ("When you lose Blood and spend 1 Rush to mitigate,
   reduce the total Blood lost to 0 instead of by 1", manual ~4009–4013) is unimplemented.
 - The remaining review-noted gaps from the original report still hold: no Aspect/Burden

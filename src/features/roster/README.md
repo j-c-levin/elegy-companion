@@ -70,4 +70,5 @@ Feature styles stay scoped in this feature's SFCs.
 - **Form remounts on pick/edit.** Picking a table cell (including the same cell again) or
   editing another entry remounts the form via `formKey`, clearing half-typed input. The roster
   list is the source of truth.
+- **Armed remove disarms on a 4s timeout**, matching Loose Ends. No outside-click dismiss.
 - **Single-tab convention** applies (last write wins, no `storage`-event sync), per `docs/store.md`.
