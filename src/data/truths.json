@@ -6,7 +6,7 @@
     {
       "id": "origins",
       "title": "Origins",
-      "ref": "1491-1530",
+      "ref": "1511-1530",
       "prompt": "Vampirism is believed to be…",
       "options": [
         { "id": "divine-punishment", "label": "A divine punishment", "summary": "Vampires descend from a scapegoat for human evil, cursed to spend eternity in darkness." },
