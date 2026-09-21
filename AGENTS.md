@@ -22,7 +22,7 @@
 
 ## Product conventions
 
-- **Mobile and desktop friendly, both are first-class.** Every screen must be usable on a phone (touch targets, responsive layout) and a desktop. There is no data sync between devices: all state lives in `localStorage` on each device. No backend, no accounts, ever. Design every feature so it can be opened on either platform and persist there.
+- **Mobile and desktop friendly, both are first-class.** Every screen must be usable on a phone (touch targets, responsive layout) and a desktop. State lives in `localStorage` on each device by default; there is no data sync between devices unless a feature calls for it. A minimal, cost-effective backend (e.g. a cloud function writing to managed storage on a free tier) is allowed when a feature genuinely benefits from it — no accounts required, and no cost-bearing infrastructure without explicit sign-off. Design every feature so it can be opened on either platform and persist there.
 - **UX-first, aesthetics-minimal.** Clean, uncluttered user experience is the priority. Use only the shared base CSS layer (see README "Building"): no styling engines, no component libraries, no theming effort. The bar is "looks intentional, not raw HTML" — nothing more.
 - **Features stay isolated.** One directory per feature. Shared game state goes through the store defined by the foundation; extend it additively in new files, never rewrite shared store files. Router/tab registration is the only shared file a feature may need to touch.
 - **Cite the manual.** Game rules live in `reference/elegy-4e-beta-v3.txt`; the line-number index is in README.md. Implement mechanics exactly as written and cite line numbers in PR/commit notes.

@@ -90,6 +90,10 @@ Quick jump points for implementation:
 
 ## Feature roadmap
 
+**Current focus:** mobile usability pass (tab bar touch targets) and a readability pass on the
+extracted manual text (ManualRef dialogs). Phases 1–3 are shipped; Phase 4 below is backlog —
+ideas only, not scheduled.
+
 ### Phase 1 — Core play loop (the paper friction)
 
 1. **Interactive character sheet**
@@ -129,7 +133,7 @@ Quick jump points for implementation:
 12. **Rules reference** — searchable glossary (1188–1396), basic actions with full result text (418–512), damage/clarity-loss tables by threat Rank (Health 687–696, Clarity 728–739).
 13. **Aspect database** — browse Expertises, Gifts, Mysteries, Edges, Burdens with abilities and acquisition requirements (2892–4269).
 
-### Phase 4 — Nice-to-haves
+### Phase 4 — Backlog (not currently planned)
 
 14. **PWA / offline** — installable, all state in `localStorage`, export/import JSON.
 15. **Journal** — scene-by-scene log with timestamps, markdown export (the game explicitly encourages journaling, 97–106).
