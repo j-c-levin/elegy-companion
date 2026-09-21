@@ -88,13 +88,14 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   border-radius: 2rem;
   border: 1px solid var(--pico-muted-border-color);
   background: var(--pico-background-color);
-  color: var(--pico-muted-color);
+  color: var(--pico-primary-inverse);
 }
 
 .chip.active {
   background: var(--pico-primary-background);
   border-color: var(--pico-primary-background);
   color: var(--pico-primary-inverse);
+  font-weight: 600;
 }
 
 .table-list {

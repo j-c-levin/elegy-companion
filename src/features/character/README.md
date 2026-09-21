@@ -69,3 +69,6 @@ never erases Starving.
   database (acquiring a burden applies only its starting −1 base/max Rush); the victim-fed-
   yesterday two-day rule is narrative text only; Mangled/Enraged/Discredited/Tormented
   progress-track completion is not wired back, so those conditions are erased manually.
+- `ConfirmButton.vue` danger variant uses `--pico-danger-background` / `--pico-danger-inverse`,
+  which are undefined in Pico 2.1.1 — the fill silently renders transparent (text still passes
+  contrast). Swap to defined tokens when touching that component.
