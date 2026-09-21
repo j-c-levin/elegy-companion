@@ -28,7 +28,10 @@ function coerceNpc(raw: unknown): Npc | null {
     name: name.trim() || 'Unnamed',
     type,
     rank,
-    pulse: typeof raw.pulse === 'number' && Number.isFinite(raw.pulse) ? raw.pulse : null,
+    pulse:
+      typeof raw.pulse === 'number' && Number.isFinite(raw.pulse)
+        ? Math.min(Math.max(0, Math.round(raw.pulse)), pulseMax(rank))
+        : null,
     notes: typeof raw.notes === 'string' ? raw.notes : '',
     createdAt: typeof raw.createdAt === 'number' ? raw.createdAt : Date.now(),
   }

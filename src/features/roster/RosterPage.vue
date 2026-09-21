@@ -29,8 +29,8 @@ function finishEditing(): void {
 </script>
 
 <template>
-  <section>
-    <h1>NPC &amp; Adversary Roster</h1>
+  <section aria-labelledby="roster-heading">
+    <h1 id="roster-heading">NPC &amp; Adversary Roster</h1>
     <p class="lede">
       Every NPC and adversary in your city as a structured record: name, creature type, Rank, Pulse
       and notes. Built from the common-rank table per creature type (manual 986–1008, repeated for
