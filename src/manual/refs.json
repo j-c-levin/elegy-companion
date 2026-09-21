@@ -962,6 +962,39 @@
     ]
   },
   {
+    "key": "glossary-ally",
+    "label": "Ally",
+    "section": "Chapter 2 — Glossary",
+    "ranges": [
+      {
+        "start": 1207,
+        "end": 1208
+      }
+    ]
+  },
+  {
+    "key": "glossary-elegy",
+    "label": "Elegy",
+    "section": "Chapter 2 — Glossary",
+    "ranges": [
+      {
+        "start": 1249,
+        "end": 1251
+      }
+    ]
+  },
+  {
+    "key": "glossary-gm",
+    "label": "Game Master (GM)",
+    "section": "Chapter 2 — Glossary",
+    "ranges": [
+      {
+        "start": 1298,
+        "end": 1301
+      }
+    ]
+  },
+  {
     "key": "truths-innate-powers",
     "label": "Truths: Innate Powers",
     "section": "Chapter 3 — Create Your Universe",
