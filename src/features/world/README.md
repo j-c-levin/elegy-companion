@@ -42,10 +42,24 @@ Use the pre-registered keys: per-category keys (`truths-origins`,
 `truths-werewolves`, `truths-fey`), `city-basics`, `city-faction`,
 `city-districts`, `first-mission-envision`, `first-mission-commit`.
 
-## Known limitations (foundation stub)
+## Known limitations
 
-- `WorldPage.vue` is a `ToolStub` placeholder. The wizard UI is task 10's work.
-- Out-of-range `firstMission.rank` values are clamped to 1–5 on load rather
-  than falling back to `null`.
-- Persist guards refuse to overwrite newer stored data, mirroring
-  `migrateGameState`; update both if the version scheme changes.
+- The manual's d10 Highlight and Ugly side tables (manual 2358–2431, 2433–2500) are digitized
+  locally in `city-tables.ts` with paraphrased summaries, not as `src/data/oracles` JSONs (the
+  oracle registry is shared). The raw table text is available through `ManualRef` via the
+  `city-highlight` and `city-ugly-side` keys wired next to the Roll controls.
+- A whole-chapter `city` key (2338–2698) is intentionally unregistered per the foundation
+  contract; the three section keys are cited instead.
+- Truths have no oracle wiring: the manual directs choosing one option per category
+  (1502–1504), not rolling, so no table is attached to that step.
+- Districts are stored as free-text lines (per the contract). The structured add-form composes
+  one string per district ("Name — Type — Faction: … — Key place: …"); individual fields are
+  not recoverable after save.
+- The wizard shows one step per screen at every viewport; the desktop "rail" is a sticky
+  stepper, not a side-by-side view of all steps.
+- Out-of-range `firstMission.rank` values are clamped to 1–5 on load rather than falling back
+  to `null`.
+- Persist guards refuse to overwrite newer stored data, mirroring `migrateGameState`; update
+  both if the version scheme changes.
+- The faction values list is capped at 3 with add/remove chips but does not enforce exactly
+  three while drafting; the manual's "choose three values" (2508) is a hint, not a hard gate.
