@@ -40,7 +40,7 @@
 }
 
 .desktop-nav a:hover {
-  color: var(--pico-color);
+  color: var(--pico-secondary-inverse);
   background: var(--pico-muted-background-color, var(--pico-secondary-background));
 }
 

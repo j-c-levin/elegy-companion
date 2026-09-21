@@ -27,6 +27,7 @@
 - **Features stay isolated.** One directory per feature. Shared game state goes through the store defined by the foundation; extend it additively in new files, never rewrite shared store files. Router/tab registration is the only shared file a feature may need to touch.
 - **Cite the manual.** Game rules live in `reference/elegy-4e-beta-v3.txt`; the line-number index is in README.md. Implement mechanics exactly as written and cite line numbers in PR/commit notes.
 - **No emojis. No unnecessary comments.**
+- **Contrast: text on filled elements uses Pico's inverse tokens** (`--pico-primary-inverse` on `--pico-primary-background`, `--pico-secondary-inverse` on `--pico-secondary-background`) — verified WCAG AA in both color modes. Pico 2.1.1 quirks: it scopes `--pico-background-color` to the primary fill inside `<button>` (so `background: var(--pico-background-color)` on a button is blue, never the page color), the `--pico-primary-hue` override in `base.css` is inert, and `--pico-danger*` tokens are undefined — do not rely on them (see character README debt).
 
 ## Agent conduct
 
