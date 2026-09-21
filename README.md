@@ -153,11 +153,12 @@ npm run build      # typecheck + build to dist/
 npm run preview    # serve the production build locally
 ```
 
-`npm run dev` and `npm run build` first regenerate `src/manual/excerpts.json` from the manual
-(`scripts/build-manual-excerpts.mjs`) — see [`src/manual/README.md`](src/manual/README.md). Wherever
-the UI quotes the manual, use the shared `<ManualRef>` info button (`src/components/ManualRef.vue`)
-with a key from the range registry (`src/manual/refs.json`); it opens the cited lines in a
-readable dialog on mobile and desktop.
+`npm run dev` and `npm run build` first regenerate `src/manual/excerpts.json` and
+`src/manual/readable.json` from the manual (`scripts/build-manual-excerpts.mjs`) — see
+[`src/manual/README.md`](src/manual/README.md). Wherever the UI quotes the manual, use the shared
+`<ManualRef>` info button (`src/components/ManualRef.vue`) with a key from the range registry
+(`src/manual/refs.json`); it opens the cited lines in a readable dialog on mobile and desktop
+(readable reflow when coverage exists, raw-line fallback otherwise).
 
 Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`. The Vite `base` is `/elegy-companion/`.
 
