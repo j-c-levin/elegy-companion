@@ -161,7 +161,7 @@ readable dialog on mobile and desktop.
 
 Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`. The Vite `base` is `/elegy-companion/`.
 
-### Tools and routes (Phase 1)
+### Tools and routes
 
 | Tool | Route |
 |---|---|
@@ -170,8 +170,11 @@ Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`. Th
 | Roll Engine | `/rolls` |
 | Progress Tracks | `/tracks` |
 | Oracles | `/oracles` |
+| Session (night log, Loose Ends, XP) | `/session` (`?view=night-log\|loose-ends\|xp`) |
+| Connections | `/connections` |
+| NPC & Adversary Roster | `/roster` |
 
-Navigation is top tabs on desktop, a bottom tab bar on mobile (breakpoint 720px). Pages use hash routing (`/#/character`).
+Navigation is top tabs on desktop, a bottom tab bar on mobile (breakpoint 720px). Pages use hash routing (`/#/character`). Storage ownership for each tool is documented in [`docs/store.md`](docs/store.md) and the per-feature READMEs.
 
 ### Shared state and data conventions
 
