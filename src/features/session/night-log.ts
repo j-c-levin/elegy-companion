@@ -42,15 +42,59 @@ function emptyLog(): NightLogStorage {
   return { version: 1, entries: [], slumberCount: 0, awakeCount: 0, totalBloodLost: 0 }
 }
 
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === 'object' && value !== null
+}
+
+function isNightOutcome(value: unknown): value is NightOutcome {
+  return value === 'slumber' || value === 'stayed-awake'
+}
+
+function finiteNumber(value: unknown): value is number {
+  return typeof value === 'number' && Number.isFinite(value)
+}
+
+function coerceEntry(raw: unknown): NightLogEntry | null {
+  if (!isRecord(raw)) return null
+  if (typeof raw.id !== 'string' || typeof raw.at !== 'string') return null
+  if (!isNightOutcome(raw.outcome)) return null
+  if (
+    !finiteNumber(raw.bloodBefore) ||
+    !finiteNumber(raw.bloodAfter) ||
+    !finiteNumber(raw.bloodLost) ||
+    !finiteNumber(raw.rushDelta)
+  ) {
+    return null
+  }
+  if (typeof raw.clamped !== 'boolean' || typeof raw.standingQueued !== 'boolean') return null
+  if (typeof raw.looseEnd !== 'string') return null
+  return {
+    id: raw.id,
+    at: raw.at,
+    outcome: raw.outcome,
+    bloodBefore: raw.bloodBefore,
+    bloodAfter: raw.bloodAfter,
+    bloodLost: raw.bloodLost,
+    clamped: raw.clamped,
+    rushDelta: raw.rushDelta,
+    standingQueued: raw.standingQueued,
+    looseEnd: raw.looseEnd,
+  }
+}
+
 export function loadLog(): NightLogStorage {
   const raw = readJson<Partial<NightLogStorage>>(STORAGE_NAME)
   if (!raw || raw.version !== 1 || !Array.isArray(raw.entries)) return emptyLog()
+  const entries = raw.entries
+    .map(coerceEntry)
+    .filter((entry): entry is NightLogEntry => entry !== null)
+    .slice(0, MAX_ENTRIES)
   return {
     version: 1,
-    entries: raw.entries.slice(0, MAX_ENTRIES),
-    slumberCount: raw.slumberCount ?? 0,
-    awakeCount: raw.awakeCount ?? 0,
-    totalBloodLost: raw.totalBloodLost ?? 0,
+    entries,
+    slumberCount: finiteNumber(raw.slumberCount) ? raw.slumberCount : 0,
+    awakeCount: finiteNumber(raw.awakeCount) ? raw.awakeCount : 0,
+    totalBloodLost: finiteNumber(raw.totalBloodLost) ? raw.totalBloodLost : 0,
   }
 }
 

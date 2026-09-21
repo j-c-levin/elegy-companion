@@ -23,8 +23,8 @@ below ("Task N notes") rather than editing shared tables, so parallel branches d
 ## Storage
 
 - `game.lists['loose-ends']` / `game.lists['loose-ends-tied']`: owned by task 6. Ownership moved
-  here from the character feature in Phase 2 (see `docs/store.md`); the Loose Ends block in
-  `src/features/character/XpSection.vue` is the legacy Phase 1 surface and is superseded.
+  here from the character feature in Phase 2 (see `docs/store.md`); the legacy Loose Ends block
+  in the character XP section was removed in Phase 2 cleanup.
 - `elegy:night-log`: owned by task 5. Store the per-night slumber checklist history there with a
   `version` field (`docs/store.md` storage helpers); simple derived counters belong in the payload,
   not in new `game.lists` names.
@@ -50,7 +50,6 @@ simpler; never write `draft.xp` directly from a section SFC.
 - XP awarded for Mission/Connection completion is granted by the tracks feature; the XP section
   displays and spends the shared total but never double-awards rank XP (manual 1132–1140).
 
-<<<<<<< HEAD
 ## Task 5 notes — Night log / slumber checklist (`feature/session-night-log`)
 
 Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persistence). Built at
@@ -74,17 +73,21 @@ Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persist
   `/character` (888–890). Connections and conditions are never mutated from here.
 - History persists in `elegy:night-log` via `readJson`/`writeJson` as a version-1 payload
   (`entries` capped at 100, newest first, plus `slumberCount` / `awakeCount` / `totalBloodLost`
-  counters), validated and defaulted on read.
+  counters). `loadLog` validates version, array-ness, and each entry's shape (id, at, outcome,
+  numeric blood/rush fields, booleans, looseEnd string); malformed entries are dropped.
 
 ### Known limitations
 
 - The Standing test is not queued into `elegy:character-tenets` programmatically — the user
   queues it on `/character` (cross-tool note above); revisit if a shared pending-test API lands.
-- Connection Pulse recovery and `Cautioned` recovery are reminders only; they are applied on
-  their owning pages (task 8 / character feature).
+- Connection Pulse recovery and `Cautioned` recovery are reminders only. Pulse is applied on
+  `/connections`. **Cautioned (manual 888–890):** canonical mechanical erase is Character Sheet
+  slumber (`character/sheet.ts` `slumber()`, RecoverySection "Slumber now"), which also resyncs
+  Rush caps; ConditionsSection can erase by hand. This night log does not mutate conditions.
 - The "Flow Your Blood with Soul" roll for staying awake must be made in the Roll Engine; the
   section reminds but does not roll.
 - Counters are simple totals; no per-scene journaling (the Phase 4 journal may supersede).
+  Per-entry timestamps on Loose Ends are out of scope (`ListItem` is `{ id, text }` only).
 
 ## Task 6 notes — Loose Ends tracker
 
@@ -109,12 +112,12 @@ Implemented in `LooseEndsSection.vue` with list logic in `loose-ends.ts` (same d
 - Tying awards XP in a second `updateGame` call after the list move (sanctioned by this README's
   XP helpers section), so a crash between the two calls would persist the move without the XP.
 - The tied list is a flat archive: tied ends cannot be re-opened or deleted; if a tie was a
-  mistake, the only recourse is editing localStorage. Add an "untie" affordance if that bites.
+  mistake, the only recourse is editing localStorage. An "untie" affordance is out of scope.
 - The Drop confirm is a local two-step button, not the character feature's `ConfirmButton`
-  component (that file is outside this task's ownership); consider extracting a shared confirm
-  component in end-of-phase cleanup.
+  component (importing across features would couple them). Left local; no shared confirm
+  component in this cleanup.
 - No per-entry timestamps: `ListItem` is `{ id, text }` only, so entries cannot be sorted by when
-  they were written; list order (append at end) is the only chronology.
+  they were written; list order (append at end) is the only chronology. Out of scope.
 
 ## Task 7 notes (XP economy)
 
@@ -138,12 +141,10 @@ Implemented in `LooseEndsSection.vue` with list logic in `loose-ends.ts` (same d
   Mission/Connection completion XP (manual 1132–1140). Tying Loose Ends (+1 XP, 1147–1152) is
   linked to the Loose Ends tab, not duplicated here.
 
-### Known limitations (for end-of-phase cleanup)
+### Known limitations
 
-- Devtools name collision: this component and `character/XpSection.vue` are both registered as
-  `XpSection`. Rename one (e.g. `SessionXpSection`) when the legacy character surface retires.
 - The spend-confirm armed state and tally-crossing affordance are local to this SFC; if another
   feature ever needs a confirm button, consider promoting a shared `ConfirmButton` (the character
-  feature has one but importing across features would couple them).
+  feature has one but importing across features would couple them). Left local in this cleanup.
 - Manual award buttons are raw +1/+3 buttons by design (the roll engine could auto-award on
-  Failure, but that would couple the rolls feature to session state — revisit with the lead).
+  Failure, but that would couple the rolls feature to session state — out of scope).

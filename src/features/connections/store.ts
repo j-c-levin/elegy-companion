@@ -235,7 +235,7 @@ export function giveBlood(id: string, amount: number): boolean {
 // Manual 1072–1077: letting them heal, rolled with dice + Rank instead of an Attribute.
 export function letThemHeal(id: string, outcome: HealOutcome): void {
   const connection = find(id)
-  if (!connection) return
+  if (!connection || connection.dead) return
   if (outcome === 'stylish') {
     healPulse(id, connection.rank)
   } else if (outcome === 'flat') {

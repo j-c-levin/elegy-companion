@@ -1,10 +1,10 @@
 import { reactive, ref } from 'vue'
 
+import { awardXp, spendXp as spendSharedXp } from '@/features/session/xp'
 import {
   addListItem,
   game,
   readJson,
-  removeListItem,
   updateGame,
   writeJson,
   type GameState,
@@ -113,39 +113,16 @@ export function dismissRushLoss(): void {
 }
 
 export function addXp(amount: number): void {
-  updateGame((draft) => {
-    draft.xp += amount
-  })
+  awardXp(amount)
 }
 
 export function spendXp(amount: number): void {
-  updateGame((draft) => {
-    draft.xp = Math.max(0, draft.xp - amount)
-  })
+  spendSharedXp(amount)
 }
 
 export function addLooseEnd(text: string): void {
   updateGame((draft) => {
     addListItem(draft, 'loose-ends', text)
-  })
-}
-
-export function tieLooseEnd(id: string): void {
-  updateGame((draft) => {
-    const list = draft.lists['loose-ends'] ?? []
-    const item = list.find((i) => i.id === id)
-    if (!item) return
-    removeListItem(draft, 'loose-ends', id)
-    const tied = draft.lists['loose-ends-tied'] ?? []
-    tied.push({ id: item.id, text: item.text })
-    draft.lists['loose-ends-tied'] = tied
-    draft.xp += 1
-  })
-}
-
-export function discardLooseEnd(id: string): void {
-  updateGame((draft) => {
-    removeListItem(draft, 'loose-ends', id)
   })
 }
 

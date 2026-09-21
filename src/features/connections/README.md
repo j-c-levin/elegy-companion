@@ -62,7 +62,8 @@ feature's feature-local shared-class file and is loaded by this feature only).
 
 - Slumber heals Connections by their Rank in Pulse (manual 1061–1062): the Session night log shows
   a reminder linking here; applying the heal belongs to this feature (per-card button and the
-  page-level batch button).- Interaction bonus when Bloodied by you (extra action die, 1043–1045) and the Rank penalty when
+  page-level batch button).
+- Interaction bonus when Bloodied by you (extra action die, 1043–1045) and the Rank penalty when
   acting against a Connection Bloodied by them (1048–1050) surface here as displayed rules text;
   the Roll Engine reads modifiers from the store only, so if rolls should consume these states,
   coordinate with the lead before adding cross-feature imports.
@@ -88,3 +89,9 @@ feature's feature-local shared-class file and is loaded by this feature only).
 - A failed test's "If you refuse or fail, the Connection is permanently undone" deletes the card
   (two-step confirm); there is no archive/undo history.
 - Dead Connections remain in the roster, tagged "Dead or destroyed", until deleted manually.
+- `dice.ts` (`rollActionDie`, `rollChallengePair`, `compareRoll`, `VERDICT_LABEL`) and
+  `pulseMax` / `XP_PER_RANK` / `clampRank` in `types.ts` duplicate the tracks feature's helpers.
+  Left duplicated: a shared module would be a third owner and would couple otherwise isolated
+  features. Tracks has no feature README; this note is the record for both.
+- No automated tracks↔connections sync (filling, rank, seal). Out of scope; linking stays the
+  free-text `trackNote` field.

@@ -54,12 +54,11 @@ Feature styles stay scoped in this feature's SFCs.
 
 ## Known limitations (v1)
 
-- **Chapter 5 citations are plain text.** `refs.json` (shared file, off-limits to this task) has
-  no keys for 4270–4490 (creation + vampires/mortals/hunters/ghosts statblocks), 4491–4567
-  (witches), 4568–4606 (werewolves), 4607–4660 (fey) or 4661–4854 (factions) — only `npc-ranks`
-  (986–1008) was pre-registered. Those ranges are therefore cited as text, not ManualRef
-  buttons; registering keys (e.g. `npc-creation` 4270–4310) would let the buttons render bundled
-  excerpts.
+- **Most Chapter 5 citations are still plain text.** `npc-creation` (4270–4310) is registered
+  and used on the RulesPanel heading. Remaining ranges — 4270–4490 (vampires/mortals/hunters/
+  ghosts statblocks), 4491–4567 (witches), 4568–4606 (werewolves), 4607–4660 (fey), 4661–4854
+  (factions) — stay as line numbers, not ManualRef buttons. `npc-ranks` (986–1008) was
+  already registered.
 - **The contract's "1007 note" is line 1008.** Lines 1006–1007 are blank in the extraction; the
   werewolf transformed-Rank note sits at 1008 (and 4333). Cited as 1008 throughout.
 - **Records are name/type/rank/pulse/notes only.** Drives and Means (4290–4294) are carried in
@@ -68,6 +67,8 @@ Feature styles stay scoped in this feature's SFCs.
   validation that a referenced combat track exists.
 - **Pulse is informational here.** Damage/healing/avoid-destruction mechanics for Connection NPCs
   stay in the tracks and connections tools; the roster records the standing value only.
-- **Form resets are prop-driven.** Picking a table cell or editing another entry replaces any
-  half-typed input in the form (including the name); the roster list is the source of truth.
+- **Form remounts on pick/edit.** Picking a table cell (including the same cell again) or
+  editing another entry remounts the form via `formKey`, clearing half-typed input. The roster
+  list is the source of truth.
+- **Armed remove disarms on a 4s timeout**, matching Loose Ends. No outside-click dismiss.
 - **Single-tab convention** applies (last write wins, no `storage`-event sync), per `docs/store.md`.

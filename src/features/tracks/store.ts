@@ -1,5 +1,6 @@
 import { reactive, watch } from 'vue'
 
+import { awardXp } from '@/features/session/xp'
 import { game, makeId, readJson, updateGame, writeJson } from '@/store'
 
 import {
@@ -206,9 +207,7 @@ export function removeStep(id: string, stepId: string): void {
 
 // Manual 1132–1140: completing a Mission grants XP per its Rank.
 export function grantXp(amount: number): void {
-  updateGame((draft) => {
-    draft.xp += amount
-  })
+  awardXp(amount)
 }
 
 export function grantMissionXp(id: string): number {

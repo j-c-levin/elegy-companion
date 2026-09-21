@@ -96,6 +96,7 @@ function applyProgress(label: string): void {
 }
 
 function recordTest(outcome: TestOutcome): void {
+  if (props.connection.dead) return
   if (outcome === 'failure') {
     confirmingUndo.value = false
     showDemand.value = true
@@ -103,10 +104,15 @@ function recordTest(outcome: TestOutcome): void {
   }
   confirmingUndo.value = false
   showDemand.value = false
-  applyProgress(outcome === 'stylish' ? 'This test brings you closer' : 'Closer, at a cost')
+  applyProgress(
+    outcome === 'stylish'
+      ? 'This test brings you closer'
+      : 'Closer, at a cost — pay the price (manual 1036–1037)',
+  )
 }
 
 function rollTest(): void {
+  if (props.connection.dead) return
   confirmingUndo.value = false
   const die = rollActionDie()
   const bonus = props.connection.sealed ? 1 : 0
@@ -306,7 +312,7 @@ function refuse(): void {
         Soul {{ game.attributes.soul }} · Charm {{ game.attributes.charm }} on the Character Sheet.
       </p>
       <div class="btn-row">
-        <button type="button" class="ghost-btn" @click="rollTest">Roll the test</button>
+        <button type="button" class="ghost-btn" :disabled="connection.dead" @click="rollTest">Roll the test</button>
       </div>
       <p v-if="testRoll" class="roll-line" role="status">
         1d6 {{ testRoll.die }} + {{ testRoll.attribute }} {{ attributeValue }}<template v-if="testRoll.bonus"> +1 Sealed</template>
@@ -318,9 +324,9 @@ function refuse(): void {
       </p>
       <p class="note">Rolled in the Roll Engine instead? Record it:</p>
       <div class="btn-row">
-        <button type="button" class="ghost-btn" @click="recordTest('stylish')">Stylish</button>
-        <button type="button" class="ghost-btn" @click="recordTest('flat')">Flat</button>
-        <button type="button" class="ghost-btn" @click="recordTest('failure')">Failure</button>
+        <button type="button" class="ghost-btn" :disabled="connection.dead" @click="recordTest('stylish')">Stylish</button>
+        <button type="button" class="ghost-btn" :disabled="connection.dead" @click="recordTest('flat')">Flat</button>
+        <button type="button" class="ghost-btn" :disabled="connection.dead" @click="recordTest('failure')">Failure</button>
       </div>
       <template v-if="showDemand">
         <p class="note">They demand proof of your loyalty. Pick one (manual 1038–1046):</p>
@@ -391,9 +397,9 @@ function refuse(): void {
           <button type="button" class="ghost-btn" :disabled="connection.dead" @click="rollLetThemHeal">
             Let them heal: roll dice + {{ connection.rank }}
           </button>
-          <button type="button" class="ghost-btn small" @click="store.letThemHeal(props.connection.id, 'stylish')">Stylish +{{ props.connection.rank }}</button>
-          <button type="button" class="ghost-btn small" @click="store.letThemHeal(props.connection.id, 'flat')">Flat +{{ Math.ceil(props.connection.rank / 2) }}</button>
-          <button type="button" class="ghost-btn small" @click="store.letThemHeal(props.connection.id, 'failure')">Fail +{{ Math.floor(props.connection.rank / 2) }}</button>
+          <button type="button" class="ghost-btn small" :disabled="connection.dead" @click="store.letThemHeal(props.connection.id, 'stylish')">Stylish +{{ props.connection.rank }}</button>
+          <button type="button" class="ghost-btn small" :disabled="connection.dead" @click="store.letThemHeal(props.connection.id, 'flat')">Flat +{{ Math.ceil(props.connection.rank / 2) }}</button>
+          <button type="button" class="ghost-btn small" :disabled="connection.dead" @click="store.letThemHeal(props.connection.id, 'failure')">Fail +{{ Math.floor(props.connection.rank / 2) }}</button>
         </div>
         <p v-if="healRoll" class="roll-line" role="status">
           1d6 {{ healRoll.die }} + Rank {{ connection.rank }} = {{ healRoll.score }} vs

@@ -191,6 +191,7 @@ feature-local storage key (see storage helpers) instead — `lists` is for simpl
 
 ```ts
 import { game, updateGame, addListItem, removeListItem } from '@/store'
+import { awardXp } from '@/features/session/xp'
 
 // read (reactive)
 const rush = game.meters.rush
@@ -204,6 +205,7 @@ updateGame((draft) => {
   draft.attributes.soul = 1
   draft.meters.rush.value += 1
 })
+awardXp(1)
 
 // named lists
 updateGame((draft) => {
@@ -246,6 +248,6 @@ awards and spends XP through the small helpers in `src/features/session/xp.ts` (
 Both helpers ignore non-positive amounts; `spendXp` clamps the total at 0 and reports nothing —
 callers must pre-check `game.xp >= cost` and disable unaffordable actions (manual 1123–1155).
 Do not edit `xp.ts` in an implementation task — it is frozen for the phase so parallel
-worktrees cannot collide; if you need more, add a module next to your own SFC. The Phase 1
-helpers (`character/sheet.ts` `addXp`/`spendXp`, `tracks/store.ts` `grantXp`) keep working;
-migrating their call sites is end-of-phase cleanup, not Phase 2 work.
+worktrees cannot collide; if you need more, add a module next to your own SFC. Phase 1 helpers
+(`character/sheet.ts` `addXp`/`spendXp`, `tracks/store.ts` `grantXp`) delegate to `awardXp` /
+`spendXp` so every mutation goes through the same entry point.

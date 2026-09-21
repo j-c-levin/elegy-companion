@@ -9,8 +9,7 @@ export function pulseMax(rank: Rank): number {
 // Manual 1136–1140: sealing a Connection grants XP per its Rank.
 export const XP_PER_RANK: Record<Rank, number> = { 1: 1, 2: 2, 3: 5, 4: 10, 5: 20 }
 
-// Manual 924–927 + 942–950: ten-box track; one mark per the rank is worth
-// 3 / 2 / 1 / ½ / ¼ boxes, so filling takes 3–4 / 5 / 10 / 20 / 40 marks.
+// Manual 924–927 + 942–950: filling a ten-box track takes 3–4 / 5 / 10 / 20 / 40 marks.
 export const MARKS_TO_FILL: Record<Rank, string> = {
   1: '3–4',
   2: '5',
