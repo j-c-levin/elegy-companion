@@ -90,7 +90,7 @@ tbody th {
   border: 1px solid var(--pico-muted-border-color);
   border-radius: 0.45rem;
   background: transparent;
-  color: var(--pico-color);
+  color: var(--pico-contrast, var(--pico-color));
   font-size: 0.9rem;
   font-weight: 400;
   min-height: 2.2rem;
