@@ -43,10 +43,10 @@ Registered keys used: `glossary` (1188–1396), `glossary-ally` (1207–1208),
 ## Known limitations
 
 - Glossary rows open the covering rule-section excerpt, not the glossary's own
-  line ranges (those are not registered individually). Ally, Elegy, and Game
-  Master cite their glossary spans (`glossary-ally` 1207–1208, `glossary-elegy`
-  1249–1251, `glossary-gm` 1298–1301); two-column layout still shows the
-  neighboring column in the excerpt.
+  line ranges (the other glossary spans are not registered individually). Ally,
+  Elegy, and Game Master cite their glossary spans (`glossary-ally` 1207–1208,
+  `glossary-elegy` 1249–1251, `glossary-gm` 1298–1301); two-column layout still
+  shows the neighboring column in the excerpt.
 - `glossary.json` term names follow the manual's glossary canon (`Basic
   Action`, `Feed`, `Experience (XP)`); `Combat` is kept as an anchor term
   although the manual glossary itself has no COMBAT entry.
