@@ -101,7 +101,7 @@ Implemented in `LooseEndsSection.vue` with list logic in `loose-ends.ts` (same d
   A pre-check on the reactive read prevents awarding XP for an id that is no longer open (e.g.
   double-click).
 - "Drop" removes an open end after an inline two-step confirm (button flips to "Sure?" for 4 s),
-  matching `discardLooseEnd` semantics from `character/sheet.ts`.
+  deleting the entry from `game.lists['loose-ends']` with no XP awarded.
 - Entries render from the shared lists reactively, so questions written by the night log
   (task 5, via `addListItem`) appear without any extra wiring; items are plain `{ id, text }`.
 - Manual citations use the pre-registered keys `loose-ends` (1147–1155) and `loose-end-write`
