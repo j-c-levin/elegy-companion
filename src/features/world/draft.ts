@@ -47,14 +47,14 @@ export function resetWorldDraft(): void {
   saveWorld(state)
 }
 
-interface TruthOption {
+export interface TruthOption {
   id: string
   label: string
   summary: string
 }
 
-interface TruthCategory {
-  id: string
+export interface TruthCategory {
+  id: TruthId
   title: string
   prompt: string
   options: TruthOption[]
@@ -63,7 +63,8 @@ interface TruthCategory {
 const CATEGORIES = (truthsData as { categories: TruthCategory[] }).categories
 
 export function truthCategory(id: TruthId): TruthCategory | undefined {
-  return CATEGORIES.find((category) => category.id === id)
+  const found = CATEGORIES.find((category) => category.id === id)
+  return found ? { ...found, id } : undefined
 }
 
 export function truthChoiceLabel(id: TruthId): string {

@@ -3,39 +3,19 @@ import { computed, ref } from 'vue'
 
 import ManualRef from '@/components/ManualRef.vue'
 
-import truthsData from '@/data/truths.json'
 import {
   chooseTruth,
   customTruthText,
   setCustomTruth,
+  truthCategory,
   worldDraft,
+  type TruthCategory,
+  type TruthOption,
 } from './draft'
 import { TRUTH_IDS, type TruthId } from './world'
 
-interface TruthOption {
-  id: string
-  label: string
-  summary: string
-}
-
-interface TruthCategory {
-  id: TruthId
-  title: string
-  prompt: string
-  options: TruthOption[]
-}
-
-interface RawTruthCategory {
-  id: string
-  title: string
-  prompt: string
-  options: TruthOption[]
-}
-
-const RAW_CATEGORIES = (truthsData as { categories: RawTruthCategory[] }).categories
-
 const CATEGORIES: TruthCategory[] = TRUTH_IDS.flatMap((id) => {
-  const raw = RAW_CATEGORIES.find((category) => category.id === id)
+  const raw = truthCategory(id)
   return raw ? [{ ...raw, id }] : []
 })
 
@@ -121,9 +101,6 @@ function customSlotValue(id: TruthId): string {
           @click="openCustom(category)"
         >
           <span class="option-label">Other — create your own</span>
-          <span v-if="customTruthText(category.id) && !isCustomActive(category.id)" class="option-summary">
-            {{ customTruthText(category.id) }}
-          </span>
         </button>
       </div>
       <div v-if="isCustomActive(category.id)" class="custom-slot">

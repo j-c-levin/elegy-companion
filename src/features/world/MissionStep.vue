@@ -1,14 +1,20 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import ManualRef from '@/components/ManualRef.vue'
 
 import { getTable, rollTable, summarize, type OracleResult } from '@/features/oracles/roll'
-import type { OracleRow } from '@/features/oracles/types'
+import type { OracleRow, OracleTable } from '@/features/oracles/types'
 import { setMissionField, worldDraft } from './draft'
 
 const world = worldDraft()
+
+function table(id: string): OracleTable {
+  const found = getTable(id)
+  if (!found) throw new Error(`missing oracle table ${id}`)
+  return found
+}
 
 type TableRoll = { result: OracleResult; row: OracleRow }
 
@@ -39,15 +45,19 @@ function onField<K extends 'title' | 'subject' | 'goal' | 'scene'>(
 }
 
 function rollSubject(): void {
-  subjectRoll.value = rollTable(getTable('subject')!)
+  subjectRoll.value = rollTable(table('subject'))
 }
 
 function rollGoal(): void {
-  goalRoll.value = rollTable(getTable('character-goal')!)
+  goalRoll.value = rollTable(table('character-goal'))
+}
+
+function collectSubTexts(result: OracleResult): string[] {
+  return (result.subResults ?? []).flatMap((sub) => [summarize(sub), ...collectSubTexts(sub)])
 }
 
 function subjectText(roll: TableRoll): string {
-  const subs = roll.result.subResults?.map((sub) => summarize(sub)) ?? []
+  const subs = collectSubTexts(roll.result)
   const main = summarize(roll.result)
   return subs.length ? `${main} — and — ${subs.join(' — and — ')}` : main
 }
@@ -84,6 +94,8 @@ function resetMission(): void {
   setMissionField('rank', null)
   setMissionField('scene', '')
 }
+
+onUnmounted(() => window.clearTimeout(resetTimer))
 
 function trackSummary(): string {
   const rank = world.firstMission.rank
@@ -132,14 +144,14 @@ function trackSummary(): string {
       </div>
 
       <p class="hint">
-        A good first mission is personal, unavoidable, urgent, and tight in scope (manual
-        2846–2857).
+        A good first mission is personal, unavoidable, urgent, and tight in scope
+        (manual 2846–2891 <ManualRef ref-key="first-mission-commit" />).
       </p>
     </article>
 
     <article class="panel">
       <h3>Set the scene <ManualRef ref-key="first-mission-commit" /></h3>
-      <p class="hint">Pick an option to start from, then make it yours (manual 2846–2863).</p>
+      <p class="hint">Pick an option to start from, then make it yours (manual 2846–2891 <ManualRef ref-key="first-mission-commit" />).</p>
       <div class="scene-options">
         <button
           v-for="option in SCENE_OPTIONS"
@@ -147,6 +159,7 @@ function trackSummary(): string {
           type="button"
           class="option"
           :class="{ selected: world.firstMission.scene.startsWith(option.seed) }"
+          :aria-pressed="world.firstMission.scene.startsWith(option.seed)"
           @click="applySceneOption(option.seed)"
         >
           {{ option.label }}
