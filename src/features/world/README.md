@@ -46,10 +46,8 @@ Use the pre-registered keys: per-category keys (`truths-origins`,
 
 - The manual's d10 Highlight and Ugly side tables (manual 2358–2431, 2433–2500) are digitized
   locally in `city-tables.ts` with paraphrased summaries, not as `src/data/oracles` JSONs (the
-  oracle registry is shared). Their full table text is therefore not available through
-  `ManualRef`; the `city-basics` key covers only the instruction lines (2342–2355). Registering
-  dedicated refs keys (e.g. `city-highlight`, `city-ugly-side`) would restore the raw table
-  text in the dialog.
+  oracle registry is shared). The raw table text is available through `ManualRef` via the
+  `city-highlight` and `city-ugly-side` keys wired next to the Roll controls.
 - A whole-chapter `city` key (2338–2698) is intentionally unregistered per the foundation
   contract; the three section keys are cited instead.
 - Truths have no oracle wiring: the manual directs choosing one option per category
