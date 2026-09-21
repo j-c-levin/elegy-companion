@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ManualRef from '@/components/ManualRef.vue'
-import actions from '@/data/basic-actions.json'
+import actionsData from '@/data/basic-actions.json'
 
 interface Action {
   id: string
@@ -12,7 +12,7 @@ interface Action {
   results: Record<string, { text: string; options: { label: string }[] }>
 }
 
-const actionList = actions.actions as Action[]
+const actionList: Action[] = actionsData.actions
 
 const resultOrder = ['stylish', 'flat', 'failure'] as const
 const resultLabels: Record<(typeof resultOrder)[number], string> = {

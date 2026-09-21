@@ -56,7 +56,7 @@ function refRange(t: Term): { start: number; end: number } {
     </header>
     <p v-if="!groupedTerms.length" class="muted">No terms match.</p>
     <div v-for="group in groupedTerms" :key="group.letter" class="letter-group">
-      <h3 class="letter" aria-hidden="true">{{ group.letter }}</h3>
+      <h3 class="letter">{{ group.letter }}</h3>
       <ul class="term-list">
         <li v-for="t in group.terms" :key="t.term" class="term-row">
           <div class="term-main">
