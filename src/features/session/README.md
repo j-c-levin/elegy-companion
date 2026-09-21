@@ -84,3 +84,33 @@ Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persist
 - The "Flow Your Blood with Soul" roll for staying awake must be made in the Roll Engine; the
   section reminds but does not roll.
 - Counters are simple totals; no per-scene journaling (the Phase 4 journal may supersede).
+
+## Task 6 notes — Loose Ends tracker
+
+Implemented in `LooseEndsSection.vue` with list logic in `loose-ends.ts` (same directory):
+
+- Write form appends a trimmed question to `game.lists['loose-ends']` via `addListItem` inside
+  `updateGame`; empty input is rejected client-side and guarded in `writeLooseEnd`.
+- "Tied (+1 XP)" moves the item from `loose-ends` to `loose-ends-tied` (same id and text, mirroring
+  the legacy `character/sheet.ts` shape) and awards +1 XP through `awardXp(1)` from `./xp` as an
+  immediate second call after the move's `updateGame` recipe; `draft.xp` is never written directly.
+  A pre-check on the reactive read prevents awarding XP for an id that is no longer open (e.g.
+  double-click).
+- "Drop" removes an open end after an inline two-step confirm (button flips to "Sure?" for 4 s),
+  matching `discardLooseEnd` semantics from `character/sheet.ts`.
+- Entries render from the shared lists reactively, so questions written by the night log
+  (task 5, via `addListItem`) appear without any extra wiring; items are plain `{ id, text }`.
+- Manual citations use the pre-registered keys `loose-ends` (1147–1155) and `loose-end-write`
+  (1150–1152); no new refs.json keys were needed.
+
+### Known limitations
+
+- Tying awards XP in a second `updateGame` call after the list move (sanctioned by this README's
+  XP helpers section), so a crash between the two calls would persist the move without the XP.
+- The tied list is a flat archive: tied ends cannot be re-opened or deleted; if a tie was a
+  mistake, the only recourse is editing localStorage. Add an "untie" affordance if that bites.
+- The Drop confirm is a local two-step button, not the character feature's `ConfirmButton`
+  component (that file is outside this task's ownership); consider extracting a shared confirm
+  component in end-of-phase cleanup.
+- No per-entry timestamps: `ListItem` is `{ id, text }` only, so entries cannot be sorted by when
+  they were written; list order (append at end) is the only chronology.
