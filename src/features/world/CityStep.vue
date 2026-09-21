@@ -4,11 +4,17 @@ import { ref } from 'vue'
 import ManualRef from '@/components/ManualRef.vue'
 
 import { getTable, rollTable, type OracleResult } from '@/features/oracles/roll'
-import type { OracleRow } from '@/features/oracles/types'
+import type { OracleRow, OracleTable } from '@/features/oracles/types'
 import { setCityField, worldDraft } from './draft'
 import { CITY_HIGHLIGHTS, CITY_UGLY_SIDES, rollCityIdea, type CityIdea } from './city-tables'
 
 const world = worldDraft()
+
+function table(id: string): OracleTable {
+  const found = getTable(id)
+  if (!found) throw new Error(`missing oracle table ${id}`)
+  return found
+}
 
 const MAX_FACTION_VALUES = 3
 
@@ -45,15 +51,15 @@ function rollUglySide(): void {
 }
 
 function rollFactionValue(): void {
-  factionValueRoll.value = rollTable(getTable('faction')!)
+  factionValueRoll.value = rollTable(table('faction'))
 }
 
 function rollFactionName(): void {
-  factionNameRoll.value = rollTable(getTable('faction')!)
+  factionNameRoll.value = rollTable(table('faction'))
 }
 
 function rollSampleFaction(): void {
-  sampleFactionRoll.value = rollTable(getTable('sample-factions')!)
+  sampleFactionRoll.value = rollTable(table('sample-factions'))
 }
 
 function useFactionValue(): void {
@@ -92,7 +98,7 @@ function removeFactionValue(index: number): void {
 }
 
 function rollDistrictType(): void {
-  const roll = rollTable(getTable('district-type')!)
+  const roll = rollTable(table('district-type'))
   districtType.value = roll.result.parts.map((part) => (part.kind === 'text' ? part.text : '')).join(' ').trim()
 }
 
@@ -152,7 +158,7 @@ function removeDistrict(index: number): void {
 
       <div class="idea-block">
         <div class="idea-head">
-          <label for="city-highlight">Highlights — what lures mortals into this city?</label>
+          <label for="city-highlight">Highlights — what lures mortals into this city? <ManualRef ref-key="city-highlight" /></label>
           <button type="button" class="roll-btn" @click="rollHighlight">Roll d10</button>
         </div>
         <input id="city-highlight" type="text" :value="world.city.highlight" placeholder="e.g. Vibrant nightlife" @input="onField('highlight', $event)" />
@@ -164,7 +170,7 @@ function removeDistrict(index: number): void {
 
       <div class="idea-block">
         <div class="idea-head">
-          <label for="city-ugly">Ugly side — what makes them leave?</label>
+          <label for="city-ugly">Ugly side — what makes them leave? <ManualRef ref-key="city-ugly-side" /></label>
           <button type="button" class="roll-btn" @click="rollUglySide">Roll d10</button>
         </div>
         <input id="city-ugly" type="text" :value="world.city.uglySide" placeholder="e.g. Surveillance state" @input="onField('uglySide', $event)" />
@@ -353,13 +359,13 @@ label {
 }
 
 .chip-remove {
-  width: 1.6rem;
-  height: 1.6rem;
-  min-height: 0;
-  padding: 0;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.3rem 0.6rem;
   margin: 0;
   border-radius: 999px;
   line-height: 1;
+  font-size: 1.1rem;
 }
 
 .add-row {
