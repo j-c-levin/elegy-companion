@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, type Component } from 'vue'
+import { computed, onUnmounted, ref, type Component } from 'vue'
 
 import ManualRef from '@/components/ManualRef.vue'
 import { game } from '@/store'
@@ -38,11 +38,13 @@ const STEPS: WizardStep[] = [
 
 const draft = ref<CreationDraft>(loadDraft())
 const stepIndex = ref(0)
-const committed = ref(false)
 const step = computed(() => STEPS[stepIndex.value]!)
 const nextStep = computed(() => STEPS[stepIndex.value + 1])
 const spreadValid = computed(() => hasValidAttributeSpread(draft.value.attributes))
 const existingName = computed(() => game.identity.name)
+const isPristine = computed(
+  () => JSON.stringify(draft.value) === JSON.stringify(createDefaultDraft()),
+)
 
 function patch(p: Partial<CreationDraft>): void {
   draft.value = { ...draft.value, ...p }
@@ -54,7 +56,6 @@ function go(index: number): void {
 }
 
 function onCommitted(): void {
-  committed.value = true
   draft.value = createDefaultDraft()
   clearDraft()
 }
@@ -72,9 +73,12 @@ function discard(): void {
   }
   window.clearTimeout(discardTimer)
   discardArmed.value = false
-  onCommitted()
+  draft.value = createDefaultDraft()
+  clearDraft()
   go(0)
 }
+
+onUnmounted(() => window.clearTimeout(discardTimer))
 </script>
 
 <template>
@@ -124,7 +128,7 @@ function discard(): void {
             Draft saves automatically on this device<span v-if="existingName"> · a character named {{ existingName }} already exists</span><span v-if="!spreadValid"> · attributes incomplete</span>.
           </p>
           <button
-            v-if="!committed"
+            v-if="!isPristine"
             type="button"
             class="outline discard-btn"
             :class="{ armed: discardArmed }"
