@@ -1,7 +1,5 @@
 import { readJson, writeJson } from '@/store'
 
-import truthsData from '@/data/truths.json'
-
 export const WORLD_STORAGE_NAME = 'world'
 export const WORLD_STORAGE_VERSION = 1
 
@@ -19,9 +17,20 @@ export type TruthId =
   | 'werewolves'
   | 'fey'
 
-export const TRUTH_IDS: readonly TruthId[] = truthsData.categories.map(
-  (category) => category.id as TruthId,
-)
+export const TRUTH_IDS = [
+  'origins',
+  'innate-powers',
+  'population',
+  'political-landscape',
+  'loyalty',
+  'hunting-territory',
+  'sunlight',
+  'district-access',
+  'witches',
+  'hunters',
+  'werewolves',
+  'fey',
+] as const satisfies readonly TruthId[]
 
 export type TruthChoice = string
 
@@ -123,7 +132,18 @@ export function loadWorld(): WorldState {
   return coerceWorld(readJson<unknown>(WORLD_STORAGE_NAME))
 }
 
+const storedWorld = readJson<unknown>(WORLD_STORAGE_NAME)
+const persistWorldBlocked =
+  typeof storedWorld === 'object' &&
+  storedWorld !== null &&
+  typeof (storedWorld as { version?: unknown }).version === 'number' &&
+  (storedWorld as { version: number }).version > WORLD_STORAGE_VERSION
+
 export function saveWorld(state: WorldState): void {
+  if (persistWorldBlocked) {
+    console.warn('[elegy] refusing to persist world: stored data is from a newer version')
+    return
+  }
   writeJson(WORLD_STORAGE_NAME, state)
 }
 

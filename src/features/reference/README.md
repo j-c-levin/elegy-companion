@@ -26,10 +26,10 @@ Everything in `src/features/reference/` (this README included), plus nothing els
 ## Manual citations
 
 Use the pre-registered keys: `glossary` (1188–1396), `basic-actions` (418–489,
-existing), `generic-action` (490–512), `health` (681–722, existing),
-`health-harm` (681–722), `clarity` (723–761, existing), `clarity-harm`
-(723–761). Prefer registry keys over ad-hoc ranges; add a `ManualRef` button
-next to every quoted rule.
+existing), `generic-action` (490–512), `combat` (1085–1121), `health`
+(681–722, existing), `health-harm` (681–722), `clarity` (723–761, existing),
+`clarity-harm` (723–761), `factions` (4661–4854). Prefer registry keys over
+ad-hoc ranges; add a `ManualRef` button next to every quoted rule.
 
 ## Known limitations (foundation stub)
 

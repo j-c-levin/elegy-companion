@@ -79,7 +79,17 @@ export function loadDraft(): CreationDraft {
   return coerceDraft(stored.draft)
 }
 
+const storedDraft = readJson<{ version?: unknown }>(CREATION_DRAFT_STORAGE_NAME)
+const persistDraftBlocked =
+  !!storedDraft &&
+  typeof storedDraft.version === 'number' &&
+  storedDraft.version > CREATION_DRAFT_VERSION
+
 export function saveDraft(draft: CreationDraft): void {
+  if (persistDraftBlocked) {
+    console.warn('[elegy] refusing to persist creation draft: stored data is from a newer version')
+    return
+  }
   writeJson(CREATION_DRAFT_STORAGE_NAME, { version: CREATION_DRAFT_VERSION, draft })
 }
 
@@ -87,10 +97,22 @@ export function clearDraft(): void {
   saveDraft(createDefaultDraft())
 }
 
+export function hasValidAttributeSpread(a: Attributes): boolean {
+  const sorted = [a.body, a.mind, a.charm, a.soul].sort((x, y) => x - y)
+  const expected = [...ATTRIBUTE_SPREAD].sort((x, y) => x - y)
+  return sorted.every((value, i) => value === expected[i])
+}
+
 export function commitDraft(draft: CreationDraft): void {
+  if (!hasValidAttributeSpread(draft.attributes)) {
+    throw new Error(
+      `[elegy] refusing to commit draft: attributes must be the ${ATTRIBUTE_SPREAD.join('/')} spread`,
+    )
+  }
   updateGame((state) => {
     state.identity.occupation = draft.occupation
     state.identity.apparentAge = draft.apparentAge
+    state.identity.realAge = ''
     state.identity.progenitor = draft.progenitor
     state.identity.name = draft.name
     state.identity.look = draft.look
