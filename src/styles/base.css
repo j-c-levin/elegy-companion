@@ -67,6 +67,8 @@
   min-height: 2.75rem;
   line-height: 2.75rem;
   padding: 0 0.3rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-radius: 0.5rem;
   text-align: center;
   text-decoration: none;
   color: var(--pico-muted-color);
@@ -76,8 +78,14 @@
   text-overflow: ellipsis;
 }
 
+.tabbar .tab:hover {
+  color: var(--pico-color);
+}
+
 .tabbar .tab.router-link-active {
-  color: var(--pico-primary);
+  border-color: var(--pico-primary-background);
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
   font-weight: 600;
 }
 
