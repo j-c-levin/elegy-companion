@@ -27,13 +27,22 @@ Everything in `src/features/aspects/` (this README included), plus nothing else:
 
 Use the pre-registered keys: `aspects-how-they-work` (2893–2959),
 `aspects-expertise` (2960–3309), `aspects-gift` (3310–3671), `aspects-edge`
-(3672–3915), `aspects-connection` (3916–3960), `aspects-burden` (3961–4269).
-Cite subsection ranges only; whole-chapter ManualRef dialogs are
+(3672–3915), `aspects-mystery` (3712–3915), `aspects-connection` (3916–3960),
+`aspects-burden` (3961–4269). Cite subsection ranges only; whole-chapter ManualRef dialogs are
 intentionally not registered.
 
-## Known limitations (foundation stub)
+## Known limitations (task 13)
 
-- `AspectsPage.vue` is a `ToolStub` placeholder. Browse + acquisition flows are
-  task 13's work.
-- `aspects.json` ships the type skeleton only; per-aspect entries (Animality,
-  Shadows, …) are task 13's work (extend additively, keep `ref` keys parseable).
+- `aspects.json` now carries the full per-aspect catalog alongside the type
+  index (63 entries: 17 Expertises, 13 Gifts, 6 Mysteries, 3 Edges, 10
+  Connection abilities, 14 Burdens). Per-entry `ref` ranges are provenance
+  only; card ManualRef buttons open the covering per-type excerpt, not the
+  single aspect — per-aspect ranges are not registered in `refs.json`.
+- Mysteries cite `aspects-mystery` (3712–3915); per-aspect `ref` ranges are provenance-only line spans while `refKey` selects the covering per-type excerpt key.
+- Connection abilities have no names in the manual (3916–3960); the ten
+  names in `aspects.json` are editorial labels for browsing.
+- The `Blighted` tag marks the ten burdens tied to the Blighted condition
+  (manual 4033–4034); the UI does not otherwise model condition linkage.
+- No owned-aspects tracking; this tool persists nothing by design. Future
+  "owned aspects" tracking needs a new claimed storage name (coordinate
+  with the lead).
