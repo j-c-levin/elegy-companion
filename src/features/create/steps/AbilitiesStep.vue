@@ -98,7 +98,7 @@ function allowAllowedType(index: number): (name: string) => boolean {
       Pick three Aspects: an Expertise main talent, then two more Expertises or Edges (manual
       1825–1844 <ManualRef ref-key="creation-skills" />). Ability text lives in the
       <RouterLink to="/aspects">Aspect Database</RouterLink> — note each Aspect's starting
-      ability on your sheet (manual 2055, 2090–2107).
+      ability on your sheet (manual 2052, 2090–2107 <ManualRef ref-key="starting-abilities" />).
     </p>
 
     <div v-for="slot in slots" :key="slot.index" class="ability-slot">

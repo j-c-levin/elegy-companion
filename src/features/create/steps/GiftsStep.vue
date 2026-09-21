@@ -103,7 +103,7 @@ function allowFresh(index: number): (name: string) => boolean {
       </p>
       <p class="truth-note">
         Blights are abnormal vampiric weaknesses developed through inhuman deeds (manual
-        1442–1449).
+        1449–1455).
       </p>
     </article>
 
