@@ -262,7 +262,7 @@ onUnmounted(() => window.clearTimeout(discardTimer))
   }
 
   .rail-btn.done {
-    color: var(--pico-color);
+    color: var(--pico-contrast);
   }
 }
 </style>

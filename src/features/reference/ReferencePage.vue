@@ -47,6 +47,7 @@ const section = ref<Section>('glossary')
   flex: 1;
   margin: 0;
   padding: 0.55rem 0.5rem;
+  min-height: 2.75rem;
   font-size: 0.9rem;
   border-radius: 2rem;
   border: 1px solid var(--pico-muted-border-color);

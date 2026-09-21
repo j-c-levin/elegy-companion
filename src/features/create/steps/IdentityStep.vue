@@ -159,6 +159,7 @@ function removePossession(index: number): void {
 
 .remove-btn {
   flex-shrink: 0;
+  min-height: 2.75rem;
 }
 
 .possession-add {

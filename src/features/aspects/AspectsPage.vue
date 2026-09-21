@@ -251,6 +251,10 @@ function pluralLabel(t: AspectTypeMeta): string {
   color: var(--pico-contrast);
 }
 
+button.chip {
+  min-height: 2.75rem;
+}
+
 .chip.active {
   background: var(--pico-primary-background);
   border-color: var(--pico-primary-background);

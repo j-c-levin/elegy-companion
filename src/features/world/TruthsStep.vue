@@ -175,6 +175,7 @@ function customSlotValue(id: TruthId): string {
   border: 1px solid var(--pico-muted-border-color);
   border-radius: 0.6rem;
   background: var(--pico-card-background-color);
+  color: var(--pico-contrast);
   cursor: pointer;
 }
 
