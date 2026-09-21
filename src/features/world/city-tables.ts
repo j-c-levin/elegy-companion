@@ -1,3 +1,5 @@
+import { rollDie } from '@/features/oracles/roll'
+
 export interface CityIdea {
   label: string
   summary: string
@@ -31,5 +33,5 @@ export const CITY_UGLY_SIDES: readonly CityIdea[] = [
 ]
 
 export function rollCityIdea(list: readonly CityIdea[]): CityIdea {
-  return list[Math.floor(Math.random() * list.length)]
+  return list[rollDie(10) - 1]
 }
