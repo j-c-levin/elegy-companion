@@ -24,7 +24,7 @@ import IdentitySection from './IdentitySection.vue'
 import MetersSection from './MetersSection.vue'
 import RecoverySection from './RecoverySection.vue'
 import TenetsSection from './TenetsSection.vue'
-import XpSection from './XpSection.vue'
+import SheetXpSection from './SheetXpSection.vue'
 import ConfirmButton from './ConfirmButton.vue'
 import ManualRef from '@/components/ManualRef.vue'
 import { endRefKey } from '@/manual/refs'
@@ -112,7 +112,7 @@ const lossNote = computed(() => {
     <ConditionsSection />
     <RecoverySection />
     <TenetsSection />
-    <XpSection />
+    <SheetXpSection />
     <IdentitySection />
     <AttributesSection />
 

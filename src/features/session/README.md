@@ -139,8 +139,6 @@ Implemented in `LooseEndsSection.vue` with list logic in `loose-ends.ts` (same d
 
 ### Known limitations (for end-of-phase cleanup)
 
-- Devtools name collision: this component and `character/XpSection.vue` are both registered as
-  `XpSection`. Rename one (e.g. `SessionXpSection`) when the legacy character surface retires.
 - The spend-confirm armed state and tally-crossing affordance are local to this SFC; if another
   feature ever needs a confirm button, consider promoting a shared `ConfirmButton` (the character
   feature has one but importing across features would couple them).
