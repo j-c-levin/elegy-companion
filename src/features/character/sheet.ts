@@ -1,5 +1,6 @@
 import { reactive, ref } from 'vue'
 
+import { awardXp, spendXp as spendSharedXp } from '@/features/session/xp'
 import {
   addListItem,
   game,
@@ -112,15 +113,11 @@ export function dismissRushLoss(): void {
 }
 
 export function addXp(amount: number): void {
-  updateGame((draft) => {
-    draft.xp += amount
-  })
+  awardXp(amount)
 }
 
 export function spendXp(amount: number): void {
-  updateGame((draft) => {
-    draft.xp = Math.max(0, draft.xp - amount)
-  })
+  spendSharedXp(amount)
 }
 
 export function addLooseEnd(text: string): void {
