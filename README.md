@@ -176,6 +176,12 @@ Deploys to GitHub Pages on push to `main` via `.github/workflows/deploy.yml`. Th
 
 Navigation is top tabs on desktop, a bottom tab bar on mobile (breakpoint 720px). Pages use hash routing (`/#/character`). Storage ownership for each tool is documented in [`docs/store.md`](docs/store.md) and the per-feature READMEs.
 
+### Known limitations (mobile tab bar)
+
+- The mobile tab bar wraps 13 routes into a `auto-fill`/`minmax(4rem, 1fr)` grid: 5 columns (3 rows) at 360-390px, 6 columns (3 rows) at ~410-430px, 4 columns (4 rows) below ~342px. It costs ~9.2rem of viewport height on phones by design — every route stays visible with 44px-tall targets instead of scrolling.
+- `body`'s mobile `padding-bottom` (9.5rem, or 12.5rem under 342.39px) is coupled to the grid: retune both together if the tab count, `minmax` floor, or paddings change.
+- A 14th tool would add a fourth row on most phones; regroup navigation (e.g. a "More" tab) before growing it further.
+
 ### Shared state and data conventions
 
 - **Store:** `src/store/` is the shared, typed, localStorage-backed game state (identity, attributes, Body/Mind/Charm/Soul, Health/Clarity/Blood/Rush meters, XP, active conditions, generic lists). Read the full API in [`docs/store.md`](docs/store.md) before touching game state. Extend it additively; never rewrite shared store files. `game` is read-only — all mutations go through `updateGame`.
