@@ -49,3 +49,34 @@ simpler; never write `draft.xp` directly from a section SFC.
   `character/sheet.ts` internals; revisit with the lead if a shared pending-test API is warranted.
 - XP awarded for Mission/Connection completion is granted by the tracks feature; the XP section
   displays and spends the shared total but never double-awards rank XP (manual 1132–1140).
+
+## Task 7 notes (XP economy)
+
+`XpSection.vue` implements the XP economy at `/session?view=xp`:
+
+- **Shared total with tally units**: `game.xp` rendered as tally marks grouped into 5-mark units
+  (fifth tick drawn as the diagonal strike; a partial unit shows faded empty slots), manual
+  1161–1187 (`xp-tallies`). An aria label describes units/ticks for screen readers.
+- **Manual award buttons**: "+1 XP — Failure" and "+3 XP — Failure with a match" (manual
+  1144–1146) call `awardXp` from `./xp`; the section never touches `draft.xp` directly.
+- **Spend buttons**: 10 XP upgrade / 15 XP acquire (manual 1123–1155) call `spendXp` with the
+  mandatory pre-check `game.xp >= cost`; buttons are disabled when unaffordable. Two-click
+  confirm ("Cross out 2/3 units?") with a 4s disarm; while armed, the units that would be crossed
+  out are highlighted in the tally (manual 1168–1172).
+- **Acquisition guidance** (manual 1128–1155, `xp-acquire`): upgrade = new Ability + slumber;
+  acquire flows per Aspect type — innate Gift (slumber), learned Gift / Mystery (Connection
+  teaches via a favor Mission one Rank below theirs, min Rank 1), Edge/Expertise (narrative
+  justification + slumber); Connections and Burdens are never bought with XP. Guided text links
+  to `/connections` and `/tracks`; the section never grants rank XP itself — tracks owns
+  Mission/Connection completion XP (manual 1132–1140). Tying Loose Ends (+1 XP, 1147–1152) is
+  linked to the Loose Ends tab, not duplicated here.
+
+### Known limitations (for end-of-phase cleanup)
+
+- Devtools name collision: this component and `character/XpSection.vue` are both registered as
+  `XpSection`. Rename one (e.g. `SessionXpSection`) when the legacy character surface retires.
+- The spend-confirm armed state and tally-crossing affordance are local to this SFC; if another
+  feature ever needs a confirm button, consider promoting a shared `ConfirmButton` (the character
+  feature has one but importing across features would couple them).
+- Manual award buttons are raw +1/+3 buttons by design (the roll engine could auto-award on
+  Failure, but that would couple the rolls feature to session state — revisit with the lead).
