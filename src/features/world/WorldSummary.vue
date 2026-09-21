@@ -1,36 +1,21 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onUnmounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import ManualRef from '@/components/ManualRef.vue'
 
-import { resetWorldDraft, truthChoiceLabel, worldDraft } from './draft'
-import { TRUTH_IDS, type TruthId } from './world'
+import { resetWorldDraft, truthCategory, truthChoiceLabel, worldDraft } from './draft'
+import { TRUTH_IDS } from './world'
 
 const world = worldDraft()
 
 const confirmingReset = ref(false)
 let resetTimer: number | undefined
 
-const TRUTH_TITLES: Record<TruthId, string> = {
-  'origins': 'Origins',
-  'innate-powers': 'Innate Powers',
-  'population': 'Population',
-  'political-landscape': 'Political Landscape',
-  'loyalty': 'Loyalty',
-  'hunting-territory': 'Hunting Territory',
-  'sunlight': 'Sunlight',
-  'district-access': 'District Access',
-  'witches': 'Witches',
-  'hunters': 'Vampire Hunters',
-  'werewolves': 'Werewolves',
-  'fey': 'Fey',
-}
-
 const chosenTruths = computed(() =>
   TRUTH_IDS.filter((id) => world.truths[id] !== '').map((id) => ({
     id,
-    title: TRUTH_TITLES[id],
+    title: truthCategory(id)?.title ?? id,
     choice: truthChoiceLabel(id),
   })),
 )
@@ -50,6 +35,8 @@ function doReset(): void {
   confirmingReset.value = false
   resetWorldDraft()
 }
+
+onUnmounted(() => window.clearTimeout(resetTimer))
 </script>
 
 <template>
