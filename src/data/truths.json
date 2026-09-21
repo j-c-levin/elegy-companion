@@ -1,0 +1,139 @@
+{
+  "id": "truths",
+  "title": "Truths",
+  "source": "reference/elegy-4e-beta-v3.txt:1491-1627",
+  "categories": [
+    {
+      "id": "origins",
+      "title": "Origins",
+      "ref": "1511-1530",
+      "prompt": "Vampirism is believed to be…",
+      "options": [
+        { "id": "divine-punishment", "label": "A divine punishment", "summary": "Vampires descend from a scapegoat for human evil, cursed to spend eternity in darkness." },
+        { "id": "genetic-mutation", "label": "A genetic mutation", "summary": "Vampires are a separate species, or subspecies, from mortal humans." },
+        { "id": "failed-ritual", "label": "The result of a failed ritual", "summary": "Vampires descend from a sorcerer who attempted a ritual for eternal life but failed to control its effects." }
+      ]
+    },
+    {
+      "id": "innate-powers",
+      "title": "Innate Powers",
+      "ref": "1492-1510",
+      "prompt": "A vampire's innate powers and blight are…",
+      "options": [
+        { "id": "inherited", "label": "Inherited from their progenitor", "summary": "Supernatural characteristics reflect those of your progenitor." },
+        { "id": "random", "label": "Seemingly random", "summary": "No way to tell what powers or blight a vampire will develop." },
+        { "id": "personality", "label": "Influenced by their personality", "summary": "Innate powers reflect the vampire's personality in some way." }
+      ]
+    },
+    {
+      "id": "population",
+      "title": "Population",
+      "ref": "1513-1530",
+      "prompt": "How many vampires exist among mortals?",
+      "options": [
+        { "id": "very-few", "label": "Very few", "summary": "Minimal influence over mortal society; rarely meet in groups." },
+        { "id": "some", "label": "Some", "summary": "Considerable (even if narrow) influence; gather in popular meeting places." },
+        { "id": "many", "label": "Many", "summary": "Influence over most spheres of mortal existence; vampires are everywhere." }
+      ]
+    },
+    {
+      "id": "political-landscape",
+      "title": "Political Landscape",
+      "ref": "1536-1549",
+      "prompt": "Your city's political landscape is marked primarily by…",
+      "options": [
+        { "id": "unity", "label": "Unity", "summary": "The entire city is ruled by a central government body called the Concord." },
+        { "id": "conflict", "label": "Conflict", "summary": "Most of the city is ruled by the Concord; the rest by dissident factions." },
+        { "id": "division", "label": "Division", "summary": "Multiple independent factions, all independent from each other." }
+      ]
+    },
+    {
+      "id": "loyalty",
+      "title": "Loyalty",
+      "ref": "1552-1573",
+      "prompt": "The faction a vampire belongs to is…",
+      "options": [
+        { "id": "chosen", "label": "Chosen by her", "summary": "Usually the same as her progenitor's; principles taught before turning." },
+        { "id": "inherited", "label": "Inherited from her progenitor", "summary": "Leaving it is illegal; leavers survive in exile unless valuable elsewhere." },
+        { "id": "by-region", "label": "Determined by the region where she was transformed", "summary": "Progenitors turn in their own faction's region; other leaders claim the progeny." }
+      ]
+    },
+    {
+      "id": "hunting-territory",
+      "title": "Hunting Territory",
+      "ref": "1536-1554",
+      "prompt": "Besides their own place, where can vampires hunt and feed?",
+      "options": [
+        { "id": "wherever", "label": "Wherever they have access to", "summary": "Common sense is the only rule: avoid being noticed or feeding from someone else's prey." },
+        { "id": "feeding-grounds", "label": "In specific feeding grounds", "summary": "Every district has a designated feeding ground; feeding elsewhere in public is illegal." },
+        { "id": "home-surroundings", "label": "In their home's surroundings", "summary": "Feeding more than one block away from home is asking for trouble." }
+      ]
+    },
+    {
+      "id": "sunlight",
+      "title": "Sunlight",
+      "ref": "1557-1572",
+      "prompt": "When vampires go out in the sun, they…",
+      "options": [
+        { "id": "ash", "label": "Combust into a pile of ash", "summary": "Sunlight incinerates vampires beyond recognition." },
+        { "id": "bones", "label": "Decay into a pile of bones", "summary": "Body turns to dust; bones stay intact and dry, instantly preserved." },
+        { "id": "statues", "label": "Become solid statues", "summary": "Destroyed vampires look like realistic stone sculptures; material varies." }
+      ]
+    },
+    {
+      "id": "district-access",
+      "title": "District Access",
+      "ref": "1579-1601",
+      "prompt": "Can you linger in (not just pass through) other factions' districts?",
+      "options": [
+        { "id": "common-sense", "label": "Yes, but don't cause trouble", "summary": "Common sense, not laws, limits activity; mind your business." },
+        { "id": "border-posts", "label": "If you announce yourself at a border post", "summary": "Every territorial frontier has a watched border post to present yourself at." },
+        { "id": "invited", "label": "If you are personally invited", "summary": "You must be someone's guest; seen alone, you're in trouble." }
+      ]
+    },
+    {
+      "id": "witches",
+      "title": "Witches",
+      "ref": "1605-1619",
+      "prompt": "Mortals that study and practice magic are…",
+      "options": [
+        { "id": "myth", "label": "So rare most believe they don't exist", "summary": "If they do, they're extremely well hidden." },
+        { "id": "uncommon", "label": "Uncommon", "summary": "Small covens; not powerful enough for real political influence." },
+        { "id": "common", "label": "Common and well-organized", "summary": "Many diverse covens, some rivaling vampire factions." }
+      ]
+    },
+    {
+      "id": "hunters",
+      "title": "Vampire Hunters",
+      "ref": "1579-1599",
+      "prompt": "Vampire hunters are…",
+      "options": [
+        { "id": "rare", "label": "Rare and unorganized", "summary": "Lone vigilantes; underprepared but still dangerous." },
+        { "id": "organized", "label": "Uncommon, but organized", "summary": "Vigilantes plus religious or intelligence organizations; serious when they show up." },
+        { "id": "widespread", "label": "Widespread", "summary": "Religious orders and government agents operate frequently; a secret war." }
+      ]
+    },
+    {
+      "id": "werewolves",
+      "title": "Werewolves",
+      "ref": "1602-1622",
+      "prompt": "Humans who turn into large wolves are…",
+      "options": [
+        { "id": "uncommon", "label": "Present but uncommon", "summary": "Small packs; avoid trouble but highly territorial and violent." },
+        { "id": "common", "label": "Common within this city", "summary": "Another part of the urban underworld; often diplomatic, lingering animosity." },
+        { "id": "wilds", "label": "Mostly in the wilds and outskirts", "summary": "Large packs, fiercely territorial, destroy vampires without a second thought." }
+      ]
+    },
+    {
+      "id": "fey",
+      "title": "Fey",
+      "ref": "1628-1652",
+      "prompt": "Ethereal beings born in the land of dreams are…",
+      "options": [
+        { "id": "myth", "label": "Nothing but a myth", "summary": "Few vampires have seen a Fey; those who have are often discredited." },
+        { "id": "rare", "label": "Rare and extremely well hidden", "summary": "Alone or in small groups; crossing paths usually means trouble." },
+        { "id": "powerful", "label": "Common enough to hold real power", "summary": "Organized into factions; sometimes cooperate when goals align." }
+      ]
+    }
+  ]
+}

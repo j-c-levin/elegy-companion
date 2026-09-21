@@ -238,6 +238,8 @@ feature. Claim new names here and in your feature README before using them.
 | `character-tenets` (`elegy:character-tenets`) | feature-local | character | pending Conscience/Standing tests (Phase 1) |
 | `rolls` (`elegy:rolls`) | feature-local | rolls | roll history and panel state (Phase 1) |
 | `progress-tracks` (`elegy:progress-tracks`) | feature-local | tracks | mission/connection/combat tracks (Phase 1) |
+| `world` (`elegy:world`) | feature-local | world (task 10, World creation) | world truths, city, first-mission draft (manual 1491–1627, 2338–2698, 2699–2891) |
+| `creation-draft` (`elegy:creation-draft`) | feature-local | create (task 11, Character creation) | abandoned-draft state only; committed character lives in `elegy:game` |
 
 ## XP conventions
 

@@ -1,0 +1,33 @@
+{
+  "id": "glossary",
+  "title": "Glossary",
+  "source": "reference/elegy-4e-beta-v3.txt:1188-1396",
+  "terms": [
+    { "term": "Action Roll", "ref": "315-362", "summary": "1d6 + attribute vs 2d10; Stylish, Flat, Failure." },
+    { "term": "Rush", "ref": "363-375", "summary": "Bonus pool; cool it to replace a low action score." },
+    { "term": "Pay the Price", "ref": "364-412", "summary": "d100 consequence table for Flat and Failure results." },
+    { "term": "Basic Actions", "ref": "418-489", "summary": "Face Danger, Secure an Advantage, Compel, Gather Information, Hunt." },
+    { "term": "Generic Action Roll", "ref": "490-512", "summary": "One-size-fits-all mechanic when no basic action fits." },
+    { "term": "Match", "ref": "513-524", "summary": "Doubles on challenge dice: Twist, Misfortune, Impulse." },
+    { "term": "Health", "ref": "681-722", "summary": "Body integrity; regenerate with Body; cascade Wounded to Scarred." },
+    { "term": "Clarity", "ref": "723-761", "summary": "Mental balance; respite; cascade In Shock to Traumatized." },
+    { "term": "Blood", "ref": "762-805", "summary": "Animating force; slumber, feeding, appear alive." },
+    { "term": "Conscience", "ref": "853-882", "summary": "Tenet: trying rolls; cascade Detached to Blighted." },
+    { "term": "Standing", "ref": "856-907", "summary": "Tenet: trying rolls; cascade Cautioned to Branded." },
+    { "term": "Mission", "ref": "933-978", "summary": "Ranked progress track; fulfilling roll, recommit, abandon." },
+    { "term": "Connection", "ref": "979-1084", "summary": "Ranked relationship; Pulse, Sealed, Bloodied, testing." },
+    { "term": "Combat", "ref": "1085-1121", "summary": "Attack rolls, damage per rank, winning and losing." },
+    { "term": "Experience", "ref": "1122-1160", "summary": "Gain on failure; spend 10 to upgrade, 15 to acquire." },
+    { "term": "Loose End", "ref": "1147-1155", "summary": "Lingering question; +1 XP when tied." },
+    { "term": "Aspect", "ref": "2893-2959", "summary": "Expertise, Gift, Mystery, Edge, Burden, Connection powers." },
+    { "term": "Truths", "ref": "1511-1530", "summary": "World assumptions: origins, powers, population, politics, territory." },
+    { "term": "Base Rush", "ref": "363-375", "summary": "Value Rush resets to when cooled; starts at +2." },
+    { "term": "Slumber", "ref": "767-778", "summary": "End of night: lose 1 Blood, gain +1 Rush, write a Loose End." },
+    { "term": "Feeding", "ref": "785-800", "summary": "Restore Blood by hunting or other feeding." },
+    { "term": "Regenerate", "ref": "682-692", "summary": "Restore Health: roll with Body." },
+    { "term": "Respite", "ref": "746-756", "summary": "Restore Clarity in a safe place." },
+    { "term": "Pulse", "ref": "1057-1079", "summary": "Connection or NPC durability, max Rank + 2." },
+    { "term": "Faction", "ref": "4661-4854", "summary": "Values, names, relationships; Concord and dissidents." },
+    { "term": "Blight", "ref": "876-879", "summary": "Abnormal vampiric weakness from the Blighted condition." }
+  ]
+}

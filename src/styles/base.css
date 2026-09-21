@@ -54,6 +54,7 @@
   inset-inline: 0;
   bottom: 0;
   display: flex;
+  overflow-x: auto;
   background: var(--pico-background-color);
   border-top: 1px solid var(--pico-muted-border-color);
   padding-bottom: env(safe-area-inset-bottom);
@@ -61,7 +62,8 @@
 }
 
 .tabbar .tab {
-  flex: 1;
+  flex: 1 0 auto;
+  min-width: 4.25rem;
   text-align: center;
   text-decoration: none;
   color: var(--pico-muted-color);
