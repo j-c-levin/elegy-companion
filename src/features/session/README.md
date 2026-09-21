@@ -49,3 +49,38 @@ simpler; never write `draft.xp` directly from a section SFC.
   `character/sheet.ts` internals; revisit with the lead if a shared pending-test API is warranted.
 - XP awarded for Mission/Connection completion is granted by the tracks feature; the XP section
   displays and spends the shared total but never double-awards rank XP (manual 1132–1140).
+
+## Task 5 notes — Night log / slumber checklist (`feature/session-night-log`)
+
+Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persistence). Built at
+`/session?view=night-log`.
+
+- The checklist runs the whole end-of-night routine in one `updateGame` recipe (manual 767–778,
+  context 762–805): lose 1 Blood (unmitigable) and gain +1 Rush, capped at max Rush, mirroring the
+  Phase 1 `character/sheet.ts` slumber clamping. If Blood is already 0 the meter is clamped, not
+  driven below 0; a warning prompt then links to `/character` for cascade resolution
+  (806–825, key `blood-cascade`) instead of duplicating cascade logic.
+- The required lingering question (1150–1152, key `loose-end-write`) is written with `addListItem`
+  into `game.lists['loose-ends']` (task 6's list; entries only) inside the same recipe. The
+  slumber button stays disabled until the question is non-empty.
+- "Violated a law or custom tonight" checkbox (856–907, key `standing`): after completing, a
+  prompt links to `/character` to queue and resolve the Standing test. `character/sheet.ts` and
+  `elegy:character-tenets` are never imported or written.
+- Secondary flow "stay awake through the day" (773–776): lose 2 Blood, 1 less when spending
+  1 Rush per 779–783 (key `mitigate-blood`, unavailable while Starving); logged as `stayed-awake`.
+- After slumbering: reminder that each Connection recovers Pulse equal to its Rank (1057–1079,
+  key `pulse`) linking to `/connections`; if `Cautioned` is active, a reminder to erase it on
+  `/character` (888–890). Connections and conditions are never mutated from here.
+- History persists in `elegy:night-log` via `readJson`/`writeJson` as a version-1 payload
+  (`entries` capped at 100, newest first, plus `slumberCount` / `awakeCount` / `totalBloodLost`
+  counters), validated and defaulted on read.
+
+### Known limitations
+
+- The Standing test is not queued into `elegy:character-tenets` programmatically — the user
+  queues it on `/character` (cross-tool note above); revisit if a shared pending-test API lands.
+- Connection Pulse recovery and `Cautioned` recovery are reminders only; they are applied on
+  their owning pages (task 8 / character feature).
+- The "Flow Your Blood with Soul" roll for staying awake must be made in the Roll Engine; the
+  section reminds but does not roll.
+- Counters are simple totals; no per-scene journaling (the Phase 4 journal may supersede).
