@@ -1,27 +1,62 @@
 <script setup lang="ts">
-import ManualRef from '@/components/ManualRef.vue'
+import { ref } from 'vue'
+
+import CommonRankTable from './CommonRankTable.vue'
+import NpcForm from './NpcForm.vue'
+import RosterList from './RosterList.vue'
+import RulesPanel from './RulesPanel.vue'
+import type { CreatureType, Npc, Rank } from './types'
+
+const editing = ref<Npc | null>(null)
+const formSection = ref<HTMLElement | null>(null)
+const formRef = ref<InstanceType<typeof NpcForm> | null>(null)
+
+function startEntry(type: CreatureType, rank: Rank): void {
+  editing.value = null
+  formRef.value?.prefill(type, rank)
+  formSection.value?.scrollIntoView({ block: 'start' })
+}
+
+function editNpc(npc: Npc): void {
+  editing.value = npc
+  formSection.value?.scrollIntoView({ block: 'start' })
+}
+
+function finishEditing(): void {
+  editing.value = null
+}
 </script>
 
 <template>
-  <section aria-labelledby="roster-heading">
-    <h1 id="roster-heading">NPC &amp; Adversary Roster</h1>
-    <p class="cite">
-      Rank, Pulse and notes for every NPC and adversary, with the common-rank table per creature
-      type (manual 986–1008 <ManualRef ref-key="npc-ranks" />) and the Chapter 5 statblocks
-      (manual 4270–4854).
+  <section>
+    <h1>NPC &amp; Adversary Roster</h1>
+    <p class="lede">
+      Every NPC and adversary in your city as a structured record: name, creature type, Rank, Pulse
+      and notes. Built from the common-rank table per creature type (manual 986–1008, repeated for
+      the statblocks at 4311–4333) and the creation rules of Chapter 5 (4270–4854).
     </p>
-    <p class="planned">Planned for Phase 2, task 9.</p>
+
+    <CommonRankTable @pick="startEntry" />
+
+    <section ref="formSection" class="form-block">
+      <h2>{{ editing ? `Edit ${editing.name}` : 'New entry' }}</h2>
+      <NpcForm ref="formRef" :editing="editing" @save="finishEditing" @cancel="finishEditing" />
+    </section>
+
+    <RosterList @edit="editNpc" />
+
+    <RulesPanel />
   </section>
 </template>
 
 <style scoped>
-.cite {
+.lede {
   color: var(--pico-muted-color);
-  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
 }
 
-.planned {
-  color: var(--pico-muted-color);
-  font-style: italic;
+.form-block {
+  margin-top: 1.5rem;
+  scroll-margin-top: 4.5rem;
 }
 </style>
