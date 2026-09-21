@@ -30,4 +30,13 @@
 
 ## Agent conduct
 
-- Subagents do not spawn subagents and do not merge to `main`. The orchestrator handles code review (dispatched separately) and merging.
+- The lead orchestrates roadmap phases but does not implement directly: dispatch one implementation subagent per numbered task in the phase.
+  - Each implementation subagent works in its own worktree/branch `feature/<topic>` under the Git workflow above; commits and pushes regularly.
+  - Subagents do not spawn subagents and do not merge to `main`.
+- If tasks in a phase share interdependent paths, dispatch a foundation subagent first to build the shared pieces (store shape, shared components, routing, data conventions) so implementation subagents can each add their work cleanly in their own worktrees without rewriting shared files.
+- When an implementation branch is finished, the lead spins up a reviewer subagent: approach review as a staff-level frontend engineer with a clear eye for maintainability, abstraction, and clean code. Code comments must be non-existent, or a single line only where absolutely mandatory.
+- The lead handles merging to `main` after review passes.
+- At the end of each roadmap phase (README Feature roadmap), the orchestrator dispatches one dedicated tech-debt cleanup subagent before the next phase starts.
+  - Scope is cleanup only: known limitations in feature READMEs, review-noted gaps, TODOs, duplication, dead code, storage/migration guards. No new features.
+  - Works in its own worktree/branch `feature/<phase>-cleanup` under the same git workflow; does not merge to `main`.
+  - Must keep `npm run build` green and preserve manual line citations; writes remaining debt back to the owning feature README.
