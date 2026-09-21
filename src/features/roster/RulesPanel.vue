@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ManualRef from '@/components/ManualRef.vue'
+
 const STATBLOCKS: ReadonlyArray<{ label: string; lines: string }> = [
   { label: 'Average Vampires (Newborn to Ancient)', lines: '4338–4395' },
   { label: 'Mundane Mortals (Common Mortal, Gangster, Police Agent, Lackey)', lines: '4400–4430' },
@@ -15,7 +17,9 @@ const STATBLOCKS: ReadonlyArray<{ label: string; lines: string }> = [
   <section class="rules">
     <h2>Creation rules — Chapter 5</h2>
     <p class="cite">
-      NPCs &amp; creating them, manual 4270–4310 (full chapter: 4270–4854).
+      NPCs & creating them, manual 4270–4310
+      <ManualRef ref-key="npc-creation" label="Creating NPCs" />
+      (full chapter: 4270–4854).
     </p>
     <ul>
       <li>

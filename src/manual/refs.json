@@ -123,5 +123,6 @@
     { "start": 767, "end": 778, "label": "Slumber" },
     { "start": 785, "end": 800, "label": "Feeding" }
   ] },
+  { "key": "npc-creation", "label": "Creating NPCs", "section": "Chapter 5 — Other Characters", "ranges": [{ "start": 4270, "end": 4310 }] },
   { "key": "oracle-how-to", "label": "How to ask the Oracle", "section": "Chapter 6 — Oracles", "ranges": [{ "start": 4856, "end": 4884 }] }
 ]
