@@ -21,11 +21,6 @@ export interface CreationDraft {
   home: string
 }
 
-export interface CreationDraftStorage {
-  version: number
-  draft: CreationDraft
-}
-
 export function createDefaultDraft(): CreationDraft {
   return {
     occupation: '',

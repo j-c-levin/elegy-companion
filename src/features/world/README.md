@@ -40,7 +40,8 @@ Use the pre-registered keys: per-category keys (`truths-origins`,
 `truths-loyalty`, `truths-hunting-territory`, `truths-sunlight`,
 `truths-district-access`, `truths-witches`, `truths-hunters`,
 `truths-werewolves`, `truths-fey`), `city-basics`, `city-faction`,
-`city-districts`, `first-mission-envision`, `first-mission-commit`.
+`city-highlight`, `city-ugly-side`, `city-districts`,
+`first-mission-envision`, `first-mission-commit`.
 
 ## Known limitations
 

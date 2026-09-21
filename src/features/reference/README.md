@@ -31,21 +31,22 @@ text (manual 418–512), damage/clarity-loss tables by threat Rank (Health
 
 ## Manual citations
 
-Registered keys used: `glossary` (1188–1396), `basic-actions` (418–489),
+Registered keys used: `glossary` (1188–1396), `glossary-ally` (1207–1208),
+`glossary-elegy` (1249–1251), `glossary-gm` (1298–1301), `basic-actions` (418–489),
 `generic-action` (490–512), `aspects-give-rush` (436–438), `combat`
 (1085–1121), `health-harm` (681–722), `clarity-harm` (723–761),
 `health-cascade` (694–717), `clarity-cascade` (726–744), `mitigate-health`
-(708–712), `mitigate-clarity` (741–744). No new `refs.json` entries were
-needed; per-term `ref` ranges in `glossary.json` were verified by hand
-against `refs.json` ranges. The excerpt builder only scans `refs.json` +
-`oracles/*.json`, so re-check that each new term's range is already bundled
-before adding it.
+(708–712), `mitigate-clarity` (741–744). Per-term `ref` ranges in
+`glossary.json` must match a bundled excerpt (`refs.json` or an oracle
+`source`); the builder only scans those two places.
 
 ## Known limitations
 
 - Glossary rows open the covering rule-section excerpt, not the glossary's own
-  line ranges (those are not registered individually); terms with no dedicated
-  rule section (Ally, Elegy, Game Master) open the full glossary excerpt.
+  line ranges (the other glossary spans are not registered individually). Ally,
+  Elegy, and Game Master cite their glossary spans (`glossary-ally` 1207–1208,
+  `glossary-elegy` 1249–1251, `glossary-gm` 1298–1301); two-column layout still
+  shows the neighboring column in the excerpt.
 - `glossary.json` term names follow the manual's glossary canon (`Basic
   Action`, `Feed`, `Experience (XP)`); `Combat` is kept as an anchor term
   although the manual glossary itself has no COMBAT entry.
