@@ -188,11 +188,13 @@ function giveBlood(): void {
 
 function drinkTheirBlood(): void {
   store.setBloodied(props.connection.id, props.connection.bloodiedByYou, true)
+  showDemand.value = false
   flash.value = 'You drank their vampiric blood: Bloodied by them (manual 1041)'
 }
 
 function demandMission(): void {
   store.setLoyaltyDemand(props.connection.id, true)
+  showDemand.value = false
   flash.value = `They require a Mission at Rank ${demandRank.value} — commit it in Progress Tracks`
 }
 
@@ -263,9 +265,10 @@ function refuse(): void {
           Mark Sealed without XP (already claimed on the track)
         </button>
         <p class="note">
-          Filling the whole track Seals the Connection. Marks happen on its track in the
-          <RouterLink to="/tracks">Progress Tracks tool</RouterLink> — at Rank
-          {{ connection.rank }} a mark fills its share of the track, {{ MARKS_TO_FILL[connection.rank] }} marks fill it.
+          Filling the whole track Seals the Connection (manual 1011–1016). Marks happen on its
+          track in the <RouterLink to="/tracks">Progress Tracks tool</RouterLink> — at Rank
+          {{ connection.rank }}, {{ MARKS_TO_FILL[connection.rank] }} marks fill the track
+          (progress per Rank, manual 924–927).
         </p>
       </div>
       <div v-else class="btn-col">
@@ -333,10 +336,10 @@ function refuse(): void {
         Pulse {{ connection.pulse }} / {{ pmax }}
         <ManualRef ref-key="pulse" label="Pulse, limits and healing" />
       </summary>
-      <p class="roll-line">Their maximum Pulse equals their Rank + 2; damage comes off Pulse as Health does from you.</p>
+      <p class="note">Their maximum Pulse equals their Rank + 2; damage comes off Pulse as Health does from you.</p>
       <div class="btn-row">
-        <button type="button" class="ghost-btn" :disabled="connection.pulse === 0" @click="store.damagePulse(props.connection.id, 1)">−1 Pulse</button>
-        <button type="button" class="ghost-btn" :disabled="connection.pulse === 0" @click="store.damagePulse(props.connection.id, 2)">−2 Pulse</button>
+        <button type="button" class="ghost-btn" :disabled="connection.pulse === 0 || connection.dead" @click="store.damagePulse(props.connection.id, 1)">−1 Pulse</button>
+        <button type="button" class="ghost-btn" :disabled="connection.pulse === 0 || connection.dead" @click="store.damagePulse(props.connection.id, 2)">−2 Pulse</button>
         <button type="button" class="ghost-btn" :disabled="connection.pulse >= pmax || connection.dead" @click="store.healPulse(props.connection.id, 1)">+1 Pulse</button>
       </div>
 
