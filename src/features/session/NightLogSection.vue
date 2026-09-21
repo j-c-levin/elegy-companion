@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, onBeforeUnmount, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import ManualRef from '@/components/ManualRef.vue'
@@ -12,6 +12,8 @@ const violatedLaw = ref(false)
 const mitigateBlood = ref(false)
 const result = ref<NightResult | null>(null)
 const log = ref(loadLog())
+const confirmingClear = ref(false)
+let confirmTimer: number | undefined
 
 const starving = computed(() => game.activeConditions.includes('Starving'))
 const cautioned = computed(() => game.activeConditions.includes('Cautioned'))
@@ -34,11 +36,21 @@ function doStayAwake(): void {
 }
 
 function doClear(): void {
-  if (!window.confirm('Clear the whole night log history?')) return
+  if (!confirmingClear.value) {
+    confirmingClear.value = true
+    confirmTimer = window.setTimeout(() => {
+      confirmingClear.value = false
+    }, 4000)
+    return
+  }
+  window.clearTimeout(confirmTimer)
+  confirmingClear.value = false
   clearLog()
   result.value = null
   log.value = loadLog()
 }
+
+onBeforeUnmount(() => window.clearTimeout(confirmTimer))
 
 const whenFormat = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' })
 
@@ -151,7 +163,7 @@ function rushText(delta: number): string {
           You lost Blood while at 0 — the cascade (Starving → Enraged → Torpid) applies (manual
           806–825 <ManualRef ref-key="blood-cascade" />).
         </p>
-        <RouterLink to="/character">Resolve it on the Character Sheet</RouterLink>
+        <RouterLink to="/character">On the Character Sheet, press Lose 1 on the Blood meter</RouterLink>
       </div>
 
       <div v-if="result.standingQueued" class="prompt">
@@ -182,7 +194,9 @@ function rushText(delta: number): string {
     <article class="panel history">
       <div class="history-head">
         <h3>History</h3>
-        <button v-if="log.entries.length" type="button" class="ghost" @click="doClear">Clear</button>
+        <button v-if="log.entries.length" type="button" class="ghost" @click="doClear">
+          {{ confirmingClear ? 'Really clear?' : 'Clear' }}
+        </button>
       </div>
       <p class="counters">
         {{ log.slumberCount }} nights slumbered · {{ log.awakeCount }} stayed awake ·
@@ -202,7 +216,7 @@ function rushText(delta: number): string {
           <div class="entry-detail">
             <span class="effect">Blood {{ entry.bloodBefore }} → {{ entry.bloodAfter }}</span>
             <span class="effect">{{ rushText(entry.rushDelta) }}</span>
-            <span v-if="entry.standingQueued" class="effect">Standing tried</span>
+            <span v-if="entry.standingQueued" class="effect">Standing prompted</span>
             <span v-if="entry.looseEnd" class="quote">“{{ entry.looseEnd }}”</span>
           </div>
         </li>
@@ -300,9 +314,10 @@ function rushText(delta: number): string {
 }
 
 .ghost {
-  padding: 0.35rem 0.7rem;
+  padding: 0.55rem 0.9rem;
   font-size: 0.85rem;
   margin: 0;
+  min-height: 2.75rem;
 }
 
 .result h3 {
