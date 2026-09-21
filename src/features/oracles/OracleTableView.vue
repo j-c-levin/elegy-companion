@@ -71,6 +71,7 @@ roll()
 .back {
   margin: 0;
   padding: 0.3rem 0.75rem;
+  min-height: 2.75rem;
   font-size: 0.85rem;
   border-radius: 2rem;
 }
@@ -86,11 +87,12 @@ header small {
 .column-picker .chip {
   margin: 0 0.4rem 0.4rem 0;
   padding: 0.35rem 0.75rem;
+  min-height: 2.75rem;
   font-size: 0.85rem;
   border-radius: 2rem;
   border: 1px solid var(--pico-muted-border-color);
-  background: var(--pico-background-color);
-  color: var(--pico-primary-inverse);
+  background: var(--pico-card-background-color);
+  color: var(--pico-contrast);
 }
 
 .column-picker .chip.active {
