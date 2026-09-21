@@ -1,4 +1,416 @@
 {
   "version": 1,
-  "splices": []
+  "splices": [
+    {
+      "from": 986,
+      "to": 1008,
+      "side": "full",
+      "blocks": [
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "COMMON NPC RANKS",
+          "s": [
+            986,
+            986
+          ]
+        },
+        {
+          "k": "table",
+          "cols": [
+            "Type",
+            "Rank 1",
+            "Rank 2",
+            "Rank 3",
+            "Rank 4",
+            "Rank 5"
+          ],
+          "s": [
+            987,
+            1005
+          ],
+          "rows": [
+            {
+              "c": [
+                "Vampire",
+                "Newborn",
+                "Young",
+                "Mature",
+                "Elder",
+                "Ancient"
+              ],
+              "s": [
+                989,
+                989
+              ]
+            },
+            {
+              "c": [
+                "Mortal (Gangster)",
+                "Common Mortal",
+                "Police Agent (Lackey)",
+                "—",
+                "—",
+                "—"
+              ],
+              "s": [
+                991,
+                993
+              ]
+            },
+            {
+              "c": [
+                "Hunter",
+                "—",
+                "Vigilante (Holy Hunter)",
+                "— (Agent)",
+                "—",
+                "—"
+              ],
+              "s": [
+                995,
+                997
+              ]
+            },
+            {
+              "c": [
+                "Ghost",
+                "Recent Ghost",
+                "Wraith",
+                "—",
+                "—",
+                "—"
+              ],
+              "s": [
+                999,
+                999
+              ]
+            },
+            {
+              "c": [
+                "Witch",
+                "Apprentice",
+                "Veteran",
+                "Arch",
+                "Transcended",
+                "—"
+              ],
+              "s": [
+                1001,
+                1001
+              ]
+            },
+            {
+              "c": [
+                "Werewolf*",
+                "—",
+                "Adolescent*",
+                "Mature*",
+                "Elder*",
+                "—"
+              ],
+              "s": [
+                1003,
+                1003
+              ]
+            },
+            {
+              "c": [
+                "Fey",
+                "—",
+                "Refugee",
+                "Official",
+                "—",
+                "High"
+              ],
+              "s": [
+                1005,
+                1005
+              ]
+            }
+          ]
+        },
+        {
+          "k": "p",
+          "t": "* Werewolves are one Rank higher when transformed.",
+          "s": [
+            1008,
+            1008
+          ]
+        }
+      ]
+    },
+    {
+      "from": 335,
+      "to": 357,
+      "side": "full",
+      "blocks": [
+        {
+          "k": "p",
+          "t": "Attribute, that's the one you add.",
+          "s": [
+            336,
+            336
+          ]
+        },
+        {
+          "k": "p",
+          "t": "…the cumulative value of any other bonus you may have, from Aspects or previous rolls.",
+          "s": [
+            337,
+            338
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "Stylish Success",
+          "s": [
+            335,
+            335
+          ]
+        },
+        {
+          "k": "p",
+          "t": "You achieve what you want, the way you want.",
+          "s": [
+            337,
+            338
+          ]
+        },
+        {
+          "k": "table",
+          "cols": [
+            "Action Die",
+            "Attribute",
+            "Any bonus",
+            "Action Score"
+          ],
+          "s": [
+            343,
+            345
+          ],
+          "rows": [
+            {
+              "c": [
+                "3",
+                "2",
+                "1",
+                "6"
+              ],
+              "s": [
+                343,
+                345
+              ]
+            }
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "Flat Success",
+          "s": [
+            343,
+            343
+          ]
+        },
+        {
+          "k": "p",
+          "t": "You get what you want, but at a moderate cost, with side effects, or with reduced effectiveness.",
+          "s": [
+            346,
+            347
+          ]
+        },
+        {
+          "k": "p",
+          "t": "Then, compare your action score to each challenge die individually. Your action score must be greater (not equal) than a challenge die to beat it.",
+          "s": [
+            348,
+            350
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "Failure",
+          "s": [
+            352,
+            352
+          ]
+        },
+        {
+          "k": "table",
+          "cols": [
+            "Action Score",
+            "Beaten",
+            "Not beaten"
+          ],
+          "s": [
+            353,
+            355
+          ],
+          "rows": [
+            {
+              "c": [
+                "6",
+                "2",
+                "8"
+              ],
+              "s": [
+                353,
+                355
+              ]
+            }
+          ]
+        },
+        {
+          "k": "p",
+          "t": "Your assumptions were wrong, a brief triumph costs too much, or you simply fail.",
+          "s": [
+            354,
+            357
+          ]
+        }
+      ]
+    },
+    {
+      "from": 1026,
+      "to": 1051,
+      "side": "full",
+      "blocks": [
+        {
+          "k": "h",
+          "lvl": 1,
+          "t": "Testing a Connection",
+          "s": [
+            1026,
+            1026
+          ]
+        },
+        {
+          "k": "p",
+          "t": "When a Connection is tested through conflict, betrayal, or circumstance, roll with Soul if they’re mortal or Charm if they’re not. If Sealed, add +1.",
+          "s": [
+            1027,
+            1029
+          ]
+        },
+        {
+          "k": "p",
+          "t": "If you have no interest in maintaining the relationship, treat it as a Failure.",
+          "s": [
+            1031,
+            1032
+          ]
+        },
+        {
+          "k": "p",
+          "t": "Stylish Success: This test brings you closer. Make progress in the Connection.",
+          "s": [
+            1034,
+            1035
+          ]
+        },
+        {
+          "k": "p",
+          "t": "Flat Success: As above, but also envision a demand or complication as a fallout and pay the price.",
+          "s": [
+            1036,
+            1037
+          ]
+        },
+        {
+          "k": "p",
+          "t": "Failure: They demand proof of your loyalty. Pick one:",
+          "s": [
+            1038,
+            1039
+          ]
+        },
+        {
+          "k": "list",
+          "items": [
+            {
+              "t": "You drink their vampiric blood, and the connection gets bloodied by them (see below)",
+              "s": [
+                1040,
+                1041
+              ]
+            },
+            {
+              "t": "They require something in the form of a Mission of the same Rank as theirs +1 (if not already 5). Until you see it done, take no benefit for the Connection. If you refuse or fail, the Connection is permanently undone.",
+              "s": [
+                1042,
+                1046
+              ]
+            }
+          ],
+          "s": [
+            1040,
+            1046
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 1,
+          "t": "Bloodying a Connection",
+          "s": [
+            1026,
+            1026
+          ]
+        },
+        {
+          "k": "p",
+          "t": "When vampiric blood is shared between you and a Connection, it becomes Bloodied.",
+          "s": [
+            1027,
+            1028
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "BLOODIED BY YOU",
+          "s": [
+            1030,
+            1030
+          ]
+        },
+        {
+          "k": "p",
+          "t": "When you let someone drink from your veins, you bind them emotionally to you: create a Connection with them if you don’t already have one. Then, make progress in the Connection, and mark it as Bloodied by you. At the end of the scene, Try Your Conscience for this act.",
+          "s": [
+            1032,
+            1037
+          ]
+        },
+        {
+          "k": "p",
+          "t": "When you interact with a connection that’s Bloodied by you, roll one extra action die and pick the best.",
+          "s": [
+            1038,
+            1040
+          ]
+        },
+        {
+          "k": "h",
+          "lvl": 2,
+          "t": "BLOODIED BY THEM",
+          "s": [
+            1041,
+            1041
+          ]
+        },
+        {
+          "k": "p",
+          "t": "When you drink from another vampire’s veins, you become emotionally bound to them: create a Connection if you don’t already have one, and mark it as Bloodied by them. If you drank against your will, the Connection has no dots or Feats: it’s not a real relationship and grants no bonuses. Acting against a Connection Bloodied by them goes against your deepest impulses: when you roll against them, subtract their Rank.",
+          "s": [
+            1043,
+            1051
+          ]
+        }
+      ]
+    }
+  ]
 }
