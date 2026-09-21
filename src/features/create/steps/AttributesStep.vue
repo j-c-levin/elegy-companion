@@ -69,9 +69,9 @@ const valid = computed(() => hasValidAttributeSpread(props.draft.attributes))
         @change="assign(key, Number(($event.target as HTMLSelectElement).value))"
       >
         <option :value="0">Not set</option>
-        <option :value="3">+3</option>
-        <option :value="2">+2</option>
-        <option :value="1">+1</option>
+        <option :value="3" :disabled="!pool.includes(3) && props.draft.attributes[key] !== 3">+3</option>
+        <option :value="2" :disabled="!pool.includes(2) && props.draft.attributes[key] !== 2">+2</option>
+        <option :value="1" :disabled="!pool.includes(1) && props.draft.attributes[key] !== 1">+1</option>
       </select>
     </div>
   </section>
