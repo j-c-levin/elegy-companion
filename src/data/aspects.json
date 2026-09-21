@@ -1,0 +1,13 @@
+{
+  "id": "aspects",
+  "title": "Aspects",
+  "source": "reference/elegy-4e-beta-v3.txt:2892-4269",
+  "types": [
+    { "aspectType": "expertise", "label": "Expertise", "ref": "2960-3309", "summary": "Trained skills; standard first ability +1 in related rolls.", "acquire": "Spend 15 XP, justify narratively, slumber; upgrade 10 XP." },
+    { "aspectType": "gift", "label": "Gift", "ref": "3310-3671", "summary": "Vampiric powers; up to three innate, more learned from Connections.", "acquire": "Spend 15 XP; innate slumber, otherwise favor Mission one Rank below theirs; upgrade 10 XP." },
+    { "aspectType": "mystery", "label": "Mystery", "ref": "2892-2959", "summary": "Magic powers and rituals; never innate, always learned like a non-innate Gift.", "acquire": "Spend 15 XP, learn like a non-innate Gift; upgrade 10 XP." },
+    { "aspectType": "edge", "label": "Edge", "ref": "3672-3915", "summary": "Resources or assets: richness, faction loyalty, fame.", "acquire": "Spend 15 XP, justify narratively, slumber; upgrade 10 XP." },
+    { "aspectType": "connection", "label": "Connection", "ref": "3916-3960", "summary": "Meaningful relationships; standard first ability +1 to interact.", "acquire": "Never bought with XP; create a Connection; upgrade 10 XP." },
+    { "aspectType": "burden", "label": "Burden", "ref": "3961-4269", "summary": "Lasting marks of overwhelm; first ability is a negative effect.", "acquire": "Never bought with XP; suffer the third condition in a cascade; upgrade 10 XP." }
+  ]
+}

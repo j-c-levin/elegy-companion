@@ -1,0 +1,67 @@
+{
+  "id": "creation",
+  "title": "Character creation",
+  "source": "reference/elegy-4e-beta-v3.txt:1628-2089",
+  "steps": [
+    {
+      "id": "origins",
+      "title": "Origins",
+      "ref": "1641-1721",
+      "summary": "Occupation in life plus apparent age; roll mortal occupation for inspiration.",
+      "table": "mortal-occupation"
+    },
+    {
+      "id": "turning",
+      "title": "Turning",
+      "ref": "1722-1786",
+      "summary": "Who turned her and why; write progenitor and reason for turning.",
+      "tables": ["turning-who", "turning-why"]
+    },
+    {
+      "id": "gifts",
+      "title": "Innate Gifts",
+      "ref": "1787-1824",
+      "summary": "Three innate Gifts; blight follows the chosen innate-powers Truth (1492-1510).",
+      "table": "vampire-power"
+    },
+    {
+      "id": "skills",
+      "title": "Skills and Assets",
+      "ref": "1825-1879",
+      "summary": "Three Aspects: main-talent Expertise, useful Expertise-or-Edge, survival Expertise-or-Edge.",
+      "table": "expertises-edges"
+    },
+    {
+      "id": "magic",
+      "title": "Magic",
+      "ref": "1880-1915",
+      "summary": "Optional: exchange innate Gifts for Mysteries one for one, up to 3.",
+      "table": "mystery"
+    },
+    {
+      "id": "relationships",
+      "title": "Relationships",
+      "ref": "1880-1939",
+      "summary": "Two Connections, one with mentor or progenitor; rank per 986-1008."
+    },
+    {
+      "id": "attributes",
+      "title": "Attributes",
+      "ref": "1940-1965",
+      "summary": "Distribute +3, +2, +2, +1 across Body, Mind, Charm, Soul."
+    },
+    {
+      "id": "identity",
+      "title": "Identity",
+      "ref": "1966-2046",
+      "summary": "Looks and vibe, possessions, name, home; roll vampire home for inspiration.",
+      "table": "vampire-home"
+    },
+    {
+      "id": "finishing",
+      "title": "Finishing Touches",
+      "ref": "2047-2055",
+      "summary": "Max Rush 10, base Rush 2, current Rush 2; Health and Clarity 5; Blood 4."
+    }
+  ]
+}
