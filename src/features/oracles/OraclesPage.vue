@@ -99,9 +99,13 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
 }
 
 .table-list {
-  list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.table-list li,
+.recent li {
+  list-style: none;
 }
 
 .table-list li + li {
@@ -120,7 +124,7 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   box-shadow: none;
   padding: 0.7rem 0.25rem;
   margin: 0;
-  color: var(--pico-color);
+  color: var(--pico-contrast, var(--pico-color));
 }
 
 .table-row:hover {
@@ -128,18 +132,21 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   color: var(--pico-secondary-inverse);
 }
 
+.table-row:hover small,
+.recent-row:hover span {
+  color: var(--pico-secondary-inverse);
+}
+
 .table-title {
   font-weight: 500;
 }
 
-.table-list small,
-.recent small {
+.table-list small {
   color: var(--pico-muted-color);
   white-space: nowrap;
 }
 
 .recent ul {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -159,7 +166,12 @@ const chips = computed<{ id: OracleCategory | 'all'; label: string }[]>(() => [
   box-shadow: none;
   padding: 0.6rem 0.25rem;
   margin: 0;
-  color: var(--pico-color);
+  color: var(--pico-contrast, var(--pico-color));
+}
+
+.recent-row:hover {
+  background: var(--pico-muted-background-color, var(--pico-secondary-background));
+  color: var(--pico-secondary-inverse);
 }
 
 .recent-row span {
