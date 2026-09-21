@@ -65,7 +65,7 @@
 .tabbar .tab {
   display: block;
   min-height: 2.75rem;
-  line-height: 2.75rem;
+  line-height: calc(2.75rem - 2px);
   padding: 0 0.3rem;
   border: 1px solid var(--pico-muted-border-color);
   border-radius: 0.5rem;
