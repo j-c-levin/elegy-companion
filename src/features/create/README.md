@@ -2,8 +2,9 @@
 
 Character creation wizard at `/create`. Owner: task 11 agent. Scope: identity,
 attributes, innate Gifts + blight per the chosen Truth (manual 1492–1510).
-Starting Abilities text (manual 2090–2337) renders via the excerpts pipeline
-ad-hoc; no whole-chapter registry key is provided.
+Starting Abilities are picked by name only (manual 1825–1879); ability text
+(manual 2090–2337) stays in the Aspect Database — no whole-chapter registry key
+is provided.
 
 ## Contract (foundation-owned, do not reshape)
 
@@ -39,6 +40,32 @@ ad-hoc; no whole-chapter registry key is provided.
   (`loadWorld()` from `@/features/world/world`, then
   `truths['innate-powers']`) to prefill the gifts step; never write it.
 
+## Wizard flow (implemented)
+
+1. Origins — occupation and apparent age; oracle inspiration via
+   `mortal-occupation` (manual 1641–1721).
+2. Turning — progenitor and reason; `turning-who` is read-only inspiration,
+   `turning-why` can be applied to the reason field (manual 1722–1786).
+3. Gifts — three power slots, each a Gift (`vampire-power` names) or, via the
+   one-for-one exchange (manual 1880–1915), a Mystery (`mystery`); the
+   innate-powers Truth is read from `loadWorld()` to prefill blight guidance
+   (manual 1492–1510), with a link to `/world` when unset.
+4. Starting Abilities — three Aspect slots per the manual's counts (one
+   Expertise main talent, two Expertise-or-Edge); names as labels only,
+   ability text linked to `/aspects` (manual 1825–1879, 2090–2107).
+5. Attributes — per-attribute selects with a live remaining-pool readout;
+   commit stays disabled until `hasValidAttributeSpread` passes (manual
+   1940–1965).
+6. Identity — name, look, home (`vampire-home` roll), possessions, two
+   relationships, finishing-touches and XP notes (manual 1966–2055,
+   1880–1939, 1161–1187).
+7. Commit — summary plus the contract's commit flow; success card links to
+   `/aspects`, `/connections`, `/tracks` and `/session?view=xp`.
+
+Oracle rolls are read-only inspiration: `rolls.ts` wraps the sanctioned
+`rollTable` helper from `src/features/oracles/roll` and resolves chained rows
+(e.g. vampire-home's urban/historical chains) recursively.
+
 ## Files the implementation agent may touch
 
 Everything in `src/features/create/` (this README included), plus nothing else:
@@ -51,16 +78,28 @@ Everything in `src/features/create/` (this README included), plus nothing else:
 Use the pre-registered keys: `creation-origins`, `creation-turning`,
 `creation-gifts`, `creation-skills`, `creation-magic`,
 `creation-relationships`, `creation-attributes`, `creation-identity`,
-`creation-finishing`, `attributes-create` (1942–1946, existing).
+`creation-finishing`, `attributes-create` (1942–1946, existing), plus
+`truths-innate-powers` and `xp-tallies`, plus `starting-abilities`
+(2090–2107) for the Aspect starting-abilities note.
 Cite subsection ranges only; whole-chapter ManualRef dialogs are
 intentionally not registered.
 
-## Known limitations (foundation stub)
+## Known limitations
 
-- `CreatePage.vue` is a `ToolStub` placeholder. The wizard UI is task 11's work.
-- Aspect names in `creation.json` are labels only; full ability text belongs to
-  task 13 (`src/data/aspects.json`) — link there, do not copy text here.
+- Aspect names are labels only; full ability text belongs to task 13
+  (`src/data/aspects.json`) — the wizard links to `/aspects`, it does not
+  copy ability text.
+- Wizard rolls are read-only inspiration and are not recorded in the
+  oracles roll history (`elegy:rolls`).
+- Wizard step position is session-local; refreshing returns to step 1. The
+  draft data itself persists in `elegy:creation-draft`.
+- CommitStep gates only on the attribute spread and does not require name,
+  Gifts or Aspects to be filled; empty slots commit as empty fields.
 - `commitDraft` preserves `xp`, `activeConditions` and `lists` by design (see
   re-creation flow above); it does not reconcile them with the new character.
 - `loadDraft` discards unversioned payloads and re-tests the newer-version
   condition inline rather than via sequential checks.
+- Slot positions can shuffle on remount when mysteries precede gifts:
+  `GiftsStep.vue` orders mysteries first (foundation draft shape, left as-is).
+- `src/data/creation.json` step→tables mapping is not consumed by the wizard;
+  table ids are component-local, though contract rules still hold.
