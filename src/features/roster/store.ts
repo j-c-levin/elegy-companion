@@ -64,7 +64,7 @@ watch(
   { deep: true },
 )
 
-export function allNpcs(): Npc[] {
+export function allNpcs(): readonly Npc[] {
   return state.npcs
 }
 

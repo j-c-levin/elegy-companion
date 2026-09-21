@@ -10,16 +10,19 @@ import type { CreatureType, Npc, Rank } from './types'
 const editing = ref<Npc | null>(null)
 const preset = reactive<{ type: CreatureType; rank: Rank }>({ type: 'mortal', rank: 1 })
 const formSection = ref<HTMLElement | null>(null)
+const formKey = ref(0)
 
 function startEntry(type: CreatureType, rank: Rank): void {
   editing.value = null
   preset.type = type
   preset.rank = rank
+  formKey.value += 1
   formSection.value?.scrollIntoView({ block: 'start' })
 }
 
 function editNpc(npc: Npc): void {
   editing.value = npc
+  formKey.value += 1
   formSection.value?.scrollIntoView({ block: 'start' })
 }
 
@@ -41,7 +44,7 @@ function finishEditing(): void {
 
     <section ref="formSection" class="form-block">
       <h2>{{ editing ? `Edit ${editing.name}` : 'New entry' }}</h2>
-      <NpcForm :editing="editing" :preset="preset" @save="finishEditing" @cancel="finishEditing" />
+      <NpcForm :key="formKey" :editing="editing" :preset="preset" @save="finishEditing" @cancel="finishEditing" />
     </section>
 
     <RosterList @edit="editNpc" />

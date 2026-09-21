@@ -68,6 +68,7 @@ Feature styles stay scoped in this feature's SFCs.
   validation that a referenced combat track exists.
 - **Pulse is informational here.** Damage/healing/avoid-destruction mechanics for Connection NPCs
   stay in the tracks and connections tools; the roster records the standing value only.
-- **Form resets are prop-driven.** Picking a table cell or editing another entry replaces any
-  half-typed input in the form (including the name); the roster list is the source of truth.
+- **Form remounts on pick/edit.** Picking a table cell (including the same cell again) or
+  editing another entry remounts the form via `formKey`, clearing half-typed input. The roster
+  list is the source of truth.
 - **Single-tab convention** applies (last write wins, no `storage`-event sync), per `docs/store.md`.

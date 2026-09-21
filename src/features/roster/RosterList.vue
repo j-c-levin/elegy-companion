@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, ref } from 'vue'
 
 import ManualRef from '@/components/ManualRef.vue'
 
@@ -14,13 +14,23 @@ import {
 defineEmits<{ edit: [npc: Npc] }>()
 
 const confirmId = ref<string | null>(null)
+let confirmTimer: number | undefined
 
 function requestRemove(id: string): void {
   if (confirmId.value === id) {
+    window.clearTimeout(confirmTimer)
+    confirmId.value = null
     removeNpc(id)
+    return
   }
-  confirmId.value = confirmId.value === id ? null : id
+  window.clearTimeout(confirmTimer)
+  confirmId.value = id
+  confirmTimer = window.setTimeout(() => {
+    confirmId.value = null
+  }, 4000)
 }
+
+onBeforeUnmount(() => window.clearTimeout(confirmTimer))
 </script>
 
 <template>
