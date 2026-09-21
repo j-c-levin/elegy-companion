@@ -289,12 +289,24 @@ function deleteArchived(id: string): void {
 
 .new-row input {
   margin-bottom: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .new-row button {
   margin-bottom: 0;
   white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .new-row {
+    flex-direction: column;
+  }
+
+  .new-row button {
+    width: 100%;
+  }
 }
 
 .rank-label {
