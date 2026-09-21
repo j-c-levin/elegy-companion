@@ -1,166 +1,1457 @@
 [
-  { "key": "identity", "label": "Identity", "section": "Chapter 2 — Character basics", "ranges": [{ "start": 174, "end": 190 }] },
-  { "key": "attributes", "label": "Attributes (Body, Mind, Charm, Soul)", "section": "Chapter 2 — Character basics", "ranges": [{ "start": 191, "end": 220 }] },
-  { "key": "conditions-overview", "label": "Conditions", "section": "Chapter 2", "ranges": [{ "start": 268, "end": 300 }] },
-  { "key": "burdens-intro", "label": "Burdens (permanent conditions)", "section": "Chapter 4 — Burden abilities", "ranges": [{ "start": 3961, "end": 3969 }] },
-  { "key": "action-roll", "label": "The Action Roll", "section": "Chapter 2 — How to play", "ranges": [{ "start": 315, "end": 362 }] },
-  { "key": "roll-engine", "label": "Action Roll, Rush, Matches and Basic Actions", "section": "Chapter 2 — How to play", "ranges": [
-    { "start": 315, "end": 362, "label": "The Action Roll" },
-    { "start": 363, "end": 375, "label": "Rush" },
-    { "start": 513, "end": 576, "label": "Matches: Twist, Misfortune, Impulse" },
-    { "start": 418, "end": 489, "label": "Basic Actions" }
-  ] },
-  { "key": "rush", "label": "Rush", "section": "Chapter 2 — How to play", "ranges": [{ "start": 363, "end": 375 }] },
-  { "key": "pay-the-price", "label": "Pay the Price", "section": "Chapter 2 — How to play", "ranges": [{ "start": 364, "end": 412 }] },
-  { "key": "basic-actions", "label": "Basic Actions", "section": "Chapter 2 — How to play", "ranges": [{ "start": 418, "end": 489 }] },
-  { "key": "matches", "label": "Matches: Twist, Misfortune, Impulse", "section": "Chapter 2 — How to play", "ranges": [{ "start": 513, "end": 576 }] },
-  { "key": "match-rule", "label": "Matches", "section": "Chapter 2 — How to play", "ranges": [{ "start": 513, "end": 524 }] },
-  { "key": "aspects-give-rush", "label": "Aspects give you Rush", "section": "Chapter 2 — Basic Actions", "ranges": [{ "start": 436, "end": 438 }] },
-  { "key": "cascade-rule", "label": "When a meter is at 0 and you lose more", "section": "Chapter 2 — Suffering", "ranges": [{ "start": 662, "end": 668 }] },
-  { "key": "resource-cascades", "label": "Resource cascades", "section": "Chapter 2 — Suffering", "ranges": [
-    { "start": 662, "end": 668, "label": "The cascade rule" },
-    { "start": 694, "end": 717, "label": "Health cascade" },
-    { "start": 726, "end": 744, "label": "Clarity cascade" },
-    { "start": 806, "end": 825, "label": "Blood cascade" }
-  ] },
-  { "key": "meters-overview", "label": "Meters", "section": "Chapter 2 — Suffering", "ranges": [
-    { "start": 681, "end": 722, "label": "Health" },
-    { "start": 723, "end": 761, "label": "Clarity" },
-    { "start": 762, "end": 805, "label": "Blood" },
-    { "start": 363, "end": 375, "label": "Rush" },
-    { "start": 806, "end": 845, "label": "Rush setbacks and 0 Rush" }
-  ] },
-  { "key": "health", "label": "Health", "section": "Chapter 2 — Suffering", "ranges": [{ "start": 681, "end": 722 }] },
-  { "key": "health-regenerate", "label": "Regenerating Health", "section": "Chapter 2 — Health", "ranges": [{ "start": 682, "end": 692 }] },
-  { "key": "health-cascade", "label": "At 0 Health", "section": "Chapter 2 — Health", "ranges": [{ "start": 694, "end": 717 }] },
-  { "key": "end-health", "label": "The End: Health", "section": "Chapter 2 — Health", "ranges": [{ "start": 716, "end": 717 }] },
-  { "key": "mitigate-health", "label": "Mitigating Health loss", "section": "Chapter 2 — Health", "ranges": [{ "start": 708, "end": 712 }] },
-  { "key": "clarity", "label": "Clarity", "section": "Chapter 2 — Suffering", "ranges": [{ "start": 723, "end": 761 }] },
-  { "key": "clarity-respite", "label": "Respite", "section": "Chapter 2 — Clarity", "ranges": [{ "start": 746, "end": 756 }] },
-  { "key": "clarity-cascade", "label": "At 0 Clarity", "section": "Chapter 2 — Clarity", "ranges": [{ "start": 726, "end": 744 }] },
-  { "key": "end-clarity", "label": "The End: Clarity", "section": "Chapter 2 — Clarity", "ranges": [{ "start": 746, "end": 748 }] },
-  { "key": "end-blood", "label": "The End: Blood", "section": "Chapter 2 — Blood", "ranges": [{ "start": 827, "end": 828 }] },
-  { "key": "mitigate-clarity", "label": "Mitigating Clarity loss", "section": "Chapter 2 — Clarity", "ranges": [{ "start": 741, "end": 744 }] },
-  { "key": "blood", "label": "Blood", "section": "Chapter 2 — Suffering", "ranges": [{ "start": 762, "end": 805 }] },
-  { "key": "slumber", "label": "Slumber", "section": "Chapter 2 — Blood", "ranges": [{ "start": 767, "end": 778 }] },
-  { "key": "feeding", "label": "Feeding", "section": "Chapter 2 — Blood", "ranges": [{ "start": 785, "end": 800 }] },
-  { "key": "mitigate-blood", "label": "Mitigating Blood loss", "section": "Chapter 2 — Blood", "ranges": [{ "start": 779, "end": 783 }] },
-  { "key": "blood-cascade", "label": "At 0 Blood", "section": "Chapter 2 — Blood", "ranges": [{ "start": 806, "end": 825 }] },
-  { "key": "rush-setbacks", "label": "Rush setbacks", "section": "Chapter 2 — Blood", "ranges": [{ "start": 806, "end": 845 }] },
-  { "key": "rush-0", "label": "At 0 Rush: setbacks and steeper costs", "section": "Chapter 2 — Blood", "ranges": [{ "start": 823, "end": 833 }] },
-  { "key": "rush-modifiers", "label": "What changes base and max Rush", "section": "Chapter 2 + Chapter 4", "ranges": [
-    { "start": 2046, "end": 2052, "label": "Starting values (creation)" },
-    { "start": 702, "end": 705, "label": "Wounded: max Rush −1" },
-    { "start": 729, "end": 731, "label": "In Shock: max Rush −1" },
-    { "start": 738, "end": 740, "label": "Tormented: max Rush −1" },
-    { "start": 873, "end": 875, "label": "Penitent: max Rush −1" },
-    { "start": 889, "end": 897, "label": "Cautioned / Discredited: max Rush −1" },
-    { "start": 3965, "end": 3967, "label": "Burdens: base Rush −1" }
-  ] },
-  { "key": "tenets", "label": "Tenets: Conscience and Standing", "section": "Chapter 2 — Suffering", "ranges": [{ "start": 846, "end": 907 }] },
-  { "key": "conscience", "label": "Conscience", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 853, "end": 882 }] },
-  { "key": "conscience-cascade", "label": "Conscience Failure cascade", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 864, "end": 882 }] },
-  { "key": "end-conscience", "label": "The End: Conscience", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 880, "end": 882 }] },
-  { "key": "standing", "label": "Standing", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 856, "end": 907 }] },
-  { "key": "standing-cascade", "label": "Standing Failure cascade", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 878, "end": 907 }] },
-  { "key": "end-standing", "label": "The End: Standing", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 904, "end": 907 }] },
-  { "key": "the-end", "label": "The End", "section": "Chapter 2 — Tenets", "ranges": [{ "start": 888, "end": 894 }] },
-  { "key": "cond-wounded", "label": "Wounded", "section": "Health cascade", "ranges": [{ "start": 700, "end": 703 }] },
-  { "key": "cond-mangled", "label": "Mangled", "section": "Health cascade", "ranges": [{ "start": 704, "end": 712 }] },
-  { "key": "cond-scarred", "label": "Scarred", "section": "Health cascade", "ranges": [
-    { "start": 713, "end": 715, "label": "Condition text" },
-    { "start": 3962, "end": 3991, "label": "Burden abilities" }
-  ] },
-  { "key": "cond-in-shock", "label": "In Shock", "section": "Clarity cascade", "ranges": [{ "start": 728, "end": 732 }] },
-  { "key": "cond-tormented", "label": "Tormented", "section": "Clarity cascade", "ranges": [{ "start": 733, "end": 740 }] },
-  { "key": "cond-traumatized", "label": "Traumatized", "section": "Clarity cascade", "ranges": [
-    { "start": 741, "end": 744, "label": "Condition text" },
-    { "start": 3997, "end": 4027, "label": "Burden abilities" }
-  ] },
-  { "key": "cond-starving", "label": "Starving", "section": "Blood cascade", "ranges": [{ "start": 809, "end": 813 }] },
-  { "key": "cond-enraged", "label": "Enraged", "section": "Blood cascade", "ranges": [{ "start": 814, "end": 822 }] },
-  { "key": "cond-torpid", "label": "Torpid", "section": "Blood cascade", "ranges": [
-    { "start": 823, "end": 825, "label": "Condition text" },
-    { "start": 3997, "end": 4015, "label": "Burden abilities" }
-  ] },
-  { "key": "cond-detached", "label": "Detached", "section": "Conscience cascade", "ranges": [{ "start": 866, "end": 869 }] },
-  { "key": "cond-penitent", "label": "Penitent", "section": "Conscience cascade", "ranges": [{ "start": 870, "end": 874 }] },
-  { "key": "cond-blighted", "label": "Blighted", "section": "Conscience cascade", "ranges": [
-    { "start": 876, "end": 879, "label": "Condition text" },
-    { "start": 4033, "end": 4034, "label": "Burden Aspects (Blighted)" }
-  ] },
-  { "key": "cond-cautioned", "label": "Cautioned", "section": "Standing cascade", "ranges": [{ "start": 888, "end": 890 }] },
-  { "key": "cond-discredited", "label": "Discredited", "section": "Standing cascade", "ranges": [{ "start": 891, "end": 897 }] },
-  { "key": "cond-branded", "label": "Branded", "section": "Standing cascade", "ranges": [
-    { "start": 898, "end": 903, "label": "Condition text" },
-    { "start": 3962, "end": 3969, "label": "Burden abilities" }
-  ] },
-  { "key": "progress-tracks", "label": "Progress Tracks", "section": "Chapter 2 — Progress Tracks", "ranges": [{ "start": 911, "end": 932 }] },
-  { "key": "track-ranks", "label": "Rank reference tables", "section": "Chapter 2 — Progress Tracks", "ranges": [
-    { "start": 924, "end": 927, "label": "Progress per rank" },
-    { "start": 942, "end": 950, "label": "Mission effort per rank" },
-    { "start": 986, "end": 1008, "label": "Common NPC ranks" },
-    { "start": 1132, "end": 1140, "label": "XP per rank" }
-  ] },
-  { "key": "missions", "label": "Missions", "section": "Chapter 2 — Missions", "ranges": [{ "start": 933, "end": 978 }] },
-  { "key": "connections", "label": "Connections", "section": "Chapter 2 — Connections", "ranges": [{ "start": 979, "end": 1084 }] },
-  { "key": "connection-progress", "label": "Making Progress / Sealing a Connection", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1011, "end": 1019 }] },
-  { "key": "connection-test", "label": "Testing a Connection", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1026, "end": 1046 }] },
-  { "key": "bloodied", "label": "Bloodying a Connection", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1026, "end": 1051 }] },
-  { "key": "pulse", "label": "Pulse, limits and healing", "section": "Chapter 2 — Connections", "ranges": [{ "start": 1057, "end": 1079 }] },
-  { "key": "npc-ranks", "label": "Common NPC ranks", "section": "Chapter 2 — Connections", "ranges": [{ "start": 986, "end": 1008 }] },
-  { "key": "combat-attack", "label": "Attacking", "section": "Chapter 2 — Combat", "ranges": [{ "start": 1095, "end": 1107 }] },
-  { "key": "combat-winning", "label": "Winning and losing", "section": "Chapter 2 — Combat", "ranges": [{ "start": 1108, "end": 1116 }] },
-  { "key": "combat", "label": "Combat", "section": "Chapter 2", "ranges": [{ "start": 1085, "end": 1121 }] },
-  { "key": "xp", "label": "Experience", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1122, "end": 1160 }] },
-  { "key": "xp-tallies", "label": "Notating XP", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1161, "end": 1187 }] },
-  { "key": "xp-acquire", "label": "Upgrading and acquiring Aspects", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1128, "end": 1149 }] },
-  { "key": "loose-ends", "label": "Loose Ends", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1147, "end": 1155 }] },
-  { "key": "loose-end-write", "label": "Writing a Loose End", "section": "Chapter 2 — Experience", "ranges": [{ "start": 1150, "end": 1152 }] },
-  { "key": "attributes-create", "label": "Attributes at creation", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1942, "end": 1946 }] },
-  { "key": "recovery", "label": "Recovery rolls", "section": "Chapter 2 — Suffering", "ranges": [
-    { "start": 682, "end": 692, "label": "Regenerate" },
-    { "start": 746, "end": 756, "label": "Respite" },
-    { "start": 767, "end": 778, "label": "Slumber" },
-    { "start": 785, "end": 800, "label": "Feeding" }
-  ] },
-  { "key": "factions", "label": "Factions", "section": "Chapter 5", "ranges": [{ "start": 4661, "end": 4854 }] },
-  { "key": "npc-creation", "label": "Creating NPCs", "section": "Chapter 5 — Other Characters", "ranges": [{ "start": 4270, "end": 4310 }] },
-  { "key": "oracle-how-to", "label": "How to ask the Oracle", "section": "Chapter 6 — Oracles", "ranges": [{ "start": 4856, "end": 4884 }] },
-  { "key": "glossary", "label": "Glossary", "section": "Chapter 2 — Glossary", "ranges": [{ "start": 1188, "end": 1396 }] },
-  { "key": "generic-action", "label": "The Generic Action Roll", "section": "Chapter 2 — How to play", "ranges": [{ "start": 490, "end": 512 }] },
-  { "key": "truths-origins", "label": "Truths: Origins", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1511, "end": 1530 }] },
-  { "key": "truths-innate-powers", "label": "Truths: Innate Powers", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1492, "end": 1510 }] },
-  { "key": "truths-population", "label": "Truths: Population", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1513, "end": 1530 }] },
-  { "key": "truths-political-landscape", "label": "Truths: Political Landscape", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1536, "end": 1549 }] },
-  { "key": "truths-loyalty", "label": "Truths: Loyalty", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1552, "end": 1573 }] },
-  { "key": "truths-hunting-territory", "label": "Truths: Hunting Territory", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1536, "end": 1554 }] },
-  { "key": "truths-sunlight", "label": "Truths: Sunlight", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1557, "end": 1572 }] },
-  { "key": "truths-district-access", "label": "Truths: District Access", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1579, "end": 1601 }] },
-  { "key": "truths-witches", "label": "Truths: Witches", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1605, "end": 1619 }] },
-  { "key": "truths-hunters", "label": "Truths: Vampire Hunters", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1579, "end": 1599 }] },
-  { "key": "truths-werewolves", "label": "Truths: Werewolves", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1602, "end": 1622 }] },
-  { "key": "truths-fey", "label": "Truths: Fey", "section": "Chapter 3 — Create Your Universe", "ranges": [{ "start": 1628, "end": 1652 }] },
-  { "key": "creation-origins", "label": "Step 1: Origins", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1641, "end": 1721 }] },
-  { "key": "creation-turning", "label": "Step 2: Turning", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1722, "end": 1786 }] },
-  { "key": "creation-gifts", "label": "Innate Gifts (Step 3)", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1787, "end": 1824 }] },
-  { "key": "creation-skills", "label": "Skills and Assets", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1825, "end": 1879 }] },
-  { "key": "creation-magic", "label": "Magic (Mysteries)", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1880, "end": 1915 }] },
-  { "key": "creation-relationships", "label": "Step 4: Relationships", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1880, "end": 1939 }] },
-  { "key": "creation-attributes", "label": "Step 6: Attributes", "section": "Chapter 3", "ranges": [{ "start": 1940, "end": 1965 }] },
-  { "key": "creation-identity", "label": "Step 6: Identity", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 1966, "end": 2046 }] },
-  { "key": "creation-finishing", "label": "Step 7: Finishing Touches", "section": "Chapter 3 — Create your character", "ranges": [{ "start": 2047, "end": 2055 }] },
-  { "key": "city-basics", "label": "City Basics", "section": "Chapter 3 — Create your City", "ranges": [{ "start": 2342, "end": 2355 }] },
-  { "key": "city-faction", "label": "Factions", "section": "Chapter 3 — Create your City", "ranges": [{ "start": 2505, "end": 2649 }] },
-  { "key": "city-districts", "label": "Districts", "section": "Chapter 3 — Create your City", "ranges": [{ "start": 2650, "end": 2698 }] },
-  { "key": "first-mission-envision", "label": "Step 1: Envision a First Mission", "section": "Chapter 3 — Your First Mission", "ranges": [{ "start": 2700, "end": 2845 }] },
-  { "key": "first-mission-commit", "label": "Steps 2-4: Scene, Commit, Next Steps", "section": "Chapter 3 — Your First Mission", "ranges": [{ "start": 2846, "end": 2891 }] },
-  { "key": "aspects-how-they-work", "label": "Types of Aspects", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 2893, "end": 2959 }] },
-  { "key": "aspects-expertise", "label": "Expertise", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 2960, "end": 3309 }] },
-  { "key": "aspects-gift", "label": "Gift", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 3310, "end": 3671 }] },
-  { "key": "aspects-edge", "label": "Edge", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 3672, "end": 3915 }] },
-  { "key": "aspects-connection", "label": "Connection abilities", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 3916, "end": 3960 }] },
-  { "key": "aspects-burden", "label": "Burden", "section": "Chapter 4 — Aspects", "ranges": [{ "start": 3961, "end": 4269 }] },
-  { "key": "health-harm", "label": "Health loss by source", "section": "Chapter 2 — Health", "ranges": [{ "start": 681, "end": 722 }] },
-  { "key": "clarity-harm", "label": "Clarity loss by gravity", "section": "Chapter 2 — Clarity", "ranges": [{ "start": 723, "end": 761 }] }
+  {
+    "key": "identity",
+    "label": "Identity",
+    "section": "Chapter 2 — Character basics",
+    "ranges": [
+      {
+        "start": 174,
+        "end": 190
+      }
+    ]
+  },
+  {
+    "key": "attributes",
+    "label": "Attributes (Body, Mind, Charm, Soul)",
+    "section": "Chapter 2 — Character basics",
+    "ranges": [
+      {
+        "start": 191,
+        "end": 220
+      }
+    ]
+  },
+  {
+    "key": "conditions-overview",
+    "label": "Conditions",
+    "section": "Chapter 2",
+    "ranges": [
+      {
+        "start": 268,
+        "end": 300
+      }
+    ]
+  },
+  {
+    "key": "action-roll",
+    "label": "The Action Roll",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 315,
+        "end": 362
+      }
+    ]
+  },
+  {
+    "key": "roll-engine",
+    "label": "Action Roll, Rush, Matches and Basic Actions",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 315,
+        "end": 362,
+        "label": "The Action Roll"
+      },
+      {
+        "start": 363,
+        "end": 375,
+        "label": "Rush"
+      },
+      {
+        "start": 513,
+        "end": 576,
+        "label": "Matches: Twist, Misfortune, Impulse"
+      },
+      {
+        "start": 418,
+        "end": 489,
+        "label": "Basic Actions"
+      }
+    ]
+  },
+  {
+    "key": "rush",
+    "label": "Rush",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 363,
+        "end": 375
+      }
+    ]
+  },
+  {
+    "key": "pay-the-price",
+    "label": "Pay the Price",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 364,
+        "end": 412
+      }
+    ]
+  },
+  {
+    "key": "basic-actions",
+    "label": "Basic Actions",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 418,
+        "end": 489
+      }
+    ]
+  },
+  {
+    "key": "aspects-give-rush",
+    "label": "Aspects give you Rush",
+    "section": "Chapter 2 — Basic Actions",
+    "ranges": [
+      {
+        "start": 436,
+        "end": 438
+      }
+    ]
+  },
+  {
+    "key": "generic-action",
+    "label": "The Generic Action Roll",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 490,
+        "end": 512
+      }
+    ]
+  },
+  {
+    "key": "matches",
+    "label": "Matches: Twist, Misfortune, Impulse",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 513,
+        "end": 576
+      }
+    ]
+  },
+  {
+    "key": "match-rule",
+    "label": "Matches",
+    "section": "Chapter 2 — How to play",
+    "ranges": [
+      {
+        "start": 513,
+        "end": 524
+      }
+    ]
+  },
+  {
+    "key": "cascade-rule",
+    "label": "When a meter is at 0 and you lose more",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 662,
+        "end": 668
+      }
+    ]
+  },
+  {
+    "key": "resource-cascades",
+    "label": "Resource cascades",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 662,
+        "end": 668,
+        "label": "The cascade rule"
+      },
+      {
+        "start": 694,
+        "end": 717,
+        "label": "Health cascade"
+      },
+      {
+        "start": 726,
+        "end": 744,
+        "label": "Clarity cascade"
+      },
+      {
+        "start": 806,
+        "end": 825,
+        "label": "Blood cascade"
+      }
+    ]
+  },
+  {
+    "key": "meters-overview",
+    "label": "Meters",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 681,
+        "end": 722,
+        "label": "Health"
+      },
+      {
+        "start": 723,
+        "end": 761,
+        "label": "Clarity"
+      },
+      {
+        "start": 762,
+        "end": 805,
+        "label": "Blood"
+      },
+      {
+        "start": 363,
+        "end": 375,
+        "label": "Rush"
+      },
+      {
+        "start": 806,
+        "end": 845,
+        "label": "Rush setbacks and 0 Rush"
+      }
+    ]
+  },
+  {
+    "key": "health",
+    "label": "Health",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 681,
+        "end": 722
+      }
+    ]
+  },
+  {
+    "key": "health-harm",
+    "label": "Health loss by source",
+    "section": "Chapter 2 — Health",
+    "ranges": [
+      {
+        "start": 681,
+        "end": 722
+      }
+    ]
+  },
+  {
+    "key": "health-regenerate",
+    "label": "Regenerating Health",
+    "section": "Chapter 2 — Health",
+    "ranges": [
+      {
+        "start": 682,
+        "end": 692
+      }
+    ]
+  },
+  {
+    "key": "recovery",
+    "label": "Recovery rolls",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 682,
+        "end": 692,
+        "label": "Regenerate"
+      },
+      {
+        "start": 746,
+        "end": 756,
+        "label": "Respite"
+      },
+      {
+        "start": 767,
+        "end": 778,
+        "label": "Slumber"
+      },
+      {
+        "start": 785,
+        "end": 800,
+        "label": "Feeding"
+      }
+    ]
+  },
+  {
+    "key": "health-cascade",
+    "label": "At 0 Health",
+    "section": "Chapter 2 — Health",
+    "ranges": [
+      {
+        "start": 694,
+        "end": 717
+      }
+    ]
+  },
+  {
+    "key": "cond-wounded",
+    "label": "Wounded",
+    "section": "Health cascade",
+    "ranges": [
+      {
+        "start": 700,
+        "end": 703
+      }
+    ]
+  },
+  {
+    "key": "cond-mangled",
+    "label": "Mangled",
+    "section": "Health cascade",
+    "ranges": [
+      {
+        "start": 704,
+        "end": 712
+      }
+    ]
+  },
+  {
+    "key": "mitigate-health",
+    "label": "Mitigating Health loss",
+    "section": "Chapter 2 — Health",
+    "ranges": [
+      {
+        "start": 708,
+        "end": 712
+      }
+    ]
+  },
+  {
+    "key": "cond-scarred",
+    "label": "Scarred",
+    "section": "Health cascade",
+    "ranges": [
+      {
+        "start": 713,
+        "end": 715,
+        "label": "Condition text"
+      },
+      {
+        "start": 3962,
+        "end": 3991,
+        "label": "Burden abilities"
+      }
+    ]
+  },
+  {
+    "key": "end-health",
+    "label": "The End: Health",
+    "section": "Chapter 2 — Health",
+    "ranges": [
+      {
+        "start": 716,
+        "end": 717
+      }
+    ]
+  },
+  {
+    "key": "clarity",
+    "label": "Clarity",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 723,
+        "end": 761
+      }
+    ]
+  },
+  {
+    "key": "clarity-harm",
+    "label": "Clarity loss by gravity",
+    "section": "Chapter 2 — Clarity",
+    "ranges": [
+      {
+        "start": 723,
+        "end": 761
+      }
+    ]
+  },
+  {
+    "key": "clarity-cascade",
+    "label": "At 0 Clarity",
+    "section": "Chapter 2 — Clarity",
+    "ranges": [
+      {
+        "start": 726,
+        "end": 744
+      }
+    ]
+  },
+  {
+    "key": "cond-in-shock",
+    "label": "In Shock",
+    "section": "Clarity cascade",
+    "ranges": [
+      {
+        "start": 728,
+        "end": 732
+      }
+    ]
+  },
+  {
+    "key": "cond-tormented",
+    "label": "Tormented",
+    "section": "Clarity cascade",
+    "ranges": [
+      {
+        "start": 733,
+        "end": 740
+      }
+    ]
+  },
+  {
+    "key": "mitigate-clarity",
+    "label": "Mitigating Clarity loss",
+    "section": "Chapter 2 — Clarity",
+    "ranges": [
+      {
+        "start": 741,
+        "end": 744
+      }
+    ]
+  },
+  {
+    "key": "cond-traumatized",
+    "label": "Traumatized",
+    "section": "Clarity cascade",
+    "ranges": [
+      {
+        "start": 741,
+        "end": 744,
+        "label": "Condition text"
+      },
+      {
+        "start": 3997,
+        "end": 4027,
+        "label": "Burden abilities"
+      }
+    ]
+  },
+  {
+    "key": "clarity-respite",
+    "label": "Respite",
+    "section": "Chapter 2 — Clarity",
+    "ranges": [
+      {
+        "start": 746,
+        "end": 756
+      }
+    ]
+  },
+  {
+    "key": "end-clarity",
+    "label": "The End: Clarity",
+    "section": "Chapter 2 — Clarity",
+    "ranges": [
+      {
+        "start": 746,
+        "end": 748
+      }
+    ]
+  },
+  {
+    "key": "blood",
+    "label": "Blood",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 762,
+        "end": 805
+      }
+    ]
+  },
+  {
+    "key": "slumber",
+    "label": "Slumber",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 767,
+        "end": 778
+      }
+    ]
+  },
+  {
+    "key": "mitigate-blood",
+    "label": "Mitigating Blood loss",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 779,
+        "end": 783
+      }
+    ]
+  },
+  {
+    "key": "feeding",
+    "label": "Feeding",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 785,
+        "end": 800
+      }
+    ]
+  },
+  {
+    "key": "blood-cascade",
+    "label": "At 0 Blood",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 806,
+        "end": 825
+      }
+    ]
+  },
+  {
+    "key": "rush-setbacks",
+    "label": "Rush setbacks",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 806,
+        "end": 845
+      }
+    ]
+  },
+  {
+    "key": "cond-starving",
+    "label": "Starving",
+    "section": "Blood cascade",
+    "ranges": [
+      {
+        "start": 809,
+        "end": 813
+      }
+    ]
+  },
+  {
+    "key": "cond-enraged",
+    "label": "Enraged",
+    "section": "Blood cascade",
+    "ranges": [
+      {
+        "start": 814,
+        "end": 822
+      }
+    ]
+  },
+  {
+    "key": "rush-0",
+    "label": "At 0 Rush: setbacks and steeper costs",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 823,
+        "end": 833
+      }
+    ]
+  },
+  {
+    "key": "cond-torpid",
+    "label": "Torpid",
+    "section": "Blood cascade",
+    "ranges": [
+      {
+        "start": 823,
+        "end": 825,
+        "label": "Condition text"
+      },
+      {
+        "start": 3997,
+        "end": 4015,
+        "label": "Burden abilities"
+      }
+    ]
+  },
+  {
+    "key": "end-blood",
+    "label": "The End: Blood",
+    "section": "Chapter 2 — Blood",
+    "ranges": [
+      {
+        "start": 827,
+        "end": 828
+      }
+    ]
+  },
+  {
+    "key": "tenets",
+    "label": "Tenets: Conscience and Standing",
+    "section": "Chapter 2 — Suffering",
+    "ranges": [
+      {
+        "start": 846,
+        "end": 907
+      }
+    ]
+  },
+  {
+    "key": "conscience",
+    "label": "Conscience",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 853,
+        "end": 882
+      }
+    ]
+  },
+  {
+    "key": "standing",
+    "label": "Standing",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 856,
+        "end": 907
+      }
+    ]
+  },
+  {
+    "key": "conscience-cascade",
+    "label": "Conscience Failure cascade",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 864,
+        "end": 882
+      }
+    ]
+  },
+  {
+    "key": "cond-detached",
+    "label": "Detached",
+    "section": "Conscience cascade",
+    "ranges": [
+      {
+        "start": 866,
+        "end": 869
+      }
+    ]
+  },
+  {
+    "key": "cond-penitent",
+    "label": "Penitent",
+    "section": "Conscience cascade",
+    "ranges": [
+      {
+        "start": 870,
+        "end": 874
+      }
+    ]
+  },
+  {
+    "key": "cond-blighted",
+    "label": "Blighted",
+    "section": "Conscience cascade",
+    "ranges": [
+      {
+        "start": 876,
+        "end": 879,
+        "label": "Condition text"
+      },
+      {
+        "start": 4033,
+        "end": 4034,
+        "label": "Burden Aspects (Blighted)"
+      }
+    ]
+  },
+  {
+    "key": "standing-cascade",
+    "label": "Standing Failure cascade",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 878,
+        "end": 907
+      }
+    ]
+  },
+  {
+    "key": "end-conscience",
+    "label": "The End: Conscience",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 880,
+        "end": 882
+      }
+    ]
+  },
+  {
+    "key": "the-end",
+    "label": "The End",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 888,
+        "end": 894
+      }
+    ]
+  },
+  {
+    "key": "cond-cautioned",
+    "label": "Cautioned",
+    "section": "Standing cascade",
+    "ranges": [
+      {
+        "start": 888,
+        "end": 890
+      }
+    ]
+  },
+  {
+    "key": "cond-discredited",
+    "label": "Discredited",
+    "section": "Standing cascade",
+    "ranges": [
+      {
+        "start": 891,
+        "end": 897
+      }
+    ]
+  },
+  {
+    "key": "cond-branded",
+    "label": "Branded",
+    "section": "Standing cascade",
+    "ranges": [
+      {
+        "start": 898,
+        "end": 903,
+        "label": "Condition text"
+      },
+      {
+        "start": 3962,
+        "end": 3969,
+        "label": "Burden abilities"
+      }
+    ]
+  },
+  {
+    "key": "end-standing",
+    "label": "The End: Standing",
+    "section": "Chapter 2 — Tenets",
+    "ranges": [
+      {
+        "start": 904,
+        "end": 907
+      }
+    ]
+  },
+  {
+    "key": "progress-tracks",
+    "label": "Progress Tracks",
+    "section": "Chapter 2 — Progress Tracks",
+    "ranges": [
+      {
+        "start": 911,
+        "end": 932
+      }
+    ]
+  },
+  {
+    "key": "track-ranks",
+    "label": "Rank reference tables",
+    "section": "Chapter 2 — Progress Tracks",
+    "ranges": [
+      {
+        "start": 924,
+        "end": 927,
+        "label": "Progress per rank"
+      },
+      {
+        "start": 942,
+        "end": 950,
+        "label": "Mission effort per rank"
+      },
+      {
+        "start": 986,
+        "end": 1008,
+        "label": "Common NPC ranks"
+      },
+      {
+        "start": 1132,
+        "end": 1140,
+        "label": "XP per rank"
+      }
+    ]
+  },
+  {
+    "key": "missions",
+    "label": "Missions",
+    "section": "Chapter 2 — Missions",
+    "ranges": [
+      {
+        "start": 933,
+        "end": 978
+      }
+    ]
+  },
+  {
+    "key": "connections",
+    "label": "Connections",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 979,
+        "end": 1084
+      }
+    ]
+  },
+  {
+    "key": "npc-ranks",
+    "label": "Common NPC ranks",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 986,
+        "end": 1008
+      }
+    ]
+  },
+  {
+    "key": "connection-progress",
+    "label": "Making Progress / Sealing a Connection",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 1011,
+        "end": 1019
+      }
+    ]
+  },
+  {
+    "key": "connection-test",
+    "label": "Testing a Connection",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 1026,
+        "end": 1046
+      }
+    ]
+  },
+  {
+    "key": "bloodied",
+    "label": "Bloodying a Connection",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 1026,
+        "end": 1051
+      }
+    ]
+  },
+  {
+    "key": "pulse",
+    "label": "Pulse, limits and healing",
+    "section": "Chapter 2 — Connections",
+    "ranges": [
+      {
+        "start": 1057,
+        "end": 1079
+      }
+    ]
+  },
+  {
+    "key": "combat",
+    "label": "Combat",
+    "section": "Chapter 2",
+    "ranges": [
+      {
+        "start": 1085,
+        "end": 1121
+      }
+    ]
+  },
+  {
+    "key": "combat-attack",
+    "label": "Attacking",
+    "section": "Chapter 2 — Combat",
+    "ranges": [
+      {
+        "start": 1095,
+        "end": 1107
+      }
+    ]
+  },
+  {
+    "key": "combat-winning",
+    "label": "Winning and losing",
+    "section": "Chapter 2 — Combat",
+    "ranges": [
+      {
+        "start": 1108,
+        "end": 1116
+      }
+    ]
+  },
+  {
+    "key": "xp",
+    "label": "Experience",
+    "section": "Chapter 2 — Experience",
+    "ranges": [
+      {
+        "start": 1122,
+        "end": 1160
+      }
+    ]
+  },
+  {
+    "key": "xp-acquire",
+    "label": "Upgrading and acquiring Aspects",
+    "section": "Chapter 2 — Experience",
+    "ranges": [
+      {
+        "start": 1128,
+        "end": 1149
+      }
+    ]
+  },
+  {
+    "key": "loose-ends",
+    "label": "Loose Ends",
+    "section": "Chapter 2 — Experience",
+    "ranges": [
+      {
+        "start": 1147,
+        "end": 1155
+      }
+    ]
+  },
+  {
+    "key": "loose-end-write",
+    "label": "Writing a Loose End",
+    "section": "Chapter 2 — Experience",
+    "ranges": [
+      {
+        "start": 1150,
+        "end": 1152
+      }
+    ]
+  },
+  {
+    "key": "xp-tallies",
+    "label": "Notating XP",
+    "section": "Chapter 2 — Experience",
+    "ranges": [
+      {
+        "start": 1161,
+        "end": 1187
+      }
+    ]
+  },
+  {
+    "key": "glossary",
+    "label": "Glossary",
+    "section": "Chapter 2 — Glossary",
+    "ranges": [
+      {
+        "start": 1188,
+        "end": 1396
+      }
+    ]
+  },
+  {
+    "key": "truths-innate-powers",
+    "label": "Truths: Innate Powers",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1492,
+        "end": 1510
+      }
+    ]
+  },
+  {
+    "key": "truths-origins",
+    "label": "Truths: Origins",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1511,
+        "end": 1530
+      }
+    ]
+  },
+  {
+    "key": "truths-population",
+    "label": "Truths: Population",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1513,
+        "end": 1530
+      }
+    ]
+  },
+  {
+    "key": "truths-political-landscape",
+    "label": "Truths: Political Landscape",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1536,
+        "end": 1549
+      }
+    ]
+  },
+  {
+    "key": "truths-hunting-territory",
+    "label": "Truths: Hunting Territory",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1536,
+        "end": 1554
+      }
+    ]
+  },
+  {
+    "key": "truths-loyalty",
+    "label": "Truths: Loyalty",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1552,
+        "end": 1573
+      }
+    ]
+  },
+  {
+    "key": "truths-sunlight",
+    "label": "Truths: Sunlight",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1557,
+        "end": 1572
+      }
+    ]
+  },
+  {
+    "key": "truths-district-access",
+    "label": "Truths: District Access",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1579,
+        "end": 1601
+      }
+    ]
+  },
+  {
+    "key": "truths-hunters",
+    "label": "Truths: Vampire Hunters",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1579,
+        "end": 1599
+      }
+    ]
+  },
+  {
+    "key": "truths-werewolves",
+    "label": "Truths: Werewolves",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1602,
+        "end": 1622
+      }
+    ]
+  },
+  {
+    "key": "truths-witches",
+    "label": "Truths: Witches",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1605,
+        "end": 1619
+      }
+    ]
+  },
+  {
+    "key": "truths-fey",
+    "label": "Truths: Fey",
+    "section": "Chapter 3 — Create Your Universe",
+    "ranges": [
+      {
+        "start": 1628,
+        "end": 1652
+      }
+    ]
+  },
+  {
+    "key": "creation-origins",
+    "label": "Step 1: Origins",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1641,
+        "end": 1721
+      }
+    ]
+  },
+  {
+    "key": "creation-turning",
+    "label": "Step 2: Turning",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1722,
+        "end": 1786
+      }
+    ]
+  },
+  {
+    "key": "creation-gifts",
+    "label": "Innate Gifts (Step 3)",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1787,
+        "end": 1824
+      }
+    ]
+  },
+  {
+    "key": "creation-skills",
+    "label": "Skills and Assets",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1825,
+        "end": 1879
+      }
+    ]
+  },
+  {
+    "key": "creation-magic",
+    "label": "Magic (Mysteries)",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1880,
+        "end": 1915
+      }
+    ]
+  },
+  {
+    "key": "creation-relationships",
+    "label": "Step 4: Relationships",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1880,
+        "end": 1939
+      }
+    ]
+  },
+  {
+    "key": "creation-attributes",
+    "label": "Step 6: Attributes",
+    "section": "Chapter 3",
+    "ranges": [
+      {
+        "start": 1940,
+        "end": 1965
+      }
+    ]
+  },
+  {
+    "key": "attributes-create",
+    "label": "Attributes at creation",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1942,
+        "end": 1946
+      }
+    ]
+  },
+  {
+    "key": "creation-identity",
+    "label": "Step 6: Identity",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 1966,
+        "end": 2046
+      }
+    ]
+  },
+  {
+    "key": "rush-modifiers",
+    "label": "What changes base and max Rush",
+    "section": "Chapter 2 + Chapter 4",
+    "ranges": [
+      {
+        "start": 2046,
+        "end": 2052,
+        "label": "Starting values (creation)"
+      },
+      {
+        "start": 702,
+        "end": 705,
+        "label": "Wounded: max Rush −1"
+      },
+      {
+        "start": 729,
+        "end": 731,
+        "label": "In Shock: max Rush −1"
+      },
+      {
+        "start": 738,
+        "end": 740,
+        "label": "Tormented: max Rush −1"
+      },
+      {
+        "start": 873,
+        "end": 875,
+        "label": "Penitent: max Rush −1"
+      },
+      {
+        "start": 889,
+        "end": 897,
+        "label": "Cautioned / Discredited: max Rush −1"
+      },
+      {
+        "start": 3965,
+        "end": 3967,
+        "label": "Burdens: base Rush −1"
+      }
+    ]
+  },
+  {
+    "key": "creation-finishing",
+    "label": "Step 7: Finishing Touches",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 2047,
+        "end": 2055
+      }
+    ]
+  },
+  {
+    "key": "starting-abilities",
+    "label": "Starting Abilities",
+    "section": "Chapter 3 — Create your character",
+    "ranges": [
+      {
+        "start": 2090,
+        "end": 2107
+      }
+    ]
+  },
+  {
+    "key": "city-basics",
+    "label": "City Basics",
+    "section": "Chapter 3 — Create your City",
+    "ranges": [
+      {
+        "start": 2342,
+        "end": 2355
+      }
+    ]
+  },
+  {
+    "key": "city-highlight",
+    "label": "City Highlight",
+    "section": "Chapter 3 — Create your City",
+    "ranges": [
+      {
+        "start": 2358,
+        "end": 2431
+      }
+    ]
+  },
+  {
+    "key": "city-ugly-side",
+    "label": "Ugly Side",
+    "section": "Chapter 3 — Create your City",
+    "ranges": [
+      {
+        "start": 2433,
+        "end": 2500
+      }
+    ]
+  },
+  {
+    "key": "city-faction",
+    "label": "Factions",
+    "section": "Chapter 3 — Create your City",
+    "ranges": [
+      {
+        "start": 2505,
+        "end": 2649
+      }
+    ]
+  },
+  {
+    "key": "city-districts",
+    "label": "Districts",
+    "section": "Chapter 3 — Create your City",
+    "ranges": [
+      {
+        "start": 2650,
+        "end": 2698
+      }
+    ]
+  },
+  {
+    "key": "first-mission-envision",
+    "label": "Step 1: Envision a First Mission",
+    "section": "Chapter 3 — Your First Mission",
+    "ranges": [
+      {
+        "start": 2700,
+        "end": 2845
+      }
+    ]
+  },
+  {
+    "key": "first-mission-commit",
+    "label": "Steps 2-4: Scene, Commit, Next Steps",
+    "section": "Chapter 3 — Your First Mission",
+    "ranges": [
+      {
+        "start": 2846,
+        "end": 2891
+      }
+    ]
+  },
+  {
+    "key": "aspects-how-they-work",
+    "label": "Types of Aspects",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 2893,
+        "end": 2959
+      }
+    ]
+  },
+  {
+    "key": "aspects-expertise",
+    "label": "Expertise",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 2960,
+        "end": 3309
+      }
+    ]
+  },
+  {
+    "key": "aspects-gift",
+    "label": "Gift",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 3310,
+        "end": 3671
+      }
+    ]
+  },
+  {
+    "key": "aspects-edge",
+    "label": "Edge",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 3672,
+        "end": 3915
+      }
+    ]
+  },
+  {
+    "key": "aspects-mystery",
+    "label": "Mysteries",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 3712,
+        "end": 3915
+      }
+    ]
+  },
+  {
+    "key": "aspects-connection",
+    "label": "Connection abilities",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 3916,
+        "end": 3960
+      }
+    ]
+  },
+  {
+    "key": "burdens-intro",
+    "label": "Burdens (permanent conditions)",
+    "section": "Chapter 4 — Burden abilities",
+    "ranges": [
+      {
+        "start": 3961,
+        "end": 3969
+      }
+    ]
+  },
+  {
+    "key": "aspects-burden",
+    "label": "Burden",
+    "section": "Chapter 4 — Aspects",
+    "ranges": [
+      {
+        "start": 3961,
+        "end": 4269
+      }
+    ]
+  },
+  {
+    "key": "npc-creation",
+    "label": "Creating NPCs",
+    "section": "Chapter 5 — Other Characters",
+    "ranges": [
+      {
+        "start": 4270,
+        "end": 4310
+      }
+    ]
+  },
+  {
+    "key": "factions",
+    "label": "Factions",
+    "section": "Chapter 5",
+    "ranges": [
+      {
+        "start": 4661,
+        "end": 4854
+      }
+    ]
+  },
+  {
+    "key": "oracle-how-to",
+    "label": "How to ask the Oracle",
+    "section": "Chapter 6 — Oracles",
+    "ranges": [
+      {
+        "start": 4856,
+        "end": 4884
+      }
+    ]
+  }
 ]
