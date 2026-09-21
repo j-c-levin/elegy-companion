@@ -579,7 +579,7 @@ function assembleFull(segment, splices) {
   const rest = rows.slice(i).filter((r) => !spliceCovers(fullSplices, r.n))
   if (rest.length === 0) return blocks
   let tableRows = rest
-  if (rest.length && splitRowCells(rest[0].text).length === 1) {
+  if (rest.length && splitRowCells(rest[0].text).length === 1 && isHeadingShape(rest[0].text)) {
     blocks.push({ k: 'h', lvl: 1, t: rest[0].text.trim(), s: [rest[0].n, rest[0].n] })
     tableRows = rest.slice(1)
   }
