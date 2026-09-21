@@ -88,9 +88,12 @@ export function addNpc(input: {
 export function updateNpc(id: string, patch: Partial<Omit<Npc, 'id' | 'createdAt'>>): void {
   const npc = state.npcs.find((entry) => entry.id === id)
   if (!npc) return
-  if (patch.name !== undefined) npc.name = patch.name.trim() || npc.name
+  if (patch.name !== undefined) npc.name = patch.name.trim() || 'Unnamed'
   if (patch.type !== undefined) npc.type = patch.type
-  if (patch.rank !== undefined) npc.rank = clampRank(patch.rank)
+  if (patch.rank !== undefined) {
+    npc.rank = clampRank(patch.rank)
+    if (npc.pulse !== null) npc.pulse = Math.min(npc.pulse, pulseMax(npc.rank))
+  }
   if (patch.pulse !== undefined) {
     npc.pulse =
       patch.pulse === null
@@ -103,8 +106,4 @@ export function updateNpc(id: string, patch: Partial<Omit<Npc, 'id' | 'createdAt
 export function removeNpc(id: string): void {
   const index = state.npcs.findIndex((entry) => entry.id === id)
   if (index !== -1) state.npcs.splice(index, 1)
-}
-
-export function npcCount(): number {
-  return state.npcs.length
 }

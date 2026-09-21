@@ -13,7 +13,7 @@ import {
   type Rank,
 } from './types'
 
-const props = defineProps<{ editing: Npc | null }>()
+const props = defineProps<{ editing: Npc | null; preset: { type: CreatureType; rank: Rank } }>()
 
 const emit = defineEmits<{ save: []; cancel: [] }>()
 
@@ -33,19 +33,29 @@ const form = reactive<{
   notes: '',
 })
 
-watch(
-  () => props.editing,
-  (npc) => {
-    if (!npc) return
+function loadFromProps(): void {
+  const npc = props.editing
+  if (npc) {
     form.name = npc.name
     form.type = npc.type
     form.rank = npc.rank
     form.hasPulse = npc.pulse !== null
     form.pulse = npc.pulse ?? pulseMax(npc.rank)
     form.notes = npc.notes
-  },
-  { immediate: true },
-)
+    return
+  }
+  form.name = ''
+  form.type = props.preset.type
+  form.rank = props.preset.rank
+  form.hasPulse = false
+  form.pulse = pulseMax(props.preset.rank)
+  form.notes = ''
+}
+
+watch([() => props.editing, () => props.preset], loadFromProps, {
+  deep: true,
+  immediate: true,
+})
 
 const commonTitle = computed(() => rankLabel(form.type, form.rank))
 const effectiveRank = computed(() => transformedRank(form.type, form.rank))
@@ -72,31 +82,13 @@ function submit(): void {
   } else {
     addNpc(payload)
   }
-  reset()
+  loadFromProps()
   emit('save')
 }
 
-function reset(): void {
-  form.name = ''
-  form.type = 'mortal'
-  form.rank = 1
-  form.hasPulse = false
-  form.pulse = 3
-  form.notes = ''
-}
-
 function cancel(): void {
-  reset()
   emit('cancel')
 }
-
-function prefill(type: CreatureType, rank: Rank): void {
-  reset()
-  form.type = type
-  form.rank = rank
-}
-
-defineExpose({ prefill })
 </script>
 
 <template>
@@ -143,9 +135,9 @@ defineExpose({ prefill })
         <span>Track Pulse (Connection NPCs in dangerous missions, 4303–4305)</span>
       </label>
       <div v-if="form.hasPulse" class="stepper">
-        <button type="button" aria-label="Decrease Pulse" :disabled="form.pulse <= 0" @click="form.pulse -= 1; clampPulse()">−</button>
+        <button type="button" aria-label="Decrease Pulse" :disabled="form.pulse <= 0" @click="form.pulse -= 1">−</button>
         <span class="step-value">{{ form.pulse }}</span>
-        <button type="button" aria-label="Increase Pulse" :disabled="form.pulse >= maxPulse" @click="form.pulse += 1; clampPulse()">+</button>
+        <button type="button" aria-label="Increase Pulse" :disabled="form.pulse >= maxPulse" @click="form.pulse += 1">+</button>
       </div>
     </div>
     <p v-if="form.hasPulse" class="hint">Pulse starts at Rank + 2 = {{ maxPulse }} (1060–1062).</p>

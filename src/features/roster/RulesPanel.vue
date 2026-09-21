@@ -43,8 +43,8 @@ const STATBLOCKS: ReadonlyArray<{ label: string; lines: string }> = [
         if you create a Connection (4282–4285).
       </li>
       <li>
-        Werewolves count one Rank higher while transformed (1008; the statblocks at 4573, 4589 and
-        4587 read "Rank X (Y when transformed)").
+        Werewolves count one Rank higher while transformed (1008; the statblocks at 4573, 4587 and
+        4589 read "Rank X (Y when transformed)").
       </li>
     </ul>
 

@@ -50,8 +50,8 @@ defineEmits<{ pick: [type: CreatureType, rank: Rank] }>()
       </table>
     </div>
     <p class="footnote">
-      * Werewolves are one Rank higher when transformed (manual 1008, statblocks at 4573, 4589,
-      4587).
+      * Werewolves are one Rank higher when transformed (manual 1008; statblocks at 4573, 4587,
+      4589).
     </p>
   </section>
 </template>

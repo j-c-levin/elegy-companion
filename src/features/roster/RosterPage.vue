@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 import CommonRankTable from './CommonRankTable.vue'
 import NpcForm from './NpcForm.vue'
@@ -8,12 +8,13 @@ import RulesPanel from './RulesPanel.vue'
 import type { CreatureType, Npc, Rank } from './types'
 
 const editing = ref<Npc | null>(null)
+const preset = reactive<{ type: CreatureType; rank: Rank }>({ type: 'mortal', rank: 1 })
 const formSection = ref<HTMLElement | null>(null)
-const formRef = ref<InstanceType<typeof NpcForm> | null>(null)
 
 function startEntry(type: CreatureType, rank: Rank): void {
   editing.value = null
-  formRef.value?.prefill(type, rank)
+  preset.type = type
+  preset.rank = rank
   formSection.value?.scrollIntoView({ block: 'start' })
 }
 
@@ -40,7 +41,7 @@ function finishEditing(): void {
 
     <section ref="formSection" class="form-block">
       <h2>{{ editing ? `Edit ${editing.name}` : 'New entry' }}</h2>
-      <NpcForm ref="formRef" :editing="editing" @save="finishEditing" @cancel="finishEditing" />
+      <NpcForm :editing="editing" :preset="preset" @save="finishEditing" @cancel="finishEditing" />
     </section>
 
     <RosterList @edit="editNpc" />
