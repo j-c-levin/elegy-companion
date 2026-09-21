@@ -62,3 +62,5 @@ intentionally not registered.
   task 13 (`src/data/aspects.json`) — link there, do not copy text here.
 - `commitDraft` preserves `xp`, `activeConditions` and `lists` by design (see
   re-creation flow above); it does not reconcile them with the new character.
+- `loadDraft` discards unversioned payloads and re-tests the newer-version
+  condition inline rather than via sequential checks.
