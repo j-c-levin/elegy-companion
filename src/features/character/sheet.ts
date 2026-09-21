@@ -4,7 +4,6 @@ import {
   addListItem,
   game,
   readJson,
-  removeListItem,
   updateGame,
   writeJson,
   type GameState,
@@ -127,25 +126,6 @@ export function spendXp(amount: number): void {
 export function addLooseEnd(text: string): void {
   updateGame((draft) => {
     addListItem(draft, 'loose-ends', text)
-  })
-}
-
-export function tieLooseEnd(id: string): void {
-  updateGame((draft) => {
-    const list = draft.lists['loose-ends'] ?? []
-    const item = list.find((i) => i.id === id)
-    if (!item) return
-    removeListItem(draft, 'loose-ends', id)
-    const tied = draft.lists['loose-ends-tied'] ?? []
-    tied.push({ id: item.id, text: item.text })
-    draft.lists['loose-ends-tied'] = tied
-    draft.xp += 1
-  })
-}
-
-export function discardLooseEnd(id: string): void {
-  updateGame((draft) => {
-    removeListItem(draft, 'loose-ends', id)
   })
 }
 

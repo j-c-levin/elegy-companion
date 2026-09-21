@@ -23,8 +23,8 @@ below ("Task N notes") rather than editing shared tables, so parallel branches d
 ## Storage
 
 - `game.lists['loose-ends']` / `game.lists['loose-ends-tied']`: owned by task 6. Ownership moved
-  here from the character feature in Phase 2 (see `docs/store.md`); the Loose Ends block in
-  `src/features/character/XpSection.vue` is the legacy Phase 1 surface and is superseded.
+  here from the character feature in Phase 2 (see `docs/store.md`); the legacy Loose Ends block
+  in the character XP section was removed in Phase 2 cleanup.
 - `elegy:night-log`: owned by task 5. Store the per-night slumber checklist history there with a
   `version` field (`docs/store.md` storage helpers); simple derived counters belong in the payload,
   not in new `game.lists` names.
@@ -50,7 +50,6 @@ simpler; never write `draft.xp` directly from a section SFC.
 - XP awarded for Mission/Connection completion is granted by the tracks feature; the XP section
   displays and spends the shared total but never double-awards rank XP (manual 1132–1140).
 
-<<<<<<< HEAD
 ## Task 5 notes — Night log / slumber checklist (`feature/session-night-log`)
 
 Files: `NightLogSection.vue` + `night-log.ts` (routine logic and history persistence). Built at
