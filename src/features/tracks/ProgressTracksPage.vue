@@ -158,47 +158,53 @@ function deleteArchived(id: string): void {
       <div class="ref-grid">
         <div>
           <h4>Mission effort (per Rank)</h4>
-          <table>
-            <thead>
-              <tr><th>Rank</th><th>Effort</th><th>Steps</th><th>Mark</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td>A few scenes or one night</td><td>3 to 4</td><td>3 boxes</td></tr>
-              <tr><td>2</td><td>One night or a bit more</td><td>5</td><td>2 boxes</td></tr>
-              <tr><td>3</td><td>A few nights</td><td>10</td><td>1 box</td></tr>
-              <tr><td>4</td><td>Many nights or about a week</td><td>20</td><td>half a box</td></tr>
-              <tr><td>5</td><td>More than a week</td><td>40</td><td>a quarter box</td></tr>
-            </tbody>
-          </table>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Rank</th><th>Effort</th><th>Steps</th><th>Mark</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>A few scenes or one night</td><td>3 to 4</td><td>3 boxes</td></tr>
+                <tr><td>2</td><td>One night or a bit more</td><td>5</td><td>2 boxes</td></tr>
+                <tr><td>3</td><td>A few nights</td><td>10</td><td>1 box</td></tr>
+                <tr><td>4</td><td>Many nights or about a week</td><td>20</td><td>half a box</td></tr>
+                <tr><td>5</td><td>More than a week</td><td>40</td><td>a quarter box</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <div>
           <h4>Common NPC ranks</h4>
-          <table>
-            <thead>
-              <tr><th>Type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Vampire</td><td>Newborn</td><td>Young</td><td>Mature</td><td>Elder</td><td>Ancient</td></tr>
-              <tr><td>Mortal</td><td>Common</td><td>Lackey</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Hunter</td><td>—</td><td>Vigilante</td><td>Agent</td><td>—</td><td>—</td></tr>
-              <tr><td>Ghost</td><td>Recent</td><td>Wraith</td><td>—</td><td>—</td><td>—</td></tr>
-              <tr><td>Witch</td><td>Apprentice</td><td>Veteran</td><td>Arch</td><td>Transcended</td><td>—</td></tr>
-              <tr><td>Werewolf</td><td>—</td><td>Adolescent</td><td>Mature</td><td>Elder</td><td>—</td></tr>
-              <tr><td>Fey</td><td>—</td><td>Refugee</td><td>Official</td><td>—</td><td>High</td></tr>
-            </tbody>
-          </table>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Type</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Vampire</td><td>Newborn</td><td>Young</td><td>Mature</td><td>Elder</td><td>Ancient</td></tr>
+                <tr><td>Mortal</td><td>Common</td><td>Lackey</td><td>—</td><td>—</td><td>—</td></tr>
+                <tr><td>Hunter</td><td>—</td><td>Vigilante</td><td>Agent</td><td>—</td><td>—</td></tr>
+                <tr><td>Ghost</td><td>Recent</td><td>Wraith</td><td>—</td><td>—</td><td>—</td></tr>
+                <tr><td>Witch</td><td>Apprentice</td><td>Veteran</td><td>Arch</td><td>Transcended</td><td>—</td></tr>
+                <tr><td>Werewolf</td><td>—</td><td>Adolescent</td><td>Mature</td><td>Elder</td><td>—</td></tr>
+                <tr><td>Fey</td><td>—</td><td>Refugee</td><td>Official</td><td>—</td><td>High</td></tr>
+              </tbody>
+            </table>
+          </div>
           <p class="ref-note">Werewolves are one Rank higher when transformed.</p>
         </div>
         <div>
           <h4>XP per Rank (fulfill / seal / down)</h4>
-          <table>
-            <thead>
-              <tr><th>Rank</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>XP</td><td>1</td><td>2</td><td>5</td><td>10</td><td>20</td></tr>
-            </tbody>
-          </table>
+          <div class="table-scroll">
+            <table>
+              <thead>
+                <tr><th>Rank</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>XP</td><td>1</td><td>2</td><td>5</td><td>10</td><td>20</td></tr>
+              </tbody>
+            </table>
+          </div>
           <p class="ref-note">
             Missions grant this on fulfillment; Connections on sealing; combat grants Rush equal
             to the adversary's Rank.
@@ -399,6 +405,7 @@ function deleteArchived(id: string): void {
 
 .ref-grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   margin-top: 0.75rem;
 }
@@ -412,6 +419,10 @@ function deleteArchived(id: string): void {
 .ref-grid table {
   font-size: 0.85rem;
   margin-bottom: 0.4rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
 }
 
 .ref-grid td,

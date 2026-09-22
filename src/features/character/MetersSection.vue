@@ -216,14 +216,11 @@ const trackChips = computed(() =>
 }
 
 .button-row button {
-  min-width: 3rem;
+  min-width: 2.75rem;
+  padding-inline: 0.6rem;
   min-height: 2.6rem;
   margin-bottom: 0;
   font-weight: 600;
-}
-
-.button-row button:not(.outline) {
-  padding-inline: 1rem;
 }
 
 .mitigate {
