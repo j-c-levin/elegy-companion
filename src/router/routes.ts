@@ -79,26 +79,6 @@ export const routes: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/world',
-    name: 'world-creation',
-    component: () => import('@/features/world/WorldPage.vue'),
-    meta: {
-      title: 'World Creation',
-      short: 'World',
-      blurb: 'Step through Truths, build your city and generate your first mission.',
-    },
-  },
-  {
-    path: '/create',
-    name: 'character-creation',
-    component: () => import('@/features/create/CreatePage.vue'),
-    meta: {
-      title: 'Character Creation',
-      short: 'Create',
-      blurb: 'Origins, turning, gifts, attributes and starting abilities — from mortal to vampire.',
-    },
-  },
-  {
     path: '/reference',
     name: 'rules-reference',
     component: () => import('@/features/reference/ReferencePage.vue'),
@@ -116,6 +96,26 @@ export const routes: RouteRecordRaw[] = [
       title: 'Aspect Database',
       short: 'Aspects',
       blurb: 'Browse Expertises, Gifts, Mysteries, Edges and Burdens with acquisition rules.',
+    },
+  },
+  {
+    path: '/world',
+    name: 'world-creation',
+    component: () => import('@/features/world/WorldPage.vue'),
+    meta: {
+      title: 'World Creation',
+      short: 'World',
+      blurb: 'Step through Truths, build your city and generate your first mission.',
+    },
+  },
+  {
+    path: '/create',
+    name: 'character-creation',
+    component: () => import('@/features/create/CreatePage.vue'),
+    meta: {
+      title: 'Character Creation',
+      short: 'Create',
+      blurb: 'Origins, turning, gifts, attributes and starting abilities — from mortal to vampire.',
     },
   },
   {
